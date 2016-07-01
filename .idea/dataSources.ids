@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - SMS@localhost" uuid="41d8b5e3-4585-4286-8929-055ed4cf5f4a">
+    <database-info product="MySQL" version="5.6.17" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="sms"/>
+      <table id="2" parent="1" name="admin_usr"/>
+      <table id="3" parent="1" name="out_box"/>
+      <table id="4" parent="1" name="send_task"/>
+      <table id="5" parent="1" name="t_token_history"/>
+      <column id="6" parent="2" name="ID">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="7" parent="2" name="GRP_ID">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="8" parent="2" name="USR_NM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="9" parent="2" name="NM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="10" parent="2" name="PSWD">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="11" parent="2" name="CRT_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="12" parent="2" name="ST">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="13" parent="2" name="USR_DESC">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="14" parent="2" name="TP">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="15" parent="2" name="IP">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="16" parent="2" name="LOG_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="17" parent="2" name="MBL_NO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="18" parent="2" name="UNCM_NO">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="19" parent="2" name="LMT_AMNT">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="20" parent="2" name="SEND_NO">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="21" parent="2" name="OLD_PSWD">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="22" parent="2" name="TRY_TMS">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="23" parent="2" name="TRY_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="24" parent="3" name="ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="25" parent="3" name="MSG_TP">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="26" parent="3" name="MSG_ID">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="27" parent="3" name="SBMT_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="28" parent="3" name="SRC_ADRS_MBL">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="29" parent="3" name="SRC_ADRS_UNCM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="30" parent="3" name="ORGN_ADRS">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="31" parent="3" name="DSTNTN_ADRS">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="32" parent="3" name="CNTNT">
+        <data-type>varchar(4000)</data-type>
+      </column>
+      <column id="33" parent="3" name="SEND_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="34" parent="3" name="RTRN_MSG_ID">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="35" parent="3" name="SRVC_ID">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="36" parent="3" name="FEE_USR_TP">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="37" parent="3" name="FEE_TRMNL_ID">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="38" parent="3" name="MSG_FRMT">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="39" parent="3" name="FEE_CD">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="40" parent="3" name="CRT_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="41" parent="3" name="SENT_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="42" parent="3" name="MSG_ST">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="43" parent="3" name="TRY_TMS">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="44" parent="3" name="RCV_ST">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="45" parent="3" name="RCV_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="46" parent="3" name="TASK_NM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="47" parent="3" name="CRTR_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="48" parent="3" name="CHNL_TP">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="49" parent="3" name="IS_SNSTV_WORD">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="50" parent="3" name="IS_BLCK">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="51" parent="3" name="TASK_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="52" parent="3" name="RCV_ST_CD">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="53" parent="4" name="id">
+        <mandatory>1</mandatory>
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="54" parent="4" name="CRTR_ID">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="55" parent="4" name="TASK_NM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="56" parent="4" name="SM_SNDD_NO">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="57" parent="4" name="SEND_TP">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="58" parent="4" name="SRC_ADRS_UNCM">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="59" parent="4" name="SRC_ADRS_MBL">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="60" parent="4" name="DSTNTN_ADRS">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="61" parent="4" name="CNTNT">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="62" parent="4" name="SEND_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="63" parent="4" name="SBMT_TM">
+        <data-type>datetime</data-type>
+      </column>
+      <column id="64" parent="4" name="TASK_ST">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="65" parent="4" name="SEND_STATE">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="66" parent="4" name="TRY_TMS">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="67" parent="4" name="CNT">
+        <data-type>bigint(20)</data-type>
+      </column>
+      <column id="68" parent="4" name="SCS_ID">
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="69" parent="4" name="IS_SNSTV_WORD">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="70" parent="4" name="PRIMARY">
+        <columns>id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="71" parent="5" name="USERNAME">
+        <mandatory>1</mandatory>
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="72" parent="5" name="TOKEN">
+        <data-type>varchar(200)</data-type>
+      </column>
+      <column id="73" parent="5" name="EXPIRE_DATE">
+        <mandatory>1</mandatory>
+        <data-type>timestamp</data-type>
+        <default-expression>&apos;CURRENT_TIMESTAMP&apos;</default-expression>
+      </column>
+    </database-model>
+  </data-source>
+</component>
