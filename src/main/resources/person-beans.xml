@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                         http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                         http://www.springframework.org/schema/context
+                         http://www.springframework.org/schema/context/spring-context-3.0.xsd
+                         http://www.springframework.org/schema/tx
+                         http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+                         http://www.springframework.org/schema/aop
+                         http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+    <context:annotation-config />
+    <aop:aspectj-autoproxy />
+
+    <bean id="personService" class="com.zjptcc.wxw.spring.person.PersonService">
+        <property name="name">
+            <value>露茜</value>
+        </property>
+    </bean>
+
+    <!--定义切面 -->
+    <bean id="personaop" class="com.zjptcc.wxw.spring.person.PersonAop" />
+    <aop:config>
+        <aop:aspect ref="personaop">
+            <aop:pointcut id="infopoint" expression="execution(* *.info(..))" />
+            <aop:before pointcut-ref="infopoint" method="before_info" />
+            <aop:after pointcut-ref="infopoint" method="after_info" />
+        </aop:aspect>
+        <aop:aspect ref="personaop">
+            <aop:pointcut id="getpoint" expression="execution(* *.getName(..))" />
+            <aop:after pointcut-ref="getpoint" method="after_get" />
+        </aop:aspect>
+    </aop:config>
+
+</beans>
