@@ -5,6 +5,7 @@ abstract class Diagram {
     protected char c;
 
     public Diagram(char c) {
+
         this.c = c;
     }
 
