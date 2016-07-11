@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+
+
+<sqlMap namespace="com.cfets.sms.rest.ibatis.mapper.TokenAllMapper">
+
+	<resultMap id="TokenAllType" class="com.cfets.sms.rest.entity.TokenModel">
+		<result property="username" column="USERNAME" />
+		<result property="token" column="TOKEN" />
+		<result property="expire_date" column="EXPIRE_DATE" />
+		<!-- <result property="ID" column="ID"/> <result property="GRP_ID" column="GRP_ID"/> 
+			<result property="CRT_TM" column="CRT_TM"/> <result property="ST" column="ST"/> 
+			<result property="USR_DESC" column="USR_DESC"/> <result property="TP" column="TP"/> 
+			<result property="IP" column="IP"/> <result property="LOG_TM" column="LOG_TM"/> 
+			<result property="MBL_NO" column="MBL_NO"/> <result property="UNCM_NO" column="UNCM_NO"/> 
+			<result property="LMT_AMNT" column="LMT_AMNT"/> <result property="SEND_NO" 
+			column="SEND_NO"/> <result property="OLD_PSWD" column="OLD_PSWD"/> <result 
+			property="TRY_TMS" column="TRY_TMS"/> <result property="TRY_TM" column="TRY_TM"/> -->
+
+	</resultMap>
+
+	<select id="selectTokenModelByToken" resultMap="TokenAllType">
+		select
+		USERNAME,TOKEN,EXPIRE_DATE
+		from SMS.T_TOKEN_HISTORY 
+	</select>
+	<select id="selectTokenModelByTokenValue" parameterClass="java.lang.String"
+		resultMap="TokenAllType">
+		select USERNAME,TOKEN,EXPIRE_DATE
+		from SMS.T_TOKEN_HISTORY
+		where token=#token#
+	</select>
+	
+	<select id="tokenIsValidate" parameterClass="java.util.Map"
+		resultMap="TokenAllType">
+		select USERNAME,TOKEN,EXPIRE_DATE
+		from SMS.T_TOKEN_HISTORY
+		where token=#token#
+		and	  TIMEDIFF(EXPIRE_DATE,#currenttime#)  <![CDATA[>]]> 0
+	</select>
+
+	<select id="selectTokenModelByUsernameAndCurrentTime"
+		parameterClass="java.util.Map" resultMap="TokenAllType">
+		select USERNAME,TOKEN,EXPIRE_DATE
+		from SMS.T_TOKEN_HISTORY
+		where
+		USERNAME<![CDATA[=]]>#username#
+		and TIMEDIFF(EXPIRE_DATE,str_to_date(#expire_date#,'%Y-%m-%d
+		%H:%i:%s')) <![CDATA[>]]>
+		0
+		limit 1
+	</select>
+
+	<insert id="addToken" parameterClass="com.cfets.sms.rest.entity.TokenModel">
+		insert into SMS.T_TOKEN_HISTORY
+		(
+		USERNAME,
+		TOKEN,
+		EXPIRE_DATE)
+		values (
+		#username#, #token#, #expire_date#
+		)
+	</insert>
+
+	<update id="refreshToken" parameterClass="com.cfets.sms.rest.entity.TokenModel">
+		UPDATE
+		SMS.T_TOKEN_HISTORY
+		SET EXPIRE_DATE = #expire_date#
+		WHERE TOKEN = #token#
+		and USERNAME = #username#
+	</update>
+
+	<update id="updateTokenModelByToken" parameterClass="com.cfets.sms.rest.entity.TokenModel">
+		UPDATE
+		SMS.T_TOKEN_HISTORY
+		SET EXPIRE_DATE = #expire_date#
+		WHERE TOKEN = #token#
+		and USERNAME = #username#
+	</update>
+
+
+
+	<!--<select id="selectUserByUsername" resultMap="UserType"> select USR_NM,PSWD,NM 
+		from SMS.admin_usr </select> <select id="selectUserByUsername" parameterClass="java.lang.String" 
+		resultMap="UserType"> select USR_NM,PSWD,NM from SMS.admin_usr where USR_NM 
+		= #USR_NM# </select> <select id="selectUserByUsernameAndPassword" parameterClass="java.util.Map" 
+		resultMap="UserType"> select USR_NM,PSWD,NM from SMS.admin_usr where USR_NM 
+		= #USR_NM# and PSWD = #PSWD# </select> <select id="selectUserByUsernameAndPasswordAndUsertype" 
+		parameterClass="java.util.Map" resultMap="UserType"> select USR_NM,PSWD,NM 
+		from SMS.admin_usr where USR_NM = #USR_NM# and PSWD = #PSWD# and NM= #NM# 
+		</select> -->
+</sqlMap>

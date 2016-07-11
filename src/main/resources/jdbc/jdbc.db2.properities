@@ -1,0 +1,5 @@
+########################## jdbc drivers ######################
+driver=com.mysql.jdbc.Driver
+url=jdbc:mysql://127.0.0.1:3306/sms?useUnicode=TRUE&characterEncoding=GB2312
+username=root
+password=

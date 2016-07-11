@@ -5,7 +5,7 @@ package cn.gacl.annotation;
  */
 
 
-@MyAnnotation
+@MyAnnotation("aaaa")
 //这里是将新创建好的注解类MyAnnotation标记到AnnotaionTest类上
 public class AnnotationUse {
     public static void main(String[] args) {

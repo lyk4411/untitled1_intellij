@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+
+
+<sqlMap namespace="com.cfets.sms.rest.ibatis.mapper.UserMapper">
+
+	<resultMap id="UserType" class="com.cfets.sms.rest.entity.User">
+		<result property="PSWD" column="PSWD" />
+		<result property="NM" column="NM" />
+		<result property="ID" column="ID" />
+		<result property="TP" column="TP" />
+		<result property="MBL_NO" column="MBL_NO" />
+		<result property="UNCM_NO" column="UNCM_NO" />
+
+
+		<!-- <result property="ID" column="ID"/> <result property="GRP_ID" column="GRP_ID"/> 
+			<result property="CRT_TM" column="CRT_TM"/> <result property="ST" column="ST"/> 
+			<result property="USR_DESC" column="USR_DESC"/> <result property="TP" column="TP"/> 
+			<result property="IP" column="IP"/> <result property="LOG_TM" column="LOG_TM"/> 
+			<result property="MBL_NO" column="MBL_NO"/> <result property="UNCM_NO" column="UNCM_NO"/> 
+			<result property="LMT_AMNT" column="LMT_AMNT"/> <result property="SEND_NO" 
+			column="SEND_NO"/> <result property="OLD_PSWD" column="OLD_PSWD"/> <result 
+			property="TRY_TMS" column="TRY_TMS"/> <result property="TRY_TM" column="TRY_TM"/> -->
+
+	</resultMap>
+	<!--<select id="selectUserByUsername" resultMap="UserType"> select USR_NM,PSWD,NM 
+		from sms.admin_usr </select> -->
+	<select id="selectUserByUsername" parameterClass="java.lang.String"
+		resultMap="UserType">
+		select PSWD,NM,ID,TP,MBL_NO,UNCM_NO from SMS.ADMIN_USR where
+		NM = #NM#
+	</select>
+	
+	
+
+	<select id="selectUserByUsernameAndPassword" parameterClass="java.util.Map"
+		resultMap="UserType">
+		select PSWD,NM,ID,TP,MBL_NO,UNCM_NO from SMS.ADMIN_USR where
+		NM = #NM# and
+		PSWD = #PSWD#
+	</select>
+	<select id="selectUserByUsernameAndPasswordAndUsertype"
+		parameterClass="java.util.Map" resultMap="UserType">
+		select PSWD,NM,ID,TP,MBL_NO,UNCM_NO from
+		SMS.ADMIN_USR where
+		NM =#NM# and
+		PSWD = #PSWD#
+		and TP= #TP#
+	</select>
+</sqlMap>

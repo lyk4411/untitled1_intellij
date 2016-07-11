@@ -8,6 +8,11 @@ package com.wenhuisoft.chapter2;
  * 策略接口，主要是规范或者让结构程序知道如何进行调用
  */
 interface CalcStrategy {
+    /**
+     * @param x
+     * @param y
+     * @return
+     */
     int calc(int x, int y);
 }
 
@@ -17,7 +22,7 @@ interface CalcStrategy {
 class Calculator {
     private int x = 0;
     private int y = 0;
-    private CalcStrategy strategy = null;
+    private CalcStrategy strategy;
 
     public Calculator(int x, int y) {
         this.x = x;
@@ -65,11 +70,7 @@ public class StrategyTest {
         Calculator c1 = new Calculator(10, 30, new SubStrategy());
         System.out.println(c1.result());
         // 看到这里就可以看到策略模式强大了，算法可以随意设置，系统的结构并不会发生任何变化
-        Calculator c2 = new Calculator(30, 40, new CalcStrategy() {
-            public int calc(int x, int y) {
-                return ((x + 10) - (y * 3)) / 2;
-            }
-        });
+        Calculator c2 = new Calculator(30, 40, (x,y) -> ((x + 10) - (y * 3)) / 2);
         System.out.println(c2.result());
     }
 }

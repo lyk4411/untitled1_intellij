@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+
+
+<sqlMap namespace="com.cfets.sms.rest.ibatis.mapper.SendTaskMapper">
+
+	<resultMap id="TokenAllType" class="com.cfets.sms.rest.entity.SendTaskModel">
+		<result property="phonenumber" column="DSTNTN_ADRS" />
+		<result property="content" column="CNTNT" />
+		<result property="sendTime" column="SEND_TM" />
+		<result property="subbmitTime" column="SBMT_TM" />
+		<result property="userid" column="CRTR_ID" />
+		<result property="count" column="CNT" />
+		<result property="MBL_NO" column="SRC_ADRS_MBL" />
+		<result property="UNCM_NO" column="SRC_ADRS_UNCM" />
+		
+	</resultMap>
+
+
+	<insert id="addSendTask" parameterClass="com.cfets.sms.rest.entity.SendTaskModel">
+		insert into SMS.SEND_TASK 
+		(
+		CRTR_ID,
+		TASK_NM,
+		SM_SNDD_NO,
+		SEND_TP,
+		SRC_ADRS_UNCM,
+		SRC_ADRS_MBL,
+		DSTNTN_ADRS,
+		CNTNT,
+		SEND_TM,
+		SBMT_TM,
+		TASK_ST,
+		SEND_STATE,
+		TRY_TMS,
+		CNT,
+		SCS_ID,
+		IS_SNSTV_WORD
+		)
+		values
+		(
+		#userid#,
+		"SendSMS",
+		0,
+		1,
+		#UNCM_NO#,
+		#MBL_NO#,
+		#phonenumber#,
+		#content#,
+		#sendTime#,
+		#subbmitTime#,
+		0,
+		0,
+		1,
+		1,
+		0,
+		0
+		)
+		<selectKey keyProperty="id" resultClass="long" >
+			SELECT LAST_INSERT_ID() AS Pid
+		</selectKey>
+	</insert>
+
+</sqlMap>

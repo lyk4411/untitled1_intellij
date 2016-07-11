@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMap PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN" "http://www.ibatis.com/dtd/sql-map-2.dtd" >
+
+
+<sqlMap namespace="com.cfets.sms.rest.ibatis.mapper.OutBoxMapper">
+
+	<resultMap id="OutBoxType" class="com.cfets.sms.rest.entity.OutBoxModel">
+		<result property="SENT_TM" column="SENT_TM" />
+		<result property="RCV_ST" column="RCV_ST" />
+		<result property="CHNL_TP" column="CHNL_TP" />
+		<result property="CRTR_ID" column="CRTR_ID" />
+		<result property="TASK_ID" column="TASK_ID" />
+		<result property="CNTNT" column="CNTNT" />
+	</resultMap>
+
+	<select id="selectOutBoxTypeByTaskID" parameterClass="java.lang.Long"
+		resultMap="OutBoxType">
+		select SENT_TM,RCV_ST,CHNL_TP,CRTR_ID,TASK_ID,CNTNT from
+		SMS.OUT_BOX where
+		TASK_ID = #TASK_ID#
+	</select>
+
+</sqlMap>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE sqlMapConfig PUBLIC "-//iBATIS.com//DTD SQL Map Config 2.0//EN"  "http://www.ibatis.com/dtd/sql-map-config-2.dtd" >
+
+
+<sqlMapConfig>
+
+	<properties resource="jdbc/jdbc.db2.properties" />
+
+	<settings 
+		cacheModelsEnabled="true" 
+		lazyLoadingEnabled="true"
+		enhancementEnabled="true" 
+		errorTracingEnabled="true" 
+		maxRequests="32"
+		maxSessions="12" 
+		maxTransactions="8" 
+		useStatementNamespaces="true" />
+	<!-- properties resource="jdbc/jdbc.db2.properties" /> -->
+	<!-- 使用JDBC的事务管理 -->
+	<transactionManager type="JDBC">
+		<!-- 数据源 -->
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}" />
+			<property name="JDBC.ConnectionURL" value="${url}" />
+			<property name="JDBC.Username" value="${username}" />
+			<property name="JDBC.Password" value="${password}" />
+			<property name="Pool.MaximumActiveConnections" value="35" />
+			<property name="Pool.MaximumIdleConnections" value="15" />
+			<property name="Pool.MaximumWait" value="1000" />
+			<property name="TimeToWait" value="1500"/>
+		</dataSource>
+	</transactionManager>
+	<!-- 这里可以写多个实体的映射文件 -->
+	<sqlMap resource="mapper/UserMapper.xml" />
+	<sqlMap resource="mapper/TokenAllMapper.xml" />
+	<sqlMap resource="mapper/SendTaskMapper.xml" />
+	<sqlMap resource="mapper/OutBoxMapper.xml" />
+
+</sqlMapConfig>
