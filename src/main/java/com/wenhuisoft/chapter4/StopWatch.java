@@ -85,6 +85,7 @@ class CommandThread implements Runnable, ActionListener {
             } else {
                 try {
                     clockDisplay.wait();
+                    //wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -107,12 +108,13 @@ class CommandThread implements Runnable, ActionListener {
                     t.start();
                 }
                 clockDisplay.notify();
-            } else if (type.equalsIgnoreCase("clear")) //暂停
+                //notify();
+            } else if (type.equalsIgnoreCase("clear")) //停止
             {
                 start = false;
                 clockDisplay.clear();
                 label.setText(clockDisplay.toString());
-            } else {
+            } else {//暂停
                 start = false;
             }
         }
@@ -152,6 +154,7 @@ class ClockDisplay {
     }
 
     public String toString() {
-        return String.format("%02d", minute) + ":" + String.format("%02d", second) + ":" + String.format("%03d", millsecond);
+        return String.format("%02d", minute) + ":" + String.format("%02d", second) + ":" +
+                String.format("%03d", millsecond);
     }
 }

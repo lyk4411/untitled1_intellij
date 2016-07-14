@@ -1,15 +1,18 @@
-package socket;
+package cfets.TCPIPSocket.chapter2;
 
 /**
- * Created by lyk on 2016/7/8.
+ * Created by lyk on 2016/7/14.
+ * Package name: cfets.TCPIPSocket.chapter2
+ * Porject name: untitled1
  */
 
-import java.net.*;
 import java.util.Enumeration;
+import java.net.*;
 
 public class InetAddressExample {
 
     public static void main(String[] args) {
+
         // Get the network interfaces and associated addresses for this host
         try {
             Enumeration<NetworkInterface> interfaceList = NetworkInterface.getNetworkInterfaces();
@@ -25,7 +28,9 @@ public class InetAddressExample {
                     }
                     while (addrList.hasMoreElements()) {
                         InetAddress address = addrList.nextElement();
-                        System.out.print("\tAddress " + ((address instanceof Inet4Address ? "(v4)" : (address instanceof Inet6Address ? "(v6)" : "(?)"))));
+                        System.out.print("\tAddress "
+                                + ((address instanceof Inet4Address ? "(v4)"
+                                : (address instanceof Inet6Address ? "(v6)" : "(?)"))));
                         System.out.println(": " + address.getHostAddress());
                     }
                 }
