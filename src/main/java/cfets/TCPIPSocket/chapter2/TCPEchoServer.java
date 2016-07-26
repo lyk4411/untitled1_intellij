@@ -32,12 +32,20 @@ public class TCPEchoServer {
             SocketAddress clientAddress = clntSock.getRemoteSocketAddress();
             System.out.println("Handling client at " + clientAddress);
 
+            System.out.println("get Inet Address" + clntSock.getInetAddress());
+            System.out.println("get Local Address:" + clntSock.getLocalAddress());
+            System.out.println("get Local Port:" + clntSock.getLocalPort());
+
+
             InputStream in = clntSock.getInputStream();
             OutputStream out = clntSock.getOutputStream();
 
             // Receive until client closes connection, indicated by -1 return
             while ((recvMsgSize = in.read(receiveBuf)) != -1) {
+                //out.write(123456);
                 out.write(receiveBuf, 0, recvMsgSize);
+                out.write(123456);
+                //break;
             }
 
             clntSock.close();  // Close the socket.  We are done with this client!
