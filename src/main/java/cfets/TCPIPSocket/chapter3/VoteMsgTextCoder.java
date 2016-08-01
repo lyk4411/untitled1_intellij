@@ -25,7 +25,6 @@ public class VoteMsgTextCoder implements VoteMsgCoder {
     public static final String CHARSETNAME = "US-ASCII";
     public static final String DELIMSTR = " ";
     public static final int MAX_WIRE_LENGTH = 2000;
-
     public byte[] toWire(VoteMsg msg) throws IOException {
         String msgString = MAGIC + DELIMSTR + (msg.isInquiry() ? INQSTR : VOTESTR)
                 + DELIMSTR + (msg.isResponse() ? RESPONSESTR + DELIMSTR : "")
