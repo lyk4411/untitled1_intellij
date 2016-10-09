@@ -28,7 +28,7 @@ public class UDPEchoServer {
         while (true) { // Run forever, receiving and echoing datagrams
             socket.receive(packet); // Receive packet from client
             System.out.println("Handling client at " + packet.getAddress().getHostAddress() + " on port " + packet.getPort());
-            System.out.println(packet.getData());
+            System.out.println("getDate:" + new String(packet.getData(),"UTF-8"));
             socket.send(packet); // Send the same packet back to client
             packet.setLength(ECHOMAX); // Reset length to avoid shrinking buffer
         }

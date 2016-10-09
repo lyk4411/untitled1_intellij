@@ -1,5 +1,7 @@
 package cfets.TCPIPSocket.chapter3;
 
+import java.io.UnsupportedEncodingException;
+
 /**
  * Created by lyk on 2016/7/26.
  * Package name: cfets.TCPIPSocket.chapter3
@@ -44,26 +46,36 @@ public class BruteForceCoding {
         return rtn;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
         System.out.println("===================================");
         System.out.println("BSIZE:" + BSIZE);
         System.out.println("SSIZE:" + SSIZE);
         System.out.println("ISIZE:" + ISIZE);
         System.out.println("LSIZE:" + LSIZE);
         System.out.println("===================================");
-
+        System.out.println("byteArrayToDecimalString:" + byteArrayToDecimalString(new byte[]{1, 1, 1, 2, 3, 4, 5, 6, 87, 127, -128, 'a','A'}));
+        System.out.println("===================================");
         byte[] message = new byte[BSIZE + SSIZE + ISIZE + LSIZE];
         // Encode the fields in the target byte array
         int offset = encodeIntBigEndian(message, byteVal, 0, BSIZE);
+        System.out.println("value of message0: " + byteArrayToDecimalString(message));
+
         System.out.println("offset 1: " + offset);
         offset = encodeIntBigEndian(message, shortVal, offset, SSIZE);
+        System.out.println("value of message1: " + byteArrayToDecimalString(message));
+
         System.out.println("offset 2: " + offset);
         offset = encodeIntBigEndian(message, intVal, offset, ISIZE);
+        System.out.println("value of message2: " + byteArrayToDecimalString(message));
+
         System.out.println("offset 3: " + offset);
-        System.out.println("value of message: " + String.valueOf(message));
+        System.out.println("value of message: " + new String(message,"utf-8"));
+        System.out.println("value of message3: " + byteArrayToDecimalString(message));
+
 
         encodeIntBigEndian(message, longVal, offset, LSIZE);
         System.out.println("Encoded message: " + byteArrayToDecimalString(message));
+        System.out.println("===================================");
 
         // Decode several fields
         long value = decodeIntBigEndian(message, BSIZE, SSIZE);
