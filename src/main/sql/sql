@@ -1,0 +1,23 @@
+select c.lastname,a.userid,
+       count(*) 总次数,
+       sum(case
+             when operatedate = '' or operatedate is null then
+              0
+             else
+              1
+           end) 已读,
+       sum(case
+             when operatedate = '' or operatedate is null then
+              1
+             else
+              0
+           end) 未读
+  from workflow_currentoperator a, workflow_requestbase b,HrmResource c
+ where a.requestid = b.requestid
+and a.userid = c.id
+--and b.requestid = 27478
+   and b.workflowid = 141 --内部留言id
+   and  to_date(A.RECEIVEDATE,'yyyy-mm-dd') >= to_date('2016-10-01','yyyy-mm-dd')
+   and  to_date(A.RECEIVEDATE,'yyyy-mm-dd') <= to_date('2016-10-10','yyyy-mm-dd')
+ --  and b.requestname like '%日报%'--流程标题作为查询条件
+ group by a.userid,c.lastname
