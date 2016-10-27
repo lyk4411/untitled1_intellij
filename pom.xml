@@ -258,12 +258,12 @@
         <repository>
             <id>cfets-maven</id>
             <name>cfets-maven</name>
-            <url>http://192.168.175.138:8080/nexus-2.11.2-06/content/repositories/cfets-maven/</url>
+            <url>http://192.168.176.138:8080/nexus-2.11.2-06/content/repositories/cfets-maven/</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <name>Snapshots</name>
-            <url>http://192.168.175.138:8080/nexus-2.11.2-06/content/repositories/snapshots/</url>
+            <url>http://192.168.176.138:8080/nexus-2.11.2-06/content/repositories/snapshots/</url>
         </snapshotRepository>
     </distributionManagement>
 
