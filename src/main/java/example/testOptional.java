@@ -1,6 +1,6 @@
 package example;
 
-import java.util.Optional;
+import java.util.*;
 import java.util.stream.Stream;
 
 /**
@@ -17,6 +17,15 @@ public class testOptional {
         System.out.println(name.map(s-> "hey " + s + "!").orElse("hey guest."));
 
         Stream.generate(Math::random).limit(5).forEach(System.out::println);
+
+        Class c1 = new ArrayList<Integer>().getClass();
+        Class c2 = new ArrayList<String>().getClass();
+        System.out.println(c1 == c2);
+
+        List<Integer> list = new ArrayList<Integer>();
+        Map<Integer, String> map = new HashMap<Integer, String>();
+        System.out.println(Arrays.toString(list.getClass().getTypeParameters()));
+        System.out.println(Arrays.toString(map.getClass().getTypeParameters()));
 
 
     }
