@@ -11,7 +11,9 @@ import java.util.List;
 public class PascalTriangle {
     public static void main(String[] args) {
         PascalTriangle pt = new PascalTriangle();
+        System.out.println(pt.generate(0));
         System.out.println(pt.generate(5));
+
     }
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> result = new ArrayList<List<Integer>>();
