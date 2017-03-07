@@ -29,11 +29,34 @@ public class MinimumDepthofBinaryTree {
         a7.left = a8;
         a7.right = a9;
 
-        System.out.println(mdbt.minDepth(a1));
-        System.out.println(mdbt.minDepth(a2));
-        System.out.println(mdbt.minDepth(a3));
+//        System.out.println(mdbt.minDepth(a1));
+//        System.out.println(mdbt.minDepth(a2));
+//        System.out.println(mdbt.minDepth(a3));
 
+        System.out.println(mdbt.minDepth1(a1));
+        System.out.println(mdbt.minDepth1(a2));
+        System.out.println(mdbt.minDepth1(a3));
 
+        System.out.println(mdbt.minDepth2(a1));
+        System.out.println(mdbt.minDepth2(a2));
+        System.out.println(mdbt.minDepth2(a3));
+
+    }
+    public int minDepth2(TreeNode root) {
+        if(root == null) return 0;
+        int left = minDepth2(root.left);
+        int right = minDepth2(root.right);
+        return (left == 0 || right == 0) ? left + right + 1: Math.min(left,right) + 1;
+
+    }
+    public int minDepth1(TreeNode root) {
+        if(root == null)
+            return 0;
+        if(root.left == null)
+            return minDepth1(root.right)+1;
+        if(root.right == null)
+            return minDepth1(root.left)+1;
+        return Math.min(minDepth1(root.left),minDepth1(root.right))+1;
     }
     public int minDepth(TreeNode root) {
         if(root == null){
