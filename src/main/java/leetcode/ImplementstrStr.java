@@ -7,6 +7,7 @@ package leetcode;
  */
 
 public class ImplementstrStr {
+
     public static void main(String[] args) {
         ImplementstrStr is = new ImplementstrStr();
         System.out.println(is.strStr("ababcaababcaabc","ababcaabc"));
