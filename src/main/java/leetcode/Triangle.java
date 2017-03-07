@@ -32,7 +32,21 @@ public class Triangle {
         aa.add(b);
         aa.add(c);
         aa.add(d);
-        System.out.println(tr.minimumTotal(aa));
+        System.out.println(tr.minimumTotal1(aa));
+    }
+
+    public int minimumTotal1(List<List<Integer>> triangle) {
+        int[] A = new int[triangle.size()+1];
+        for(int i=triangle.size()-1;i>=0;i--){
+            for(int j=0;j<triangle.get(i).size();j++){
+                A[j] = Math.min(A[j],A[j+1])+triangle.get(i).get(j);
+            }
+            for (int k = 0; k < A.length; k++) {
+                System.out.print(A[k] + ";");
+            }
+            System.out.println();
+        }
+        return A[0];
     }
     public int minimumTotal(List<List<Integer>> triangle) {
         if(triangle == null || triangle.size() == 0) {
