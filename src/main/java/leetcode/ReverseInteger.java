@@ -8,7 +8,7 @@ package leetcode;
 public class ReverseInteger {
     public static void main(String[] args) {
         ReverseInteger ri = new ReverseInteger();
-        System.out.println(ri.reverse(12345678));
+        System.out.println(ri.reverse(1534236469));
         System.out.println(ri.reverse(-12345678));
     }
     public int reverse(int x)
