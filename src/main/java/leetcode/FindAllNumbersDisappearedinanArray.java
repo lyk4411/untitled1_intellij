@@ -9,6 +9,11 @@ import java.util.List;
  * Porject name: untitled1
  */
 public class FindAllNumbersDisappearedinanArray {
+    public static void main(String[] args) {
+        FindAllNumbersDisappearedinanArray fanda = new FindAllNumbersDisappearedinanArray();
+        List<Integer> list = fanda.findDisappearedNumbers(new int[]{1,2,3,3,4,6,7,7,9,9});
+        System.out.println(list);
+    }
     public List<Integer> findDisappearedNumbers(int[] nums) {
         List<Integer> ret = new ArrayList<Integer>();
 
