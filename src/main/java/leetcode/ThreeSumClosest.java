@@ -11,24 +11,38 @@ public class ThreeSumClosest {
         int[] nums = new int[]{1,2,5,6};
         System.out.println(tsc.threeSumClosest(nums,6));
     }
-    public int threeSumClosest(int[] num, int target) {
-        int result = num[0] + num[1] + num[num.length - 1];
-        Arrays.sort(num);
-        for (int i = 0; i < num.length - 2; i++) {
-            int start = i + 1, end = num.length - 1;
-            while (start < end) {
-                int sum = num[i] + num[start] + num[end];
-                System.out.println(sum);
-                if (sum > target) {
-                    end--;
-                } else {
-                    start++;
-                }
-                if (Math.abs(sum - target) < Math.abs(result - target)) {
-                    result = sum;
+    public int threeSumClosest(int[] nums, int target) {
+        int left,right;
+        Arrays.sort(nums);//排序
+        int sum = Integer.MAX_VALUE;
+        int minusWithTarget = Integer.MAX_VALUE;
+        int sumWithTriple;
+        int minus;
+
+        for(int i = 0;i<nums.length;i++){
+            if(i-1>=0&&nums[i]==nums[i-1])
+                continue;
+            left = i+1;right = nums.length-1;
+            while(left<right){
+                sumWithTriple = nums[i]+nums[left]+nums[right];
+                minus = sumWithTriple-target;
+                if(minus==0){
+                    return sumWithTriple;
+                }else if(minus>0){
+                    if(minus<minusWithTarget){
+                        minusWithTarget = minus;
+                        sum = sumWithTriple;
+                    }
+                    right--;
+                }else {
+                    if(-minus<minusWithTarget){
+                        minusWithTarget = -minus;
+                        sum=sumWithTriple;
+                    }
+                    left++;
                 }
             }
         }
-        return result;
+        return sum;
     }
 }
