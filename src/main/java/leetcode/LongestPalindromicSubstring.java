@@ -1,4 +1,4 @@
-package main.java.leetcode;
+package leetcode;
 
 /**
  * Created by liuyongkai on 17/3/11.
