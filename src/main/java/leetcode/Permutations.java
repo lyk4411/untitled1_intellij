@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by lyk on 2017/3/14.
@@ -15,71 +14,72 @@ public class Permutations {
         System.out.println(p.permute(nums));
     }
 
-//    List<List<Integer>> res;
-//    boolean[] used;
-//
-//    public List<List<Integer>> permute(int[] nums) {
-//        res = new LinkedList<List<Integer>>();
-//        used = new boolean[nums.length];
-//        List<Integer> tmp = new LinkedList<Integer>();
-//        helper(nums, tmp);
-//        return res;
-//    }
-//
-//    private void helper(int[] nums, List<Integer> tmp){
-//        if(tmp.size() == nums.length){
-//            List<Integer> list = new LinkedList<Integer>(tmp);
-//            res.add(list);
-//        } else {
-//            for(int idx = 0; idx < nums.length; idx++){
-//                // 遇到已经加过的元素就跳过
-//                if(used[idx]){
-//                    continue;
-//                }
-//                // 加入该元素后继续搜索
-//                used[idx] = true;
-//                tmp.add(nums[idx]);
-//                helper(nums, tmp);
-//                tmp.remove(tmp.size()-1);
-//                used[idx] = false;
-//            }
-//        }
-//    }
 
+    public ArrayList<ArrayList<Integer>> permute(int[] num) {
+        ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
 
+        //start from an empty list
+        result.add(new ArrayList<Integer>());
 
+        for (int i = 0; i < num.length; i++) {
+            //list of list in current iteration of the array num
+            ArrayList<ArrayList<Integer>> current = new ArrayList<ArrayList<Integer>>();
 
-    public List<List<Integer>> permute(int[] num) {
-        ArrayList<List<Integer>> result = new ArrayList<List<Integer>>();
-        permute(num, 0,  result);
+            for (ArrayList<Integer> l : result) {
+                // # of locations to insert is largest index + 1
+                for (int j = 0; j < l.size()+1; j++) {
+                    // + add num[i] to different locations
+                    l.add(j, num[i]);
+
+                    ArrayList<Integer> temp = new ArrayList<Integer>(l);
+                    current.add(temp);
+
+                    //System.out.println(temp);
+
+                    // - remove num[i] add
+                    l.remove(j);
+                }
+            }
+
+            result = new ArrayList<ArrayList<Integer>>(current);
+        }
+
         return result;
     }
 
-    void permute(int[] num, int start, ArrayList<List<Integer>> result) {
 
-        if (start == num.length) {
-            ArrayList<Integer> item = convertArrayToList(num);
-            result.add(item);
-        }
 
-        for (int j = start; j <= num.length - 1; j++) {
-            swap(num, start, j);
-            permute(num, start + 1, result);
-            swap(num, start, j);
-        }
-    }
-
-    private ArrayList<Integer> convertArrayToList(int[] num) {
-        ArrayList<Integer> item = new ArrayList<Integer>();
-        for (int h = 0; h < num.length; h++) {
-            item.add(num[h]);
-        }
-        return item;
-    }
-
-    private void swap(int[] a, int i, int j) {
-        int temp = a[i];
-        a[i] = a[j];
-        a[j] = temp;
-    }
+//    public List<List<Integer>> permute(int[] num) {
+//        ArrayList<List<Integer>> result = new ArrayList<List<Integer>>();
+//        permute(num, 0,  result);
+//        return result;
+//    }
+//
+//    void permute(int[] num, int start, ArrayList<List<Integer>> result) {
+//
+//        if (start == num.length) {
+//            ArrayList<Integer> item = convertArrayToList(num);
+//            result.add(item);
+//        }
+//
+//        for (int j = start; j <= num.length - 1; j++) {
+//            swap(num, start, j);
+//            permute(num, start + 1, result);
+//            swap(num, start, j);
+//        }
+//    }
+//
+//    private ArrayList<Integer> convertArrayToList(int[] num) {
+//        ArrayList<Integer> item = new ArrayList<Integer>();
+//        for (int h = 0; h < num.length; h++) {
+//            item.add(num[h]);
+//        }
+//        return item;
+//    }
+//
+//    private void swap(int[] a, int i, int j) {
+//        int temp = a[i];
+//        a[i] = a[j];
+//        a[j] = temp;
+//    }
 }
