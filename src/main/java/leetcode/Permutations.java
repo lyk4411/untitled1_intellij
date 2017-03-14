@@ -11,15 +11,15 @@ public class Permutations {
     public static void main(String[] args) {
         Permutations p = new Permutations();
         int[] nums = new int[]{1,2,3};
-        System.out.println(p.permute(nums));
+        p.permute(nums);
+        //System.out.println(p.permute(nums));
     }
-
 
     public ArrayList<ArrayList<Integer>> permute(int[] num) {
         ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-
         //start from an empty list
         result.add(new ArrayList<Integer>());
+        //System.out.println(result);
 
         for (int i = 0; i < num.length; i++) {
             //list of list in current iteration of the array num
@@ -35,15 +35,13 @@ public class Permutations {
                     current.add(temp);
 
                     //System.out.println(temp);
-
                     // - remove num[i] add
                     l.remove(j);
                 }
             }
-
             result = new ArrayList<ArrayList<Integer>>(current);
+            System.out.println("result:" + result);
         }
-
         return result;
     }
 
