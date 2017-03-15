@@ -8,7 +8,7 @@ package leetcode;
 public class UniquePaths {
     public static  void  main(String[] args){
         UniquePaths up = new UniquePaths();
-        System.out.println(up.uniquePaths(7,7));
+        System.out.println(up.uniquePaths(2,2));
     }
 
     public int uniquePaths(int m, int n) {
@@ -25,6 +25,12 @@ public class UniquePaths {
                 a[i][j] = a[i-1][j] + a[i][j-1];
             }
         }
+
+//        for (int i = 0; i < a.length; i++) {
+//            for (int j = 0; j < a[0].length; j++) {
+//                System.out.println("a[" + i + "][" + j + "]:" + a[i][j]);
+//            }
+//        }
         return a[m-1][n-1];
     }
 }
