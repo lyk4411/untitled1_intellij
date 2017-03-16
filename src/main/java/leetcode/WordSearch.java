@@ -17,26 +17,44 @@ public class WordSearch {
         System.out.println(ws.exist(boards,word1));
         System.out.println(ws.exist(boards,word2));
     }
+
     public boolean exist(char[][] board, String word) {
-        char[] w = word.toCharArray();
-        for (int y=0; y<board.length; y++) {
-            for (int x=0; x<board[y].length; x++) {
-                if (exist(board, y, x, w, 0)) return true;
+        int m = board.length;
+        int n = board[0].length;
+
+        boolean result = false;
+        for(int i=0; i<m; i++){
+            for(int j=0; j<n; j++){
+                if(dfs(board,word,i,j,0)){
+                    result = true;
+                }
             }
         }
-        return false;
+        return result;
     }
 
-    private boolean exist(char[][] board, int y, int x, char[] word, int i) {
-        if (i == word.length) return true;
-        if (y<0 || x<0 || y == board.length || x == board[y].length) return false;
-        if (board[y][x] != word[i]) return false;
-        board[y][x] ^= 256;
-        boolean exist = exist(board, y, x+1, word, i+1)
-                || exist(board, y, x-1, word, i+1)
-                || exist(board, y+1, x, word, i+1)
-                || exist(board, y-1, x, word, i+1);
-        board[y][x] ^= 256;
-        return exist;
+    public boolean dfs(char[][] board, String word, int i, int j, int k){
+        int m = board.length;
+        int n = board[0].length;
+
+        if(i<0 || j<0 || i>=m || j>=n){
+            return false;
+        }
+
+        if(board[i][j] == word.charAt(k)){
+            char temp = board[i][j];
+            board[i][j]='#';
+            if(k==word.length()-1){
+                return true;
+            }else if(dfs(board, word, i-1, j, k+1)
+                    ||dfs(board, word, i+1, j, k+1)
+                    ||dfs(board, word, i, j-1, k+1)
+                    ||dfs(board, word, i, j+1, k+1)){
+                return true;
+            }
+            board[i][j]=temp;
+        }
+
+        return false;
     }
 }
