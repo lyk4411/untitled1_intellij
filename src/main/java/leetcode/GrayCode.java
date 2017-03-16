@@ -17,8 +17,9 @@ public class GrayCode {
     }
     public List<Integer> grayCode(int n) {
         List<Integer> result = new LinkedList<>();
+        //System.out.println(1<<n);
         for (int i = 0; i < 1<<n; i++) {
-            result.add(i ^ i>>1);
+            result.add(i ^ (i>>1));
         }
         return result;
     }
