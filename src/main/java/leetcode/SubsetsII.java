@@ -1,8 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lyk on 2017/3/17.
@@ -15,6 +13,44 @@ public class SubsetsII {
         int[] nums = new int[]{1,2,2};
         System.out.println(subsets.subsetsWithDup(nums));
     }
+
+//    public List<List<Integer>> subsetsWithDup(int[] S) {
+//        if (S == null)
+//            return null;
+//
+//        Arrays.sort(S);
+//
+//        Set<ArrayList<Integer>> result = new HashSet<ArrayList<Integer>>();
+//
+//        for (int i = 0; i < S.length; i++) {
+//            ArrayList<ArrayList<Integer>> temp = new ArrayList<ArrayList<Integer>>();
+//
+//            //get sets that are already in result
+//            for (ArrayList<Integer> a : result) {
+//                temp.add(new ArrayList<Integer>(a));
+//            }
+//
+//            //add S[i] to existing sets
+//            for (ArrayList<Integer> a : temp) {
+//                a.add(S[i]);
+//            }
+//
+//            //add S[i] only as a set
+//            ArrayList<Integer> single = new ArrayList<Integer>();
+//            single.add(S[i]);
+//            temp.add(single);
+//
+//            result.addAll(temp);
+//        }
+//
+//        //add empty set
+//        result.add(new ArrayList<Integer>());
+//        List<List<Integer>> al = new ArrayList<List<Integer>>();
+//        for (ArrayList<Integer> r:result) {
+//            al.add(r);
+//        }
+//        return al;
+//    }
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         ArrayList<List<Integer>> al = new ArrayList<List<Integer>>();
         List<Integer> tempList = new ArrayList<Integer>();
