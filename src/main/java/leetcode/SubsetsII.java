@@ -14,71 +14,74 @@ public class SubsetsII {
         System.out.println(subsets.subsetsWithDup(nums));
     }
 
-//    public List<List<Integer>> subsetsWithDup(int[] nums) {
-//        ArrayList<List<Integer>> al = new ArrayList<List<Integer>>();
-//        List<Integer> tempList = new ArrayList<Integer>();
-//        Arrays.sort(nums);
-//        backtrack(al,tempList,nums,0);
-//        return al;
-//    }
-//
-//    private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
-//        list.add(new ArrayList<Integer>(tempList));
-//        for (int i = start; i < nums.length; i++) {
-//            tempList.add(nums[i]);
-//            backtrack(list,tempList,nums,i + 1);
-//            tempList.remove(tempList.size() - 1);
-//
-//            while (i+1 < nums.length && nums[i + 1] == nums[i]) {
-//                i++;
-//            }
-//        }
-//    }
+    public List<List<Integer>> subsetsWithDup(int[] nums) {
+        ArrayList<List<Integer>> al = new ArrayList<List<Integer>>();
+        List<Integer> tempList = new ArrayList<Integer>();
+        Arrays.sort(nums);
+        backtrack(al,tempList,nums,0);
+        return al;
+    }
 
-    public List<List<Integer>> subsetsWithDup(int[] num) {
-        if (num == null)
-            return null;
-        Arrays.sort(num);
+    private void backtrack(List<List<Integer>> list , List<Integer> tempList, int [] nums, int start){
+        list.add(new ArrayList<Integer>(tempList));
+        for (int i = start; i < nums.length; i++) {
+            tempList.add(nums[i]);
+            backtrack(list,tempList,nums,i + 1);
+            tempList.remove(tempList.size() - 1);
 
-        List<List<Integer>> result = new ArrayList<List<Integer>>();
-        ArrayList<ArrayList<Integer>> prev = new ArrayList<ArrayList<Integer>>();
-
-        for (int i = num.length-1; i >= 0; i--) {
-
-            //get existing sets
-            if (i == num.length - 1 || num[i] != num[i + 1] || prev.size() == 0) {
-                //System.out.println("before prev{" + i + "}:" + prev);
-                prev = new ArrayList<ArrayList<Integer>>();
-                for (int j = 0; j < result.size(); j++) {
-                    prev.add(new ArrayList<Integer>(result.get(j)));
-                }
-                //System.out.println("after prev{" + i + "}:" + prev);
-
-            }
-
-            //add current number to each element of the set
-            for (ArrayList<Integer> temp : prev) {
-                temp.add(num[i]);
-            }
-
-            //add each single number as a set, only if current element is different with previous
-            if (i == num.length - 1 || num[i] != num[i + 1]) {
-                ArrayList<Integer> temp = new ArrayList<Integer>();
-                temp.add(num[i]);
-                prev.add(temp);
-            }
-
-            //add all set created in this iteration
-            for (ArrayList<Integer> temp : prev) {
-                result.add(new ArrayList<Integer>(temp));
+            while (i+1 < nums.length && nums[i + 1] == nums[i]) {
+                i++;
             }
         }
-
-        //add empty set
-        result.add(new ArrayList<Integer>());
-
-        return result;
     }
+
+//    public List<List<Integer>> subsetsWithDup(int[] num) {
+//        if (num == null)
+//            return null;
+//        Arrays.sort(num);
+//
+//        List<List<Integer>> result = new ArrayList<List<Integer>>();
+//        ArrayList<ArrayList<Integer>> prev = new ArrayList<ArrayList<Integer>>();
+//
+//        for (int i = num.length-1; i >= 0; i--) {
+//
+//            //get existing sets
+//            if (i == num.length - 1 || num[i] != num[i + 1] ) {
+//                System.out.println("before prev{" + i + "}:" + prev);
+//                prev = new ArrayList<ArrayList<Integer>>();
+//                for (int j = 0; j < result.size(); j++) {
+//                    prev.add(new ArrayList<Integer>(result.get(j)));
+//                }
+//                System.out.println("after prev{" + i + "}:" + prev);
+//            }
+//            else {
+//                System.out.println(" prev{" + i + "}:" + prev);
+//                System.out.println(" result{" + i + "}:" + result);
+//            }
+//
+//            //add current number to each element of the set
+//            for (ArrayList<Integer> temp : prev) {
+//                temp.add(num[i]);
+//            }
+//
+//            //add each single number as a set, only if current element is different with previous
+//            if (i == num.length - 1 || num[i] != num[i + 1]) {
+//                ArrayList<Integer> temp = new ArrayList<Integer>();
+//                temp.add(num[i]);
+//                prev.add(temp);
+//            }
+//
+//            //add all set created in this iteration
+//            for (ArrayList<Integer> temp : prev) {
+//                result.add(new ArrayList<Integer>(temp));
+//            }
+//        }
+//
+//        //add empty set
+//        result.add(new ArrayList<Integer>());
+//
+//        return result;
+//    }
 
 //    public List<List<Integer>> subsetsWithDup(int[] S) {
 //        if (S == null)
@@ -116,5 +119,46 @@ public class SubsetsII {
 //            al.add(r);
 //        }
 //        return al;
+//    }
+
+
+
+//    public List<List<Integer>> subsetsWithDup(int[] S) {
+//        if (S == null)
+//            return null;
+//
+//        Arrays.sort(S);
+//
+//        List<List<Integer>> result = new ArrayList<List<Integer>>();
+//        ArrayList<ArrayList<Integer>> temp = new ArrayList<ArrayList<Integer>>();
+//
+//        for (int i = 0; i < S.length; i++) {
+//
+//            //get sets that are already in result
+//            if(i == 0 || S[i] != S[i-1]){
+//                temp = new ArrayList<ArrayList<Integer>>();
+//                for (List<Integer> a : result) {
+//                    temp.add(new ArrayList<Integer>(a));
+//                }
+//            }
+//
+//            //add S[i] to existing sets
+//            for (ArrayList<Integer> a : temp) {
+//                a.add(S[i]);
+//            }
+//
+//            //add S[i] only as a set
+//            if(i == 0 || S[i] != S[i-1]) {
+//                ArrayList<Integer> single = new ArrayList<Integer>();
+//                single.add(S[i]);
+//                temp.add(single);
+//            }
+//            result.addAll(temp);
+//        }
+//
+//        //add empty set
+//        result.add(new ArrayList<Integer>());
+//
+//        return result;
 //    }
 }
