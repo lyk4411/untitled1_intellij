@@ -47,10 +47,13 @@ public class SubsetsII {
 
             //get existing sets
             if (i == num.length - 1 || num[i] != num[i + 1] || prev.size() == 0) {
+                //System.out.println("before prev{" + i + "}:" + prev);
                 prev = new ArrayList<ArrayList<Integer>>();
                 for (int j = 0; j < result.size(); j++) {
                     prev.add(new ArrayList<Integer>(result.get(j)));
                 }
+                //System.out.println("after prev{" + i + "}:" + prev);
+
             }
 
             //add current number to each element of the set
