@@ -1,8 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by lyk on 2017/3/20.
@@ -35,26 +33,34 @@ public class BinaryTreeZigzagLevelOrderTraversal {
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root)
     {
-        List<List<Integer>> sol = new ArrayList<>();
-        travel(root, sol, 0);
-        return sol;
-    }
-
-    private void travel(TreeNode curr, List<List<Integer>> sol, int level)
-    {
-        if(curr == null) return;
-
-        if(sol.size() <= level)
-        {
-            List<Integer> newLevel = new LinkedList<>();
-            sol.add(newLevel);
+        List<List<Integer>> res = new ArrayList<List<Integer>>();
+        if (root == null) {
+            return res;
         }
-
-        List<Integer> collection  = sol.get(level);
-        if(level % 2 == 0) collection.add(curr.val);
-        else collection.add(0, curr.val);
-
-        travel(curr.left, sol, level + 1);
-        travel(curr.right, sol, level + 1);
+        ArrayList<Integer> tmp = new ArrayList<Integer>();
+        Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        queue.offer(root);
+        int num;
+        boolean reverse = false;
+        while (!queue.isEmpty()) {
+            num = queue.size();
+            tmp.clear();
+            for (int i = 0; i < num; i++) {
+                TreeNode node = queue.poll();
+                tmp.add(node.val);
+                if (node.left != null)
+                    queue.offer(node.left);
+                if (node.right != null)
+                    queue.offer(node.right);
+            }
+            if (reverse) {
+                Collections.reverse(tmp);
+                reverse = false;
+            }
+            else
+                reverse = true;
+            res.add(new ArrayList<Integer>(tmp));
+        }
+        return res;
     }
 }
