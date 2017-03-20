@@ -10,15 +10,22 @@ public class UniqueBinarySearchTrees {
         UniqueBinarySearchTrees ubst = new UniqueBinarySearchTrees();
         System.out.println(ubst.numTrees(10));
         System.out.println(ubst.numTrees(15));
-
+        System.out.println(ubst.numTrees(5));
+        System.out.println(ubst.numTrees(4));
+        System.out.println(ubst.numTrees(3));
+        System.out.println(ubst.numTrees(2));
+        System.out.println(ubst.numTrees(1));
+        System.out.println(ubst.numTrees(0));
     }
     public int numTrees(int n) {
-        int [] dp = new int[n+1];
-        dp[0]= 1;
-        dp[1] = 1;
-        for(int level = 2; level <=n; level++)
-            for(int root = 1; root<=level; root++)
-                dp[level] += dp[level-root]*dp[root-1];
-        return dp[n];
+        if(n ==0 || n ==1) return 1;
+        int res[] =new int[n+1];
+        res[0]=1;
+        for(int i =1 ; i <= n ; i++){
+            for(int j = 0; j < i; j++){
+                res[i] += res[j]*res[i-j-1];
+            }
+        }
+        return res[n];
     }
 }
