@@ -37,9 +37,9 @@ public class CopyListwithRandomPointer {
         rln7.random = rln9;
         rln8.random = rln1;
         rln9.random = null;
-        System.out.println(rln1);
+        //System.out.println(rln1);
         RandomListNode result = clrp.copyRandomList(rln1);
-        System.out.println(result);
+        //System.out.println(result);
     }
     public RandomListNode copyRandomList(RandomListNode head) {
         if (head == null) return null;
@@ -48,14 +48,18 @@ public class CopyListwithRandomPointer {
 
         // loop 1. copy all the nodes
         RandomListNode node = head;
+
         while (node != null) {
             map.put(node, new RandomListNode(node.label));
             node = node.next;
         }
+        System.out.println(map);
+        System.out.println("============================================================================================");
 
         // loop 2. assign next and random pointers
         node = head;
         while (node != null) {
+            System.out.println(node);
             map.get(node).next = map.get(node.next);
             map.get(node).random = map.get(node.random);
             node = node.next;
@@ -71,6 +75,6 @@ class RandomListNode {
 
     @Override
     public String toString() {
-        return  ":" + label + (random != null?random.toString():"") ;
+        return  ":" + label + (next != null?next.toString():"") ;
     }
 }
