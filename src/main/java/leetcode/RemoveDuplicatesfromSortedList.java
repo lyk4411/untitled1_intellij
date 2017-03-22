@@ -53,9 +53,9 @@ class ListNode {
              val = x;
          }
 
-//    @Override
-//    public String toString() {
-//       // return ":" + val + ":" + (next !=null? next.toString(): "");
-//        return String.valueOf(this.val);
-//    }
+    @Override
+    public String toString() {
+        return ":" + val + ":" + (next !=null? next.toString(): "");
+        //return String.valueOf(this.val);
+    }
 }
