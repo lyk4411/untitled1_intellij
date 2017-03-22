@@ -60,6 +60,7 @@ public class MaxPointsonaLine {
     }
     public int maxPoints(Point[] points) {
         if(points == null || points.length == 0) return 0;
+        if(points.length == 1) return 1;
 
         HashMap<Double, Integer> result = new HashMap<Double, Integer>();
         int max=0;
