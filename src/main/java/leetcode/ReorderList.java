@@ -17,19 +17,14 @@ public class ReorderList {
         n3.next = n4;
 
         printList(n1);
-
         reorderList(n1);
-
         printList(n1);
     }
 
     public static void reorderList(ListNode head) {
-
         if (head != null && head.next != null) {
-
             ListNode slow = head;
             ListNode fast = head;
-
             //use a fast and slow pointer to break the link to two parts.
             while (fast != null && fast.next != null && fast.next.next!= null) {
                 //why need third/second condition?
@@ -65,11 +60,9 @@ public class ReorderList {
     }
 
     public static ListNode reverseOrder(ListNode head) {
-
         if (head == null || head.next == null) {
             return head;
         }
-
         ListNode pre = head;
         ListNode curr = head.next;
 
@@ -79,10 +72,8 @@ public class ReorderList {
             pre = curr;
             curr = temp;
         }
-
         // set head node's next
         head.next = null;
-
         return pre;
     }
 
