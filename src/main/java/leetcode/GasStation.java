@@ -13,28 +13,18 @@ public class GasStation {
         System.out.println(gs.canCompleteCircuit(gas,cost));
     }
     public int canCompleteCircuit(int[] gas, int[] cost) {
-        int sumRemaining = 0; // track current remaining
-        int total = 0; // track total remaining
-        int start = 0;
-
+        int sum = 0;
+        int total = 0;
+        int j = -1;
         for (int i = 0; i < gas.length; i++) {
-            int remaining = gas[i] - cost[i];
-
-            //if sum remaining of (i-1) >= 0, continue
-            if (sumRemaining >= 0) {
-                sumRemaining += remaining;
-                //otherwise, reset start index to be current
-            } else {
-                sumRemaining = remaining;
-                start = i;
+            sum += gas[i] - cost[i];
+            total += gas[i] - cost[i];
+            if(sum < 0) {   //之前的油量不够到达当前加油站
+                j = i;
+                sum = 0;
             }
-            total += remaining;
         }
-
-        if (total >= 0){
-            return start;
-        }else{
-            return -1;
-        }
+        if (total < 0) return -1;    //所有加油站的油量都不够整个路程的消耗
+        else return j + 1;
     }
 }
