@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by lyk on 2017/3/22.
@@ -58,49 +59,50 @@ public class MaxPointsonaLine {
         System.out.println(mpl.maxPoints(points));
 
     }
+
     public int maxPoints(Point[] points) {
-        if(points == null || points.length == 0) return 0;
-        if(points.length == 1) return 1;
+        if (points==null) return 0;
+        if (points.length<=2) return points.length;
 
-        HashMap<Double, Integer> result = new HashMap<Double, Integer>();
-        int max=0;
+        Map<Integer,Map<Integer,Integer>> map = new HashMap<Integer,Map<Integer,Integer>>();
+        int result=0;
+        for (int i=0;i<points.length;i++){
+            map.clear();
+            int overlap=0,max=0;
+            for (int j=i+1;j<points.length;j++){
+                int x=points[j].x-points[i].x;
+                int y=points[j].y-points[i].y;
+                if (x==0&&y==0){
+                    overlap++;
+                    continue;
+                }
+                int gcd=generateGCD(x,y);
+                if (gcd!=0){
+                    x/=gcd;
+                    y/=gcd;
+                }
 
-        for(int i=0; i<points.length; i++){
-            int duplicate = 1;//
-            int vertical = 0;
-            for(int j=i+1; j<points.length; j++){
-                //handle duplicates and vertical
-                if(points[i].x == points[j].x){
-                    if(points[i].y == points[j].y){
-                        duplicate++;
+                if (map.containsKey(x)){
+                    if (map.get(x).containsKey(y)){
+                        map.get(x).put(y, map.get(x).get(y)+1);
                     }else{
-                        vertical++;
+                        map.get(x).put(y, 1);
                     }
                 }else{
-                    double slope = points[j].y == points[i].y ? 0.0
-                            : (1.0 * (points[j].y - points[i].y))
-                            / (points[j].x - points[i].x);
-
-                    if(result.get(slope) != null){
-                        result.put(slope, result.get(slope) + 1);
-                    }else{
-                        result.put(slope, 1);
-                    }
+                    Map<Integer,Integer> m = new HashMap<Integer,Integer>();
+                    m.put(y, 1);
+                    map.put(x, m);
                 }
+                max=Math.max(max, map.get(x).get(y));
             }
-
-            for(Integer count: result.values()){
-                if(count+duplicate > max){
-                    max = count+duplicate;
-                }
-            }
-
-            max = Math.max(vertical + duplicate, max);
-            result.clear();
+            result=Math.max(result, max+overlap+1);
         }
+        return result;
+    }
+    private int generateGCD(int a,int b){
+        if (b==0) return a;
+        else return generateGCD(b,a%b);
 
-
-        return max;
     }
 }
 
