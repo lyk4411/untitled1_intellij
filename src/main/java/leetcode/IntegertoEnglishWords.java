@@ -11,8 +11,6 @@ public class IntegertoEnglishWords {
         System.out.println(iew.numberToWords(1234567));
         System.out.println(iew.numberToWords(123456789));
         System.out.println(iew.numberToWords(1234567891));
-
-
     }
 
     private final String[] LESS_THAN_20 = {"", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"};
