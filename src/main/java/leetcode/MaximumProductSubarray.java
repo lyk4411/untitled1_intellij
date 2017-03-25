@@ -29,10 +29,14 @@ public class MaximumProductSubarray {
 
             result = Math.max(result, max[i]);
         }
-//        for (int i = 0; i < max.length; i++) {
-//            System.out.print(max[i] + ":");
-//        }
-//        System.out.println();
+        for (int i = 0; i < max.length; i++) {
+            System.out.print(max[i] + ":");
+        }
+        System.out.println();
+        for (int i = 0; i < max.length; i++) {
+            System.out.print(min[i] + ":");
+        }
+        System.out.println();
 
         return result;
     }
