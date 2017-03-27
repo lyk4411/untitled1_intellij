@@ -8,29 +8,46 @@ package leetcode;
 public class FindtheDuplicateNumber {
     public static void main(String[] args) {
         FindtheDuplicateNumber fdn = new FindtheDuplicateNumber();
-        int[] nums = new int[]{1,2,3,4,5,6,7,8,1};
+        int[] nums = new int[]{8,7,6,5,4,3,2,1,2};
         System.out.println(fdn.findDuplicate(nums));
     }
     public int findDuplicate(int[] nums) {
-        int l=1,r=nums.length-1;
-        while(l<r){
-            int m=(l+r)/2;
-            int c=0;
+        int slow = 0;
+        int fast = 0;
 
-            for(int i: nums){
-                if(i<=m){
-                    c++;
-                }
-            }
+        do{
+            slow = nums[slow];
+            fast = nums[nums[fast]];
+        } while(slow != fast);
 
-            //if c < m,
-            if(c>m){
-                r=m;
-            }else{
-                l=m+1;
-            }
+        int find = 0;
+
+        while(find != slow){
+            slow = nums[slow];
+            find = nums[find];
         }
-
-        return r;
+        return find;
     }
+//    public int findDuplicate(int[] nums) {
+//        int l=1,r=nums.length-1;
+//        while(l<r){
+//            int m=(l+r)/2;
+//            int c=0;
+//
+//            for(int i: nums){
+//                if(i<=m){
+//                    c++;
+//                }
+//            }
+//
+//            //if c < m,
+//            if(c>m){
+//                r=m;
+//            }else{
+//                l=m+1;
+//            }
+//        }
+//
+//        return r;
+//    }
 }
