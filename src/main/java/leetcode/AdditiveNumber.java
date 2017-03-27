@@ -6,6 +6,13 @@ package leetcode;
  * Porject name: untitled1
  */
 public class AdditiveNumber {
+    public static void main(String[] args) {
+        AdditiveNumber an = new AdditiveNumber();
+        System.out.println(an.isAdditiveNumber("123581321"));
+        System.out.println(an.isAdditiveNumber("12315183351"));
+        System.out.println(an.isAdditiveNumber("12315183350"));
+
+    }
     public boolean isAdditiveNumber(String num) {
         //枚举前两个数的位置，因为前两个数决定了num是否为Additive
         for(int i = 0; i < num.length(); i++) {
