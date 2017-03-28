@@ -33,6 +33,10 @@ public class MinimumHeightTrees {
 //                System.out.print(edge[i] + " ");
 //            }
 //            System.out.println();
+//            for (int i = 0; i < edge.length; i++) {
+//                System.out.print("edge" + i + ":" +edge[i] + "===");
+//            }
+//            System.out.println();
             graph.get(edge[0]).add(edge[1]);
             graph.get(edge[1]).add(edge[0]);
         }
@@ -57,6 +61,8 @@ public class MinimumHeightTrees {
             for(int l: leaves){
                 int neighbor = graph.get(l).iterator().next();
                 graph.get(neighbor).remove(l);
+                System.out.println(graph);
+
                 if(graph.get(neighbor).size()==1){
                     newLeaves.add(neighbor);
                 }
