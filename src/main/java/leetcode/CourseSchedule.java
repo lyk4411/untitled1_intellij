@@ -29,9 +29,9 @@ public class CourseSchedule {
         for(int i=0; i<len; i++){
             pCounter[prerequisites[i][0]]++;
         }
-        for (int i = 0; i < pCounter.length; i++) {
-            System.out.println(pCounter[i]);
-        }
+//        for (int i = 0; i < pCounter.length; i++) {
+//            System.out.println(pCounter[i]);
+//        }
 
         //store courses that have no prerequisites
         LinkedList<Integer> queue = new LinkedList<Integer>();
