@@ -15,7 +15,6 @@ public class ImplementStackusingQueues {
         isq.push(3);
         System.out.println(isq.empty());
         System.out.println(isq.top());
-
     }
 
     LinkedList<Integer> queue1 = new LinkedList<Integer>();
