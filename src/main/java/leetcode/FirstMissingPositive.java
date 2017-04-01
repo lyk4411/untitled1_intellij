@@ -16,7 +16,14 @@ public class FirstMissingPositive {
         int i = 0;
         while(i < A.length){
             if(A[i] == i+1 || A[i] <= 0 || A[i] > A.length) i++;
-            else if(A[A[i]-1] != A[i]) swap(A, i, A[i]-1);
+            else if(A[A[i]-1] != A[i]) {
+                swap(A, i, A[i]-1);
+//                System.out.print("i:" + i + ":");
+//                for (int j = 0; j < A.length; j++) {
+//                    System.out.print(A[j] + " ");
+//                }
+//                System.out.println();
+            }
             else i++;
         }
         i = 0;
