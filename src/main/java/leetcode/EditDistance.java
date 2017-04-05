@@ -8,7 +8,7 @@ package leetcode;
 public class EditDistance {
     public static void main(String[] args) {
         EditDistance ed = new EditDistance();
-        System.out.println(ed.minDistance("abcdafdafahk","jloahdflajfa"));
+        System.out.println(ed.minDistance("abcdafdafahk","iiiiabcdaf"));
 
     }
     public static int minDistance(String word1, String word2) {
@@ -47,12 +47,12 @@ public class EditDistance {
                 }
             }
         }
-//        for (int i = 0; i < dp.length; i++) {
-//            for (int j = 0; j < dp[0].length; j++) {
-//                System.out.print(dp[i][j] + "  ");
-//            }
-//            System.out.println();
-//        }
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length; j++) {
+                System.out.print(dp[i][j] + "  ");
+            }
+            System.out.println();
+        }
         return dp[len1][len2];
     }
 }
