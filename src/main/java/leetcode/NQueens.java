@@ -57,6 +57,7 @@ public class NQueens {
             String s = new String(board[i]);
             res.add(s);
         }
+        //System.out.println(res);
         return res;
     }
 }
