@@ -10,10 +10,12 @@ import java.util.Stack;
 public class MaximalRectangle {
     public static void main(String[] args) {
         MaximalRectangle mr = new MaximalRectangle();
-        char[][] matrixes = new char[][]{{'1','0','1','0','0'},
+        char[][] matrixes = new char[][]{
+                {'1','0','1','0','0'},
                 {'1','0','1','1','1'},
                 {'1','1','1','1','1'},
-                {'1','0','0','1','0'}};
+                {'1','0','0','1','0'}
+        };
         System.out.println(mr.maximalRectangle(matrixes));
     }
     public int maximalRectangle(char[][] matrix) {
