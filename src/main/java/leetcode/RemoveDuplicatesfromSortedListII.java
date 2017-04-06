@@ -39,9 +39,7 @@ public class RemoveDuplicatesfromSortedListII {
             }else{
                 p=p.next;
             }
-
         }
-
         return t.next;
     }
 }
