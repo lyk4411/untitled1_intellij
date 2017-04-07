@@ -10,7 +10,7 @@ import java.util.HashMap;
 public class MinimumWindowSubstring {
     public static void main(String[] args) {
         MinimumWindowSubstring mws = new MinimumWindowSubstring();
-        System.out.println(mws.minWindow("hello world, scala.","sc.l"));
+        System.out.println(mws.minWindow("hello world, scala.","llll"));
     }
     public String minWindow(String s, String t) {
         if(t.length()>s.length())
