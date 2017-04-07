@@ -11,7 +11,7 @@ import java.util.List;
 public class UniqueBinarySearchTreesII {
     public static void main(String[] args) {
         UniqueBinarySearchTreesII ubstii = new UniqueBinarySearchTreesII();
-        System.out.println(ubstii.generateTrees(1));
+        System.out.println(ubstii.generateTrees(3));
     }
 
     public List<TreeNode> generateTrees(int n) {
