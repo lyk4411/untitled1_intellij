@@ -10,9 +10,17 @@ public class NextPermutation {
         NextPermutation np = new NextPermutation();
         int[] nums = new int[]{1,4,6,8,7,5,4};
         np.nextPermutation(nums);
+
         for (int i : nums) {
             System.out.print(i);
         }
+        System.out.println();
+        np.nextPermutation(nums);
+
+        for (int i : nums) {
+            System.out.print(i);
+        }
+
     }
     public void nextPermutation(int[] num) {
         //1.找到最后一个升序位置pos
@@ -23,6 +31,7 @@ public class NextPermutation {
                 break;
             }
         }
+        //System.out.println(pos);
 
         //2.如果不存在升序，即这个数是最大的，那么反排这个数组
         if (pos < 0) {
