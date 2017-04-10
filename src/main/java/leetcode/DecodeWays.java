@@ -8,6 +8,7 @@ package leetcode;
 public class DecodeWays {
     public static void main(String[] args) {
         DecodeWays dw = new DecodeWays();
+        System.out.println(dw.numDecodings("00123456321212"));
         System.out.println(dw.numDecodings("123456321212"));
     }
     public int numDecodings(String s) {
