@@ -39,8 +39,10 @@ public class BinaryTreeMaximumPathSum {
             return 0;
         int left  = Math.max(0,calculateSum(root.left,max));
         int right = Math.max(0,calculateSum(root.right,max));
+        //最终结果的最大值；每个节点的最大值；
         max[0] = Math.max(max[0],left + right + root.val);
 
+        //路径的最大值（最大值不一定经过根节点）
         return Math.max(left,right) + root.val;
     }
 //    public int calculateSum(TreeNode root, int[] max) {
