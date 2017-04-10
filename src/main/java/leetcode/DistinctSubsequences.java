@@ -32,6 +32,21 @@ public class DistinctSubsequences {
 //    dp[i][j] = dp[i][j - 1] + (T[i - 1] == S[j - 1] ? dp[i - 1][j - 1] : 0).
 //    1 <= i <= T.length(), 1 <= j <= S.length()
 
+
+//    0 r a b b b i t
+//    0 1 1 1 1 1 1 1 1
+//    r 0 1 1 1 1 1 1 1
+//    a 0 0 1 1 1 1 1 1
+//    b 0 0 0 1 2 3 3 3
+//    b 0 0 0 0 1 3 3 3
+//    i 0 0 0 0 0 0 3 3
+//    t 0 0 0 0 0 0 0 3
+//    state: dp[i][j] 表示S串中从开始位置到第i位置与T串从开始位置到底j位置匹配的子序列的个数
+//    function: dp[i][j] = dp[i][j-1] 就是说假设S已经匹配了j-1个字符,无论S[j]和T[i]是否匹配, 至少是dp[i][j-1]
+//    如果匹配(S[j]和T[i]匹配)让S[j - 1]和T[i - 1]去匹配 (由图得关系) dp[i][j] += dp[i-1][j-1]
+//    initial: f[i][0] = 0 f[0][j] = 1 空集也是subsequences
+//    return dp[m][n]
+
     public int numDistinct(String S, String T) {
         // array creation
         int[][] mem = new int[T.length()+1][S.length()+1];
