@@ -1,6 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -12,59 +12,60 @@ public class PermutationSequence {
     public static void main(String[] args) {
         PermutationSequence ps = new PermutationSequence();
         System.out.println(ps.getPermutation(3,1));
-        //System.out.println(ps.getPermutation(3,2));
-        //System.out.println(ps.getPermutation(3,3));
+        System.out.println(ps.getPermutation(3,2));
+        System.out.println(ps.getPermutation(3,3));
     }
+//    方法二：数学解法
+//
+//    在n!个排列中，第一位的元素总是(n-1)!一组出现的，也就说如果p = k / (n-1)!，那么排列的最开始一个元素一定是nums[p]。
+//
+//    假设有n个元素，第K个permutation是
+//    a1, a2, a3, .....   ..., an
+//    那么a1是哪一个数字呢？
+//    那么这里，我们把a1去掉，那么剩下的permutation为
+//    a2, a3, .... .... an, 共计n-1个元素。 n-1个元素共有(n-1)!组排列，那么这里就可以知道
+//            设变量K1 = K
+//    a1 = K1 / (n-1)!
+//    同理，a2的值可以推导为
+//            a2 = K2 / (n-2)!
+//    K2 = K1 % (n-1)!
+//            .......
+//    a(n-1) = K(n-1) / 1!
+//    K(n-1) = K(n-2) /2!
+//    an = K(n-1)
+public String getPermutation(int n, int k) {
+    List<Integer> num = new LinkedList<Integer>();
+    for (int i = 1; i <= n; i++) num.add(i);
+    int[] fact = new int[n];  // factorial
+    fact[0] = 1;
+    for (int i = 1; i < n; i++) fact[i] = i*fact[i-1];
+    k = k-1;
+    StringBuilder sb = new StringBuilder();
+    for (int i = n; i > 0; i--){
+        int ind = k/fact[i-1];
+        k = k%fact[i-1];
+        sb.append(num.get(ind));
+        num.remove(ind);
+    }
+    return sb.toString();
+}
 
 
-    public String getPermutation(int n, int k) {
-        StringBuilder sb = new StringBuilder();
-        List<Integer> list = new ArrayList<Integer>();
-        int[] factTable = new int[10];
-        factTable[1] = 1;
-        for (int i = 2; i <= 9; i++) {
-            factTable[i] = factTable[i - 1] * i;
-        }
-        for (int i = 1; i <= n; i++)
-            list.add(i);
-        helper(n, k, list, sb, factTable);
-        return sb.toString();
-    }
-    public void helper(int n, int k, List<Integer> list, StringBuilder sb, int[] factTable) {
-        if (n == 1) {
-            sb.append(list.get(0));
-            return;
-        }
-        int fact = factTable[n - 1];
-        int bucket = (k - 1) / fact;
-        sb.append(list.get(bucket));
-        list.remove(bucket);
-        helper(n - 1, k - fact * bucket, list, sb, factTable);
-    }
-
+//
 //    public String getPermutation(int n, int k) {
-//        int mod = 1;
-//        List<Integer> candidates = new ArrayList<Integer>();
-//        // 先得到n!和候选数字列表
-//        for(int i = 1; i <= n; i++){
-//            mod = mod * i;
-//            candidates.add(i);
-//            System.out.println(mod);
-//            System.out.println(candidates);
+//        NextPermutation np = new NextPermutation();
+//        int[] nums = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            nums[i] = i + 1;
 //        }
-//        // 将k先减1方便整除
-//        k--;
-//        StringBuilder sb = new StringBuilder();
-//        for(int i = 0; i < n ; i++){
-//            mod = mod / (n - i);
-//            // 得到当前应选数字的序数
-//            int first = k / mod;
-//            // 得到用于计算下一位的k
-//            k = k % mod;
-//            sb.append(candidates.get(first));
-//            // 在列表中移出该数字
-//            candidates.remove(first);
+//        for (int i = 0; i < k; i++) {
+//            np.nextPermutation(nums);
 //        }
-//        return sb.toString();
+//        String string = Arrays.toString(nums);
+//        string = string.replace(",","");
+//        string = string.replace("[","");
+//        string = string.replace("]","");
+//        string = string.replace(" ","");
+//        return string;
 //    }
 }
