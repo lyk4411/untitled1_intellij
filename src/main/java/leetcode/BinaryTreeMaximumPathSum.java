@@ -13,7 +13,7 @@ public class BinaryTreeMaximumPathSum {
         TreeNode a3 = new TreeNode(2);
         TreeNode a4 = new TreeNode(2);
         TreeNode a5 = new TreeNode(3);
-        TreeNode a6 = new TreeNode(3);
+        TreeNode a6 = new TreeNode(30);
         TreeNode a7 = new TreeNode(4);
         TreeNode a8 = new TreeNode(4);
         TreeNode a9 = new TreeNode(5);
@@ -34,18 +34,26 @@ public class BinaryTreeMaximumPathSum {
         calculateSum(root, max);
         return max[0];
     }
-
     public int calculateSum(TreeNode root, int[] max) {
         if (root == null)
             return 0;
+        int left  = Math.max(0,calculateSum(root.left,max));
+        int right = Math.max(0,calculateSum(root.right,max));
+        max[0] = Math.max(max[0],left + right + root.val);
 
-        int left = calculateSum(root.left, max);
-        int right = calculateSum(root.right, max);
-
-        int current = Math.max(root.val, Math.max(root.val + left, root.val + right));
-
-        max[0] = Math.max(max[0], Math.max(current, left + root.val + right));
-
-        return current;
+        return Math.max(left,right) + root.val;
     }
+//    public int calculateSum(TreeNode root, int[] max) {
+//        if (root == null)
+//            return 0;
+//
+//        int left = calculateSum(root.left, max);
+//        int right = calculateSum(root.right, max);
+//
+//        int current = Math.max(root.val, Math.max(root.val + left, root.val + right));
+//
+//        max[0] = Math.max(max[0], Math.max(current, left + root.val + right));
+//
+//        return current;
+//    }
 }
