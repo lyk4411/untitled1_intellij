@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by lyk on 2017/4/11.
@@ -28,8 +29,8 @@ public class PalindromePartitioning {
 //    line 13: is the boundary to check if the current string contains the last element.
 //            l>=s.length()
 
-    public ArrayList<ArrayList<String>> partition(String s) {
-        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+    public List<List<String>> partition(String s) {
+        List<List<String>> result = new ArrayList<List<String>>();
 
         if (s == null || s.length() == 0) {
             return result;
@@ -42,7 +43,7 @@ public class PalindromePartitioning {
     }
 
     private void addPalindrome(String s, int start, ArrayList<String> partition,
-                               ArrayList<ArrayList<String>> result) {
+                               List<List<String>> result) {
         //stop condition
         if (start == s.length()) {
             ArrayList<String> temp = new ArrayList<String>(partition);
