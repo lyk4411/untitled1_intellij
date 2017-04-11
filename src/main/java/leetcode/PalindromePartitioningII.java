@@ -10,6 +10,8 @@ public class PalindromePartitioningII {
         PalindromePartitioningII ppii = new PalindromePartitioningII();
         System.out.println(ppii.minCut("abcba"));
     }
+
+    //图解说明：http://www.jianshu.com/p/dace9a4e0d5c
     public int minCut(String s) {
         int n = s.length();
 
