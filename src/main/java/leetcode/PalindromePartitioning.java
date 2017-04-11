@@ -13,7 +13,21 @@ public class PalindromePartitioning {
         PalindromePartitioning pp = new PalindromePartitioning();
         System.out.println(pp.partition("hafehabahliuil"));
     }
-
+//    图解在：https://leetcode.com/problems/palindrome-partitioning/#/solutions
+//    if the input is "aab", check if [0,0] "a" is palindrome. then check [0,1] "aa", then [0,2] "aab".
+//    While checking [0,0], the rest of string is "ab", use ab as input to make a recursive call.
+//    enter image description here
+//
+//    in this example, in the loop of i=l+1, a recursive call will be made with input = "ab".
+//            Every time a recursive call is made, the position of l move right.
+//
+//    How to define a correct answer?
+//    Think about DFS, if the current string to be checked (Palindrome) contains the last position, in this case "c", this path is a correct answer, otherwise, it's a false answer.
+//
+//    enter image description here
+//
+//    line 13: is the boundary to check if the current string contains the last element.
+//            l>=s.length()
     List<List<String>> resultLst;
     ArrayList<String> currLst;
 
