@@ -69,6 +69,7 @@ public class WordBreakII {
         }
 
         for (String str : dp[end]) {
+//        for (int i = 0; i < dp.length; i++) {
             tmp.add(str);
             dfs(dp, end - str.length(), result, tmp);
             tmp.remove(tmp.size() - 1);
