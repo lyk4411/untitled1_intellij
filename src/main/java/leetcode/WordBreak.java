@@ -22,20 +22,19 @@ public class WordBreak {
 
         f[0] = true;
 
-
-        /* First DP
-        for(int i = 1; i <= s.length(); i++){
-            for(String str: dict){
-                if(str.length() <= i){
-                    if(f[i - str.length()]){
-                        if(s.substring(i-str.length(), i).equals(str)){
-                            f[i] = true;
-                            break;
-                        }
-                    }
-                }
-            }
-        }*/
+//        /* First DP
+//        for(int i = 1; i <= s.length(); i++){
+//            for(String str: dict){
+//                if(str.length() <= i){
+//                    if(f[i - str.length()]){
+//                        if(s.substring(i-str.length(), i).equals(str)){
+//                            f[i] = true;
+//                            break;
+//                        }
+//                    }
+//                }
+//            }
+//        }*/
 
         //Second DP
         for(int i=1; i <= s.length(); i++){
