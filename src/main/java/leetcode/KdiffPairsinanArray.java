@@ -11,8 +11,8 @@ import java.util.Map;
 public class KdiffPairsinanArray {
     public static void main(String[] args) {
         KdiffPairsinanArray kpa = new KdiffPairsinanArray();
-        int[] nums = new int[]{3, 1, 4, 1, 5};
-        System.out.println(kpa.findPairs(nums,2));
+        int[] nums = new int[]{3,1,4,1,5,1,1};
+        System.out.println(kpa.findPairs(nums,0));
     }
     public int findPairs(int[] nums, int k) {
         if (nums == null || nums.length == 0 || k < 0)   return 0;
