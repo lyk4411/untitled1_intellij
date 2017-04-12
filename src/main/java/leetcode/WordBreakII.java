@@ -57,7 +57,9 @@ public class WordBreakII {
 
     public static void dfs(List<String> dp[], int end, List<String> result, ArrayList<String> tmp) {
         if (end <= 0) {
+            //System.out.println(tmp);
             String path = tmp.get(tmp.size() - 1);
+            //System.out.println(path);
             for (int i = tmp.size() - 2; i >= 0; i--) {
                 path += " " + tmp.get(i);
             }
