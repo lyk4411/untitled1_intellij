@@ -48,4 +48,24 @@ public class WordBreak {
 
         return f[s.length()];
     }
+
+
+//    private Set<String> unmatch = new HashSet<String>();
+//
+//    public boolean wordBreak(String s, List<String> dict) {
+//        for (String prefix : dict) {
+//            if (s.equals(prefix))
+//                return true;
+//            if (s.startsWith(prefix)) {
+//                String suffix = s.substring(prefix.length(), s.length());
+//                if (!unmatch.contains(suffix)) {
+//                    if (wordBreak(suffix, dict))
+//                        return true;
+//                    else
+//                        unmatch.add(suffix);
+//                }
+//            }
+//        }
+//        return false;
+//    }
 }
