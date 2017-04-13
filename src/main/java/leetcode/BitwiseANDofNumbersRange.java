@@ -10,6 +10,11 @@ public class BitwiseANDofNumbersRange {
         BitwiseANDofNumbersRange banr = new BitwiseANDofNumbersRange();
         System.out.println(banr.rangeBitwiseAnd(101,108));
     }
+//    当m!=n，那么最末位必定等0，因为[m, n]必定包含奇偶数，相与最末位等0。
+//    可以将m，n都右移一位，记为mk、 nk，这样就相当于将[m, n]之间的所有的
+//    数都右移动了一位，当mk=nk的时候，说明之前[m, n]之间的数右移一位后是
+//    相等的，右移后的数作AND操作，结果还是m(=n)，所以操作就可以停止了记录
+//    右移的次数，offset，m>>offset即为所求结果
     public int rangeBitwiseAnd(int m, int n) {
         if(m == 0){
             return 0;
