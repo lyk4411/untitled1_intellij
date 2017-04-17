@@ -13,7 +13,8 @@ public class DungeonGame {
                 {-6,-8,-8,-2,-9},
                 {-4,-3,-4,-7,-7},
                 {-3,-1,-2,-8,-6},
-                {-2,-2,-9,-2,-7},};
+                {-2,-2,-9,-2,-7}
+        };
         System.out.println(dg.calculateMinimumHP(dungeons));
     }
     public int calculateMinimumHP(int[][] dungeon) {
