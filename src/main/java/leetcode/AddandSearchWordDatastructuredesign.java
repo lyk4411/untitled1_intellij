@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Stream;
 
 /**
  * Created by lyk on 2017/4/13.
@@ -9,6 +10,16 @@ import java.util.Map;
  * Porject name: untitled1
  */
 public class AddandSearchWordDatastructuredesign {
+    public static void main(String[] args) {
+        AddandSearchWordDatastructuredesign aswd = new AddandSearchWordDatastructuredesign();
+        aswd.addWord("a");
+        System.out.println("root.c:" + aswd.root.c);
+        System.out.print("root.children.c:");
+        Stream.of(aswd.root.children).map(a -> a.keySet()).forEach(p -> System.out.print(p + " "));
+        System.out.println();
+        //Stream.of(aswd.root.children).map(a -> a.entrySet().toArray());
+        System.out.println(aswd.search("a"));
+    }
     class TrieNode{
         char c;
         HashMap<Character, TrieNode> children =
