@@ -15,12 +15,16 @@ public class AddandSearchWordDatastructuredesign {
         aswd.addWord("a");
         aswd.addWord("b");
         aswd.addWord("c");
+        aswd.addWord("abc");
+
         System.out.println("root.c:" + aswd.root.c);
         System.out.print("root.children.c:");
         Stream.of(aswd.root.children).map(a -> a.keySet()).forEach(p -> System.out.print(p));
         System.out.println();
         //Stream.of(aswd.root.children).map(a -> a.entrySet().toArray());
         System.out.println(aswd.search("a"));
+        System.out.println(aswd.search("ab"));
+        System.out.println(aswd.search("..c"));
     }
     class TrieNode{
         char c;
