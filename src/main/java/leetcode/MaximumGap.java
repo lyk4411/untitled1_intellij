@@ -44,11 +44,12 @@ public class MaximumGap {
         }
 
         //scan buckets to find maximum gap
-        int result = 0;
+        int result = buckets[0].high - buckets[0].low;
         int prev = buckets[0].high;
         for(int i=1; i<buckets.length; i++){
             if(buckets[i].low != -1){
                 result = Math.max(result, buckets[i].low-prev);
+                result = Math.max(result, buckets[i].high - buckets[i].low);
                 prev = buckets[i].high;
             }
 
