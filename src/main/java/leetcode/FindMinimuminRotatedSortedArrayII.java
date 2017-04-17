@@ -48,6 +48,7 @@ public class FindMinimuminRotatedSortedArrayII {
         } else if (num[right] == num[left]) {
             return findMin(num, left + 1, right);
             //go right
+            //没有already sorted，必定有个rotated，在right side！
         } else if (num[middle] >= num[left]) {
             return findMin(num, middle, right);
             //go left
