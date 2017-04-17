@@ -13,9 +13,11 @@ public class AddandSearchWordDatastructuredesign {
     public static void main(String[] args) {
         AddandSearchWordDatastructuredesign aswd = new AddandSearchWordDatastructuredesign();
         aswd.addWord("a");
+        aswd.addWord("b");
+        aswd.addWord("c");
         System.out.println("root.c:" + aswd.root.c);
         System.out.print("root.children.c:");
-        Stream.of(aswd.root.children).map(a -> a.keySet()).forEach(p -> System.out.print(p + " "));
+        Stream.of(aswd.root.children).map(a -> a.keySet()).forEach(p -> System.out.print(p));
         System.out.println();
         //Stream.of(aswd.root.children).map(a -> a.entrySet().toArray());
         System.out.println(aswd.search("a"));
