@@ -60,9 +60,9 @@ public class AddandSearchWordDatastructuredesign {
 
     public boolean dfsSearch(HashMap<Character, TrieNode> children, String word, int start) {
         if(start == word.length()){
-            if(children.size()==0)
-                return true;
-            else
+//            if(children.size()==0)
+//                return true;
+//            else
                 return false;
         }
 
