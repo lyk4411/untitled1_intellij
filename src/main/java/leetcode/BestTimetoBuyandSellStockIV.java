@@ -21,8 +21,9 @@ public class BestTimetoBuyandSellStockIV {
         if (k == 1000000000)
             return 1648961;
 
-        int[][] local = new int[len][k + 1];
-        int[][] global = new int[len][k + 1];
+        int[][] local = new int[len][k + 1];  // local[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
+
+        int[][] global = new int[len][k + 1];// global[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
 
         for (int i = 1; i < len; i++) {
             int diff = prices[i] - prices[i - 1];
