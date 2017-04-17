@@ -8,7 +8,7 @@ package leetcode;
 public class MaximumGap {
     public static void main(String[] args) {
         MaximumGap mg = new MaximumGap();
-        int[] nums = new int[]{123,222,213,123,653,952,233,893,386,217,819,265,456};
+        int[] nums = new int[]{110,222,213,456,653,952,233,893,386,217,819,265,456};
         System.out.println(mg.maximumGap(nums));
     }
     public int maximumGap(int[] num) {
