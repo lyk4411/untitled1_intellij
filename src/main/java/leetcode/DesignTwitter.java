@@ -10,9 +10,40 @@ import java.util.*;
 public class DesignTwitter {
     public static void main(String[] args) {
         DesignTwitter dt = new DesignTwitter();
+        dt.follow(1,2);
+        dt.follow(1,3);
+        dt.follow(2,1);
+        dt.postTweet(1,21);
+        dt.postTweet(1,22);
+        dt.postTweet(1,23);
+        dt.postTweet(1,24);
+        dt.postTweet(1,25);
+        dt.postTweet(1,26);
+        dt.postTweet(1,27);
+        dt.postTweet(1,28);
+        dt.postTweet(1,29);
+        dt.postTweet(1,30);
+        dt.postTweet(2,1);
+        dt.postTweet(2,2);
+        dt.postTweet(2,3);
+        dt.postTweet(2,4);
+        dt.postTweet(2,5);
+        dt.postTweet(2,6);
+        dt.postTweet(2,7);
+        dt.postTweet(2,8);
+        dt.postTweet(2,9);
+        dt.postTweet(2,10);
+        dt.postTweet(2,11);
+        dt.postTweet(3,111);
+        dt.postTweet(3,112);
 
+        dt.userMap.forEach((k,v)-> System.out.println(k + ":" + v));
+        dt.tweets.forEach((k,v)-> System.out.println(k + ":" + v));
+
+        System.out.println(dt.getNewsFeed(2));
+        System.out.println(dt.getNewsFeed(1));
     }
-    public class Twitter {
+
         Map<Integer, Set<Integer>> userMap = new HashMap<>();
         Map<Integer, LinkedList<Tweet>> tweets = new HashMap<>();
         int timestamp = 0;
@@ -24,6 +55,11 @@ public class DesignTwitter {
             Tweet(int time, int id) {
                 this.time = time;
                 this.id = id;
+            }
+
+            @Override
+            public String toString() {
+                return "time:" + time + " id:" + id ;
             }
         }
 
@@ -54,4 +90,4 @@ public class DesignTwitter {
                 userMap.get(followerId).remove(followeeId);
         }
     }
-}
+
