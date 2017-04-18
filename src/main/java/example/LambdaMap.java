@@ -48,5 +48,47 @@ public class LambdaMap {
                 }
         ));
         introMap3.forEach((k, v) -> System.out.println(k + ": " + v));
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+
+        Map<String, List<Locale>> countryToLocaleList = Stream.of(Locale.getAvailableLocales())
+                .collect(Collectors.groupingBy(l -> l.getDisplayCountry()));
+
+        countryToLocaleList.forEach((k,v) -> System.out.println(k + ": " + v));
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+
+        // predicate
+        Map<Boolean, List<Locale>> englishAndOtherLocales = Stream.of(Locale.getAvailableLocales())
+                .collect(Collectors.groupingBy(l -> l.getDisplayLanguage().equalsIgnoreCase("English")));
+        englishAndOtherLocales.forEach((k,v) -> System.out.println(k + ": " + v));
+
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+        // partitioningBy
+        Map<Boolean, List<Locale>> englishAndOtherLocales2 = Stream.of(Locale.getAvailableLocales())
+                .collect(Collectors.partitioningBy(l -> l.getDisplayLanguage().equalsIgnoreCase("English")));
+        englishAndOtherLocales2.forEach((k,v) -> System.out.println(k + ": " + v));
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+
+        Stream.of(Locale.getAvailableLocales()).forEach(a ->
+                System.out.println(a.getCountry() + ":" +
+                        a.getDisplayLanguage() + ":" +
+                        a.getDisplayName()));
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+
+        Map<String, Set<Locale>> countryToLocaleSet = Stream.of(Locale.getAvailableLocales())
+                .collect(Collectors.groupingBy(l -> l.getDisplayCountry(), Collectors.toSet()));
+        countryToLocaleSet.forEach((k,v) -> System.out.println(k + ":" + v));
+
+        Stream.of("=").peek(a -> System.out.println("======================================")).count();
+
+        Map<String, Long> countryToLocaleCounts = Stream.of(Locale.getAvailableLocales())
+                .collect(Collectors.groupingBy(l -> l.getDisplayCountry(), Collectors.counting()));
+
+        countryToLocaleCounts.forEach((k,v) -> System.out.println(k + ":" + v));
+
     }
 }
