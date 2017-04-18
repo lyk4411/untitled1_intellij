@@ -21,5 +21,17 @@ public class LambdaMap {
             Map.Entry<String, String> pair = (Map.Entry<String, String>)it.next();
             System.out.println(pair.getKey()+"="+pair.getValue());
         }
+
+        System.out.println("==================================");
+        Stream<String> introStream2 = Stream.
+                of("Get started with UICollectionView and the photo library".split(" "));
+        Map<Integer, String> introMap2 =
+                introStream2.collect(Collectors.toMap(s -> s.length(),
+                s -> s, (existingValue, newValue) -> existingValue + ":" + newValue));
+        Iterator it2 = introMap2.entrySet().iterator();
+        while(it2.hasNext()){
+            Map.Entry<Integer, String> pair = (Map.Entry<Integer, String>)it2.next();
+            System.out.println(pair.getKey()+"="+pair.getValue());
+        }
     }
 }
