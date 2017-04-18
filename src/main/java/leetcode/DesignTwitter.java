@@ -73,7 +73,8 @@ public class DesignTwitter {
         public List<Integer> getNewsFeed(int userId) {
             if (!userMap.containsKey(userId)) return new LinkedList<>();
             PriorityQueue<Tweet> feed = new PriorityQueue<>((t1, t2) -> t2.time - t1.time);
-            userMap.get(userId).stream().filter(f -> tweets.containsKey(f)).peek(f -> System.out.println("userid:" + f))
+            userMap.get(userId).stream().filter(f -> tweets.containsKey(f))
+                    //.peek(f -> System.out.println("userid:" + f))
                     .forEach(f -> tweets.get(f).forEach(feed::add));
             List<Integer> res = new LinkedList<>();
             while (feed.size() > 0 && res.size() < 10) res.add(feed.poll().id);
