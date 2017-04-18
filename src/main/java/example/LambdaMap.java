@@ -1,7 +1,6 @@
 package example;
 
-import java.util.Iterator;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -27,11 +26,27 @@ public class LambdaMap {
                 of("Get started with UICollectionView and the photo library".split(" "));
         Map<Integer, String> introMap2 =
                 introStream2.collect(Collectors.toMap(s -> s.length(),
-                s -> s, (existingValue, newValue) -> existingValue + ":" + newValue));
-        Iterator it2 = introMap2.entrySet().iterator();
-        while(it2.hasNext()){
-            Map.Entry<Integer, String> pair = (Map.Entry<Integer, String>)it2.next();
-            System.out.println(pair.getKey()+"="+pair.getValue());
-        }
+                s -> s, (existingValue, newValue) -> existingValue + " + " + newValue));
+//        Iterator it2 = introMap2.entrySet().iterator();
+//        while(it2.hasNext()){
+//            Map.Entry<Integer, String> pair = (Map.Entry<Integer, String>)it2.next();
+//            System.out.println(pair.getKey()+"="+pair.getValue());
+//        }
+        introMap2.forEach((k,v) -> System.out.println(k + ":" + v));
+
+
+
+        System.out.println("==================================");
+
+        Stream<String> introStream3 = Stream.of("Get started with UICollectionView and the photo library"
+                .split(" "));
+        Map<Integer, Set<String>> introMap3 = introStream3.collect(Collectors.toMap(s -> s.length(),
+                s -> Collections.singleton(s), (existingValue, newValue) -> {
+                    HashSet<String> set = new HashSet<>(existingValue);
+                    set.addAll(newValue);
+                    return set;
+                }
+        ));
+        introMap3.forEach((k, v) -> System.out.println(k + ": " + v));
     }
 }
