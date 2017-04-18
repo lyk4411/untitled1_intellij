@@ -53,7 +53,15 @@ public class BestTimetoBuyandSellStockIV {
 //        // ignore this line
 //        if (k == 1000000000)
 //            return 1648961;
-//
+//    //https://aaronice.gitbooks.io/lintcode/content/high_frequency/best_time_to_buy_and_sell_stock_iv.html
+//    //对于局部变量的维护，递推式是
+//    //local[i][j]=max(global[i-1][j-1]+max(diff,0),local[i-1][j]+diff)，
+//    //也就是看两个量，第一个是全局到i-1天进行j-1次交易，然后加上今天的交易，
+//    //如果今天是赚钱的话（也就是前面只要j-1次交易，最后一次交易取当前天），
+//    //第二个量则是取local第i-1天j次交易，然后加上今天的差值
+//    //（这里因为local[i-1][j]比如包含第i-1天卖出的交易，所以现在变成第i天卖出，
+//    //并不会增加交易次数，而且这里无论diff是不是大于0都一定要加上，因为否则就
+//    //不满足local[i][j]必须在最后一天卖出的条件了）。
 //        int[][] local = new int[len][k + 1];  // local[i][j] 表示前i天，至多进行j次交易，第i天必须sell的最大获益
 //
 //        int[][] global = new int[len][k + 1];// global[i][j] 表示前i天，至多进行j次交易，第i天可以不sell的最大获益
