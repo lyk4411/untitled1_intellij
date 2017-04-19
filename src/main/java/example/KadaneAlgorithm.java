@@ -39,6 +39,8 @@ public class KadaneAlgorithm {
         int arr[] = { 1, 8, -3, -7, 2, 7, -1, 9 };
         KadaneAlgorithm ka = new KadaneAlgorithm();
         System.out.println("Maximum subarray is  " + ka.kandaneForMaxSubArray(arr));
+        System.out.println("Maximum subarray is  " + ka.kandaneForMaxSubArrayForNegativ(arr));
+
         int arrNeg[] = { -10, -8, -3, -7, -2, -7, -3, -9 };
         System.out.println("Maximum Subarray when all elements are negative : "
                 + ka.kandaneForMaxSubArrayForNegativ(arrNeg));
