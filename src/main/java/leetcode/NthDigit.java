@@ -24,7 +24,9 @@ public class NthDigit {
             start *= 10;
         }
         //System.out.println("n:" + n + " len: " + len + " start:" + start);
-        start += (n - 1) / len;
+        start += (n - 1) / len; //当n落到某一个确定的区间里了，那么(n-1)/len就是目标数字在
+                                // 该区间里的坐标，加上start就是得到了目标数字，然后我们将
+                                // 目标数字start转为字符串，(n-1)%len就是所要求的目标位
         //System.out.println("start:" + start);
         String s = Integer.toString(start);
         //System.out.println("s:" + s);
