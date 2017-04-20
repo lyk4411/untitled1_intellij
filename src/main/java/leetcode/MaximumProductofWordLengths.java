@@ -10,6 +10,9 @@ public class MaximumProductofWordLengths {
         MaximumProductofWordLengths mpwl = new MaximumProductofWordLengths();
         String[] words = new String[]{"aaaaaa", "bbbbbb", "foo", "bar", "xtfn", "abcdef"};
         System.out.println(mpwl.maxProduct(words));
+        System.out.println(mpwl.maxProduct(new String[]{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"}));
+
+
     }
     public static int maxProduct(String[] words) {
         if (words == null || words.length == 0)
