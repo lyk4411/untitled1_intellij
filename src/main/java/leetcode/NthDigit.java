@@ -23,9 +23,13 @@ public class NthDigit {
             count *= 10;
             start *= 10;
         }
-
+        //System.out.println("n:" + n + " len: " + len + " start:" + start);
         start += (n - 1) / len;
+        //System.out.println("start:" + start);
         String s = Integer.toString(start);
+        //System.out.println("s:" + s);
+        //System.out.println("s.charAt((n - 1) % len:" + s.charAt((n - 1) % len));
+        //System.out.println("=============================");
         return Character.getNumericValue(s.charAt((n - 1) % len));
     }
 }
