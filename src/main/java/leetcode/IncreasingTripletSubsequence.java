@@ -22,8 +22,10 @@ public class IncreasingTripletSubsequence {
 
             if (x >= z) {
                 x = z;// update x to be a smaller value
+                //System.out.println("x:" + x);
             } else if (y >= z) {
                 y = z; // update y to be a smaller value
+                //System.out.println("y:" + y);
             } else {
                 return true;
             }
