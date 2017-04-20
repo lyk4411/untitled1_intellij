@@ -8,7 +8,7 @@ package leetcode;
 public class MaximumProductofWordLengths {
     public static void main(String[] args) {
         MaximumProductofWordLengths mpwl = new MaximumProductofWordLengths();
-        String[] words = new String[]{"abcw", "baz", "foo", "bar", "xtfn", "abcdef"};
+        String[] words = new String[]{"aaaaaa", "bbbbbb", "foo", "bar", "xtfn", "abcdef"};
         System.out.println(mpwl.maxProduct(words));
     }
     public static int maxProduct(String[] words) {
