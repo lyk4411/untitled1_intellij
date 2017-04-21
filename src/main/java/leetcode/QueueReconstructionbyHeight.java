@@ -15,9 +15,10 @@ public class QueueReconstructionbyHeight {
         int[][] matrixes = new int[][]{
                 {4, 4}, {5, 2}, {5, 0}, {6, 1}, {7, 1}, {7, 0}
         };
-        for (int i = 0; i < matrixes.length; i++) {
-            for (int j = 0; j < matrixes[0].length; j++) {
-                System.out.print(matrixes[i][j] + ",");
+        int[][] peoples = qrh.reconstructQueue(matrixes);
+        for (int i = 0; i < peoples.length; i++) {
+            for (int j = 0; j < peoples[0].length; j++) {
+                System.out.print(peoples[i][j] + ",");
             }
             System.out.println();
         }
