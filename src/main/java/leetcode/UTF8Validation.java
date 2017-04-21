@@ -31,7 +31,7 @@ public class UTF8Validation {
             // 2. check 1s
             i++;
             while(ones-- > 1) {
-                if(i >= data.length || ((data[i] >> 6) & 3) != 2) return false;
+                if(i >= data.length || (data[i] >> 6)  != 2) return false;
                 // 3. update i
                 i++;
             }
