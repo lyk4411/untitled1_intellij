@@ -6,7 +6,11 @@ package leetcode;
  * Porject name: untitled1
  */
 public class WiggleSubsequence {
-
+    public static void main(String[] args) {
+        WiggleSubsequence ws = new WiggleSubsequence();
+        int[] nums = new int[]{1,3,6,8,4,7,3,1,7,9,3,0,2,6,8,3};
+        System.out.println(ws.wiggleMaxLength(nums));
+    }
     public int wiggleMaxLength(int[] nums) {
         if (nums.length == 0 || nums.length == 1) {
             return nums.length;
