@@ -29,7 +29,22 @@ public class KthSmallestElementinaSortedMatrix {
                 if(maxHeap.size() > k) maxHeap.poll();
             }
         }
-
         return maxHeap.poll();
     }
+
+//    public int kthSmallest(int[][] matrix, int k) {
+//        // heap
+//        PriorityQueue<int[]> minHeap = new PriorityQueue<>(k+1, (a, b) -> a[2] - b[2]);
+//        for(int j = 0; j < Math.min(k, matrix[0].length); j++) {
+//            minHeap.offer(new int[] {0, j, matrix[0][j]});
+//        }
+//        // for k loop find the result
+//        for(int i = 0; i < k-1; i++) {
+//            int[] cur = minHeap.poll();
+//            if(cur[0] + 1 < matrix.length) {
+//                minHeap.offer(new int[] {cur[0] + 1, cur[1], matrix[cur[0] + 1][cur[1]]});
+//            }
+//        }
+//        return minHeap.poll()[2];
+//    }
 }
