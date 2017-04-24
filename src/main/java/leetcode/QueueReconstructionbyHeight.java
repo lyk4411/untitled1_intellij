@@ -28,13 +28,17 @@ public class QueueReconstructionbyHeight {
 
         Arrays.sort(people, (a, b) -> a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]);
 
-        for (int i = 0; i < people.length; i++) {
-            for (int j = 0; j < people[0].length; j++) {
-                System.out.print(people[i][j] + ",");
-            }
-            System.out.println();
-        }
-        System.out.println();
+
+        //首先我们给队列先排个序，按照身高高的排前面，如果身高相同，则第二个数小的排前面。
+        // 然后我们新建一个空的数组，遍历之前排好序的数组，然后根据每个元素的第二个数字，
+        // 将其插入到res数组中对应的位置
+//        for (int i = 0; i < people.length; i++) {
+//            for (int j = 0; j < people[0].length; j++) {
+//                System.out.print(people[i][j] + ",");
+//            }
+//            System.out.println();
+//        }
+//        System.out.println();
 
         List<int[]> result = new ArrayList();
         for(int[] person : people) {
