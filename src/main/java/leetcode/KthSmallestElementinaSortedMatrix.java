@@ -13,9 +13,9 @@ public class KthSmallestElementinaSortedMatrix {
                 new KthSmallestElementinaSortedMatrix();
         int[][] matrix = new int[][]{
                 {1,2,5,7,9},
-                {3,6,8,9,0},
-                {8,5,3,1,7},
-                {1,2,5,9,3},
+                {3,6,8,9,10},
+                {8,15,13,11,17},
+                {11,21,25,29,33},
         };
         System.out.println(ksesm.kthSmallest(matrix,4));
     }
