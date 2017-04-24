@@ -14,10 +14,10 @@ public class KthSmallestElementinaSortedMatrix {
         int[][] matrix = new int[][]{
                 {1,2,5,7,9},
                 {3,6,8,9,10},
-                {8,15,13,11,17},
+                {8,15,23,24,27},
                 {11,21,25,29,33},
         };
-        System.out.println(ksesm.kthSmallest(matrix,4));
+        System.out.println(ksesm.kthSmallest(matrix,14));
     }
     public int kthSmallest(int[][] matrix, int k) {
         // heap
