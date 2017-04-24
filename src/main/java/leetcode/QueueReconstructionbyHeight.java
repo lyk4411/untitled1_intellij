@@ -27,10 +27,29 @@ public class QueueReconstructionbyHeight {
         if(people.length == 0) return people;
 
         Arrays.sort(people, (a, b) -> a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]);
+
+        for (int i = 0; i < people.length; i++) {
+            for (int j = 0; j < people[0].length; j++) {
+                System.out.print(people[i][j] + ",");
+            }
+            System.out.println();
+        }
+        System.out.println();
+
         List<int[]> result = new ArrayList();
         for(int[] person : people) {
             result.add(person[1], person);
         }
+
+//        for (int i = 0; i < result.size(); i++) {
+//            int[] temp = result.get(i);
+//            for (int j = 0; j < temp.length; j++) {
+//                System.out.print("i:" + i + " temp[j]:" + temp[j]);
+//            }
+//            System.out.println();
+//        }
+//        System.out.println();
+
         return result.toArray(new int[result.size()][2]);
     }
 }
