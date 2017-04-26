@@ -15,29 +15,22 @@ public class CoinChange {
     }
 
     public int coinChange(int[] coins, int amount) {
-        if(amount==0) return 0;
+        if(amount<1) return 0;
+        return helper(coins, amount, new int[amount]);
+    }
 
-        int[] dp = new int [amount+1];
-        dp[0]=0; // do not need any coin to get 0 amount
-        for(int i=1;i<=amount; i++)
-            dp[i]= Integer.MAX_VALUE;
-
-        for(int i=0; i<=amount; i++){
-            for(int coin: coins){
-                if(i+coin <=amount){
-                    if(dp[i]==Integer.MAX_VALUE){
-                        dp[i+coin] = dp[i+coin];
-                    }else{
-                        dp[i+coin] = Math.min(dp[i+coin], dp[i]+1);
-                    }
-                }
-            }
+    private int helper(int[] coins, int rem, int[] count) { // rem: remaining coins after the last step; count[rem]: minimum number of coins to sum up to rem
+        if(rem<0) return -1; // not valid
+        if(rem==0) return 0; // completed
+        if(count[rem-1] != 0) return count[rem-1]; // already computed, so reuse
+        int min = Integer.MAX_VALUE;
+        for(int coin : coins) {
+            int res = helper(coins, rem-coin, count);
+            if(res>=0 && res < min)
+                min = 1+res;
         }
-
-        if(dp[amount] >= Integer.MAX_VALUE)
-            return -1;
-
-        return dp[amount];
+        count[rem-1] = (min==Integer.MAX_VALUE) ? -1 : min;
+        return count[rem-1];
     }
 
 }
