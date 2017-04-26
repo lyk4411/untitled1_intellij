@@ -19,7 +19,8 @@ public class CoinChange {
         return helper(coins, amount, new int[amount]);
     }
 
-    private int helper(int[] coins, int rem, int[] count) { // rem: remaining coins after the last step; count[rem]: minimum number of coins to sum up to rem
+    private int helper(int[] coins, int rem, int[] count) {
+        // rem: remaining coins after the last step; count[rem-1]: minimum number of coins to sum up to rem
         if(rem<0) return -1; // not valid
         if(rem==0) return 0; // completed
         if(count[rem-1] != 0) return count[rem-1]; // already computed, so reuse
