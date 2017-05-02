@@ -11,6 +11,13 @@ import java.util.HashMap;
 public class InsertDeleteGetRandom {
     public static void main(String[] args) {
         InsertDeleteGetRandom idgr = new InsertDeleteGetRandom();
+        System.out.println(idgr.insert(1));
+        System.out.println(idgr.insert(2));
+        System.out.println(idgr.insert(3));
+        System.out.println(idgr.insert(1));
+        System.out.println(idgr.getRandom());
+        System.out.println(idgr.getRandom());
+        System.out.println(idgr.getRandom());
 
     }
     ArrayList<Integer> nums;
