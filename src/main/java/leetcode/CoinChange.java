@@ -15,23 +15,24 @@ public class CoinChange {
     }
 
     public int coinChange(int[] coins, int amount) {
-        if(amount<1) return 0;
-        return helper(coins, amount, new int[amount]);
-    }
+        // 无效输入的处理
+        if (amount == 0)
+            return 0;
+        if (coins == null || coins.length == 0)
+            return -1;
 
-    private int helper(int[] coins, int rem, int[] count) {
-        // rem: remaining coins after the last step; count[rem-1]: minimum number of coins to sum up to rem
-        if(rem<0) return -1; // not valid
-        if(rem==0) return 0; // completed
-        if(count[rem-1] != 0) return count[rem-1]; // already computed, so reuse
-        int min = Integer.MAX_VALUE;
-        for(int coin : coins) {
-            int res = helper(coins, rem-coin, count);
-            if(res>=0 && res < min)
-                min = 1+res;
+        int[] dp = new int[amount + 1];
+        for (int i = 1; i <= amount; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = 0; j < coins.length; j++) {
+                if (i >= coins[j] && dp[i - coins[j]] != -1)
+                    min = Math.min(min, dp[i - coins[j]] + 1);
+            }
+
+            // 根据min的值判断是否能兑换
+            dp[i] = min == Integer.MAX_VALUE ? -1 : min;
         }
-        count[rem-1] = (min==Integer.MAX_VALUE) ? -1 : min;
-        return count[rem-1];
+        return dp[amount];
     }
 
 }
