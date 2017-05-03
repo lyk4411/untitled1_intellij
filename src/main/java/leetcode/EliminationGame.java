@@ -13,6 +13,10 @@ public class EliminationGame {
         System.out.println(eg.lastRemaining(1500));
 
     }
+    //关键在于维护一个boolean变量left2right来表明当前这一轮elimination是否为
+    // 从左往右。另外，对于当前这一step来说，如果所剩的元素个数为奇数，那么头
+    // 尾元素都会被去掉，否则的话头元素被去掉，但是尾元素不变。相邻元素的距离
+    // 随着每一步都会放大两倍。
     public int lastRemaining(int n) {
         int gap = 1;
         int low = 1;
