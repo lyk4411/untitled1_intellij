@@ -14,18 +14,26 @@ public class EliminationGame {
 
     }
     public int lastRemaining(int n) {
-        boolean left = true;
-        int remaining = n;
-        int step = 1;
-        int head = 1;
-        while (remaining > 1) {
-            if (left || remaining % 2 ==1) {
-                head = head + step;
+        int gap = 1;
+        int low = 1;
+        int high = n;
+        boolean left2right = true;
+        while (low < high){
+            int temp = (high - low) / gap;
+            if(left2right){
+                low += gap;
+                if(temp%2 == 0){
+                    high -= gap;
+                }
+            } else {
+                high -= gap;
+                if(temp%2 == 0){
+                    low += gap;
+                }
             }
-            remaining = remaining / 2;
-            step = step * 2;
-            left = !left;
+            gap *=2;
+            left2right = !left2right;
         }
-        return head;
+        return low;
     }
 }
