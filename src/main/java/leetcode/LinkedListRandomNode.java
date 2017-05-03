@@ -10,13 +10,13 @@ import java.util.Random;
 public class LinkedListRandomNode {
     public static void main(String[] args) {
         ListNode ln1 = new ListNode(1);
-        ListNode ln2 = new ListNode(1);
-        ListNode ln3 = new ListNode(2);
-        ListNode ln4 = new ListNode(2);
-        ListNode ln5 = new ListNode(2);
-        ListNode ln6 = new ListNode(3);
-        ListNode ln7 = new ListNode(4);
-        ListNode ln8 = new ListNode(5);
+        ListNode ln2 = new ListNode(2);
+        ListNode ln3 = new ListNode(3);
+        ListNode ln4 = new ListNode(4);
+        ListNode ln5 = new ListNode(5);
+        ListNode ln6 = new ListNode(6);
+        ListNode ln7 = new ListNode(7);
+        ListNode ln8 = new ListNode(8);
         ln1.next = ln2;
         ln2.next = ln3;
         ln3.next = ln4;
