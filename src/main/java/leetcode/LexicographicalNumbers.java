@@ -15,6 +15,11 @@ public class LexicographicalNumbers {
         System.out.println(ln.lexicalOrder(150));
 
     }
+    //这种思路是按个位数遍历，在遍历下一个个位数之前，先遍历十位数，
+    // 十位数的高位为之前的个位数，只要这个多位数并没有超过n，就可以
+    // 一直往后遍历，如果超过了，我们除以10，然后再加1，如果加1后末尾
+    // 形成了很多0，那么我们要用个while循环把0都去掉，然后继续运算，
+    // 参见代码如下：
     public List<Integer> lexicalOrder(int n) {
         List<Integer> list = new ArrayList<>(n);
         int curr = 1;
