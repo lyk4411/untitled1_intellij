@@ -11,7 +11,8 @@ import java.util.Deque;
 public class LongestAbsoluteFilePath {
     public static void main(String[] args) {
         LongestAbsoluteFilePath lafp = new LongestAbsoluteFilePath();
-        System.out.println(lafp.lengthLongestPath("dir\\n\\tsubdir1\\n\\t\\tfile1.ext\\n\\t\\tsubsubdir1\\n\\tsubdir2\\n\\t\\tsubsubdir2\\n\\t\\t\\tfile2.ext"));
+        System.out.println(lafp.lengthLongestPath("dir\\n\\tsubdir1\\n\\t\\tfile1.ext" +
+                "\\n\\t\\tsubsubdir1\\n\\tsubdir2\\n\\t\\tsubsubdir2\\n\\t\\t\\tfile2.ext"));
     }
     public int lengthLongestPath(String input) {
         Deque<Integer> stack = new ArrayDeque<>();
