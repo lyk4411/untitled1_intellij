@@ -11,6 +11,8 @@ public class LongestSubstringwithAtLeastKRepeatingCharacters {
                 = new LongestSubstringwithAtLeastKRepeatingCharacters();
         System.out.println(lsakrc.longestSubstring("ababacba",2));
         System.out.println(lsakrc.longestSubstring("ababacbaa",3));
+        System.out.println(lsakrc.longestSubstring("ababacbaaaab",3));
+
     }
 
     public int longestSubstring(String s, int k) {
