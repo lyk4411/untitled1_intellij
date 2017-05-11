@@ -10,6 +10,7 @@ public class ArithmeticSlices {
         ArithmeticSlices as = new ArithmeticSlices();
         System.out.println(as.numberOfArithmeticSlices(new int[]{7,7,7,7}));
         System.out.println(as.numberOfArithmeticSlices(new int[]{1,2,3,4}));
+        System.out.println(as.numberOfArithmeticSlices(new int[]{1,2,3,4,5}));
         System.out.println(as.numberOfArithmeticSlices(new int[]{1,2,5,3,3}));
     }
     public int numberOfArithmeticSlices(int[] A) {
