@@ -73,7 +73,7 @@ public class EvaluateDivision {
 //        set.remove(start);
 //        return tmp;
 //    }
-
+    HashMap<String, List<Info>> map;
 
     public double[] calcEquation(String[][] equations, double[] values, String[][] queries) {
         // build graph, use adjacent list
@@ -93,7 +93,6 @@ public class EvaluateDivision {
         }
         return result;
     }
-    HashMap<String, List<Info>> map;
 
     private double find(String start, String end, double value, Set<String> visited) {
         if(visited.contains(start)) return -1;
