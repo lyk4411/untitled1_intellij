@@ -9,8 +9,8 @@ public class PartitionEqualSubsetSum {
     public static void main(String[] args) {
         PartitionEqualSubsetSum pess = new PartitionEqualSubsetSum();
         System.out.println(pess.canPartition(new int[]{1,5,5,11}));
-        System.out.println(pess.canPartition(new int[]{1,5,5,12}));
-        System.out.println(pess.canPartition(new int[]{1,2,3,4}));
+        //System.out.println(pess.canPartition(new int[]{1,5,5,12}));
+        //System.out.println(pess.canPartition(new int[]{1,2,3,4}));
     }
     public boolean canPartition(int[] nums) {
         // check edge case
@@ -35,6 +35,10 @@ public class PartitionEqualSubsetSum {
             for (int j = volumn; j >= nums[i-1]; j--) {
                 dp[j] = dp[j] || dp[j - nums[i-1]];
             }
+            for (int k = 0; k < dp.length; k++) {
+                System.out.print(dp[k] + ";");
+            }
+            System.out.println();
         }
         return dp[volumn];
     }
