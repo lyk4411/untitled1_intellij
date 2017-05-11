@@ -105,7 +105,7 @@ public class EvaluateDivision {
             if(sub != -1.0) return sub;
         }
 
-        visited.remove(start);
+        //visited.remove(start);
         return -1;
     }
 
