@@ -35,10 +35,10 @@ public class PartitionEqualSubsetSum {
             for (int j = volumn; j >= nums[i-1]; j--) {
                 dp[j] = dp[j] || dp[j - nums[i-1]];
             }
-            for (int k = 0; k < dp.length; k++) {
-                System.out.print(dp[k] + ";");
-            }
-            System.out.println();
+//            for (int k = 0; k < dp.length; k++) {
+//                System.out.print(dp[k] + ";");
+//            }
+//            System.out.println();
         }
         return dp[volumn];
     }
