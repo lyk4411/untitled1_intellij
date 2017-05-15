@@ -6,6 +6,7 @@ package leetcode;
  * Porject name: untitled1
  */
 public class SuperPow {
+    //此题无意义，不用看。
     public static void main(String[] args) {
         SuperPow sp = new SuperPow();
         int a = 1545;
