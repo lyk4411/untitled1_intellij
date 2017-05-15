@@ -14,7 +14,7 @@ public class FindKPairswithSmallestSums {
     public static void main(String[] args) {
         FindKPairswithSmallestSums fp = new FindKPairswithSmallestSums();
         int[] nums1 = new int[]{1,2,3};
-        int[] nums2 = new int[]{2,1,4};
+        int[] nums2 = new int[]{1,2,4};
         List<int[]> list = fp.kSmallestPairs(nums1,nums2,3);
         Iterator it = list.iterator();
         while (it.hasNext()){
