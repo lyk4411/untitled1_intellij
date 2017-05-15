@@ -1,8 +1,5 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Created by lyk on 2017/5/15.
  * Package name: leetcode
@@ -15,36 +12,43 @@ public class SuperPow {
         int[] b = new int[]{1,2};
         System.out.println(sp.superPow(a,b));
     }
-    int DIV = 1337;
+    /**
+     * 这道题是ACM里面入门问题，powmod，详细的算法可以参照这里：http://blog.csdn.net/xuruoxin/article/details/8578992
+     * */
 
-    List<Integer> findLoop(int a){
-        List<Integer> index = new ArrayList<>();
-        boolean[] set = new boolean[DIV];
-        int rem = a % DIV;
-        while ( ! set[rem] ) {
-            set[rem]=true;
-            index.add(rem);
-            rem = (rem*a) % DIV;
+    // 判断是否大于0
+    public boolean morethanzero(int[] x){
+        for(int i=x.length-1;i>=0;i--){
+            if(x[i]>0) return true;
         }
-        return index;
+        return false;
     }
 
-    int modBy(int[] b, int m){
-        int rem = 0;
-        for (int i=0; i < b.length; i++) {
-            rem = (rem*10+b[i]) % m;
+    //高精度除法
+    public void div(int[] x,int y){
+        int tmp=0;
+        for(int i=0;i<x.length;i++){
+            x[i] += tmp*10;
+            tmp = x[i] % y;
+            x[i] = x[i] /y;
         }
-        return rem;
+
     }
 
     public int superPow(int a, int[] b) {
-        if (a==0 || a==DIV || b==null || b.length == 0) return 0;
-        if (a==1) return 1;
-        if (a > DIV) return superPow( a % DIV, b);
-        List<Integer> index = findLoop(a);
-        int loopsize = index.size();
-        int rem = modBy(b, loopsize);
-        rem = rem==0? loopsize: rem;
-        return index.get(rem-1);
+        if (morethanzero(b) == false) return 1;
+        a=a%1337;
+        boolean isEven = false;
+        if(b[b.length-1] % 2 == 0) isEven = true;
+        div(b,2);
+        int result = superPow(a,b);
+        result = result % 1337;
+        result*=result;
+        result = result % 1337;
+        if(isEven==false){
+            result*=a;
+            result = result % 1337;
+        }
+        return result;
     }
 }
