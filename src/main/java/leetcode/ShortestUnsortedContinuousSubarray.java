@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Created by lyk on 2017/5/16.
  * Package name: leetcode
@@ -9,17 +11,20 @@ public class ShortestUnsortedContinuousSubarray {
     public static void main(String[] args) {
         ShortestUnsortedContinuousSubarray sucs
                 = new ShortestUnsortedContinuousSubarray();
-        int[] nums = new int[]{2, 6, 4, 8, 10, 9, 15};
+        int[] nums = new int[]{2, 6, 4, 8, 10, 11, 15};
         System.out.println(sucs.findUnsortedSubarray(nums));
     }
     public int findUnsortedSubarray(int[] nums) {
-        int n = nums.length, beg = -1, end = -2, min = nums[n-1], max = nums[0];
-        for (int i=1;i<nums.length;i++) {
-            max = Math.max(max, nums[i]);
-            min = Math.min(min, nums[n-1-i]);
-            if (nums[i] < max) end = i;
-            if (nums[n-1-i] > min) beg = n-1-i;
-        }
-        return end - beg + 1;
+        int n = nums.length;
+        int[] temp = new int[n];
+        for (int i = 0; i < n; i++) temp[i] = nums[i];
+        Arrays.sort(temp);
+        int start = 0;
+        while (start < n  && nums[start] == temp[start]) start++;
+
+        int end = n - 1;
+        while (end > start  && nums[end] == temp[end]) end--;
+
+        return end - start + 1;
     }
 }
