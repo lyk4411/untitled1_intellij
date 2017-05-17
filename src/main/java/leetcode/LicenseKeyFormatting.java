@@ -8,7 +8,10 @@ package leetcode;
 public class LicenseKeyFormatting {
     public static void main(String[] args) {
         LicenseKeyFormatting lkf = new LicenseKeyFormatting();
+        System.out.println(lkf.licenseKeyFormatting("2-4A0r7----------4k",3));
         System.out.println(lkf.licenseKeyFormatting("2-4A0r7-4k",3));
+        System.out.println(lkf.licenseKeyFormatting("24A0r74k",3));
+
     }
     public String licenseKeyFormatting(String s, int k) {
         StringBuilder sb = new StringBuilder();
