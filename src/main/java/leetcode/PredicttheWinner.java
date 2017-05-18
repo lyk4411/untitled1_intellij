@@ -34,8 +34,17 @@ public class PredicttheWinner {
             for (int i = 0; i < n - len; i++) {
                 int j = i + len;
                 dp[i][j] = Math.max(nums[i] - dp[i + 1][j], nums[j] - dp[i][j - 1]);
+
+                for (int k = 0; k < dp.length; k++) {
+                    for (int l = 0; l < dp[0].length; l++) {
+                        System.out.print(dp[k][l] + ":");
+                    }
+                    System.out.println();
+                }
+                System.out.println("===================");
             }
         }
+
         return dp[0][n - 1] >= 0;
     }
 }
