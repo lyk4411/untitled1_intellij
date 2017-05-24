@@ -12,6 +12,7 @@ public class StudentAttendanceRecordII {
         System.out.println(sarii.checkRecord(3));
     }
 
+//    https://discuss.leetcode.com/topic/86696/share-my-o-n-c-dp-solution-with-thinking-process-and-explanation/2
 //    下面这种方法来自大神KJer的帖子，大神帖子里面的讲解写的很详细，很赞，也不难读懂。
 //    定义了三个DP数组P, L, A，其中P[i]表示数组[0,i]范围内以P结尾的所有排列方式，L[i]
 //    表示数组[0,i]范围内以L结尾的所有排列方式，A[i]表示数组[0,i]范围内以A结尾的所有
