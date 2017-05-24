@@ -10,8 +10,9 @@ public class ImplementstrStr {
 
     public static void main(String[] args) {
         ImplementstrStr is = new ImplementstrStr();
-        System.out.println(is.strStr("ababcaababcaabc","ababcaabc"));
-        System.out.println(is.strStr("mississippi","a"));
+        //System.out.println(is.strStr("ababcaababcaabc","ababcaabc"));
+        //System.out.println(is.strStr("mississippi","a"));
+        System.out.println(is.strStr("BBC ABCDAB ABCDABCDABDE","ABCDABD"));
     }
 
     // http://www.ruanyifeng.com/blog/2013/05/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm.html
@@ -24,6 +25,12 @@ public class ImplementstrStr {
         int[] next = new int[needle.length()];
         // 得到next数组
         getNextArr(next, needle);
+
+        for (int i = 0; i < next.length; i++) {
+            System.out.print(next[i] + " = ");
+        }
+        System.out.println();
+
         // i是匹配串haystack的指针，j是模式串needle的指针
         int i = 0, j = 0;
         // 双指针开始匹配
