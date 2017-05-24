@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Created by lyk on 2017/5/24.
  * Package name: leetcode
@@ -27,22 +29,44 @@ public class ConvertBSTtoGreaterTree {
         a7.left = a8;
         a7.right = a9;
         System.out.println(a1);
-        System.out.println(cgt.ConvertBST(a1));
+        System.out.println(cgt.convertBST(a1));
     }
-    int sum = 0;
-    public TreeNode ConvertBST(TreeNode root)
-    {
-        ConvertBST_helper(root);
-        return root;
-    }
-    void ConvertBST_helper(TreeNode root)
-    {
-        if (root == null)
-            return;
+//    int sum = 0;
 
-        ConvertBST_helper(root.right);
-        sum += root.val;
-        root.val = sum;
-        ConvertBST(root.left);
+//    public TreeNode convertBST(TreeNode root)
+//    {
+//        ConvertBST_helper(root);
+//        return root;
+//    }
+//    void ConvertBST_helper(TreeNode root)
+//    {
+//        if (root == null)
+//            return;
+//
+//        ConvertBST_helper(root.right);
+//        sum += root.val;
+//        root.val = sum;
+//        ConvertBST(root.left);
+//    }
+
+
+    public TreeNode convertBST(TreeNode root) {
+        if(root==null) return null;
+        TreeNode cur = root;
+        int prevSum = 0;
+        Stack<TreeNode> stack = new Stack<TreeNode>();
+        while(!stack.isEmpty() || cur!=null){
+            if(cur!=null){
+                stack.push(cur);
+                cur = cur.right;
+            }
+            else{
+                cur = stack.pop();
+                cur.val+=prevSum;
+                prevSum = cur.val;
+                cur = cur.left;
+            }
+        }
+        return root;
     }
 }
