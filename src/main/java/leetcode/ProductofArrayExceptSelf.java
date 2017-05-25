@@ -8,7 +8,7 @@ package leetcode;
 public class ProductofArrayExceptSelf {
     public static void main(String[] args) {
         ProductofArrayExceptSelf paes = new ProductofArrayExceptSelf();
-        int[] nums = new int[]{1,2,3,4};
+        int[] nums = new int[]{2,3,4,5};
         int[] results = paes.productExceptSelf(nums);
         for (int i = 0; i < results.length; i++) {
             System.out.print(results[i] + " :");
@@ -22,10 +22,10 @@ public class ProductofArrayExceptSelf {
         for (int i = 1; i < n; i++) {
             res[i] = res[i - 1] * nums[i - 1];
         }
-//        for (int i = 0; i < n; i++) {
-//            System.out.print(res[i] + " :");
-//        }
-//        System.out.println();
+        for (int i = 0; i < n; i++) {
+            System.out.print(res[i] + " :");
+        }
+        System.out.println();
 
         int right = 1;
         for (int i = n - 1; i >= 0; i--) {
