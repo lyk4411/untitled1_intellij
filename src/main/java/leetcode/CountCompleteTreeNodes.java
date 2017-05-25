@@ -36,7 +36,7 @@ public class CountCompleteTreeNodes {
         int right = getRightHeight(root)+1;
 
         if(left==right){
-            return (2<<(left-1))-1;
+            return (1<<left)-1;
         }else{
             return countNodes(root.left)+countNodes(root.right)+1;
         }
