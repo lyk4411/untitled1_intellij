@@ -46,6 +46,18 @@ public class PacificAtlanticWaterFlow {
             dfs(matrix, pacific, Integer.MIN_VALUE, 0, i);
             dfs(matrix, atlantic, Integer.MIN_VALUE, n-1, i);
         }
+//        for (int i = 0; i < pacific.length; i++) {
+//            for (int j = 0; j < pacific[0].length; j++) {
+//                System.out.print(pacific[i][j] + " =");
+//            }
+//            System.out.println("====================");
+//        }
+//        for (int i = 0; i < atlantic.length; i++) {
+//            for (int j = 0; j < atlantic[0].length; j++) {
+//                System.out.print(atlantic[i][j] + " =");
+//            }
+//            System.out.println();
+//        }
         for (int i = 0; i < n; i++)
             for (int j = 0; j < m; j++)
                 if (pacific[i][j] && atlantic[i][j])
