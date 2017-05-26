@@ -10,6 +10,7 @@ public class ReconstructOriginalDigitsfromEnglish {
         ReconstructOriginalDigitsfromEnglish rode = new ReconstructOriginalDigitsfromEnglish();
         System.out.println(rode.originalDigits("onefour"));
         System.out.println(rode.originalDigits("foneour"));
+        System.out.println(rode.originalDigits("fourone"));
     }
     public String originalDigits(String s) {
         if(s==null || s.length()==0) return "";
