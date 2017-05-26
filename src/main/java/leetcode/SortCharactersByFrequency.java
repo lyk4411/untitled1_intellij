@@ -13,8 +13,8 @@ import java.util.Map;
 public class SortCharactersByFrequency {
     public static void main(String[] args) {
         SortCharactersByFrequency scbf = new SortCharactersByFrequency();
-        System.out.println(scbf.frequencySort("ababc"));
-        System.out.println(scbf.frequencySort("ababcccac"));
+        System.out.println(scbf.frequencySort("aaaaabbcc"));
+        //System.out.println(scbf.frequencySort("ababcccac"));
     }
     public String frequencySort(String s) {
         if (s == null) {
@@ -45,6 +45,10 @@ public class SortCharactersByFrequency {
             }
             array[count].add(c);
         }
+//        for (int i = 0; i < array.length; i++) {
+//            System.out.print(array[i] + " ; ");
+//        }
+//        System.out.println();
         return array;
     }
 
