@@ -26,10 +26,10 @@ public class SerializeandDeserializeBST {
         a1.right = a3;
         a2.left = a4;
         a2.right = a5;
-        a3.left = a6;
-        a3.right = a7;
-        a4.left = a8;
-        a4.right = a9;
+        a5.left = a6;
+        a5.right = a7;
+        a7.left = a8;
+        a7.right = a9;
         String serTree = sd.serialize(a1);
         System.out.println(serTree);
         System.out.println(sd.deserialize(serTree));
