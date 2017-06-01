@@ -29,10 +29,15 @@ public class MinimumNumberofArrowstoBurstBalloons {
             }
         });
 
+
         int minArrows = 1;
         int arrowLimit = points[0][1];
         for(int i=1;i<points.length;i++) {
             int[] baloon = points[i];
+//            for (int j = 0; j < baloon.length; j++) {
+//                System.out.print("baloon[" + j + "]:" + baloon[j] + " ");
+//            }
+//            System.out.println();
             if(baloon[0]<=arrowLimit) {
                 arrowLimit=Math.min(arrowLimit, baloon[1]);
             } else {
