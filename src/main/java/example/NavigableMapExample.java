@@ -1,4 +1,4 @@
-package leetcode;
+package example;
 
 import java.util.NavigableMap;
 import java.util.TreeMap;
