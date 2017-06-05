@@ -17,11 +17,11 @@ public class FindRightInterval {
         intervals2[0] = new Interval(1,4);
         intervals2[1] = new Interval(2,3);
         intervals2[2] = new Interval(3,4);
-        int[] result1 = fri.findRightInterval(intervals1);
+        //int[] result1 = fri.findRightInterval(intervals1);
         int[] result2 = fri.findRightInterval(intervals2);
-        for (int i = 0; i < result1.length; i++) {
-            System.out.print("result1[" + i + "]:" + result1[i] + "  ");
-        }
+//        for (int i = 0; i < result1.length; i++) {
+//            System.out.print("result1[" + i + "]:" + result1[i] + "  ");
+//        }
         System.out.println();
         System.out.println("==================================");
         for (int i = 0; i < result2.length; i++) {
@@ -36,7 +36,7 @@ public class FindRightInterval {
         for (int i = 0; i < intervals.length; ++i) {
             intervalMap.put(intervals[i].start, i);
         }
-
+        System.out.println(intervalMap);
         for (int i = 0; i < intervals.length; ++i) {
             Map.Entry<Integer, Integer> entry = intervalMap.ceilingEntry(intervals[i].end);
             result[i] = (entry != null) ? entry.getValue() : -1;
