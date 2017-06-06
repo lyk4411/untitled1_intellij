@@ -13,7 +13,8 @@ public class MinimumTimeDifference {
         MinimumTimeDifference mtd = new MinimumTimeDifference();
         List<String> tp = new ArrayList<>();
         tp.add("23:59");
-        tp.add("00:01");
+        tp.add("10:01");
+        tp.add("16:01");
         System.out.println(mtd.findMinDifference(tp));
     }
 
