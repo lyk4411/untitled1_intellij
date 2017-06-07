@@ -19,8 +19,8 @@ public class MinimumIndexSumofTwoLists {
         list1[1]="Tapioca ";
         list1[2]="Burger King";
         list1[3]="KFC";
-        list2[0]="KFC";
-        list2[1]="Hungry ";
+        list2[0]="Grill ";
+        list2[1]="KFC ";
         list2[2]="Steakhouse";
         list2[3]="Shogun";
 
