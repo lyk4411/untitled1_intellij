@@ -11,8 +11,8 @@ import java.util.Map;
 public class SubarraySumEqualsK {
     public static void main(String[] args) {
         SubarraySumEqualsK ssek = new SubarraySumEqualsK();
-        int[] nums = new int[]{1,2,3,4};
-        System.out.println(ssek.subarraySum(nums,3));
+        int[] nums = new int[]{1,1,1};
+        System.out.println(ssek.subarraySum(nums,2));
     }
     public int subarraySum(int[] nums, int k) {
         int sum = 0, result = 0;
@@ -26,7 +26,6 @@ public class SubarraySumEqualsK {
             }
             preSum.put(sum, preSum.getOrDefault(sum, 0) + 1);
         }
-
         return result;
     }
 }
