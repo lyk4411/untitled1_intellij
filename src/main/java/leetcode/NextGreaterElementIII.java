@@ -12,6 +12,7 @@ public class NextGreaterElementIII {
         System.out.println(ngeiii.nextGreaterElement(123));
         System.out.println(ngeiii.nextGreaterElement(212));
         System.out.println(ngeiii.nextGreaterElement(21));
+        System.out.println(ngeiii.nextGreaterElement(987789));
 
     }
     public int nextGreaterElement(int n) {
