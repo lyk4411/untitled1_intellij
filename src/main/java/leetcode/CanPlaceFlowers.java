@@ -8,23 +8,25 @@ package leetcode;
 public class CanPlaceFlowers {
     public static void main(String[] args) {
         CanPlaceFlowers cpf = new CanPlaceFlowers();
-        int[] flowerber = new  int[]{1,0,0,1,0,0,0,1};
-        System.out.println(cpf.canPlaceFlowers(flowerber,2));
-        System.out.println(cpf.canPlaceFlowers(flowerber,1));
+        int[] flowerber1 = new  int[]{1,0,0,1,0,0,0,1};
+        int[] flowerber2 = new  int[]{1,0,0,1,0,0,0,1};
+        int[] flowerber3 = new  int[]{1,0,0,1,0,0,0,1};
+//        for (int i = 0; i < flowerber.length; i++) {
+//            if(flowerber[i] == 0){
+//                System.out.println("flowerber[" + i + "]: true." );
+//            }
+//        }
+        System.out.println(cpf.canPlaceFlowers(flowerber1,2));
+        System.out.println(cpf.canPlaceFlowers(flowerber2,1));
+        System.out.println(cpf.canPlaceFlowers(flowerber3,0));
     }
-    public boolean canPlaceFlowers(int[] flowerbed, int n) {
-        int count = 0;
-        for(int i = 0; i < flowerbed.length && count < n; i++) {
-            if(flowerbed[i] == 0) {
-                //get next and prev flower bed slot values. If i lies at the ends the next and prev are considered as 0.
-                int next = (i == flowerbed.length - 1) ? 0 : flowerbed[i + 1];
-                int prev = (i == 0) ? 0 : flowerbed[i - 1];
-                if(next == 0 && prev == 0) {
-                    flowerbed[i] = 1;
-                    count++;
-                }
+    public boolean canPlaceFlowers(int[] bed, int n) {
+        for (int i = 0; i < bed.length; i++) {
+            if (bed[i] == 0 && (i == 0 || bed[i - 1] == 0) && (i == bed.length - 1 || bed[i + 1] == 0)) {
+                bed[i] = 1;
+                n--;
             }
         }
-        return count == n;
+        return n <= 0;
     }
 }
