@@ -30,5 +30,18 @@ public class FractionAdditionandSubtraction {
     }
 
     // Computes gcd using Euclidean algorithm
-    public int gcd(int x, int y) { return x == 0 || y == 0 ? x + y : gcd(y, x % y); }
+    public int gcd(int x, int y) {
+        if(x == 0 || y == 0) return x + y;
+        if(x > y){
+            int temp = x;
+            x = y;
+            y = temp;
+        }
+        int t = x;
+
+        while (x%t != 0 || y%t != 0){
+            t--;
+        }
+        return t;
+    }
 }
