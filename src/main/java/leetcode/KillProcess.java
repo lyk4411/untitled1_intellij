@@ -21,6 +21,7 @@ public class KillProcess {
         ppid.add(0,0);
         ppid.add(0,3);
         System.out.println(kp.killProcess(pid,ppid,5));
+        System.out.println(kp.killProcess(pid,ppid,0));
     }
     public List<Integer> killProcess(List<Integer> pid, List<Integer> ppid, int kill) {
         if (kill == 0) return pid;
