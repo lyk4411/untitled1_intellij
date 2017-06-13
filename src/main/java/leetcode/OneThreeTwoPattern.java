@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Created by lyk on 2017/6/13.
  * Package name: leetcode
@@ -21,22 +23,51 @@ public class OneThreeTwoPattern {
     // 于下一个数字停止。最后就找第三个数字，我们验证这个数字是否在之前两个数字的
     // 中间，如果没有找到，我们就从第二个数字的后面一个位置继续开始重新找这三个
     // 数字，参见代码如下：
+//    public boolean find132pattern(int[] nums) {
+//        if(nums.length<3) return false;
+//        Integer low = null, high = null;
+//        int start = 0, end = 0;
+//        while(start<nums.length-1){
+//            while(start<nums.length-1 && nums[start]>=nums[start+1]) start++;
+//            // start is lowest now
+//            int m = start+1;
+//            while(m<nums.length-1 && nums[m]<=nums[m+1]) m++;
+//            // m is highest now
+//            int j = m+1;
+//            while(j<nums.length){
+//                if(nums[j]>nums[start] && nums[j]<nums[m]) return true;
+//                j++;
+//            }
+//            start = m+1;
+//        }
+//        return false;
+//    }
+
+
+
+    class Pair{
+        int min, max;
+        public Pair(int min, int max){
+            this.min = min;
+            this.max = max;
+        }
+    }
     public boolean find132pattern(int[] nums) {
-        if(nums.length<3) return false;
-        Integer low = null, high = null;
-        int start = 0, end = 0;
-        while(start<nums.length-1){
-            while(start<nums.length-1 && nums[start]>=nums[start+1]) start++;
-            // start is lowest now
-            int m = start+1;
-            while(m<nums.length-1 && nums[m]<=nums[m+1]) m++;
-            // m is highest now
-            int j = m+1;
-            while(j<nums.length){
-                if(nums[j]>nums[start] && nums[j]<nums[m]) return true;
-                j++;
+        Stack<Pair> stack = new Stack();
+        for(int n: nums){
+            if(stack.isEmpty() || n <stack.peek().min ) stack.push(new Pair(n,n));
+            else if(n > stack.peek().min){
+                Pair last = stack.pop();
+                if(n < last.max) return true;
+                else {
+                    last.max = n;
+                    while(!stack.isEmpty() && n >= stack.peek().max) stack.pop();
+                    // At this time, n < stack.peek().max (if stack not empty)
+                    if(!stack.isEmpty() && stack.peek().min < n) return true;
+                    stack.push(last);
+                }
+
             }
-            start = m+1;
         }
         return false;
     }
