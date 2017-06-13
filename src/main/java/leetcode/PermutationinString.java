@@ -8,7 +8,7 @@ package leetcode;
 public class PermutationinString {
     public static void main(String[] args) {
         PermutationinString ps = new PermutationinString();
-        String s1 = "ab";
+        String s1 = "abdo";
         String s2 = "ba";
         String s3 = "eidbaooo";
         System.out.println(ps.checkInclusion(s1,s3));
