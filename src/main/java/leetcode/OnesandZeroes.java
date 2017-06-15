@@ -12,7 +12,7 @@ public class OnesandZeroes {
         System.out.println(oz.findMaxForm(strs1,5,4));
         System.out.println(oz.findMaxForm(strs1,5,1));
     }
-    // 我们建立一个二位的DP数组，其中dp[i][j]表示有i个0和j个1时能组成的最
+    // 我们建立一个二维的DP数组，其中dp[i][j]表示有i个0和j个1时能组成的最
     // 多字符串的个数，而对于当前遍历到的字符串，我们统计出其中0和1的个数为
     // zeros和ones，然后dp[i - zeros][j - ones]表示当前的i和j减去zeros和ones
     // 之前能拼成字符串的个数，那么加上当前的zeros和ones就是当前dp[i][j]可以
