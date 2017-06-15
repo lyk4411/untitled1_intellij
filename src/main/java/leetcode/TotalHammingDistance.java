@@ -9,7 +9,7 @@ public class TotalHammingDistance {
     public static void main(String[] args) {
         TotalHammingDistance thd = new TotalHammingDistance();
         int[] nums1 = new int[]{4, 14, 2};
-        int[] nums2 = new int[]{1,2,3,4};
+        int[] nums2 = new int[]{1,1,1,0,2,2,2,2};
         System.out.println(thd.totalHammingDistance(nums1));
         System.out.println(thd.totalHammingDistance(nums2));
     }
