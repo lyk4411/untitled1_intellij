@@ -28,7 +28,6 @@ public class BurstBalloons {
         for (int x : iNums) if (x > 0) nums[n++] = x;
         nums[0] = nums[n++] = 1;
 
-
         int[][] dp = new int[n][n];
         for (int k = 2; k < n; ++k)
             for (int left = 0; left < n - k; ++left) {
@@ -45,6 +44,6 @@ public class BurstBalloons {
             System.out.println();
         }
 
-        return dp[0][n - 1];
+        return dp[1][n - 1];
     }
 }
