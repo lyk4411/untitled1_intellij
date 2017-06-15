@@ -38,6 +38,13 @@ public class BurstBalloons {
                             nums[left] * nums[i] * nums[right] + dp[left][i] + dp[i][right]);
             }
 
+        for (int i = 0; i < dp.length; i++) {
+            for (int j = 0; j < dp[0].length ; j++) {
+                System.out.print(dp[i][j] + " = ");
+            }
+            System.out.println();
+        }
+
         return dp[0][n - 1];
     }
 }
