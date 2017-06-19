@@ -8,10 +8,10 @@ package leetcode;
 public class BurstBalloons {
     public static void main(String[] args) {
         BurstBalloons bb = new BurstBalloons();
-        int[] nums1 = new int[]{1,3,5,8};
-        int[] nums2 = new int[]{3,1,5,8};
+        int[] nums1 = new int[]{1, 3, 5, 8};
+        int[] nums2 = new int[]{3, 1, 5, 8};
         System.out.println(bb.maxCoins(nums1));
-        System.out.println(bb.maxCoins(nums2));
+        //System.out.println(bb.maxCoins(nums2));
     }
     // 我们维护一个二维动态数组dp，其中dp[i][j]表示打爆区间[i,j]中的所有气球能得到的最多金币。
     // 题目中说明了边界情况，当气球周围没有气球的时候，旁边的数字按1算，这样我们可以在原数组
@@ -29,21 +29,24 @@ public class BurstBalloons {
         nums[0] = nums[n++] = 1;
 
         int[][] dp = new int[n][n];
-        for (int k = 2; k < n; ++k)
-            for (int left = 0; left < n - k; ++left) {
-                int right = left + k;
-                for (int i = left + 1; i < right; ++i)
+
+        for (int len = 1; len < n - 1; ++len) {
+            for (int left = 1; left < n - len ; ++left) {
+                int right = left + len - 1;
+                for (int k = left; k <= right; ++k) {
                     dp[left][right] = Math.max(dp[left][right],
-                            nums[left] * nums[i] * nums[right] + dp[left][i] + dp[i][right]);
-            }
+                            nums[left - 1] * nums[k] * nums[right + 1] + dp[left][k - 1] + dp[k + 1][right]);
+                }
 
-        for (int i = 0; i < dp.length; i++) {
-            for (int j = 0; j < dp[0].length ; j++) {
-                System.out.print(dp[i][j] + " = ");
+//                for (int i = 0; i < dp.length; i++) {
+//                    for (int j = 0; j < dp[0].length; j++) {
+//                        System.out.print(dp[i][j] + " = ");
+//                    }
+//                    System.out.println("");
+//                }
+//                System.out.println("===============================");
             }
-            System.out.println();
         }
-
-        return dp[1][n - 1];
+        return dp[1][n -2];
     }
 }
