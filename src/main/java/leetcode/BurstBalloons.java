@@ -30,10 +30,10 @@ public class BurstBalloons {
 
         int[][] dp = new int[n][n];
 
-        for (int len = 1; len < n - 1; ++len) {
-            for (int left = 1; left < n - len ; ++left) {
+        for (int len = 1; len < n - 1; len++) {
+            for (int left = 1; left < n - len ; left++) {
                 int right = left + len - 1;
-                for (int k = left; k <= right; ++k) {
+                for (int k = left; k <= right; k++) {
                     dp[left][right] = Math.max(dp[left][right],
                             nums[left - 1] * nums[k] * nums[right + 1] + dp[left][k - 1] + dp[k + 1][right]);
                 }
