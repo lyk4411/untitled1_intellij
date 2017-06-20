@@ -30,6 +30,10 @@ public class DataStreamasDisjointIntervals {
         System.out.println(dsdi.tree);
         dsdi.addNum(9);
         System.out.println(dsdi.tree);
+        dsdi.addNum(5);
+        System.out.println(dsdi.tree);
+
+        System.out.println(dsdi.getIntervals());
     }
     TreeMap<Integer, Interval> tree;
 
