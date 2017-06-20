@@ -13,12 +13,23 @@ public class DataStreamasDisjointIntervals {
     public static void main(String[] args) {
         DataStreamasDisjointIntervals dsdi = new DataStreamasDisjointIntervals();
         dsdi.addNum(1);
+        System.out.println(dsdi.tree);
         dsdi.addNum(3);
+        System.out.println(dsdi.tree);
         dsdi.addNum(7);
+        System.out.println(dsdi.tree);
         dsdi.addNum(2);
+        System.out.println(dsdi.tree);
+        dsdi.addNum(4);
+        System.out.println(dsdi.tree);
         dsdi.addNum(6);
         System.out.println(dsdi.tree);
-
+        dsdi.addNum(5);
+        System.out.println(dsdi.tree);
+        dsdi.addNum(11);
+        System.out.println(dsdi.tree);
+        dsdi.addNum(9);
+        System.out.println(dsdi.tree);
     }
     TreeMap<Integer, Interval> tree;
 
