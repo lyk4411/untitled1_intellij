@@ -27,6 +27,7 @@ public class AddOneRowtoTree {
         a7.left = a8;
         a7.right = a9;
         System.out.println(aort.addOneRow(a1,11,3));
+        System.out.println(a1);
     }
 
     public TreeNode addOneRow(TreeNode root, int v, int d) {
