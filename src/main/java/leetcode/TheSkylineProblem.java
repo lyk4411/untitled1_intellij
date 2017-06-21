@@ -33,8 +33,8 @@ public class TheSkylineProblem {
         List<int[]> result = new ArrayList<>();
         List<int[]> height = new ArrayList<>();
         for(int[] b:buildings) {
-            height.add(new int[]{b[0], -b[2]});
-            height.add(new int[]{b[1], b[2]});
+            height.add(new int[]{b[0], -b[2]});//左边界
+            height.add(new int[]{b[1], b[2]});//右边界
         }
         Collections.sort(height, (a, b) -> {
             if(a[0] != b[0])
