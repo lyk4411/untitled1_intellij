@@ -12,7 +12,7 @@ public class SlidingWindowMedian {
     public static void main(String[] args) {
         SlidingWindowMedian swm = new SlidingWindowMedian();
         int[] nums = new int[]{1,3,-1,-3,5,3,6,7};
-        double[] results= swm.medianSlidingWindow(nums,3);
+        double[] results= swm.medianSlidingWindow(nums,5);
         for (int i = 0; i < results.length; i++) {
             System.out.print("results[" + i + "]:" + results[i] + ";  ");
         }
@@ -57,6 +57,8 @@ public class SlidingWindowMedian {
         if (minHeap.size() - maxHeap.size() > 1) {
             maxHeap.add(minHeap.poll());
         }
+        //System.out.print("maxHeap:" + maxHeap + "  ");
+        //System.out.println("minHeap:" + minHeap);
     }
 
     private void remove(int num) {
