@@ -11,13 +11,13 @@ public class SmallestGoodBase {
     public static void main(String[] args) {
         SmallestGoodBase sgb = new SmallestGoodBase();
         System.out.println(sgb.smallestGoodBase("13"));
-        System.out.println(sgb.smallestGoodBase("1"));
-        System.out.println(sgb.smallestGoodBase("2"));
         System.out.println(sgb.smallestGoodBase("3"));
         System.out.println(sgb.smallestGoodBase("4"));
         System.out.println(sgb.smallestGoodBase("5"));
         System.out.println(sgb.smallestGoodBase("6"));
         System.out.println(sgb.smallestGoodBase("7"));
+        System.out.println(sgb.smallestGoodBase("8"));
+        System.out.println(sgb.smallestGoodBase("9"));
     }
     public String smallestGoodBase(String n) {
         BigInteger N = new BigInteger(n);
