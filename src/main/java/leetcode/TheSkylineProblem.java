@@ -26,7 +26,9 @@ public class TheSkylineProblem {
             System.out.println();
         }
     }
-
+    //这里为了区分左右边界，将左边界的高度存为负数，这样遇到左边界就存入堆中，
+    // 遇到右边界就删掉，然后看当前状态有无改变，改变了话就把左边界和当前的高
+    // 度存入结果中
     public List<int[]> getSkyline(int[][] buildings) {
         List<int[]> result = new ArrayList<>();
         List<int[]> height = new ArrayList<>();
