@@ -13,6 +13,12 @@ public class NumberofDigitOne {
         System.out.println(ndo.countDigitOne(130));
     }
 
+//    public int countDigitOne(int n) {
+//        int ones = 0;
+//        for (long m = 1; m <= n; m *= 10)
+//            ones += (n/m + 8) / 10 * m + (n/m % 10 == 1 ? n%m + 1 : 0);
+//        return ones;
+//    }
     public int countDigitOne(int n) {
         if (n <= 0) return 0;
         int q = n, x = 1, ans = 0;
@@ -25,6 +31,5 @@ public class NumberofDigitOne {
             x *= 10;
         } while (q > 0);
         return ans;
-
     }
 }
