@@ -10,6 +10,7 @@ public class NumberofDigitOne {
         NumberofDigitOne ndo = new NumberofDigitOne();
         System.out.println(ndo.countDigitOne(7));
         System.out.println(ndo.countDigitOne(13));
+        System.out.println(ndo.countDigitOne(56));
         System.out.println(ndo.countDigitOne(130));
     }
 
