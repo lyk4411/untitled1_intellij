@@ -116,6 +116,8 @@ public class CountofSmallerNumbersAfterSelf {
 //    }
 
 
+
+    //https://segmentfault.com/a/1190000008233819
     public List<Integer> countSmaller(int[] nums) {
         Integer[] ans = new Integer[nums.length];
         Node root = null;
