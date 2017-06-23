@@ -1,6 +1,6 @@
 package leetcode;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -56,91 +56,91 @@ public class CountofSmallerNumbersAfterSelf {
     // 是第一种效率比第二种还高一点，可能第二种的常量系数比较大吧．其实第二种还
     // 有一点可以优化，就是可以再用二分查找来找到第一个大于左边的数．但是不知道
     // 能优化多少．
-    int[] count;
-    public List<Integer> countSmaller(int[] nums) {
-        List<Integer> res = new ArrayList<Integer>();
-
-        count = new int[nums.length];
-        int[] indexes = new int[nums.length];
-        for(int i = 0; i < nums.length; i++){
-            indexes[i] = i;
-        }
-        mergesort(nums, indexes, 0, nums.length - 1);
-        for(int i = 0; i < count.length; i++){
-            res.add(count[i]);
-        }
-        return res;
-    }
-    private void mergesort(int[] nums, int[] indexes, int start, int end){
-        if(end <= start){
-            return;
-        }
-        int mid = (start + end) / 2;
-        mergesort(nums, indexes, start, mid);
-        mergesort(nums, indexes, mid + 1, end);
-
-        merge(nums, indexes, start, end);
-    }
-    private void merge(int[] nums, int[] indexes, int start, int end){
-        int mid = (start + end) / 2;
-        int left_index = start;
-        int right_index = mid+1;
-        int rightcount = 0;
-        int[] new_indexes = new int[end - start + 1];
-
-        int sort_index = 0;
-        while(left_index <= mid && right_index <= end){
-            if(nums[indexes[right_index]] < nums[indexes[left_index]]){
-                new_indexes[sort_index] = indexes[right_index];
-                rightcount++;
-                right_index++;
-            }else{
-                new_indexes[sort_index] = indexes[left_index];
-                count[indexes[left_index]] += rightcount;
-                left_index++;
-            }
-            sort_index++;
-        }
-        while(left_index <= mid){
-            new_indexes[sort_index] = indexes[left_index];
-            count[indexes[left_index]] += rightcount;
-            left_index++;
-            sort_index++;
-        }
-        while(right_index <= end){
-            new_indexes[sort_index++] = indexes[right_index++];
-        }
-        for(int i = start; i <= end; i++){
-            indexes[i] = new_indexes[i - start];
-        }
-    }
+//    int[] count;
+//    public List<Integer> countSmaller(int[] nums) {
+//        List<Integer> res = new ArrayList<Integer>();
+//
+//        count = new int[nums.length];
+//        int[] indexes = new int[nums.length];
+//        for(int i = 0; i < nums.length; i++){
+//            indexes[i] = i;
+//        }
+//        mergesort(nums, indexes, 0, nums.length - 1);
+//        for(int i = 0; i < count.length; i++){
+//            res.add(count[i]);
+//        }
+//        return res;
+//    }
+//    private void mergesort(int[] nums, int[] indexes, int start, int end){
+//        if(end <= start){
+//            return;
+//        }
+//        int mid = (start + end) / 2;
+//        mergesort(nums, indexes, start, mid);
+//        mergesort(nums, indexes, mid + 1, end);
+//
+//        merge(nums, indexes, start, end);
+//    }
+//    private void merge(int[] nums, int[] indexes, int start, int end){
+//        int mid = (start + end) / 2;
+//        int left_index = start;
+//        int right_index = mid+1;
+//        int rightcount = 0;
+//        int[] new_indexes = new int[end - start + 1];
+//
+//        int sort_index = 0;
+//        while(left_index <= mid && right_index <= end){
+//            if(nums[indexes[right_index]] < nums[indexes[left_index]]){
+//                new_indexes[sort_index] = indexes[right_index];
+//                rightcount++;
+//                right_index++;
+//            }else{
+//                new_indexes[sort_index] = indexes[left_index];
+//                count[indexes[left_index]] += rightcount;
+//                left_index++;
+//            }
+//            sort_index++;
+//        }
+//        while(left_index <= mid){
+//            new_indexes[sort_index] = indexes[left_index];
+//            count[indexes[left_index]] += rightcount;
+//            left_index++;
+//            sort_index++;
+//        }
+//        while(right_index <= end){
+//            new_indexes[sort_index++] = indexes[right_index++];
+//        }
+//        for(int i = start; i <= end; i++){
+//            indexes[i] = new_indexes[i - start];
+//        }
+//    }
 
 
 
     //https://segmentfault.com/a/1190000008233819
-//    public List<Integer> countSmaller(int[] nums) {
-//        Integer[] ans = new Integer[nums.length];
-//        Node root = null;
-//        for (int i = nums.length - 1; i >= 0; i--) {
-//            root = insert(nums[i], root, ans, i, 0);
-//        }
-//        return Arrays.asList(ans);
-//    }
-//    private Node insert(int num, Node node, Integer[] ans, int i, int preSum) {
-//        if (node == null) {
-//            node = new Node(num);
-//            ans[i] = preSum;
-//        } else if (node.val == num) {
-//            node.dup++;
-//            ans[i] = preSum + node.sum;
-//        } else if (node.val > num) {
-//            node.sum++;
-//            node.left = insert(num, node.left, ans, i, preSum);
-//        } else {
-//            node.right = insert(num, node.right, ans, i, preSum + node.dup + node.sum);
-//        }
-//        return node;
-//    }
+    public List<Integer> countSmaller(int[] nums) {
+        Integer[] ans = new Integer[nums.length];
+        Node root = null;
+        for (int i = nums.length - 1; i >= 0; i--) {
+            root = insert(nums[i], root, ans, i, 0);
+        }
+        return Arrays.asList(ans);
+    }
+    private Node insert(int num, Node node, Integer[] ans, int i, int preSum) {
+        if (node == null) {
+            node = new Node(num);
+            ans[i] = preSum;
+        } else if (node.val == num) {
+            node.dup++;
+            ans[i] = preSum + node.sum;
+        } else if (node.val > num) {
+            node.sum++;
+            node.left = insert(num, node.left, ans, i, preSum);
+        } else {
+            node.right = insert(num, node.right, ans, i, preSum + node.dup + node.sum);
+        }
+        return node;
+    }
 }
 
 class Node {
