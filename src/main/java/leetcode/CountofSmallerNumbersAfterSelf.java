@@ -141,9 +141,6 @@ public class CountofSmallerNumbersAfterSelf {
     }
 }
 
-
-
-
 class Node {
     Node left, right;
     int val, sum, dup = 1;
