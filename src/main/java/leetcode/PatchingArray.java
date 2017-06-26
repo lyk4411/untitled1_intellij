@@ -15,17 +15,17 @@ public class PatchingArray {
     }
 
     public static int minPatches(int[] nums, int n) {
-        long max = 0;
-        int cnt = 0;
-        for (int i = 0; max < n;) {
-            if (i >= nums.length || max < nums[i] - 1) {
-                max += max + 1;
-                cnt++;
+        long miss = 1;
+        int res = 0;
+        int i = 0;
+        while (miss <= n) {
+            if (i < nums.length && nums[i] <= miss) {
+                miss += nums[i++];
             } else {
-                max += nums[i];
-                i++;
+                miss += miss;
+                ++res;
             }
         }
-        return cnt;
+        return res;
     }
 }
