@@ -8,7 +8,7 @@ package leetcode;
 public class PatchingArray {
     public static void main(String[] args) {
         PatchingArray pa = new PatchingArray();
-        int[] nums1 = new int[]{5};
+        int[] nums1 = new int[]{3,5};
         int[] nums2 = new int[]{1,5,10};
         System.out.println(pa.minPatches(nums1,6));
         //System.out.println(pa.minPatches(nums2,20));
@@ -21,11 +21,12 @@ public class PatchingArray {
         while (miss <= n) {
             if (i < nums.length && nums[i] <= miss) {
                 miss += nums[i++];
+                //System.out.println("nums[i]:" + nums[i - 1]);
             } else {
                 miss += miss;
                 ++res;
-                System.out.println("miss: " + miss);
-                System.out.println("res: " + res);
+                //System.out.println("miss: " + miss);
+                //System.out.println("res: " + res);
             }
         }
         return res;
