@@ -13,6 +13,13 @@ public class CountofRangeSum {
         System.out.println(crs.countRangeSum(nums1,-2,2));
     }
 
+    //这题实际就是给定范围内的range sum，divide and conquer的方法。
+    // 一路计算prefixSum[0:i]，并把结果放进tree里面，然后计算到prefixSum[0:j+1]
+    // 的时候，找tree里面有没有满足条件的prefixSum[0:i]，这里的条件
+    // 是lower <= sum[0:j+1] - sum[0:i] <= upper，那么
+    // 可知sum[0:j+1] - upper <= sum[0:i] <= sum[0:j+1] - lower，那么
+    // 这个就一个recursion就好了。注意一开始把0加进去，考虑结果是sum[0:j]的
+    // 情况，还有要用long型，以免sum会overflow
     public int countRangeSum(int[] nums, int lower, int upper) {
         int n = nums.length;
         if(n == 0) return 0;
