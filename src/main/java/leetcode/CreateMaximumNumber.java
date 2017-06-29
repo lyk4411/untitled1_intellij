@@ -26,12 +26,14 @@ public class CreateMaximumNumber {
         int n = nums1.length;
         int m = nums2.length;
         int[] ans = new int[k];
+        //分别从nums1和nums2数组中抽取0-k个数字
         for (int i = Math.max(0, k - m); i <= k && i <= n; ++i) {
             int[] candidate = merge(maxArray(nums1, i), maxArray(nums2, k - i), k);
             if (greater(candidate, 0, ans, 0)) ans = candidate;
         }
         return ans;
     }
+    //merge两个子数组
     private int[] merge(int[] nums1, int[] nums2, int k) {
         int[] ans = new int[k];
         for (int i = 0, j = 0, r = 0; r < k; ++r)
@@ -45,6 +47,7 @@ public class CreateMaximumNumber {
         }
         return j == nums2.length || (i < nums1.length && nums1[i] > nums2[j]);
     }
+    //从数组nums中选择k个组成最大数组，选出的数字顺序不变。
     public int[] maxArray(int[] nums, int k) {
         int n = nums.length;
         int[] ans = new int[k];
