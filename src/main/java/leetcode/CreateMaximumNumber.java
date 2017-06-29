@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by lyk on 2017/6/28.
  * Package name: leetcode
@@ -10,9 +13,15 @@ public class CreateMaximumNumber {
         CreateMaximumNumber cmn = new CreateMaximumNumber();
         int[] nums1 = new int[]{3, 4, 6, 5};
         int[] nums2 = new int[]{9, 1, 2, 5, 8, 3};
-        int[] results = cmn.maxNumber(nums1,nums2,5);
-        for (int result : results) {
-            System.out.print(result + "  :  ");
+        //int[] results = cmn.maxNumber(nums1,nums2,5);
+//        for (int result : results) {
+//            System.out.print(result + "  :  ");
+//        }
+        System.out.println();
+
+        int[] temps = cmn.maxArray(nums2,4);
+        for (int temp : temps) {
+            System.out.print(temp + "  :  ");
         }
     }
 
@@ -42,10 +51,32 @@ public class CreateMaximumNumber {
     public int[] maxArray(int[] nums, int k) {
         int n = nums.length;
         int[] ans = new int[k];
-        for (int i = 0, j = 0; i < n; ++i) {
-            while (n - i + j > k && j > 0 && ans[j - 1] < nums[i]) j--;
-            if (j < k) ans[j++] = nums[i];
+        List<Integer> temp = new ArrayList<Integer>();
+        for (int i = 0; i < k && i < nums.length; i++) {
+            temp.add(nums[i]);
         }
+        //System.out.println("temp: " + temp);
+
+        if(nums.length > k) {
+            for (int i = k; i < nums.length; i++){
+                for (int j = 0; j < k; j++) {
+                    if(nums[i] > temp.get(j)){
+                        temp.remove(j);
+                        //System.out.println("temp: " + temp + "   j:" + j);
+                        temp.add(nums[i]);
+                        //System.out.println("temp: " + temp + "   num[i]:" + nums[i]);
+                        break;
+                    }
+                }
+            }
+        }
+        for(int i = 0;i<temp.size();i++){
+            ans[i] = temp.get(i);
+        }
+//        for (int i = 0, j = 0; i < n; ++i) {
+//            while (n - i + j > k && j > 0 && ans[j - 1] < nums[i]) j--;
+//            if (j < k) ans[j++] = nums[i];
+//        }
         return ans;
     }
 }
