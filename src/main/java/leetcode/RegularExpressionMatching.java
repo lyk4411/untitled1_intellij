@@ -47,6 +47,10 @@ public class RegularExpressionMatching {
 //        return dp[s.length()][p.length()];
 //    }
 
+
+
+
+    //递归解
     public boolean isMatch(String s, String p) {
         if (s == null)
             return p == null;
