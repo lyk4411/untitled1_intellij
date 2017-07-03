@@ -25,7 +25,7 @@ public class SubstringwithConcatenationofAllWords {
 
         for (int i = 0; i <= S.length() - len * L.length; i++) {
             Map<String, Integer> copy = new HashMap<String, Integer>(map);
-            for (int j = 0; j < L.length; j++) { // checkc if match
+            for (int j = 0; j < L.length; j++) { // check if match
                 String str = S.substring(i + j*len, i + j*len + len); // next word
                 if (copy.containsKey(str)) { // is in remaining words
                     int count = copy.get(str);
