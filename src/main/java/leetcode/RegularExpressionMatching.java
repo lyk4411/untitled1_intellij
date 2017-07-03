@@ -11,7 +11,7 @@ public class RegularExpressionMatching {
         System.out.println(rem.isMatch("aa","aaa"));
         System.out.println(rem.isMatch("aa","aa"));
         //System.out.println(rem.isMatch("aa","**"));
-        System.out.println(rem.isMatch("aa",".*"));
+        //System.out.println(rem.isMatch("aa","*"));
         System.out.println(rem.isMatch("aa","ca*ab"));
         System.out.println(rem.isMatch("aa","ca."));
         System.out.println(rem.isMatch("aa",".."));
@@ -21,7 +21,6 @@ public class RegularExpressionMatching {
     //动态规划解
     //
     public boolean isMatch(String s, String p) {
-
         if (s == null || p == null) {
             return false;
         }
@@ -43,15 +42,16 @@ public class RegularExpressionMatching {
                 if (p.charAt(j) == '*') {
                     if (p.charAt(j-1) != s.charAt(i) && p.charAt(j-1) != '.') {
                         dp[i+1][j+1] = dp[i+1][j-1];
-                    } else {
-                        dp[i+1][j+1] = (dp[i+1][j] || dp[i][j+1] || dp[i+1][j-1]);
+                    } else {//就算p.charAt(i-1) == s.charAt(i) 也可以：a* counts as empty
+                        dp[i+1][j+1] = (dp[i+1][j] // in this case, a* counts as single a
+                                || dp[i][j+1]      //in this case, a* counts as multiple a
+                                || dp[i+1][j-1]);  // in this case, a* counts as empty
                     }
                 }
             }
         }
         return dp[s.length()][p.length()];
     }
-
 
 
 
