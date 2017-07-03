@@ -10,7 +10,7 @@ import java.util.*;
 public class SubstringwithConcatenationofAllWords {
     public static void main(String[] args) {
         SubstringwithConcatenationofAllWords scaw = new SubstringwithConcatenationofAllWords();
-        String s1 = new String("barfoothefoobarman");
+        String s1 = new String("barfoobarthefoobarman");
         String[] words = new String[]{"foo","bar"};
         System.out.println(scaw.findSubstring(s1,words));
     }
