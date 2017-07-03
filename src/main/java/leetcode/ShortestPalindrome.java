@@ -20,6 +20,8 @@ public class ShortestPalindrome {
         return new StringBuilder(s.substring(table[table.length - 1])).reverse().toString() + s;
     }
 
+
+    //KMP table的实现
     public int[] getTable(String s){
         //get lookup table
         int[] table = new int[s.length()];
