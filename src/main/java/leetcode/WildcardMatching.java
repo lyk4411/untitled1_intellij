@@ -12,7 +12,7 @@ public class WildcardMatching {
         System.out.println(wm.isMatch("ab","??"));
         System.out.println(wm.isMatch("aaab","*?"));
         System.out.println(wm.isMatch("aaab","***?"));
-        System.out.println(wm.isMatch("aaab","**"));
+        System.out.println(wm.isMatch("abcd","**"));
         System.out.println(wm.isMatch("aabc","**"));
     }
 
