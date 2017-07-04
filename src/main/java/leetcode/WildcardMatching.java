@@ -65,7 +65,7 @@ public class WildcardMatching {
                 if(s.charAt(i)==p.charAt(j)||p.charAt(j)=='?')
                     match[i][j]=match[i+1][j+1];
                 else if(p.charAt(j)=='*')
-                    match[i][j]=match[i+1][j]||match[i][j+1];
+                    match[i][j]=match[i+1][j]||match[i][j+1]/*||match[i+1][j+1] 加上也可以*/;
                 else
                     match[i][j]=false;
             }
