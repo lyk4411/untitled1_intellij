@@ -14,6 +14,7 @@ public class WildcardMatching {
         System.out.println(wm.isMatch("aaab","***?"));
         System.out.println(wm.isMatch("abcd","**"));
         System.out.println(wm.isMatch("aabc","**"));
+        System.out.println(wm.isMatch("aabc","c**"));
     }
 
     public boolean isMatch(String s, String p) {
