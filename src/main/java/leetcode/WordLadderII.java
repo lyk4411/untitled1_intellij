@@ -12,7 +12,7 @@ public class WordLadderII {
         WordLadderII wlii = new WordLadderII();
         String start = new String("hit");
         String end = new String("cog");
-        Set<String> dict = new TreeSet<>();
+        List<String> dict = new ArrayList<>();
         dict.add("hot");
         dict.add("dot");
         dict.add("dog");
@@ -21,7 +21,7 @@ public class WordLadderII {
         dict.add("cog");
         System.out.println(wlii.findLadders(start,end,dict));
     }
-    public List<List<String>> findLadders(String start, String end, Set<String> dict) {
+    public List<List<String>> findLadders(String start, String end, List<String> dict) {
         List<List<String>> result = new ArrayList<List<String>>();
 
         LinkedList<WordNode> queue = new LinkedList<WordNode>();
