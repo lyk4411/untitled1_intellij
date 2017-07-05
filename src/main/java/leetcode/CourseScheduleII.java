@@ -1,8 +1,8 @@
 package leetcode;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * Created by lyk on 2017/7/4.
@@ -18,40 +18,72 @@ public class CourseScheduleII {
                 {3,1},
                 {3,2}
         };
-        int[] result1 = csii.findOrder(4,pre);
-        //int[] result2 = csii.findOrder(3,pre);
-        for (int i = 0; i < result1.length; i++) {
-            System.out.print(result1[i] + " > ");
-        }
+        //int[] result1 = csii.findOrder(4,pre);
+        int[] result2 = csii.findOrder(1,new int[][]{});
+//        for (int i = 0; i < result1.length; i++) {
+//            System.out.print(result1[i] + " > ");
+//        }
         System.out.println();
+        for (int i = 0; i < result2.length; i++) {
+            System.out.print(result2[i] + " > ");
+        }
     }
 
     public int[] findOrder(int numCourses, int[][] prerequisites) {
-        List<List<Integer>> adj = new ArrayList<>(numCourses);
-        for (int i = 0; i < numCourses; i++) adj.add(i, new ArrayList<>());
-        for (int i = 0; i < prerequisites.length; i++) adj.get(prerequisites[i][1]).add(prerequisites[i][0]);
-        boolean[] visited = new boolean[numCourses];
-        Stack<Integer> stack = new Stack<>();
-        for (int i = 0; i < numCourses; i++) {
-            if (!topologicalSort(adj, i, stack, visited, new boolean[numCourses])) return new int[0];
+        if(prerequisites == null){
+            throw new IllegalArgumentException("illegal prerequisites array");
         }
-        int i = 0;
-        int[] result = new int[numCourses];
-        while (!stack.isEmpty()) {
-            result[i++] = stack.pop();
+
+        int len = prerequisites.length;
+
+        if(numCourses == 0 && len == 0){
+            return new int[0];
         }
-        return result;
+        if(numCourses == 1 && len == 0  ){
+            return new int[]{0};
+        }
+
+
+        // counter for number of prerequisites
+        int[] pCounter = new int[numCourses];
+        for(int i=0; i<len; i++){
+            pCounter[prerequisites[i][0]]++;
+        }
+//        for (int i = 0; i < pCounter.length; i++) {
+//            System.out.println(pCounter[i]);
+//        }
+
+        //store courses that have no prerequisites
+        LinkedList<Integer> queue = new LinkedList<Integer>();
+        for(int i=0; i<numCourses; i++){
+            if(pCounter[i]==0){
+                queue.add(i);
+            }
+        }
+
+        // number of courses that have no prerequisites
+        int numNoPre = queue.size();
+        int[] results = new int[numCourses];
+        List<Integer> temp = new ArrayList<>();
+        while(!queue.isEmpty()){
+            int top = queue.remove();
+            temp.add(top);
+            for(int i=0; i<len; i++){
+                // if a course's prerequisite can be satisfied by a course in queue
+                if(prerequisites[i][1]==top){
+                    pCounter[prerequisites[i][0]]--;
+                    if(pCounter[prerequisites[i][0]]==0){
+                        numNoPre++;
+                        queue.add(prerequisites[i][0]);
+                    }
+                }
+            }
+        }
+        if(temp.size() == numCourses) {
+            return temp.stream().mapToInt(i -> i).toArray();
+        }
+        return new int[0];
     }
 
-    private boolean topologicalSort(List<List<Integer>> adj, int v, Stack<Integer> stack, boolean[] visited, boolean[] isLoop) {
-        if (visited[v]) return true;
-        if (isLoop[v]) return false;
-        isLoop[v] = true;
-        for (Integer u : adj.get(v)) {
-            if (!topologicalSort(adj, u, stack, visited, isLoop)) return false;
-        }
-        visited[v] = true;
-        stack.push(v);
-        return true;
-    }
+
 }
