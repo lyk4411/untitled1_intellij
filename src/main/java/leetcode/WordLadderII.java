@@ -27,7 +27,6 @@ public class WordLadderII {
         LinkedList<WordNode> queue = new LinkedList<WordNode>();
         queue.add(new WordNode(start, 1, null));
 
-        dict.add(end);
 
         int minStep = 0;
 
