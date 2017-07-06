@@ -12,7 +12,7 @@ public class ArithmeticSlicesIISubsequence {
     public static void main(String[] args) {
         ArithmeticSlicesIISubsequence ass = new ArithmeticSlicesIISubsequence();
         int[] A = new int[]{2, 4, 6, 8, 10};
-        int[] B = new int[]{1, 3, 4, 6, 7, 8, 10};
+        int[] B = new int[]{1, 2, 3, 4, 6, 7, 8, 10};
         System.out.println(ass.numberOfArithmeticSlices(A));
         System.out.println(ass.numberOfArithmeticSlices(B));
     }
