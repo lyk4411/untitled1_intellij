@@ -1,7 +1,6 @@
 package leetcode;
 
 import java.util.HashMap;
-import java.util.Map;
 
 /**
  * Created by lyk on 2017/7/6.
@@ -18,24 +17,20 @@ public class ArithmeticSlicesIISubsequence {
     }
 
     public int numberOfArithmeticSlices(int[] A) {
-        int res = 0;
-        Map<Integer, Integer>[] map = new Map[A.length];
-
-        for (int i = 0; i < A.length; i++) {
-            map[i] = new HashMap<>(i);
-
-            for (int j = 0; j < i; j++) {
-                long diff = (long)A[i] - A[j];
-                if (diff <= Integer.MIN_VALUE || diff > Integer.MAX_VALUE) continue;
-
-                int d = (int)diff;
-                int c1 = map[i].getOrDefault(d, 0);
-                int c2 = map[j].getOrDefault(d, 0);
-                res += c2;
-                map[i].put(d, c1 + c2 + 1);
+        int re = 0;
+        HashMap<Integer, Integer>[] maps = new HashMap[A.length];
+        for(int i=0; i<A.length; i++) {
+            maps[i] = new HashMap<>();
+            int num = A[i];
+            for(int j=0; j<i; j++) {
+                if((long)num-A[j]>Integer.MAX_VALUE) continue;
+                if((long)num-A[j]<Integer.MIN_VALUE) continue;
+                int diff = num - A[j];
+                int count = maps[j].getOrDefault(diff, 0);
+                maps[i].put(diff, maps[i].getOrDefault(diff,0)+count+1);
+                re += count;
             }
         }
-
-        return res;
+        return re;
     }
 }
