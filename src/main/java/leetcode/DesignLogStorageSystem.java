@@ -31,7 +31,8 @@ public class DesignLogStorageSystem {
         int idx = indices[units.indexOf(gra)];
         for (String[] timestamp : timestamps) {
             if (timestamp[1].substring(0, idx).compareTo(s.substring(0, idx)) >= 0 &&
-                    timestamp[1].substring(0, idx).compareTo(e.substring(0, idx)) <= 0) res.add(Integer.parseInt(timestamp[0]));
+                    timestamp[1].substring(0, idx).compareTo(e.substring(0, idx)) <= 0)
+                res.add(Integer.parseInt(timestamp[0]));
         }
         return res;
     }
