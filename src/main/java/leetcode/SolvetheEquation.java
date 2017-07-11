@@ -30,11 +30,19 @@ public class SolvetheEquation {
 
     public int[] evaluateExpression(String exp) {
         String[] tokens = exp.split("(?=[-+])");
+//        for (int i = 0; i < tokens.length; i++) {
+//            System.out.print("token[" + i + "]:" + tokens[i] + " ");
+//        }
+//        System.out.println();
         int[] res =  new int[2];
         for (String token : tokens) {
+            // 1个x的情况
             if (token.equals("+x") || token.equals("x")) res[0] += 1;
+            //-1个x的情况
             else if (token.equals("-x")) res[0] -= 1;
+            // 多个x的情况
             else if (token.contains("x")) res[0] += Integer.parseInt(token.substring(0, token.indexOf("x")));
+            //数字，和x无关
             else res[1] += Integer.parseInt(token);
         }
         return res;
