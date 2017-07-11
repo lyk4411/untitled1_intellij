@@ -17,7 +17,7 @@ public class FreedomTrail {
         int n = ring.length();
         int m = key.length();
         int[][] dp = new int[m + 1][n];
-        //dp[i][j] 表示key中第i个字条，ring中第j个字符时，所需的最小步数。
+        //dp[i][j] 表示key中第i个字条，ring中第j个字符在12点时，所需的最小步数。
         for (int i = m - 1; i >= 0; i--) {
             for (int j = 0; j < n; j++) {
                 dp[i][j] = Integer.MAX_VALUE;
