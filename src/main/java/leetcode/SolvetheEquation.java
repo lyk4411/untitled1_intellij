@@ -12,10 +12,10 @@ public class SolvetheEquation {
         String eq2 = "x=x";
         String eq3 = "2x+3x-6x=x+2";
         String eq4 = "x=x+2";
-        System.out.println(se.evaluateExpression(eq1));
-        System.out.println(se.evaluateExpression(eq2));
-        System.out.println(se.evaluateExpression(eq3));
-        System.out.println(se.evaluateExpression(eq4));
+        System.out.println(se.solveEquation(eq1));
+        System.out.println(se.solveEquation(eq2));
+        System.out.println(se.solveEquation(eq3));
+        System.out.println(se.solveEquation(eq4));
     }
 
     public String solveEquation(String equation) {
