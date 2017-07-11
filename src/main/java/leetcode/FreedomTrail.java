@@ -30,7 +30,7 @@ public class FreedomTrail {
                 }
             }
         }
-
+        //倒序，所以是dp[0][0]
         return dp[0][0] + m;
     }
 }
