@@ -13,17 +13,7 @@ import static java.util.stream.Collectors.toList;
  * Porject name: untitled1
  */
 public class SmallestRange {
-    class Element {
-        int val;
-        int idx;
-        int row;
 
-        public Element(int r, int i, int v) {
-            row = r;
-            idx = i;
-            val = v;
-        }
-    }
 
     public static void main(String[] args) {
         SmallestRange sr = new SmallestRange();
