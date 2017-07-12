@@ -1,11 +1,9 @@
 package leetcode;
 
 import java.util.ArrayList;
-import java.util.BitSet;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.IntStream;
-import static java.util.stream.Collectors.toList;
+import java.util.PriorityQueue;
 
 /**
  * Created by lyk on 2017/7/12.
@@ -42,40 +40,50 @@ public class SmallestRange {
         }
         System.out.println();
     }
-    public static int[] smallestRange(List<List<Integer>> nums) {
-        List<int[]> list = IntStream.range(0, nums.size())
-                .mapToObj( i -> nums.get(i).stream().map(x -> new int[]{x, i}))
-                .flatMap(y -> y)
-                .sorted(Comparator.comparingInt(p -> p[0])).collect(toList());
-//        for (int[] temp:list) {
-//            for (int i = 0; i < temp.length; i++) {
-//                System.out.print(temp[i] + " : ");
-//            }
-//            System.out.println();
-//        }
-//        IntStream.range(0, nums.size())
-//                .mapToObj( i -> nums.get(i).stream().map(x -> new int[]{x, i})).collect(toList()).forEach(System.out::println);
-
-        int[] counts = new int[nums.size()];
-        BitSet set = new BitSet(nums.size());
-        int start = -1;
-        int[] res = new int[2];
-        for(int i = 0; i < list.size(); i++) {
-            int[] p = list.get(i);
-            set.set(p[1]);
-            counts[p[1]] += 1;
-            if(start == -1) { start = 0; }
-            while(start < i && counts[list.get(start)[1]] > 1) {
-                counts[list.get(start)[1]]--;
-                start++;
+    public int[] smallestRange(List<List<Integer>>  nums) {
+        PriorityQueue<Element> pq = new PriorityQueue<Element>(new Comparator<Element>() {
+            public int compare(Element a, Element b) {
+                return a.val - b.val;
             }
-            if(set.cardinality() == nums.size()) {
-                if( (res[0] == 0 && res[1] == 0) || (list.get(i)[0] - list.get(start)[0]) < res[1] - res[0]) {
-                    res[0] = list.get(start)[0];
-                    res[1] = list.get(i)[0];
+        });
+        int min = Integer.MAX_VALUE, max = Integer.MIN_VALUE;
+        for (int i = 0; i < nums.size(); i++) {
+            Element e = new Element(i, 0, nums.get(i).get(0));
+            pq.offer(e);
+            max = Math.max(max, nums.get(i).get(0));
+        }
+        int range = Integer.MAX_VALUE;
+        int start = -1, end = -1;
+        while (pq.size() == nums.size()) {
+
+            Element curr = pq.poll();
+            if (max - curr.val < range) {
+                range = max - curr.val;
+                start = curr.val;
+                end = max;
+            }
+            if (curr.idx + 1 < nums.get(curr.row).size()) {
+                curr.idx = curr.idx + 1;
+                curr.val = nums.get(curr.row).get(curr.idx);
+                pq.offer(curr);
+                if (curr.val > max) {
+                    max = curr.val;
                 }
             }
         }
-        return res;
+
+        return new int[] { start, end };
+    }
+
+    class Element {
+        int val;
+        int idx;
+        int row;
+
+        public Element(int r, int i, int v) {
+            val = v;
+            idx = i;
+            row = r;
+        }
     }
 }
