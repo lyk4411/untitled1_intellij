@@ -47,6 +47,15 @@ public class SmallestRange {
                 .mapToObj( i -> nums.get(i).stream().map(x -> new int[]{x, i}))
                 .flatMap(y -> y)
                 .sorted(Comparator.comparingInt(p -> p[0])).collect(toList());
+//        for (int[] temp:list) {
+//            for (int i = 0; i < temp.length; i++) {
+//                System.out.print(temp[i] + " : ");
+//            }
+//            System.out.println();
+//        }
+//        IntStream.range(0, nums.size())
+//                .mapToObj( i -> nums.get(i).stream().map(x -> new int[]{x, i})).collect(toList()).forEach(System.out::println);
+
         int[] counts = new int[nums.size()];
         BitSet set = new BitSet(nums.size());
         int start = -1;
