@@ -21,15 +21,42 @@ public class SuperWashingMachines {
     // 衣机处获得，那么差值数组变为[0, 0, -1, 1]，此时三号洗衣机还缺1件，就从
     // 四号洗衣机处获得，此时差值数组成功变为了[0, 0, 0, 0]，成功。那么移动的
     // 最大次数就是差值数组中出现的绝对值最大的数字，8次，参见代码如下：
+//    public int findMinMoves(int[] machines) {
+//        int total = 0;
+//        for(int i: machines) total+=i;
+//        if(total%machines.length!=0) return -1;
+//        int avg = total/machines.length, cnt = 0, max = 0;
+//        for(int load: machines){
+//            cnt += load-avg; //load-avg is "gain/lose"
+//            max = Math.max(Math.max(max, Math.abs(cnt)), load-avg);
+//        }
+//        return max;
+//    }
+
+
     public int findMinMoves(int[] machines) {
-        int total = 0;
-        for(int i: machines) total+=i;
-        if(total%machines.length!=0) return -1;
-        int avg = total/machines.length, cnt = 0, max = 0;
-        for(int load: machines){
-            cnt += load-avg; //load-avg is "gain/lose"
-            max = Math.max(Math.max(max, Math.abs(cnt)), load-avg);
+        int total = 0, target = 0, result = 0, n = machines.length;
+        for (int d : machines) total += d;
+        if (total == 0) return 0;
+        if (total % n != 0) return -1;
+        target = total / n;
+
+        int[] move = new int[n];
+        for (int i = 0; i < n - 1; i++) {
+            if (machines[i] > target) {
+                move[i] += machines[i] - target;
+                machines[i + 1] += machines[i] - target;
+                machines[i] = target;
+                result = Math.max(result, move[i]);
+            }
+            else {
+                move[i + 1] = target - machines[i];
+                machines[i + 1] -= target - machines[i];
+                machines[i] = target;
+                result = Math.max(result, move[i + 1]);
+            }
         }
-        return max;
+
+        return result;
     }
 }
