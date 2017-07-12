@@ -14,7 +14,6 @@ import static java.util.stream.Collectors.toList;
  */
 public class SmallestRange {
 
-
     public static void main(String[] args) {
         SmallestRange sr = new SmallestRange();
         List<List<Integer>> nums = new ArrayList<>();
