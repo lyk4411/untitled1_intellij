@@ -29,6 +29,10 @@ public class SmallestRange {
                 {5,18,22,30}
         };
         int[] results = sr.smallestRange(nums);
+        for (int i = 0; i < results.length; i++) {
+            System.out.print(results[i] + " : ");
+        }
+        System.out.println();
     }
     public int[] smallestRange(int[][] nums) {
         PriorityQueue<Element> pq = new PriorityQueue<Element>(new Comparator<Element>() {
