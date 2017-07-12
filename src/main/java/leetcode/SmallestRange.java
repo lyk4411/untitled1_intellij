@@ -15,9 +15,9 @@ public class SmallestRange {
         int row;
 
         public Element(int r, int i, int v) {
-            val = v;
-            idx = i;
             row = r;
+            idx = i;
+            val = v;
         }
     }
 
