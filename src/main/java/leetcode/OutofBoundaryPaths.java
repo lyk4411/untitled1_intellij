@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.Arrays;
+
 /**
  * Created by lyk on 2017/7/14.
  * Package name: leetcode
