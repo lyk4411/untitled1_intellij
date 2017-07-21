@@ -15,6 +15,7 @@ public class MagicalString {
         System.out.println(ms.magicalString(100));
     }
     public int magicalString(int n) {
+        //此题木有兴趣。
         if (n <= 0) return 0;
         if (n <= 3) return 1;
         int res = 1, head = 2, tail = 3, num = 1;
