@@ -13,6 +13,11 @@ public class KrusKal {
      *
      * @author Administrator
      */
+    /**
+     * 构造最小生成树（Kruskal算法）--贪心算法
+     * @author Lican
+     *
+     */
     public static class FastUnionFind {
         public int[] u;//数组用来保存顶点所属的集合，用数字表示
 
