@@ -1,4 +1,4 @@
-package headfirst.simpleremote;
+package headfirst.command.simpleremote.remote;
 
 public class LightOffCommand implements Command {
 	Light light;
