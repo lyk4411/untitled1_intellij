@@ -12,10 +12,10 @@ public class DeleteCommand extends Command{
 
     public void execute(String args) {
         this.args = args;
-        configOperator.insert(args);
+        configOperator.delete(args);
     }
 
     public void execute() {
-        configOperator.insert(this.args);
+        configOperator.delete(this.args);
     }
 }
