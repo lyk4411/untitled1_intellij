@@ -12,7 +12,7 @@ public class FileUtil {
     //将命令集合写入日志文件
     public static void writeCommands(ArrayList commands) {
         try {
-            FileOutputStream file = new FileOutputStream("config.log");
+            FileOutputStream file = new FileOutputStream("testconfig.log");
             //创建对象输出流用于将对象写入到文件中
             ObjectOutputStream objout = new ObjectOutputStream(new BufferedOutputStream(file));
             //将对象写入文件
@@ -26,7 +26,7 @@ public class FileUtil {
     //从日志文件中提取命令集合
     public static ArrayList readCommands() {
         try {
-            FileInputStream file = new FileInputStream("config.log");
+            FileInputStream file = new FileInputStream("testconfig.log");
             //创建对象输入流用于从文件中读取对象
             ObjectInputStream objin = new ObjectInputStream(new BufferedInputStream(file));
 
