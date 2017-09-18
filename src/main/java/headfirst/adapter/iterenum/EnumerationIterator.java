@@ -1,4 +1,4 @@
-package headfirst.adapter.duck.iterenum;
+package headfirst.adapter.iterenum;
 
 import java.util.Enumeration;
 import java.util.Iterator;

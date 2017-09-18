@@ -1,4 +1,4 @@
-package headfirst.adapter.duck;
+package headfirst.adapter.ducks;
 
 public interface Turkey {
 	public void gobble();
