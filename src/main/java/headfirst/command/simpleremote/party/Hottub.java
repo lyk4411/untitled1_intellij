@@ -9,10 +9,12 @@ public class Hottub {
 
 	public void on() {
 		on = true;
+		System.out.println("Hottub is on!");
 	}
 
 	public void off() {
 		on = false;
+		System.out.println("Hottub is off!");
 	}
 
 	public void circulate() {
