@@ -22,6 +22,7 @@ public class GumballMachineTestDrive {
 
  
 		System.out.println(gumballMachine);
+		System.out.println("1111111111111111111111111111111111111111");
 
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -29,6 +30,7 @@ public class GumballMachineTestDrive {
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
+		System.out.println("2222222222222222222222222222222222222222");
 
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -36,6 +38,7 @@ public class GumballMachineTestDrive {
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
+		System.out.println("33333333333333333333333333333333333333333");
 
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -43,6 +46,7 @@ public class GumballMachineTestDrive {
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
+		System.out.println("44444444444444444444444444444444444444444");
 
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -50,6 +54,7 @@ public class GumballMachineTestDrive {
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
+		System.out.println("5555555555555555555555555555555555555555");
 
 		gumballMachine.insertQuarter();
 		gumballMachine.turnCrank();
@@ -57,6 +62,7 @@ public class GumballMachineTestDrive {
 		gumballMachine.turnCrank();
 
 		System.out.println(gumballMachine);
+		System.out.println("66666666666666666666666666666666666666666");
 
 		monitor.report();
 	}
