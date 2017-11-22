@@ -5,9 +5,10 @@ import java.rmi.Naming;
 public class GumballMonitorTestDrive {
 
 	public static void main(String[] args) {
-		String[] location = { "rmi://santafe.mightygumball.com/gumballmachine",
-				"rmi://boulder.mightygumball.com/gumballmachine",
-				"rmi://seattle.mightygumball.com/gumballmachine" };
+		String[] location = { "rmi://santafe.mightygumball.com/gumballmachine"
+//				"rmi://boulder.mightygumball.com/gumballmachine",
+//				"rmi://seattle.mightygumball.com/gumballmachine"
+							 };
 
 		GumballMonitor[] monitor = new GumballMonitor[location.length];
 
