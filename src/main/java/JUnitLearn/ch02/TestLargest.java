@@ -37,4 +37,12 @@ public class TestLargest extends TestCase {
         arr[2]=9;
         assertEquals(9,Largest.largest(arr));
     }
+    public void testEmpty(){
+        try {
+            Largest.largest(new int[]{});
+            fail("Should have thrown an exception.");
+        } catch (RuntimeException e){
+            assertTrue(true);
+        }
+    }
 }
