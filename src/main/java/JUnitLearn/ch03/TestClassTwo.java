@@ -12,6 +12,7 @@ import junit.framework.TestSuite;
 public class TestClassTwo  extends TestCase{
     public TestClassTwo(String method){
         super(method);
+        System.out.println("method:  " + method);
     }
     public void testLongRunner(){
         assertEquals(10,2);
