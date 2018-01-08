@@ -12,7 +12,6 @@ import junit.framework.TestSuite;
 public class TestClassComposite extends TestCase {
     public TestClassComposite(String method){
         super(method);
-        System.out.println("method:  " + method);
     }
     static public Test suite(){
         TestSuite suite = new TestSuite();
