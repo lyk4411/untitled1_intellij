@@ -10,6 +10,8 @@ import junit.framework.TestCase;
 public class TestClassOne extends TestCase {
     public TestClassOne(String method){
         super(method);
+        System.out.println("method:  " + method);
+
     }
     public void testAddition(){
         assertEquals(4,2 + 2);
