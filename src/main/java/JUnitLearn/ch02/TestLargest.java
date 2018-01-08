@@ -13,6 +13,8 @@ public class TestLargest extends TestCase {
     }
     public void testSimple(){
         assertEquals(9,Largest.largest(new int[]{7,8,9}));
+    }
+    public void testNegative(){
         assertEquals(-7,Largest.largest(new int[]{-7,-8,-9}));
         assertEquals(-7,Largest.largest(new int[]{-7,-99,-9}));
     }
@@ -21,6 +23,12 @@ public class TestLargest extends TestCase {
         assertEquals(9,Largest.largest(new int[]{7,9,8}));
         assertEquals(9,Largest.largest(new int[]{7,8,9}));
 
+    }
+    public void testDups(){
+        assertEquals(9,Largest.largest(new int[]{9,8,7,9,8,7}));
+    }
+    public void testOne(){
+        assertEquals(1,Largest.largest(new int[]{1}));
     }
     public void testSimple2(){
         int[] arr = new int[3];
