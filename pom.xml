@@ -233,12 +233,12 @@
             <!--<scope>test</scope>-->
         <!--</dependency>-->
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-core &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-core</artifactId>-->
-            <!--<version>0.09</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <dependency>
+            <groupId>mockobjects</groupId>
+            <artifactId>mockobjects-core</artifactId>
+            <version>0.09</version>
+            <scope>test</scope>
+        </dependency>
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.4-j2ee1.3 &ndash;&gt;-->
         <!--=========================================================================-->
         <dependency>
@@ -252,6 +252,48 @@
             <artifactId>mockobjects-j1.4-j2ee1.3</artifactId>
             <version>0.07</version>
         </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.easymock</groupId>-->
+            <!--<artifactId>easymock</artifactId>-->
+            <!--<version>3.5.1</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.easymock/easymockclassextension &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.easymock</groupId>-->
+            <!--<artifactId>easymockclassextension</artifactId>-->
+            <!--<version>3.2</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner-no-jcl &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.ops4j.pax.runner</groupId>-->
+            <!--<artifactId>pax-runner-no-jcl</artifactId>-->
+            <!--<version>1.9.0</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner-commons &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.ops4j.pax.runner</groupId>-->
+            <!--<artifactId>pax-runner-commons</artifactId>-->
+            <!--<version>1.9.0</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.ops4j.pax.runner</groupId>-->
+            <!--<artifactId>pax-runner</artifactId>-->
+            <!--<version>1.9.0</version>-->
+        <!--</dependency>-->
+        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.easymock/easymockclassextension &ndash;&gt;-->
+        <!--<dependency>-->
+            <!--<groupId>org.easymock</groupId>-->
+            <!--<artifactId>easymockclassextension</artifactId>-->
+            <!--<version>3.2</version>-->
+            <!--<scope>test</scope>-->
+        <!--</dependency>-->
+
+
+
         <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.3-j2ee1.3 &ndash;&gt;-->
         <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
             <!--&lt;!&ndash;<groupId>mockobjects</groupId>&ndash;&gt;-->
