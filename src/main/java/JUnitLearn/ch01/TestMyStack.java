@@ -19,9 +19,11 @@ public class TestMyStack extends TestCase {
     // Popping last element ok
     assertEquals("sample", stack.pop()); 
     stack.checkInvariant();
+    stack.push("sample");
+    stack.push("sample");
 
     // Delete from empty stack
-    stack.delete(1); 
+    stack.delete(10);
     stack.checkInvariant();
   }
 
