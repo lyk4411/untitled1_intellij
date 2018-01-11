@@ -92,124 +92,7 @@
             <artifactId>spring-context</artifactId>
             <version>4.2.5.RELEASE</version>
         </dependency>
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-core</artifactId>-->
-            <!--<version>0.09</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects</artifactId>-->
-            <!--<version>0.1</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.4</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.easymock/easymockclassextension &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymockclassextension</artifactId>-->
-            <!--<version>3.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.unitils</groupId>-->
-            <!--<artifactId>unitils-easymock</artifactId>-->
-            <!--<version>3.3</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymockclassextension</artifactId>-->
-            <!--<version>3.2</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.2</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.5.1</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.5.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.droidparts.dexmaker</groupId>-->
-            <!--<artifactId>dexmaker</artifactId>-->
-            <!--<version>1.5</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.1</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.4</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.jmock</groupId>-->
-            <!--<artifactId>jmock</artifactId>-->
-            <!--<version>2.6.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>jmock</groupId>-->
-            <!--<artifactId>jmock</artifactId>-->
-            <!--<version>1.2.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>cglib</groupId>-->
-            <!--<artifactId>cglib</artifactId>-->
-            <!--<version>3.1</version>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>jmock</groupId>-->
-            <!--<artifactId>jmock-cglib</artifactId>-->
-            <!--<version>1.2.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.5.1</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-core</artifactId>-->
-            <!--<version>0.09</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-jdk1.3</artifactId>-->
-            <!--<version>0.09</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+
         <!--=========================================================================-->
         <dependency>
             <groupId>mockobjects</groupId>
@@ -217,29 +100,13 @@
             <version>0.09</version>
             <scope>test</scope>
         </dependency>
-        <!--=========================================================================-->
 
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.4-j2ee1.3 &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-j1.4-j2ee1.3</artifactId>-->
-            <!--<version>0.07</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-jdk1.4-j2ee1.3 &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-jdk1.4-j2ee1.3</artifactId>-->
-            <!--<version>0.09</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-core &ndash;&gt;-->
         <dependency>
             <groupId>mockobjects</groupId>
             <artifactId>mockobjects-core</artifactId>
             <version>0.09</version>
             <scope>test</scope>
         </dependency>
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.4-j2ee1.3 &ndash;&gt;-->
         <!--=========================================================================-->
         <dependency>
             <groupId>mockobjects</groupId>
@@ -254,6 +121,7 @@
         </dependency>
 
 
+
         <!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
         <dependency>
             <groupId>org.easymock</groupId>
@@ -261,103 +129,72 @@
             <version>3.5.1</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/easymock/easymock -->
+
+        <!-- https://mvnrepository.com/artifact/junit/junit-dep -->
         <dependency>
-            <groupId>easymock</groupId>
-            <artifactId>easymock</artifactId>
-            <version>2.0</version>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+         <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.7-groovy-2.0</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>1.2.1</version>
             <scope>test</scope>
         </dependency>
 
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>3.5.1</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.easymock/easymockclassextension &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymockclassextension</artifactId>-->
-            <!--<version>3.2</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner-no-jcl &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.ops4j.pax.runner</groupId>-->
-            <!--<artifactId>pax-runner-no-jcl</artifactId>-->
-            <!--<version>1.9.0</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner-commons &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.ops4j.pax.runner</groupId>-->
-            <!--<artifactId>pax-runner-commons</artifactId>-->
-            <!--<version>1.9.0</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.ops4j.pax.runner</groupId>-->
-            <!--<artifactId>pax-runner</artifactId>-->
-            <!--<version>1.9.0</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.easymock/easymockclassextension &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.easymock</groupId>-->
-            <!--<artifactId>easymockclassextension</artifactId>-->
-            <!--<version>3.2</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
+        <!-- https://mvnrepository.com/artifact/cglib/cglib-nodep -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib-nodep</artifactId>
+            <version>3.1</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/org.spockframework/spock-unitils -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-unitils</artifactId>
+            <version>0.7-groovy-2.0</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.spockframework/spock-maven -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-maven</artifactId>
+            <version>0.7-groovy-2.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.spockframework/spock-spring -->
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-spring</artifactId>
+            <version>1.0-groovy-2.4</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.objenesis/objenesis -->
+        <dependency>
+            <groupId>org.objenesis</groupId>
+            <artifactId>objenesis</artifactId>
+            <version>2.1</version>
+            <scope>test</scope>
+        </dependency>
 
 
 
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.3-j2ee1.3 &ndash;&gt;-->
-        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-            <!--&lt;!&ndash;<groupId>mockobjects</groupId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<artifactId>mockobjects-j1.3-j2ee1.3</artifactId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<version>0.07</version>&ndash;&gt;-->
-            <!--&lt;!&ndash;<scope>test</scope>&ndash;&gt;-->
-        <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-j1.3-j2ee1.3 &ndash;&gt;-->
-        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-            <!--&lt;!&ndash;<groupId>mockobjects</groupId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<artifactId>mockobjects-j1.3-j2ee1.3</artifactId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<version>0.08dev-20030318</version>&ndash;&gt;-->
-            <!--&lt;!&ndash;<scope>test</scope>&ndash;&gt;-->
-        <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-core &ndash;&gt;-->
-        <!--&lt;!&ndash;<dependency>&ndash;&gt;-->
-            <!--&lt;!&ndash;<groupId>mockobjects</groupId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<artifactId>mockobjects-core</artifactId>&ndash;&gt;-->
-            <!--&lt;!&ndash;<version>0.08dev-20030318</version>&ndash;&gt;-->
-            <!--&lt;!&ndash;<scope>test</scope>&ndash;&gt;-->
-        <!--&lt;!&ndash;</dependency>&ndash;&gt;-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/mockobjects/mockobjects-core &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>mockobjects</groupId>-->
-            <!--<artifactId>mockobjects-core</artifactId>-->
-            <!--<version>0.07</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/org.ops4j.pax.runner/pax-runner-commons &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>org.ops4j.pax.runner</groupId>-->
-            <!--<artifactId>pax-runner-commons</artifactId>-->
-            <!--<version>1.9.0</version>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/easymock/easymock &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>1.2_Java1.3</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
-        <!--&lt;!&ndash; https://mvnrepository.com/artifact/easymock/easymock &ndash;&gt;-->
-        <!--<dependency>-->
-            <!--<groupId>easymock</groupId>-->
-            <!--<artifactId>easymock</artifactId>-->
-            <!--<version>1.2_Java1.5</version>-->
-            <!--<scope>test</scope>-->
-        <!--</dependency>-->
 
 
 
@@ -397,7 +234,7 @@
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
+            <version>4.10</version>
         </dependency>
         <dependency>
             <groupId>com.sun.jersey</groupId>
@@ -547,6 +384,42 @@
             <groupId>mockobjects</groupId>
             <artifactId>mockobjects-core</artifactId>
             <version>0.07</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.7-groovy-2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.7-groovy-2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.spockframework</groupId>
+            <artifactId>spock-core</artifactId>
+            <version>0.7-groovy-2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.10</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit-dep</artifactId>
+            <version>4.10</version>
         </dependency>
         <dependency>
             <groupId>org.easymock</groupId>

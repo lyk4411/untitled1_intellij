@@ -1,8 +1,8 @@
 package JUnitLearn.ch04;
 
 import junit.framework.TestCase;
-import org.junit.Before;
 import org.junit.After;
+import org.junit.Before;
 import org.junit.Test;
 
 import javax.servlet.ServletException;
