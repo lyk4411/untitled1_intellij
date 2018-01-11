@@ -36,6 +36,15 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/target/classes/easymock-2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: org.apache.ibatis:ibatis-sqlmap:2.3.4.726" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet:2.15" level="project" />
     <orderEntry type="library" name="Maven: org.glassfish.jersey.containers:jersey-container-servlet-core:2.15" level="project" />
@@ -87,6 +96,8 @@
     <orderEntry type="library" scope="TEST" name="Maven: mockobjects:mockobjects-jdk1.4-j2ee1.3:0.09" level="project" />
     <orderEntry type="library" name="Maven: mockobjects:mockobjects-core:0.07" level="project" />
     <orderEntry type="library" name="Maven: mockobjects:mockobjects-j1.4-j2ee1.3:0.07" level="project" />
+    <orderEntry type="library" name="Maven: org.easymock:easymock:3.5.1" level="project" />
+    <orderEntry type="library" name="Maven: org.objenesis:objenesis:2.6" level="project" />
     <orderEntry type="library" name="Maven: cfets.com:hello:1" level="project" />
     <orderEntry type="library" name="Maven: aopalliance:aopalliance:1.0" level="project" />
     <orderEntry type="library" name="Maven: org.aspectj:aspectjweaver:1.6.8" level="project" />
