@@ -5,7 +5,7 @@ import java.rmi.Naming;
 public class GumballMonitorTestDrive {
 
 	public static void main(String[] args) {
-		String[] location = { "rmi://santafe.mightygumball.com/gumballmachine"
+		String[] location = { "rmi://localhost:8877/gumballmachine"
 //				"rmi://boulder.mightygumball.com/gumballmachine",
 //				"rmi://seattle.mightygumball.com/gumballmachine"
 							 };
