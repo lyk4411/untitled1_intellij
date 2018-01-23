@@ -17,7 +17,7 @@ public class Or extends Expression {
     public boolean equals(Object obj) {
         if(obj != null && obj instanceof Or)
         {
-            return this.left.equals(((Or)obj).left) && this.right.equals(((Or)obj).right);
+            return this.left.equals(((Or)obj).left) || this.right.equals(((Or)obj).right);
         }
         return false;
     }
