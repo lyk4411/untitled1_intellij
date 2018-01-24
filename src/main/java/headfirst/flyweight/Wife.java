@@ -4,7 +4,9 @@ package headfirst.flyweight;
  * Created by lyk on 2018-1-24.
  * Package name: headfirst.flyweight
  * Porject name: untitled1
- */public class Wife implements Cloneable {
+ */
+
+public class Wife implements Cloneable {
     private int id;
     private String name;
 
