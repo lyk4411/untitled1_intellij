@@ -11,9 +11,15 @@ public class StringCompression {
         char[] c2 = new char[]{'a'};
         char[] c3 = new char[]{'a','b','b','b','b','b','b','b','b','b','b','b','b'};
         StringCompression sc = new StringCompression();
+        System.out.println(c1);
         System.out.println(sc.compress(c1));
+        System.out.println(c1);
+        System.out.println(c2);
         System.out.println(sc.compress(c2));
+        System.out.println(c2);
+        System.out.println(c3);
         System.out.println(sc.compress(c3));
+        System.out.println(c3);
     }
     public int compress(char[] chars) {
         int anchor = 0, write = 0;
