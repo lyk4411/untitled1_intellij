@@ -28,37 +28,52 @@ public class StringCompression {
         System.out.println(sc.compress(c4));
         System.out.println(c4);
     }
+//    public int compress(char[] chars) {
+//        int len = chars.length;
+//        if (len < 2) {
+//            return len;
+//        }
+//        int res = 0;
+//        char c = chars[0];
+//        int num = 1;
+//        for (int i = 1; i < len; i++) {
+//            if (chars[i] == chars[i - 1]) {
+//                num++;
+//            }
+//            if (chars[i] != chars[i - 1]) {
+//                chars[res++] = c;
+//                if (num > 1) {
+//                    for (char cc : ("" + num).toCharArray()) {
+//                        chars[res++] = cc;
+//                    }
+//                }
+//                num = 1;
+//                c = chars[i];
+//            }
+//            if(i == len - 1){
+//                chars[res++] = c;
+//                if (num > 1) {
+//                    for (char cc : ("" + num).toCharArray()) {
+//                        chars[res++] = cc;
+//                    }
+//                }
+//            }
+//        }
+//        return res;
+//    }
     public int compress(char[] chars) {
-        int len = chars.length;
-        if (len < 2) {
-            return len;
-        }
-        int res = 0;
-        char c = chars[0];
-        int num = 1;
-        for (int i = 1; i < len; i++) {
-            if (chars[i] == chars[i - 1]) {
-                num++;
-            }
-            if (chars[i] != chars[i - 1]) {
-                chars[res++] = c;
-                if (num > 1) {
-                    for (char cc : ("" + num).toCharArray()) {
-                        chars[res++] = cc;
+        int anchor = 0, write = 0;
+        for (int read = 0; read < chars.length; read++) {
+            if (read + 1 == chars.length || chars[read + 1] != chars[read]) {
+                chars[write++] = chars[anchor];
+                if (read > anchor) {
+                    for (char c: ("" + (read - anchor + 1)).toCharArray()) {
+                        chars[write++] = c;
                     }
                 }
-                num = 1;
-                c = chars[i];
-            }
-            if(i == len - 1){
-                chars[res++] = c;
-                if (num > 1) {
-                    for (char cc : ("" + num).toCharArray()) {
-                        chars[res++] = cc;
-                    }
-                }
+                anchor = read + 1;
             }
         }
-        return res;
+        return write;
     }
 }
