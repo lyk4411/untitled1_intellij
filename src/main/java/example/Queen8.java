@@ -34,7 +34,6 @@ public class Queen8 {
             if(n<MAXQUEEN-1){
                 getArrangement(n+1);
             }else{
-
                 //累计方案个数
                 num++;
                 //打印棋盘信息
