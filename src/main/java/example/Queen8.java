@@ -1,11 +1,9 @@
 package example;
-
 /**
  * Created by lyk on 2018-3-6.
  * Package name: example
  * Porject name: untitled1
  */
-
 public class Queen8 {
     public static int num = 0; //累计方案总数
     public static final int MAXQUEEN = 8;//皇后个数，同时也是棋盘行列总数
@@ -42,15 +40,10 @@ public class Queen8 {
                 //打印棋盘信息
                 printChessBoard();
             }
-
-
         }
-
     }
     public void printChessBoard(){
-
         System.out.println("第"+num+"种走法:");
-
         for(int i=0;i<MAXQUEEN;i++){
             for(int j=0;j<MAXQUEEN;j++){
                 if(i==cols[j]){
@@ -61,10 +54,8 @@ public class Queen8 {
             System.out.println();
         }
         System.out.println();
-
     }
     public static void main(String args[]){
         Queen8 queen = new Queen8();
     }
-
 }
