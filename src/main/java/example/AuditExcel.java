@@ -243,7 +243,8 @@ public class AuditExcel {
                 "技术开发部"
         };
         for(int i=0;  i<str1.length;i++){
-            File xlsFile = new File(fileNames[i]);
+            File xlsFile = new File("F:\\Users\\lyk\\IdeaProjects\\untitled1\\excel"
+                    + fileNames[i] + ".xls");
             WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
             WritableSheet sheet = workbook.createSheet("sheet1", 0);
 
@@ -275,18 +276,18 @@ public class AuditExcel {
             workbook.close();
 
         }
-        File xlsFile = new File("jxl.xls");
-        // 创建一个工作簿
-        WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
-        // 创建一个工作表
-        WritableSheet sheet = workbook.createSheet("sheet1", 0);
-        for (int row = 0; row < 10; row++) {
-            for (int col = 0; col < 10; col++) {
-                // 向工作表中添加数据
-                sheet.addCell(new Label(col, row, "data" + row + col));
-            }
-        }
-        workbook.write();
-        workbook.close();
+//        File xlsFile = new File("jxl.xls");
+//        // 创建一个工作簿
+//        WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
+//        // 创建一个工作表
+//        WritableSheet sheet = workbook.createSheet("sheet1", 0);
+//        for (int row = 0; row < 10; row++) {
+//            for (int col = 0; col < 10; col++) {
+//                // 向工作表中添加数据
+//                sheet.addCell(new Label(col, row, "data" + row + col));
+//            }
+//        }
+//        workbook.write();
+//        workbook.close();
     }
 }
