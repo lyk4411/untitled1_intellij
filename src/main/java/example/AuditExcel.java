@@ -185,6 +185,96 @@ public class AuditExcel {
                 "中汇公司、技术开发部和运行部各项目组自行负责对外包人员进行培训，但在制度层面，仅中汇公司形成了《培训管理规范》，其他部门目前暂时缺失针对外包人员培训的相关制度。",
                 "目前中心尚未形成针对各类已上线应用系统的全面绩效评估机制和相关制度，业务部门仅收集市场反馈意见但未就此形成系统的绩效评估，中汇公司对开发过程中的原始数据进行了收集和整理，但缺乏标准化的绩效评估指标对此进行项目绩效的分析，技术开发部仅对部分重大项目进行项目总结以及年度总结，工程运行部尚未对项目后期模拟测试与上线流程环节的流程执行效率和情况进行回顾分析。"
         };
+        String[] str3 = new String[]{
+                "技术开发部",
+                "中汇公司",
+                "中汇公司",
+                "技术开发部",
+                "中汇公司",
+                "中汇公司",
+                "技术开发部",
+                "技术开发部",
+                "技术开发部",
+                "中汇公司",
+                "中汇公司",
+                "技术开发部",
+                "财务部",
+                "工程运行部",
+                "中汇公司",
+                "人力资源部",
+                "工程运行部",
+                "市场一部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "工程运行部",
+                "中汇公司",
+                "中汇公司",
+                "工程运行部",
+                "工程运行部",
+                "工程运行部",
+                "行政保卫部",
+                "行政保卫部",
+                "工程运行部",
+                "风险管理部",
+                "工程运行部",
+                "风险管理部",
+                "风险管理部",
+                "工程运行部",
+                "风险管理部",
+                "技术开发部",
+                "中汇公司",
+                "中汇公司",
+                "中汇公司",
+                "技术开发部"
+        };
+        for(int i=0;  i<str1.length;i++){
+            File xlsFile = new File(fileNames[i]);
+            WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
+            WritableSheet sheet = workbook.createSheet("sheet1", 0);
+
+            sheet.addCell(new Label(0,0,"审计测试结果"));
+            sheet.addCell(new Label(1,0,"审计发现整改建议"));
+            sheet.addCell(new Label(2,0,"系统"));
+            sheet.addCell(new Label(3,0,"关键字"));
+            sheet.addCell(new Label(4,0,"联系人"));
+            sheet.addCell(new Label(5,0,"问题部门"));
+            sheet.addCell(new Label(6,0,"问题级别"));
+            sheet.addCell(new Label(7,0,"问题状"));
+            sheet.addCell(new Label(8,0,"跟踪情况记录"));
+            sheet.addCell(new Label(9,0,"备注"));
+            sheet.addCell(new Label(10,0,"问题单号"));
+
+            sheet.addCell(new Label(0,1,str1[i]));
+            sheet.addCell(new Label(1,1,str2[i]));
+            sheet.addCell(new Label(2,1,"N/A"));
+            sheet.addCell(new Label(3,1,"2017年全面审计"));
+            sheet.addCell(new Label(4,1,"陈晓跃"));
+            sheet.addCell(new Label(5,1,str3[i]));
+            sheet.addCell(new Label(6,1,"轻微"));
+            sheet.addCell(new Label(7,1,"发现问题"));
+            sheet.addCell(new Label(8,1,""));
+            sheet.addCell(new Label(9,1,"无"));
+            sheet.addCell(new Label(10,1,""));
+
+            workbook.write();
+            workbook.close();
+
+        }
         File xlsFile = new File("jxl.xls");
         // 创建一个工作簿
         WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
