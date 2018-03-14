@@ -243,7 +243,7 @@ public class AuditExcel {
                 "技术开发部"
         };
         for(int i=0;  i<str1.length;i++){
-            File xlsFile = new File("F:\\Users\\lyk\\IdeaProjects\\untitled1\\excel"
+            File xlsFile = new File("F:\\Users\\lyk\\IdeaProjects\\untitled1\\excel\\"
                     + fileNames[i] + ".xls");
             WritableWorkbook workbook = Workbook.createWorkbook(xlsFile);
             WritableSheet sheet = workbook.createSheet("sheet1", 0);
