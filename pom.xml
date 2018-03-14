@@ -120,6 +120,12 @@
             <version>0.07</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/jexcelapi/jxl -->
+        <dependency>
+            <groupId>jexcelapi</groupId>
+            <artifactId>jxl</artifactId>
+            <version>2.6</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/org.easymock/easymock -->
