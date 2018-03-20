@@ -49,7 +49,7 @@ public class AuditExcel2 {
             if (sheets != null) {
                 for (Sheet sheet : sheets) {
                     for(int i = 0;  i < fileNames.length;i++){
-                        File newXlsFile = new File("F:\\Users\\lyk\\IdeaProjects\\untitled1\\excel1\\"
+                        File newXlsFile = new File("F:\\Users\\lyk\\IdeaProjects\\untitled1\\excel2\\"
                                 + fileNames[i] + ".xls");
                         WritableWorkbook newworkbook = Workbook.createWorkbook(newXlsFile);
                         WritableSheet newsheet = newworkbook.createSheet("问题单", 0);
