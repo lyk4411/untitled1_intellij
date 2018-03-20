@@ -38,7 +38,7 @@ public class AuditExcel2 {
                 "6.1.3"
         };
         File xlsFile = new File("F:\\Users\\lyk\\IdeaProjects" +
-                "\\untitled1\\excel1\\itaudit_que6.xls");
+                "\\untitled1\\excel2\\itaudit_que6.xls");
         // 获得工作簿对象
         Workbook workbook = null;
         try {
