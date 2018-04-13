@@ -23,6 +23,19 @@ public class TwoSumIV {
     }
 
     public static void main(String[] args) {
-
+        TwoSumIV tsiv = new TwoSumIV();
+        TreeNode a1 = new TreeNode(5);
+        TreeNode a2 = new TreeNode(3);
+        TreeNode a3 = new TreeNode(6);
+        TreeNode a4 = new TreeNode(2);
+        TreeNode a5 = new TreeNode(4);
+        TreeNode a6 = new TreeNode(7);
+        a1.left = a2;
+        a1.right = a3;
+        a2.left = a4;
+        a2.right = a5;
+        a3.right = a6;
+        System.out.println(tsiv.findTarget(a1,9));
+        System.out.println(tsiv.findTarget(a1,28));
     }
 }
