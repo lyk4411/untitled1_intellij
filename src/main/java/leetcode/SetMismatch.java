@@ -26,10 +26,10 @@ public class SetMismatch {
         int[] nums1 = new int[]{1,2,2,4};
         int[] nums2 = new int[]{1,2,3,4,5,6,7,7,8,9};
         int[] nums3 = new int[]{1,9,2,3,4,5,6,6,7,8};
-        IntStream.of(sm.findErrorNums(nums1)).boxed().forEach(n -> System.out.print(n + " "));
+        IntStream.of(sm.findErrorNums(nums1)).forEach(n -> System.out.print(n + " "));
         System.out.println();
-        IntStream.of(sm.findErrorNums(nums2)).boxed().forEach(n -> System.out.print(n + " "));
+        IntStream.of(sm.findErrorNums(nums2)).forEach(n -> System.out.print(n + " "));
         System.out.println();
-        IntStream.of(sm.findErrorNums(nums3)).boxed().forEach(n -> System.out.print(n + " "));
+        IntStream.of(sm.findErrorNums(nums3)).forEach(n -> System.out.print(n + " "));
     }
 }
