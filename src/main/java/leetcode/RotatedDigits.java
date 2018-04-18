@@ -32,5 +32,7 @@ public class RotatedDigits {
         System.out.println(rd.rotatedDigits(123));
         System.out.println(rd.rotatedDigits(696));
         System.out.println(rd.rotatedDigits(10));
+        System.out.println(rd.rotatedDigits(17));
+        System.out.println(rd.rotatedDigits(18));
     }
 }
