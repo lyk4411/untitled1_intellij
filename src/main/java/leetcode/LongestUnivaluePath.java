@@ -36,8 +36,10 @@ public class LongestUnivaluePath {
         TreeNode t5 = new TreeNode(1);
         TreeNode t6 = new TreeNode(5);
         t1.left = t2;
-        t2.right = t3;
+        t1.right = t3;
         t2.left = t4;
-        t3.right = t5;
+        t2.right = t5;
+        t3.right = t6;
+        System.out.println(lup.longestUnivaluePath(t1));
     }
 }
