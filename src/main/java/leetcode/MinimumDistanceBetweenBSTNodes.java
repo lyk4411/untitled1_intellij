@@ -38,7 +38,7 @@ public class MinimumDistanceBetweenBSTNodes {
         TreeNode t4 = new TreeNode(1);
         TreeNode t5 = new TreeNode(3);
         t1.left = t2;
-        t2.right = t3;
+        t1.right = t3;
         t2.left = t4;
         t2.right = t5;
         System.out.println(mdbbn.minDiffInBST(t1));
