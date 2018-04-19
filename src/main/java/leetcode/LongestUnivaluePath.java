@@ -12,6 +12,14 @@ public class LongestUnivaluePath {
         arrowLength(root);
         return ans;
     }
+//    这道题让我们求最长的相同值路径，跟之前那道Count Univalue Subtrees十分的类似，
+//    解法也很类似。对于这种树的路径问题，递归是不二之选。在递归函数中，我们首先
+//    对其左右子结点调用递归函数，得到其左右子树的最大相同值路径，下面就要来看当前
+//    结点和其左右子结点之间的关系了，如果其左子结点存在且和当前节点值相同，则left
+//    自增1，否则left重置0；同理，如果其右子结点存在且和当前节点值相同，则right自
+//    增1，否则right重置0。然后用left+right来更新结果res。而调用当前节点值的函数只
+//    能返回left和right中的较大值，因为如果还要跟父节点组path，就只能在左右子节点
+//    中选一条path，当然选值大的那个了，参见代码如下：
     public int arrowLength(TreeNode node) {
         if (node == null) return 0;
         int left = arrowLength(node.left);
