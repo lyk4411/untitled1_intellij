@@ -17,7 +17,9 @@ public class CountBinarySubstrings {
                 groups[t]++;
             }
         }
-
+        for(int i: groups){
+            System.out.print(i + " ");
+        }
         int ans = 0;
         for (int i = 1; i <= t; i++) {
             ans += Math.min(groups[i-1], groups[i]);
