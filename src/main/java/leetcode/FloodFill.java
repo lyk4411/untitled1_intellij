@@ -1,5 +1,8 @@
 package leetcode;
 
+import java.util.Arrays;
+import java.util.stream.Stream;
+
 /**
  * Created by lyk on 2018-4-20.
  * Package name: leetcode
@@ -29,6 +32,16 @@ public class FloodFill {
                 {1, 0, 1}
         };
 
-//        Stream.of(ff.floodFill(image, 1, 1, 2)).forEach(n -> );
+        Arrays.stream(Stream.of(ff.floodFill(image, 1, 1, 2)).
+                flatMapToInt(x -> Arrays.stream(x)).toArray()).
+                forEach(n -> System.out.print(n + " "));
+        int[][] a = ff.floodFill(image, 1, 1, 2);
+        System.out.println();
+        for(int[] i : a){
+            for(int j : i){
+                System.out.print(j + " ");
+            }
+        System.out.println();
+        }
     }
 }
