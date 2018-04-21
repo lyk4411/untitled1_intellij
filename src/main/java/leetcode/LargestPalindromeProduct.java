@@ -35,8 +35,14 @@ public class LargestPalindromeProduct {
 
     public static void main(String[] args) {
         LargestPalindromeProduct lpp = new LargestPalindromeProduct();
+        System.out.println(lpp.largestPalindrome(9));
         System.out.println(lpp.largestPalindrome(8));
         System.out.println(lpp.largestPalindrome(7));
         System.out.println(lpp.largestPalindrome(6));
+        System.out.println(lpp.largestPalindrome(5));
+        System.out.println(lpp.largestPalindrome(4));
+        System.out.println(lpp.largestPalindrome(3));
+        System.out.println(lpp.largestPalindrome(2));
+        System.out.println(lpp.largestPalindrome(1));
     }
 }
