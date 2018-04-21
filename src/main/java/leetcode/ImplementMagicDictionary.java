@@ -19,6 +19,7 @@ public class ImplementMagicDictionary {
     public void buildDict(String[] words) {
         for (String word: words) {
             buckets.computeIfAbsent(word.length(), x -> new ArrayList()).add(word);
+//            System.out.println(buckets);
         }
     }
 
@@ -40,6 +41,7 @@ public class ImplementMagicDictionary {
         ImplementMagicDictionary imd = new ImplementMagicDictionary();
         String[] words = new String[]{
                "hello",
+               "world",
                "leetcode"
         };
         imd.buildDict(words);
