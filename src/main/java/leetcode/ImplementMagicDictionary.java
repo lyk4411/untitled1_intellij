@@ -19,7 +19,7 @@ public class ImplementMagicDictionary {
     public void buildDict(String[] words) {
         for (String word: words) {
             buckets.computeIfAbsent(word.length(), x -> new ArrayList()).add(word);
-//            System.out.println(buckets);
+            System.out.println(buckets);
         }
     }
 
@@ -40,9 +40,10 @@ public class ImplementMagicDictionary {
     public static void main(String[] args) {
         ImplementMagicDictionary imd = new ImplementMagicDictionary();
         String[] words = new String[]{
-               "hello",
-               "world",
-               "leetcode"
+                "hello",
+                "hello",
+                "world",
+                "leetcode"
         };
         imd.buildDict(words);
         System.out.println(imd.search("hello"));
