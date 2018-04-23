@@ -1,29 +1,38 @@
 package leetcode;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by lyk on 2018-4-23.
  * Package name: leetcode
  * Porject name: untitled1
  */
+
+//        这道题给了我们两个数组A和B，让我们返回连个数组的最长重复子数组。
+//        那么如果我们将数组换成字符串，实际这道题就是求Longest Common Substring
+//        的问题了，而貌似LeetCode上并没有这种明显的要求最长相同子串的题，注意
+//        需要跟最长子序列Longest Common Subsequence区分开，关于最长子序列会
+//        在follow up中讨论。好，先来看这道题，对于这种求极值的问题，DP是不二
+//        之选，我们使用一个二维的DP数组，其中dp[i][j]表示数组A的前i个数字和数组
+//        B的前j个数字的最长子数组的长度，如果dp[i][j]不为0，则A中第i个数组和B中
+//        第j个数字必须相等，比对于这两个数组[1,2,2]和[3,1,2]，我们的dp数组为：
+//        3 1 2
+//        1 0 1 0
+//        2 0 0 2
+//        2 0 0 1
+//        我们注意观察，dp值不为0的地方，都是当A[i] == B[j]的地方，而且还要加
+//       上左上方的dp值，即dp[i-1][j-1]，所以当前的dp[i][j]就等于dp[i-1][j-1] + 1，
+//       而一旦A[i] != B[j]时，直接赋值为0，不用多想，因为子数组是要连续的，一旦
+//       不匹配了，就不能再增加长度了。我们每次算出一个dp值，都要用来更新结果res，
+//       这样就能得到最长相同子数组的长度了，参见代码如下：
 public class MaximumLengthofRepeatedSubarray {
     public int findLength(int[] A, int[] B) {
         int ans = 0;
-        Map<Integer, ArrayList<Integer>> Bstarts = new HashMap();
-        for (int j = 0; j < B.length; j++) {
-            Bstarts.computeIfAbsent(B[j], x -> new ArrayList()).add(j);
-        }
-
-        for (int i = 0; i < A.length; i++) if (Bstarts.containsKey(A[i])) {
-            for (int j: Bstarts.get(A[i])) {
-                int k = 0;
-                while (i+k < A.length && j+k < B.length && A[i+k] == B[j+k]) {
-                    k++;
+        int[][] memo = new int[A.length + 1][B.length + 1];
+        for (int i = A.length - 1; i >= 0; --i) {
+            for (int j = B.length - 1; j >= 0; --j) {
+                if (A[i] == B[j]) {
+                    memo[i][j] = memo[i+1][j+1] + 1;
+                    if (ans < memo[i][j]) ans = memo[i][j];
                 }
-                ans = Math.max(ans, k);
             }
         }
         return ans;
