@@ -14,7 +14,7 @@ package leetcode;
 //        之选，我们使用一个二维的DP数组，其中dp[i][j]表示数组A的前i个数字和数组
 //        B的前j个数字的最长子数组的长度，如果dp[i][j]不为0，则A中第i个数组和B中
 //        第j个数字必须相等，比对于这两个数组[1,2,2]和[3,1,2]，我们的dp数组为：
-//        3 1 2
+//          3 1 2
 //        1 0 1 0
 //        2 0 0 2
 //        2 0 0 1
@@ -23,6 +23,17 @@ package leetcode;
 //       而一旦A[i] != B[j]时，直接赋值为0，不用多想，因为子数组是要连续的，一旦
 //       不匹配了，就不能再增加长度了。我们每次算出一个dp值，都要用来更新结果res，
 //       这样就能得到最长相同子数组的长度了，参见代码如下：
+
+//        Intuition and Algorithm
+//
+//        Since a common subarray of A and B must start at some A[i] and B[j],
+//        let dp[i][j] be the longest common prefix of A[i:] and B[j:]. Whenever
+//        A[i] == B[j], we know dp[i][j] = dp[i+1][j+1] + 1. Also, the answer is
+//        max(dp[i][j]) over all i, j.
+//
+//        We can perform bottom-up dynamic programming to find the answer based
+//        on this recurrence. Our loop invariant is that the answer is already
+//        calculated correctly and stored in dp for any larger i, j.
 public class MaximumLengthofRepeatedSubarray {
     public int findLength(int[] A, int[] B) {
         int ans = 0;
