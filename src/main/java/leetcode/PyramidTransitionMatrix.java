@@ -10,6 +10,12 @@ import java.util.Map;
  * Package name: leetcode
  * Porject name: untitled1
  */
+
+//思路：
+//        注意allowed中的三元组是可以重复利用的，这样我们定义dp：
+//        dp[i][j][k]: 表示第i层上，第j个元素为k
+//        根据bottom，可以初始化每个位置j上含有的字符bottom[j]， dp更新式如下：
+//        dp[i][j][k] = true if dp[i + 1][j][l] = true && dp[i + 1][j + 1][r] = true && lrk组成的字符串在allowed中出现过。
 public class PyramidTransitionMatrix {
     public boolean pyramidTransition(String bottom, List<String> allowed) {
         Map<String, List<String>> mem = new HashMap<>();
