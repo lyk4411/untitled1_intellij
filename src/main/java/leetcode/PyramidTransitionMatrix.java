@@ -19,7 +19,6 @@ public class PyramidTransitionMatrix {
         for (String allow : allowed) {
             mem.computeIfAbsent(allow.substring(0, 2), k -> new ArrayList<>()).add(allow.substring(2));
         }
-        System.out.println(mem);
 
         for (int i = 0; i < n; ++i) {
             dp[i][bottom.charAt(i) - 'A'] = true;
@@ -51,11 +50,11 @@ public class PyramidTransitionMatrix {
 
     public static void main(String[] args) {
         PyramidTransitionMatrix ptm = new PyramidTransitionMatrix();
-        String bottom1 = new String("XYZ");
+        String bottom1 = new String("ABC");
         List<String> allowed1 = new ArrayList<>();
-        String s1 = new String("XYD");
-        String s2 = new String("YZE");
-        String s3 = new String("DEA");
+        String s1 = new String("BCD");
+        String s2 = new String("ABC");
+        String s3 = new String("CDA");
         allowed1.add(s1);
         allowed1.add(s2);
         allowed1.add(s3);
