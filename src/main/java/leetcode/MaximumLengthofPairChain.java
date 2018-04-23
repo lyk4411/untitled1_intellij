@@ -1,6 +1,7 @@
 package leetcode;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 /**
  * Created by lyk on 2018-4-23.
@@ -30,10 +31,7 @@ public class MaximumLengthofPairChain {
                     dp[j] = Math.max(dp[j], dp[i] + 1);
             }
         }
-
-        int ans = 0;
-        for (int x: dp) if (x > ans) ans = x;
-        return ans;
+        return IntStream.of(dp).max().getAsInt();
     }
 
     public static void main(String[] args) {
