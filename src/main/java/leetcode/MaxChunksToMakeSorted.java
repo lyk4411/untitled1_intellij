@@ -19,7 +19,9 @@ public class MaxChunksToMakeSorted {
         MaxChunksToMakeSorted mctms = new MaxChunksToMakeSorted();
         int[] nums1 = new int[]{4,3,2,1,0};
         int[] nums2 = new int[]{1,0,2,3,4};
+        int[] nums3 = new int[]{1,2,0,3};
         System.out.println(mctms.maxChunksToSorted(nums1));
         System.out.println(mctms.maxChunksToSorted(nums2));
+        System.out.println(mctms.maxChunksToSorted(nums3));
     }
 }
