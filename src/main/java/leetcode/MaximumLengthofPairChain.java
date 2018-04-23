@@ -7,6 +7,16 @@ import java.util.Arrays;
  * Package name: leetcode
  * Porject name: untitled1
  */
+//        Intuition
+//
+//          If a chain of length k ends at some pairs[i], and pairs[i][1] < pairs[j][0],
+//          we can extend this chain to a chain of length k+1.
+//        Algorithm
+//
+//          Sort the pairs by first coordinate, and let dp[i] be the length of the
+//          longest chain ending at pairs[i]. When i < j and pairs[i][1] < pairs[j][0],
+//          we can extend the chain, and so we have the candidate
+//          answer dp[j] = max(dp[j], dp[i] + 1).
 public class MaximumLengthofPairChain {
     public int findLongestChain(int[][] pairs) {
         Arrays.sort(pairs, (a, b) -> a[0] - b[0]);
