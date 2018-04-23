@@ -1,6 +1,7 @@
 package leetcode;
 
-import java.util.*;
+
+import java.util.stream.IntStream;
 
 /**
  * Created by lyk on 2018-4-23.
@@ -9,24 +10,13 @@ import java.util.*;
  */
 public class MaxChunksToMakeSortedII {
     public int maxChunksToSorted(int[] arr) {
-        Map<Integer, Integer> count = new HashMap();
-        List<Pair1> counted = new ArrayList();
-        for (int x: arr) {
-            count.put(x, count.getOrDefault(x, 0) + 1);
-            counted.add(new Pair1(x, count.get(x)));
+        int sum1 = 0, sum2 = 0, ans = 0;
+        int[] arr1 = IntStream.of(arr).sorted().toArray();
+        for(int i = 0; i < arr.length; i++) {
+            sum1 += arr[i];
+            sum2 += arr1[i];
+            if(sum1 == sum2) ans++;
         }
-
-        List<Pair1> expect = new ArrayList(counted);
-        Collections.sort(expect, (a, b) -> a.compare(b));
-
-        Pair1 cur = counted.get(0);
-        int ans = 0;
-        for (int i = 0; i < arr.length; ++i) {
-            Pair1 X = counted.get(i), Y = expect.get(i);
-            if (X.compare(cur) > 0) cur = X;
-            if (cur.compare(Y) == 0) ans++;
-        }
-
         return ans;
     }
 
