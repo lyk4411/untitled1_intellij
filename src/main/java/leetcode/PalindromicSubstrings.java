@@ -12,6 +12,18 @@ package leetcode;
 //      如果是偶数长度的，那么i是最中间两个字符的左边那个，右边那个就是i+1，这样就
 //      能cover所有的情况啦，而且都是不同的回文子字符串，参见代码如下：
 
+//        Intuition
+//        Let N be the length of the string. The middle of the palindrome could be
+//        in one of 2N - 1 positions: either at letter or between two letters.
+//        For each center, let's count all the palindromes that have this center.
+//        Notice that if [a, b] is a palindromic interval (meaning S[a], S[a+1], ...,
+//        S[b] is a palindrome), then [a+1, b-1] is one too.
+//        Algorithm
+//        For each possible palindrome center, let's expand our candidate palindrome
+//        on the interval [left, right] as long as we can. The condition for expanding
+//        is left >= 0 and right < N and S[left] == S[right]. That means we want to
+//        count a new palindrome S[left], S[left+1], ..., S[right].
+
 public class PalindromicSubstrings {
     public int countSubstrings(String S) {
         int N = S.length(), ans = 0;
