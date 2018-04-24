@@ -28,8 +28,7 @@ public class NonnegativeIntegerswithoutConsecutiveOnes {
             if ((num & (1 << i)) != 0) {
                 sum += f[i];
                 if (prev_bit == 1) {
-                    sum--;
-                    break;
+                    return sum;
                 }
                 prev_bit = 1;
             } else {
