@@ -14,6 +14,7 @@ public class test112 {
         whoLetDogsOut.computeIfAbsent("snoop", k -> f(k));
         whoLetDogsOut.computeIfAbsent("snoop", k -> f(k));
         System.out.println(1<<2);
+        System.out.println(1<<4);
     }
     static boolean f(String s) {
         System.out.println("creating a value for \""+s+'"');
