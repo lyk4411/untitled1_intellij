@@ -42,8 +42,9 @@ public class NonnegativeIntegerswithoutConsecutiveOnes {
     public static void main(String[] args) {
         NonnegativeIntegerswithoutConsecutiveOnes nico =
                 new NonnegativeIntegerswithoutConsecutiveOnes();
+//        System.out.println(nico.findIntegers(24));
+//        System.out.println(nico.findIntegers(28));
         System.out.println(nico.findIntegers(14));
-        System.out.println(nico.findIntegers(18));
-
+        System.out.println(nico.findIntegers(12));
     }
 }
