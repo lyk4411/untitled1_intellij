@@ -46,5 +46,6 @@ public class NonnegativeIntegerswithoutConsecutiveOnes {
 //        System.out.println(nico.findIntegers(28));
         System.out.println(nico.findIntegers(14));
         System.out.println(nico.findIntegers(12));
+        System.out.println(nico.findIntegers(10));
     }
 }
