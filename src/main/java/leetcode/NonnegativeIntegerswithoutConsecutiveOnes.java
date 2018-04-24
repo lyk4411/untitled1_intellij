@@ -21,8 +21,9 @@ public class NonnegativeIntegerswithoutConsecutiveOnes {
                     break;
                 }
                 prev_bit = 1;
-            } else
+            } else {
                 prev_bit = 0;
+            }
             i--;
         }
         return sum + 1;
