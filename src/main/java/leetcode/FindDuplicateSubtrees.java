@@ -11,6 +11,31 @@ import java.util.Map;
  * Porject name: untitled1
  */
 public class FindDuplicateSubtrees {
+//    int t;
+//    Map<String, Integer> trees;
+//    Map<String, Integer> count;
+//    List<TreeNode> ans;
+//
+//    public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
+//        t = 1;
+//        trees = new HashMap();
+//        count = new HashMap();
+//        ans = new ArrayList();
+//        lookup(root);
+//        return ans;
+//    }
+//
+//    public String lookup(TreeNode node) {
+//        if (node == null) return "";
+//        String serial = node.val + "," + lookup(node.left) + "," + lookup(node.right);
+//        trees.computeIfAbsent(serial, x-> t++);
+//        count.put(serial, count.getOrDefault(serial, 0) + 1);
+//        if (count.get(serial) == 2)
+//            ans.add(node);
+//        return serial;
+//    }
+
+
     Map<String, Integer> count;
     List<TreeNode> ans;
     public List<TreeNode> findDuplicateSubtrees(TreeNode root) {
@@ -24,7 +49,6 @@ public class FindDuplicateSubtrees {
         if (node == null) return "#";
         String serial = node.val + "," + collect(node.left) + "," + collect(node.right);
         count.put(serial, count.getOrDefault(serial, 0) + 1);
-        System.out.println(count);
         if (count.get(serial) == 2)
             ans.add(node);
         return serial;
