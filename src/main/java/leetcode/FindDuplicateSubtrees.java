@@ -24,6 +24,7 @@ public class FindDuplicateSubtrees {
         if (node == null) return "#";
         String serial = node.val + "," + collect(node.left) + "," + collect(node.right);
         count.put(serial, count.getOrDefault(serial, 0) + 1);
+        System.out.println(count);
         if (count.get(serial) == 2)
             ans.add(node);
         return serial;
