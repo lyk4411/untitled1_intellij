@@ -16,7 +16,6 @@ public class NumberofLongestIncreasingSubsequence {
         int[] counts = new int[N];  // count[i] = number of longest ending in nums[i]
                                     // 表示以nums[i]为结尾的递推序列的个数
         Arrays.fill(counts, 1);
-        Arrays.fill(lengths, 1);
 
 
         for (int j = 0; j < N; ++j) {
