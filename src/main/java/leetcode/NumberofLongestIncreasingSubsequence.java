@@ -16,13 +16,14 @@ public class NumberofLongestIncreasingSubsequence {
         Arrays.fill(counts, 1);
 
         for (int j = 0; j < N; ++j) {
-            for (int i = 0; i < j; ++i) if (nums[i] < nums[j]) {
-                if (lengths[i] >= lengths[j]) {
-                    lengths[j] = lengths[i] + 1;
-                    counts[j] = counts[i];
-                } else if (lengths[i] + 1 == lengths[j]) {
-                    counts[j] += counts[i];
-                }
+            for (int i = 0; i < j; ++i)
+                if (nums[i] < nums[j]) {
+                    if (lengths[i] >= lengths[j]) {
+                        lengths[j] = lengths[i] + 1;
+                        counts[j] = counts[i];
+                    } else if (lengths[i] + 1 == lengths[j]) {
+                        counts[j] += counts[i];
+                    }
             }
         }
 
