@@ -11,8 +11,10 @@ public class NumberofLongestIncreasingSubsequence {
     public int findNumberOfLIS(int[] nums) {
         int N = nums.length;
         if (N <= 1) return N;
-        int[] lengths = new int[N]; //lengths[i] = length of longest ending in nums[i]
-        int[] counts = new int[N]; //count[i] = number of longest ending in nums[i]
+        int[] lengths = new int[N]; // lengths[i] = length of longest ending in nums[i]
+                                    // 表示以nums[i]为结尾的递推序列的长度
+        int[] counts = new int[N];  // count[i] = number of longest ending in nums[i]
+                                    // 表示以nums[i]为结尾的递推序列的个数
         Arrays.fill(counts, 1);
 
         for (int j = 0; j < N; ++j) {
@@ -43,8 +45,8 @@ public class NumberofLongestIncreasingSubsequence {
         NumberofLongestIncreasingSubsequence nlis =
                 new NumberofLongestIncreasingSubsequence();
         int[] nums1 = new int[]{1,3,5,4,7};
-        int[] nums2 = new int[]{2,2,2,2,2};
+//        int[] nums2 = new int[]{2,2,2,2,2};
         System.out.println(nlis.findNumberOfLIS(nums1));
-        System.out.println(nlis.findNumberOfLIS(nums2));
+//        System.out.println(nlis.findNumberOfLIS(nums2));
     }
 }
