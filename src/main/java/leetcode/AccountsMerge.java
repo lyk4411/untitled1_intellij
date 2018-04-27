@@ -7,6 +7,7 @@ import java.util.*;
  * Package name: leetcode
  * Porject name: untitled1
  */
+
 public class AccountsMerge {
     public List<List<String>> accountsMerge(List<List<String>> accounts) {
         Map<String, String> emailToName = new HashMap();
@@ -50,21 +51,23 @@ public class AccountsMerge {
         return ans;
     }
 
+
+
     public static void main(String[] args) {
         AccountsMerge am = new AccountsMerge();
         List<String> l1 = new ArrayList<>();
         List<String> l2 = new ArrayList<>();
         List<String> l3 = new ArrayList<>();
         List<String> l4 = new ArrayList<>();
-        l1.add("john00@mail.com");
-        l1.add("johnsmith@mail.com");
+        l1.add(0, "john00@mail.com");
+        l1.add(0, "johnsmith@mail.com");
         l1.add(0, "John");
-        l2.add("johnnybravo@mail.com");
+        l2.add(0, "johnnybravo@mail.com");
         l2.add(0, "John");
-        l3.add("john_newyork@mail.com");
-        l3.add("johnsmith@mail.com");
+        l3.add(0, "john_newyork@mail.com");
+        l3.add(0, "johnsmith@mail.com");
         l3.add(0, "John");
-        l4.add("mary@mail.com");
+        l4.add(0, "mary@mail.com");
         l4.add(0, "Mary");
         List<List<String>> accounts = new ArrayList<>();
         accounts.add(l1);
