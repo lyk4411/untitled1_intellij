@@ -72,8 +72,11 @@ public class SelfCrossing {
         int[] x1 = new int[]{2,1,1,2};
         int[] x2 = new int[]{1,2,3,4};
         int[] x3 = new int[]{1,1,1,1};
+        int[] x4 = new int[]{1,1,2,1,1};
+
         System.out.println(sc.isSelfCrossing(x1));
         System.out.println(sc.isSelfCrossing(x2));
         System.out.println(sc.isSelfCrossing(x3));
+        System.out.println(sc.isSelfCrossing(x4));
     }
 }
