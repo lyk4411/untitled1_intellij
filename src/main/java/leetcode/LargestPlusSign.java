@@ -9,6 +9,7 @@ import java.util.Set;
  * Porject name: untitled1
  */
 public class LargestPlusSign {
+//    http://www.cnblogs.com/grandyang/p/8679286.html
 //    可以对于每一个点，都计算好其上下左右连续1的个数。博主最先用的方法是建立四个方
 //    向的dp数组，dp[i][j]表示 (i, j) 位置上该特定方向连续1的个数，那么就需要4个二
 //    维dp数组，举个栗子，比如：
