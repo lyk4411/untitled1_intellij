@@ -13,8 +13,12 @@ public class LargestPlusSign {
         Set<Integer> banned = new HashSet();
         int[][] dp = new int[N][N];
 
-        for (int[] mine: mines)
+        for (int[] mine: mines){
+//            System.out.println("mine[0]:" + mine[0]);
+//            System.out.println("mine[1]:" + mine[1]);
             banned.add(mine[0] * N + mine[1]);
+        }
+//        System.out.println("banned:" + banned);
         int ans = 0, count;
 
         for (int r = 0; r < N; ++r) {
@@ -50,7 +54,7 @@ public class LargestPlusSign {
 
     public static void main(String[] args) {
         LargestPlusSign lps = new LargestPlusSign();
-        int[][] mines1 = new int[][]{{4, 2}};
+        int[][] mines1 = new int[][]{{4, 2},{4,1}};
         int[][] mines2 = new int[][]{};
         int[][] mines3 = new int[][]{{0,0}};
         System.out.println(lps.orderOfLargestPlusSign(5,mines1));
