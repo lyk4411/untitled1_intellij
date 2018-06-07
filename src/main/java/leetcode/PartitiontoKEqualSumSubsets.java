@@ -17,7 +17,7 @@ public class PartitiontoKEqualSumSubsets {
                 if (search(groups, row, nums, target)) return true;
                 groups[i] -= v;
             }
-            if (groups[i] == 0) break;
+            if (groups[i] == 0) break;  // return false;
         }
         return false;
     }
