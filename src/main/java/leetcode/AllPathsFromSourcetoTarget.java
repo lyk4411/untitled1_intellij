@@ -37,6 +37,10 @@ public class AllPathsFromSourcetoTarget {
         int[][] g1 = new int[][]{
                 {1,2}, {3}, {3}, {}
         };
+        int[][] g2 = new int[][]{
+                {1,2}, {3}, {3}, {4,5}, {6}, {6}, {}
+        };
         System.out.println(apfst.allPathsSourceTarget(g1));
+        System.out.println(apfst.allPathsSourceTarget(g2));
     }
 }
