@@ -9,8 +9,11 @@ import java.util.Arrays;
  */
 public class PartitiontoKEqualSumSubsets {
     public boolean search(int[] groups, int row, int[] nums, int target) {
+//        IntStream.of(groups).forEach(n -> System.out.print(n + " : "));
+//        System.out.println();
         if (row < 0) return true;
         int v = nums[row--];
+//        System.out.println(row + 1);
         for (int i = 0; i < groups.length; i++) {
             if (groups[i] + v <= target) {
                 groups[i] += v;
@@ -19,6 +22,7 @@ public class PartitiontoKEqualSumSubsets {
             }
             if (groups[i] == 0) break;  // return false;
         }
+//        System.out.println("false...");
         return false;
     }
 
@@ -40,7 +44,9 @@ public class PartitiontoKEqualSumSubsets {
     public static void main(String[] args) {
         PartitiontoKEqualSumSubsets pkess = new PartitiontoKEqualSumSubsets();
         int[] nums = new int[]{4, 3, 2, 3, 5, 2, 1};
-        System.out.println(pkess.canPartitionKSubsets(nums, 4));
-        System.out.println(pkess.canPartitionKSubsets(nums, 3));
+//        System.out.println(pkess.canPartitionKSubsets(nums, 4));
+//        System.out.println(pkess.canPartitionKSubsets(nums, 3));
+        int[] nums1 = new int[]{2, 2, 2, 2, 3, 4, 5};
+        System.out.println(pkess.canPartitionKSubsets(nums1, 4));
     }
 }
