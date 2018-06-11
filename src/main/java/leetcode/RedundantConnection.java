@@ -29,7 +29,7 @@ public class RedundantConnection {
             graph[edge[0]].add(edge[1]);
             graph[edge[1]].add(edge[0]);
         }
-        throw new AssertionError();
+        return new int[0];
     }
     public boolean dfs(ArrayList<Integer>[] graph, int source, int target) {
         if (!seen.contains(source)) {
