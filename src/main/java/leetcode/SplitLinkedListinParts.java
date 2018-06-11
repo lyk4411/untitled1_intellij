@@ -19,9 +19,11 @@ public class SplitLinkedListinParts {
         ListNode[] ans = new ListNode[k];
         cur = root;
         for (int i = 0; i < k; ++i) {
-            ListNode head = new ListNode(0), write = head;
+            ListNode head = new ListNode(0);
+            ListNode write = head;
             for (int j = 0; j < width + (i < rem ? 1 : 0); ++j) {
-                write = write.next = new ListNode(cur.val);
+                write.next = new ListNode(cur.val);
+                write = write.next;
                 if (cur != null) cur = cur.next;
             }
             ans[i] = head.next;
