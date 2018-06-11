@@ -13,6 +13,10 @@ public class MaximizeDistancetoClosestPerson {
         int[] left = new int[N], right = new int[N];
         Arrays.fill(left, N);
         Arrays.fill(right, N);
+//        IntStream.of(left).forEach(n -> System.out.print(n + " : "));
+//        System.out.println();
+//        IntStream.of(right).forEach(n -> System.out.print(n + " : "));
+//        System.out.println();
 
         for (int i = 0; i < N; ++i) {
             if (seats[i] == 1) left[i] = 0;
