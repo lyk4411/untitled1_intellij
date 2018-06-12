@@ -14,15 +14,17 @@ public class GameOf24 {
         return solve(A);
     }
     private boolean solve(ArrayList<Double> nums) {
-        if (nums.size() == 0) return false;
+
         if (nums.size() == 1) return Math.abs(nums.get(0) - 24) < 1e-6;
 
         for (int i = 0; i < nums.size(); i++) {
             for (int j = 0; j < nums.size(); j++) {
                 if (i != j) {
                     ArrayList<Double> nums2 = new ArrayList<Double>();
-                    for (int k = 0; k < nums.size(); k++) if (k != i && k != j) {
-                        nums2.add(nums.get(k));
+                    for (int m = 0; m < nums.size(); m++) {
+                        if (m != i && m != j) {
+                        nums2.add(nums.get(m));
+                        }
                     }
                     for (int k = 0; k < 4; k++) {
                         if (k < 2 && j > i) continue;
@@ -47,9 +49,12 @@ public class GameOf24 {
 
     public static void main(String[] args) {
         GameOf24 gameOf24 = new GameOf24();
-        System.out.println(gameOf24.judgePoint24(new int[]{4, 1, 8, 7}));
-        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 3, 4}));
-        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 3, 5}));
-        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 8, 5}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{4, 1, 8, 7}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 3, 4}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 3, 5}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{8, 3, 8, 5}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{1, 5, 5, 5}));
+//        System.out.println(gameOf24.judgePoint24(new int[]{1, 3, 8, 3}));
+        System.out.println(gameOf24.judgePoint24(new int[]{8, 8, 8, 8}));
     }
 }
