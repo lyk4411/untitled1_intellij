@@ -50,6 +50,8 @@ public class ReorganizeString {
         System.out.println(rs.reorganizeString("aaabb"));
         System.out.println(rs.reorganizeString("aaab"));
         System.out.println(rs.reorganizeString("aab"));
-
+        System.out.println(rs.reorganizeString("aaabbcc"));
+        System.out.println(rs.reorganizeString("aabbbcc"));
+        System.out.println(rs.reorganizeString("aabbccc"));
     }
 }
