@@ -41,10 +41,25 @@ public class RemoveComments {
     public static void main(String[] args) {
         RemoveComments rc = new RemoveComments();
         String[] s1 = new String[]{
-                "/*Test program */", "int main()", "{ ", "  // variable declaration ", "int a, b, c;", "/* This is a test", "   multiline  ", "   comment for ", "   testing */", "a = b + c;", "}"
+                "/*Test program */",
+                "int main()",
+                "{ ",
+                "  // variable declaration ",
+                "int a, b, c;",
+                "/* This is a test",
+                "   multiline  ",
+                "   comment for ",
+                "   testing */",
+                "a = b + c;",
+                "}"
         };
         String[] s2 = new String[]{
-                "int main()","{ ","  ","int a, b, c;","a = b + c;","}"
+                "int main()",
+                "{ ","  " +
+                "",
+                "int a, b, c;",
+                "a = b + c;",
+                "}"
         };
         System.out.println(rc.removeComments(s1));
         System.out.println(rc.removeComments(s2));
