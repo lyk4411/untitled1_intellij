@@ -1,28 +1,31 @@
 package leetcode;
 
+import java.util.Stack;
+
 /**
  * Created by lyk on 2018-6-15.
  * Package name: leetcode
  * Porject name: untitled1
  */
 public class ValidParenthesisString {
-    boolean checkValidString(String s) {
-        return helper(s, 0, 0);
-    }
-    boolean helper(String s, int start, int cnt) {
-        if (cnt < 0) return false;
-        for (int i = start; i < s.length(); ++i) {
-            if (s.substring(i, i + 1).equals("(")) {
-                ++cnt;
-            } else if (s.substring(i, i + 1).equals(")")) {
-                if (cnt <= 0) return false;
-                --cnt;
-            } else {
-                return helper(s, i + 1, cnt) || helper(s, i + 1, cnt + 1) || helper(s, i + 1, cnt - 1);
-            }
-        }
-        return cnt == 0;
-    }
+//    //Time Limit Exceeded
+//    boolean checkValidString(String s) {
+//        return helper(s, 0, 0);
+//    }
+//    boolean helper(String s, int start, int cnt) {
+//        if (cnt < 0) return false;
+//        for (int i = start; i < s.length(); ++i) {
+//            if (s.substring(i, i + 1).equals("(")) {
+//                ++cnt;
+//            } else if (s.substring(i, i + 1).equals(")")) {
+//                if (cnt <= 0) return false;
+//                --cnt;
+//            } else {
+//                return helper(s, i + 1, cnt) || helper(s, i + 1, cnt + 1) || helper(s, i + 1, cnt - 1);
+//            }
+//        }
+//        return cnt == 0;
+//    }
 //
 //    https://leetcode.com/problems/valid-parenthesis-string/discuss/107577/short-java-on-time-o1-space-one-pass
 //
@@ -87,25 +90,25 @@ public class ValidParenthesisString {
 //        return low == 0;
 //    }
 
-//    public boolean checkValidString(String s) {
-//        Stack<Integer> left = new Stack<>();
-//        Stack<Integer> star = new Stack<>();
-//        for(int i = 0; i < s.length(); i++){
-//            if(s.substring(i, i + 1).equals("*")) star.push(i);
-//            else if(s.substring(i, i + 1).equals("(")) left.push(i);
-//            else {
-//                if(left.empty() && star.empty()) return false;
-//                if(!left.empty()) left.pop();
-//                else star.pop();
-//            }
-//        }
-//        while (!left.empty() && !star.empty()){
-//            if (left.peek() > star.peek()) return false;
-//            left.pop();
-//            star.pop();
-//        }
-//        return left.empty();
-//    }
+    public boolean checkValidString(String s) {
+        Stack<Integer> left = new Stack<>();
+        Stack<Integer> star = new Stack<>();
+        for(int i = 0; i < s.length(); i++){
+            if(s.substring(i, i + 1).equals("*")) star.push(i);
+            else if(s.substring(i, i + 1).equals("(")) left.push(i);
+            else {
+                if(left.empty() && star.empty()) return false;
+                if(!left.empty()) left.pop();
+                else star.pop();
+            }
+        }
+        while (!left.empty() && !star.empty()){
+            if (left.peek() > star.peek()) return false;
+            left.pop();
+            star.pop();
+        }
+        return left.empty();
+    }
 
         public static void main(String[] args) {
             ValidParenthesisString vps = new ValidParenthesisString();
