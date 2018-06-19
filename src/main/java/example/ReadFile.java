@@ -50,7 +50,7 @@ public class ReadFile {
 
     public static void main(String[] args) {
         try {
-            readfile("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2017年审计\\2017年专项审计\\DEP专项审计材料\\工程运行部\\DEP审计资料\\岗位说明书及岗位人员对应表\\岗位说明书");
+            readfile("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2018年安全运行监督检查\\检查材料\\调阅材料\\中汇公司");
         } catch (FileNotFoundException ex) {
         } catch (IOException ex) {
         }

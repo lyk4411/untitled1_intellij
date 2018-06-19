@@ -41,14 +41,14 @@ public class GetFileName {
     }
     public static void main(String[] args)
     {
-        String [] fileName = getFileName("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2017年审计\\2017年专项审计\\专项审计资料提供");
+        String [] fileName = getFileName("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2018年安全运行监督检查\\检查材料\\调阅材料\\工程运行部");
         for(String name:fileName)
         {
             System.out.println(name);
         }
         System.out.println("--------------------------------");
         ArrayList<String> listFileName = new ArrayList<String>();
-        getAllFileName("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2017年审计\\2017年专项审计\\专项审计资料提供",listFileName);
+        getAllFileName("F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2018年安全运行监督检查\\检查材料\\调阅材料\\工程运行部",listFileName);
         for(String name:listFileName)
         {
             System.out.println(name);

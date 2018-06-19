@@ -18,7 +18,7 @@ public class GetFoldFileNames {
     }
 
     public static void getFileName() {
-        String path = "F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2017年审计\\2017年专项审计\\专项审计资料提供"; // 路径
+        String path = "F:\\cfets风险管理部\\审计与检查\\AuditandInspect\\2018年安全运行监督检查\\检查材料\\调阅材料\\工程运行部"; // 路径
         File f = new File(path);
         if (!f.exists()) {
             System.out.println(path + " not exists");
