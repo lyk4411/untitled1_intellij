@@ -1,6 +1,5 @@
 package leetcode;
 
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
@@ -12,7 +11,7 @@ import java.util.Map;
  */
 public class NumberofMatchingSubsequences {
     public int numMatchingSubseq(String S, String[] words) {
-        Map<Character, Deque<String>> map = new HashMap<>();
+        Map<Character, LinkedList<String>> map = new HashMap<>();
         for (char c = 'a'; c <= 'z'; c++) {
             map.putIfAbsent(c, new LinkedList<String>());
         }
@@ -22,7 +21,7 @@ public class NumberofMatchingSubsequences {
 
         int count = 0;
         for (char c : S.toCharArray()) {
-            Deque<String> queue = map.get(c);
+            LinkedList<String> queue = map.get(c);
             int size = queue.size();
             for (int i = 0; i < size; i++) {
                 String word = queue.removeFirst();
