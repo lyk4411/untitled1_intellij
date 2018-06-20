@@ -38,5 +38,7 @@ public class FindAndReplaceinString {
                 "abcd", new int[]{0, 2},new String[]{"a", "cd"},new String[]{"eee", "ffff"}));
         System.out.println(fars.findReplaceString(
                 "abcd", new int[]{0, 2},new String[]{"ab", "ec"},new String[]{"eee", "ffff"}));
+        System.out.println(fars.findReplaceString(
+                "abcd", new int[]{0, 2},new String[]{"a", "cd"},new String[]{"eeeeeeeee", "ffff"}));
     }
 }
