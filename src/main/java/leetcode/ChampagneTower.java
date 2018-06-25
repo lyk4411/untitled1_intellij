@@ -27,6 +27,6 @@ public class ChampagneTower {
         System.out.println(ct.champagneTower(10,3,1));
         System.out.println(ct.champagneTower(100,8,1));
         System.out.println(ct.champagneTower(100,8,2));
-        System.out.println(ct.champagneTower(100,9,1));
+        System.out.println(ct.champagneTower(100,9,2));
     }
 }
