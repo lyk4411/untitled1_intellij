@@ -33,5 +33,15 @@ public class MostProfitAssigningWork {
                 new int[]{10,20,30,40,50},
                 new int[]{4,5,6,7}
         ));
+        System.out.println(mpaw.maxProfitAssignment(
+                new int[]{13,37,58},
+                new int[]{4,90,96},
+                new int[]{34,73,45}
+        ));
+        System.out.println(mpaw.maxProfitAssignment(
+                new int[]{5,50,92,21,24,70,17,63,30,53},
+                new int[]{68,100,3,99,56,43,26,93,55,25},
+                new int[]{96,3,55,30,11,58,68,36,26,1}
+        ));
     }
 }
