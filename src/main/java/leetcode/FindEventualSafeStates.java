@@ -23,24 +23,23 @@ public class FindEventualSafeStates {
     // colors: WHITE 0, GRAY 1, BLACK 2;
     public boolean dfs(int node, int[] color, int[][] graph) {
         if (color[node] > 0)
-            return color[node] == 2;
+            return color[node] == 2;//如果染色是安全状态2就返回true
 
-        color[node] = 1;
+        color[node] = 1;//初始染1号色，相当于标记这次dfs过程中访问过它，但它的状态不确定是否安全
+                        //如果它的邻接点或者他的邻接点的邻接点dfs时又访问了i结点那么就说明成环了。
         for (int nei: graph[node]) {
             if (color[node] == 2)
                 continue;
             if (color[nei] == 1 || !dfs(nei, color, graph))
                 return false;
         }
-
         color[node] = 2;
         return true;
     }
-
     public static void main(String[] args) {
         FindEventualSafeStates fess = new FindEventualSafeStates();
         System.out.println(
                 fess.eventualSafeNodes(
-                        new int[][]{{1,2},{2,3},{5},{0},{5},{},{}}));
+                        new int[][]{{1, 2}, {2, 3}, {5}, {0}, {5}, {}, {}}));
     }
 }
