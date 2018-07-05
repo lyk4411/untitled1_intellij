@@ -63,5 +63,10 @@ class Worker implements Comparable<Worker> {
     public int compareTo(Worker other) {
         return Double.compare(ratio(), other.ratio());
     }
+
+    @Override
+    public String toString() {
+        return "wage:" + this.wage + " quality:" + this.quality + " ratio:" + this.ratio();
+    }
 }
 
