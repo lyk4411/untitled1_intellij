@@ -10,7 +10,7 @@ import java.util.Arrays;
 public class SetIntersectionSizeAtLeastTwo {
     public int intersectionSizeTwo(int[][] intervals) {
         Arrays.sort(intervals, (a, b) ->
-                a[1] != b[1] ? a[1]-b[1] : a[0] - b[0]);
+                a[1] != b[1] ? a[1]-b[1] : b[0] - a[0]);
 //        for(int[] t: intervals){
 //            for(int i: t){
 //                System.out.print(i + " : ");
