@@ -36,6 +36,10 @@ public class MinimumCosttoHireKWorkers {
                 new int[]{10,20,5},new int[]{70,50,30},2));
         System.out.println(mchkw.mincostToHireWorkers(
                 new int[]{3,1,10,10,1},new int[]{4,8,2,2,7},3));
+        System.out.println(mchkw.mincostToHireWorkers(
+                new int[]{100,10000,10000,10000,10000},new int[]{1,10000,10000,10000,10000},3));
+        System.out.println(mchkw.mincostToHireWorkers(
+                new int[]{1,10000,10000,10000,10000},new int[]{100,10000,10000,10000,10000},3));
     }
 }
 
