@@ -5,6 +5,17 @@ package leetcode;
  * Package name: leetcode
  * Porject name: untitled1
  */
+
+
+//        https://blog.csdn.net/biglethz/article/details/78036081
+//解题思路：
+//        1）对长度为Len的字符串，可以将其分解为两部分单独打印，安装切分点的不同，共有Len-1种组合，
+//        所有组合中最小的打印次数即为该字符串的最少打印次数。对字符串的第i+1个字符到j+1个字符组成
+//        的子串，用p(i,j)表示其最少打印次数，则本题的解为p(0,Len-1)，且有递推表达式
+//        这里写图片描述
+//        由于具有最优子结构的特点，显然可以用动态规划求解的，麻烦的捋清楚填表顺序。对字符串S的第i+1
+//        个字符到第j+1个字符组成的子串，还是P(i,j)用表示其最少打印次数。以长度为4的字符串，演示填表
+//        顺序
 public class StrangePrinter {
 //    public int strangePrinter(String s) {
 //        int dp[][] = new int[110][110];
