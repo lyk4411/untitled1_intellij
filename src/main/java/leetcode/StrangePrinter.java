@@ -54,6 +54,8 @@ public class StrangePrinter {
                     int tem = dp[j][k] + dp[k + 1][j + i];
                     if(s.substring(k, k + 1).equals(s.substring(j + i, j + i + 1))) tem--;
                     dp[j][j+ i] = Math.min(dp[j][j + i], tem);
+//                    int t = i + j;
+//                    System.out.println("dp[" + j + "][" + j + " " + k  + " " + t + "]:" + dp[j][j+ i]);
                 }
             }
         }
@@ -65,6 +67,6 @@ public class StrangePrinter {
         StrangePrinter sp = new StrangePrinter();
         System.out.println(sp.strangePrinter("aaabbb"));
         System.out.println(sp.strangePrinter("aba"));
-        System.out.println(sp.strangePrinter("abc"));
+        System.out.println(sp.strangePrinter("abcd"));
     }
 }
