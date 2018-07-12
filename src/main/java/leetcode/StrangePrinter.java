@@ -52,7 +52,7 @@ public class StrangePrinter {
             for(int j = 0; j+i < len; j++){//层数遍历
                 for(int k = j; k < j+i; k++){
                     int tem = dp[j][k] + dp[k + 1][j + i];
-                    if(s.substring(k, k + 1).equals(s.substring(j + i, j + i + 1))) tem--;
+                    if(s.charAt(k) == s.charAt(j + i)) tem--;
                     dp[j][j+ i] = Math.min(dp[j][j + i], tem);
 //                    int t = i + j;
 //                    System.out.println("dp[" + j + "][" + j + " " + k  + " " + t + "]:" + dp[j][j+ i]);
