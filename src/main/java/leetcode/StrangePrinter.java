@@ -1,7 +1,5 @@
 package leetcode;
 
-import java.util.Arrays;
-
 /**
  * Created by lyk on 2018-7-6.
  * Package name: leetcode
@@ -31,41 +29,31 @@ public class StrangePrinter {
 //        return dp[0][n - 1];
 //    }
     public int strangePrinter(String s) {
-        int size = s.length();
-        int[][] dp = new int[size + 1][size + 1];
-
-        for(int[] t :dp) {
-            Arrays.fill(t, 0x3f3f3f3f);
-        }
-        for (int x = 0; x <= size; x++) {
-            for (int y = 0; y <= x; y++) {
-                dp[y][x] = x - y + 1;
+        int len = s.length();
+        if(len <= 1) return len;
+        int dp[][] = new int[100][100];
+        for(int i = 0; i < len; i++){
+            for(int j = i; j < len; j++){
+                dp[i][j]= j - i + 1;
             }
         }
-        for (int x = 1; x <= size; x++) {
-            for (int y = 1; y <= x; y++) {
-                for (int z = x - 1; z >= y; z--) {
-                    dp[y][x] = Math.min(dp[y][x], dp[y + 1][z - 1] + dp[z][x]);
-                    if(s.substring(y, y + 1).equals(s.substring(z, z + 1))) {
-                        dp[y][x] = dp[y][x] - 1;
-                    }
+        for(int i = 1; i < len; i++){//间隔遍历
+            for(int j = 0; j+i < len; j++){//层数遍历
+                for(int k = j; k < j+i; k++){
+                    int tem = dp[j][k] + dp[k + 1][j + i];
+                    if(s.substring(k, k + 1).equals(s.substring(j + i, j + i + 1))) tem--;
+                    dp[j][j+ i] = Math.min(dp[j][j + i], tem);
                 }
             }
         }
-        for (int x = 0; x <= size; x++) {
-            for (int y = 0; y <= size; y++) {
-                System.out.print(" dp[" + y + "][" + x + "]:" + dp[y][x]);
-            }
-            System.out.println();
-        }
-        return size > 0 ? dp[1][size] : 0;
+        return dp[0][ len - 1];
     }
 
 
     public static void main(String[] args) {
         StrangePrinter sp = new StrangePrinter();
-//        System.out.println(sp.strangePrinter("aaabbb"));
-//        System.out.println(sp.strangePrinter("aba"));
+        System.out.println(sp.strangePrinter("aaabbb"));
+        System.out.println(sp.strangePrinter("aba"));
         System.out.println(sp.strangePrinter("abc"));
     }
 }
