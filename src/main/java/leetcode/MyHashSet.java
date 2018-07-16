@@ -5,11 +5,11 @@ package leetcode;
  * Package name: leetcode
  * Porject name: untitled1
  */
-public class HashSet {
+public class MyHashSet {
     int[] arr;
 
     /** Initialize your data structure here. */
-    public HashSet() {
+    public MyHashSet() {
         arr = new int[1000000];
     }
 
@@ -31,7 +31,7 @@ public class HashSet {
     }
 
     public static void main(String[] args) {
-        HashSet hs = new HashSet();
+        MyHashSet hs = new MyHashSet();
         hs.add(0);
         hs.add(1);
         hs.add(2);
