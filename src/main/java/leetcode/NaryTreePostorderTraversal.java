@@ -22,7 +22,7 @@ public class NaryTreePostorderTraversal {
             val = _val;
             children = _children;
         }
-    };
+    }
     public List<Integer> postorder(Node root) {
         List<Integer> ret = new LinkedList<>();
 
