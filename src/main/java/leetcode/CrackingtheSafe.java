@@ -44,6 +44,7 @@ public class CrackingtheSafe {
         System.out.println(cs.crackSafe(1, 2));
         System.out.println(cs.crackSafe(2, 3));
         System.out.println(cs.crackSafe(3, 3));
+        System.out.println(cs.crackSafe(3, 4));
         System.out.println(cs.crackSafe(4, 4));
     }
 }
