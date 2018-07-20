@@ -11,7 +11,7 @@ public class PrefixandSuffixSearch {
     public PrefixandSuffixSearch(String[] words) {
         trie = new TrieNode();
         for (int weight = 0; weight < words.length; ++weight) {
-            String word = words[weight] + "{";
+            String word = words[weight] + "{";//在ASCII编码中，“{”正好位于“z”之后。
             for (int i = 0; i < word.length(); ++i) {
                 TrieNode cur = trie;
                 cur.weight = weight;
