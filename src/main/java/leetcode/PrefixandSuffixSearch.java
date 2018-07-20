@@ -82,6 +82,7 @@ public class PrefixandSuffixSearch {
         PrefixandSuffixSearch pss2 = new PrefixandSuffixSearch(words2);
         System.out.println(pss1.f("a", "e"));
         System.out.println(pss2.f("worl", "orld"));
+        System.out.println(pss2.f("", "orld"));
     }
 
 }
