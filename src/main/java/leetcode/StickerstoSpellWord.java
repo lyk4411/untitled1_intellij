@@ -53,9 +53,9 @@ public class StickerstoSpellWord {
         if (key.length() == 0) {
             return 0;
         }
-        if (scnts.keySet().contains(key)) {
-            return 1;
-        }
+//        if (scnts.keySet().contains(key)) {
+//            return 1;
+//        }
         if (dmap.containsKey(key)) {
             return dmap.get(key);
         }
