@@ -42,7 +42,7 @@ public class FallingSquares {
                 {1, 2}, {2, 3}, {6, 1}
         };
         int[][] f2 = new int[][]{
-                {100, 100}, {200, 100}
+                {100, 100}, {200, 100},{400, 1}
         };
         System.out.println(fs.fallingSquares(f1));
         System.out.println(fs.fallingSquares(f2));
