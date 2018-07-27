@@ -22,38 +22,28 @@ public class CherryPickup {
 //    最后就是t这一维我们可以通过滚动数组压掉，注意这样的话需要反向遍历更新dp
     public int cherryPickup(int[][] grid) {
         int n = grid.length;
-        int[][] dp = new int[n][n];
+        int[][][] memo = new int[n][n][n];
         for(int i = 0; i < n; i++){
-            Arrays.fill(dp[i],-1);
-        }
-        dp[0][0] = grid[0][0];
-        for (int k = 1; k < (n << 1) - 1; k++){
-            for (int i = Math.min(n - 1, k); i >= 0 && i >= k - n + 1; i--){
-                for (int j = Math.min(n - 1, k); j >= 0 && j >= k - n + 1; j--){
-                    int p = k - i, q = k - j;
-                    if (grid[i][p] == -1  || grid[j][q] == -1){
-                        dp[i][j] = -1;
-                        continue;
-                    }
-                    if (p > 0 && j > 0){
-                        dp[i][j] = Math.max(dp[i][j], dp[i][j-1]);
-                    }
-                    if (i > 0){
-                        if (j > 0)
-                            dp[i][j] = Math.max(dp[i][j], dp[i-1][j-1]);
-                        if (q > 0)
-                            dp[i][j] = Math.max(dp[i][j], dp[i-1][j]);
-                    }
-                    if (dp[i][j] == -1)
-                        continue;
-                    if (i == j)
-                        dp[i][j] += grid[i][p];
-                    else
-                        dp[i][j] += grid[i][p] + grid[j][q];
-                }
+            for(int j = 0; j < n; j++){
+                Arrays.fill(memo[i][j], Integer.MIN_VALUE);
             }
         }
-        return Math.max(dp[n-1][n-1], 0);
+        return Math.max(0, dp(grid, memo, n - 1, n - 1, n - 1));
+
+    }
+
+    private int dp(int[][] grid, int[][][] memo, int x1, int y1, int x2) {
+        int y2 = x1 + y1 - x2;
+        if (x1 < 0 || y1 < 0 || x2 < 0 || y2 < 0) return -1;
+        if (grid[y1][x1] < 0 || grid[y2][x2] < 0) return -1;
+        if (x1 == 0 && y1 == 0) return grid[y1][x1];
+        if (memo[x1][y1][x2] != Integer.MIN_VALUE) return memo[x1][y1][x2];
+        int ans =  Math.max(Math.max(dp(grid, memo,x1 - 1, y1, x2 - 1), dp(grid, memo,x1, y1 - 1, x2)),
+                Math.max(dp(grid, memo,x1, y1 - 1, x2 - 1), dp(grid, memo,x1 - 1, y1, x2)));
+        if (ans < 0) return memo[x1][y1][x2] = -1;
+        ans += grid[y1][x1];
+        if (x1 != x2) ans += grid[y2][x2];
+        return memo[x1][y1][x2] = ans;
     }
 
 
@@ -76,9 +66,24 @@ public class CherryPickup {
                 {0, 0, 0, 1, 0, 0, 0},
                 {0, 0, 0, 1, 1, 1, 1}
         };
+        int[][] g4 = new int[][]{
+                {0, 1, -1},
+                {1, -1, -1},
+                {-1, 1,  1},
+        };
+        int[][] g5 = new int[][]{
+                {1,   1,  1, 1, 1},
+                {1,   1, -1, 1, 1},
+                {-1, -1,  1, 1, 1},
+                {1,   1,  1, 1, 1},
+                {-1,  1,  1, 1, 1}
+        };
+
         CherryPickup cp = new CherryPickup();
         System.out.println(cp.cherryPickup(g1));
         System.out.println(cp.cherryPickup(g2));
         System.out.println(cp.cherryPickup(g3));
+        System.out.println(cp.cherryPickup(g4));
+        System.out.println(cp.cherryPickup(g5));
     }
 }
