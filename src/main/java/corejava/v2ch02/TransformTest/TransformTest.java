@@ -35,7 +35,7 @@ public class TransformTest
       t.setOutputProperty("{http://xml.apache.org/xslt}indent-amount", "2");
 
       t.transform(new SAXSource(new EmployeeReader(), new InputSource(new FileInputStream(
-            "employee.dat"))), new StreamResult(System.out));
+            "F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch02\\TransformTest\\employee.dat"))), new StreamResult(System.out));
    }
 }
 
