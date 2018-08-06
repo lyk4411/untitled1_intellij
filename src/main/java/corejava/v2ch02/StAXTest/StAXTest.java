@@ -1,8 +1,10 @@
 package corejava.v2ch02.StAXTest;
 
-import java.io.*;
-import java.net.*;
-import javax.xml.stream.*;
+import javax.xml.stream.XMLInputFactory;
+import javax.xml.stream.XMLStreamConstants;
+import javax.xml.stream.XMLStreamReader;
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * This program demonstrates how to use a StAX parser. The program prints all hyperlinks links of an
