@@ -36,6 +36,7 @@ public class EchoServer
             while (!done && in.hasNextLine())
             {
                String line = in.nextLine();
+               System.out.println(line);
                out.println("Echo: " + line);
                if (line.trim().equals("BYE")) done = true;
             }
