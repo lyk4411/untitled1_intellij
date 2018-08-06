@@ -17,7 +17,7 @@ public class GridBagTest
          {
             public void run()
             {
-               String filename = args.length == 0 ? "fontdialog.xml" : args[0];
+               String filename = args.length == 0 ? "F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch02\\GridBagTest\\fontdialog.xml" : args[0];
                JFrame frame = new FontFrame(filename);
                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                frame.setVisible(true);
