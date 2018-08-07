@@ -61,7 +61,7 @@ class TestDB
    public static Connection getConnection() throws SQLException, IOException
    {
       Properties props = new Properties();
-      FileInputStream in = new FileInputStream("database.properties");
+      FileInputStream in = new FileInputStream("F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch04\\TestDB\\database.properties");
       props.load(in);
       in.close();
 
