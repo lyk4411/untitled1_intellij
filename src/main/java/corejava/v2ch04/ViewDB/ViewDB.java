@@ -1,14 +1,18 @@
 package corejava.v2ch04.ViewDB;
 
-import com.sun.rowset.*;
-import java.sql.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
+import com.sun.rowset.CachedRowSetImpl;
+
+import javax.sql.RowSet;
+import javax.sql.rowset.CachedRowSet;
 import javax.swing.*;
-import javax.sql.*;
-import javax.sql.rowset.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.Properties;
 
 /**
  * This program uses metadata to display arbitrary tables in a database.
@@ -248,7 +252,7 @@ class ViewDBFrame extends JFrame
    private void readDatabaseProperties() throws IOException
    {
       props = new Properties();
-      FileInputStream in = new FileInputStream("database.properties");
+      FileInputStream in = new FileInputStream("F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch04\\ViewDB\\database.properties");
       props.load(in);
       in.close();
       String drivers = props.getProperty("jdbc.drivers");
