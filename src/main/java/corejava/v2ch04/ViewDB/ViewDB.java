@@ -334,8 +334,7 @@ class DataPanel extends JPanel
       for (int i = 1; i <= fields.size(); i++)
       {
          String field = rs.getString(i);
-         JTextField tb = (JTextField) fields.get(i - 1);
-         tb.setText(field);
+         fields.get(i - 1).setText(field);
       }
    }
    
