@@ -1,11 +1,15 @@
 package corejava.v2ch04.QueryDB;
 
-import java.sql.*;
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.sql.*;
+import java.util.Properties;
 
 /**
  * This program demonstrates several complex database queries.
@@ -215,7 +219,7 @@ class QueryDBFrame extends JFrame
    public static Connection getConnection() throws SQLException, IOException
    {
       Properties props = new Properties();
-      FileInputStream in = new FileInputStream("database.properties");
+      FileInputStream in = new FileInputStream("F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch04\\ExecSQL\\database.properties");
       props.load(in);
       in.close();
 
