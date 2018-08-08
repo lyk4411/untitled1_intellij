@@ -1,12 +1,12 @@
 package corejava.v2ch05.CollationTest;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.*;
-import java.text.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.Collator;
 import java.util.*;
 import java.util.List;
-
-import javax.swing.*;
 
 /**
  * This program demonstrates collating strings under various locales.
@@ -108,7 +108,7 @@ class CollationFrame extends JFrame
    public void updateDisplay()
    {
       Locale currentLocale = locales[localeCombo.getSelectedIndex()];
-      localeCombo.setLocale(currentLocale);
+//      localeCombo.setLocale(currentLocale);
 
       currentCollator = Collator.getInstance(currentLocale);
       currentCollator.setStrength(strengthCombo.getValue());
@@ -124,7 +124,7 @@ class CollationFrame extends JFrame
                .append("= ");
          sortedWords.append(s + "\n");
       }
-      pack();
+//      pack();
    }
 
    private List<String> strings = new ArrayList<String>();
