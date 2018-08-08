@@ -1,11 +1,14 @@
 package corejava.v2ch05.NumberFormatTest;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.text.*;
-import java.util.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Arrays;
+import java.util.Comparator;
+import java.util.Locale;
 
 /**
  * This program demonstrates formatting numbers under various locales.
