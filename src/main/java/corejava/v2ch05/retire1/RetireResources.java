@@ -1,4 +1,4 @@
-package corejava.v2ch05.Retire;
+package corejava.v2ch05.retire1;
 
 import java.awt.*;
 
@@ -9,14 +9,14 @@ import java.awt.*;
  */
 public class RetireResources extends java.util.ListResourceBundle
 {
-   public Object[][] getContents()
-   {
-      return contents;
-   }
-
-   static final Object[][] contents = {
+   private static final Object[][] contents = {
    // BEGIN LOCALIZE
          { "colorPre", Color.blue }, { "colorGain", Color.white }, { "colorLoss", Color.red }
    // END LOCALIZE
    };
+
+   public Object[][] getContents()
+   {
+      return contents;
+   }
 }

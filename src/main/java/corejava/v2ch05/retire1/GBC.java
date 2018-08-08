@@ -1,4 +1,6 @@
-package corejava.v2ch05.Retire;/*
+package corejava.v2ch05.retire1;
+
+/*
 GBC - A convenience class to tame the GridBagLayout
 
 Copyright (C) 2002 Cay S. Horstmann (http://horstmann.com)

@@ -1,31 +1,70 @@
-package corejava.v2ch05.Retire;
+package corejava.v2ch05.retire1;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.awt.geom.*;
-import java.util.*;
-import java.text.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.geom.Rectangle2D;
+import java.text.MessageFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+import java.util.ResourceBundle;
 
 /**
- * This applet shows a retirement calculator. The UI is displayed in English, German, and Chinese.
- * @version 1.22 2007-07-25
+ * This program shows a retirement calculator. The UI is displayed in English, German, and Chinese.
+ * @version 1.23 2012-06-07
  * @author Cay Horstmann
  */
-public class Retire extends JApplet
+public class Retire
 {
-   public void init()
+   public static void main(String[] args)
    {
       EventQueue.invokeLater(new Runnable()
          {
             public void run()
             {
-               initUI();
+               JFrame frame = new RetireFrame();
+               frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+               frame.setVisible(true);
             }
          });
    }
+}
 
-   public void initUI()
+class RetireFrame extends JFrame
+{
+   private JTextField savingsField = new JTextField(10);
+   private JTextField contribField = new JTextField(10);
+   private JTextField incomeField = new JTextField(10);
+   private JTextField currentAgeField = new JTextField(4);
+   private JTextField retireAgeField = new JTextField(4);
+   private JTextField deathAgeField = new JTextField(4);
+   private JTextField inflationPercentField = new JTextField(6);
+   private JTextField investPercentField = new JTextField(6);
+   private JTextArea retireText = new JTextArea(10, 25);
+   private RetireComponent retireCanvas = new RetireComponent();
+   private JButton computeButton = new JButton();
+   private JLabel languageLabel = new JLabel();
+   private JLabel savingsLabel = new JLabel();
+   private JLabel contribLabel = new JLabel();
+   private JLabel incomeLabel = new JLabel();
+   private JLabel currentAgeLabel = new JLabel();
+   private JLabel retireAgeLabel = new JLabel();
+   private JLabel deathAgeLabel = new JLabel();
+   private JLabel inflationPercentLabel = new JLabel();
+   private JLabel investPercentLabel = new JLabel();
+   private RetireInfo info = new RetireInfo();
+   private Locale[] locales = { Locale.US, Locale.CHINA, Locale.GERMANY };
+   private Locale currentLocale;
+   private JComboBox<Locale> localeCombo = new LocaleCombo(locales);
+   private ResourceBundle res;
+   private ResourceBundle resStrings;
+   private NumberFormat currencyFmt;
+   private NumberFormat numberFmt;
+   private NumberFormat percentFmt;
+
+   public RetireFrame()
    {
       setLayout(new GridBagLayout());
       add(languageLabel, new GBC(0, 0).setAnchor(GBC.EAST));
@@ -87,6 +126,7 @@ public class Retire extends JApplet
                validate();
             }
          });
+      pack();
    }
 
    /**
@@ -165,9 +205,9 @@ public class Retire extends JApplet
     */
    public void updateGraph()
    {
-      retireCanvas.setColorPre((Color) res.getObject("colorPre"));
-      retireCanvas.setColorGain((Color) res.getObject("colorGain"));
-      retireCanvas.setColorLoss((Color) res.getObject("colorLoss"));
+      retireCanvas.setColorPre(java.awt.Color.blue);
+      retireCanvas.setColorGain(java.awt.Color.white);
+      retireCanvas.setColorLoss(java.awt.Color.red);
       retireCanvas.setInfo(info);
       repaint();
    }
@@ -188,42 +228,11 @@ public class Retire extends JApplet
          info.setInvestPercent(percentFmt.parse(investPercentField.getText()).doubleValue());
          info.setInflationPercent(percentFmt.parse(inflationPercentField.getText()).doubleValue());
       }
-      catch (ParseException e)
+      catch (ParseException ex)
       {
+         ex.printStackTrace();
       }
    }
-
-   private JTextField savingsField = new JTextField(10);
-   private JTextField contribField = new JTextField(10);
-   private JTextField incomeField = new JTextField(10);
-   private JTextField currentAgeField = new JTextField(4);
-   private JTextField retireAgeField = new JTextField(4);
-   private JTextField deathAgeField = new JTextField(4);
-   private JTextField inflationPercentField = new JTextField(6);
-   private JTextField investPercentField = new JTextField(6);
-   private JTextArea retireText = new JTextArea(10, 25);
-   private RetireCanvas retireCanvas = new RetireCanvas();
-   private JButton computeButton = new JButton();
-   private JLabel languageLabel = new JLabel();
-   private JLabel savingsLabel = new JLabel();
-   private JLabel contribLabel = new JLabel();
-   private JLabel incomeLabel = new JLabel();
-   private JLabel currentAgeLabel = new JLabel();
-   private JLabel retireAgeLabel = new JLabel();
-   private JLabel deathAgeLabel = new JLabel();
-   private JLabel inflationPercentLabel = new JLabel();
-   private JLabel investPercentLabel = new JLabel();
-
-   private RetireInfo info = new RetireInfo();
-
-   private Locale[] locales = { Locale.US, Locale.CHINA, Locale.GERMANY };
-   private Locale currentLocale;
-   private JComboBox localeCombo = new LocaleCombo(locales);
-   private ResourceBundle res;
-   private ResourceBundle resStrings;
-   private NumberFormat currencyFmt;
-   private NumberFormat numberFmt;
-   private NumberFormat percentFmt;
 }
 
 /**
@@ -231,6 +240,17 @@ public class Retire extends JApplet
  */
 class RetireInfo
 {
+   private double savings;
+   private double contrib;
+   private double income;
+   private int currentAge;
+   private int retireAge;
+   private int deathAge;
+   private double inflationPercent;
+   private double investPercent;
+   private int age;
+   private double balance;
+
    /**
     * Gets the available balance for a given year.
     * @param year the year for which to compute the balance
@@ -397,26 +417,24 @@ class RetireInfo
    {
       investPercent = newValue;
    }
-
-   private double savings;
-   private double contrib;
-   private double income;
-   private int currentAge;
-   private int retireAge;
-   private int deathAge;
-   private double inflationPercent;
-   private double investPercent;
-
-   private int age;
-   private double balance;
 }
 
 /**
- * This panel draws a graph of the investment result.
+ * This component draws a graph of the investment result.
  */
-class RetireCanvas extends JPanel
+class RetireComponent extends JComponent
 {
-   public RetireCanvas()
+   private static final int DEFAULT_WIDTH = 800;
+   private static final int DEFAULT_HEIGHT = 600;
+   private static final int PANEL_WIDTH = 400;
+   private static final int PANEL_HEIGHT = 200;
+
+   private RetireInfo info = null;
+   private Color colorPre;
+   private Color colorGain;
+   private Color colorLoss;
+
+   public RetireComponent()
    {
       setSize(PANEL_WIDTH, PANEL_HEIGHT);
    }
@@ -508,11 +526,6 @@ class RetireCanvas extends JPanel
       colorLoss = color;
       repaint();
    }
-
-   private RetireInfo info = null;
-   private Color colorPre;
-   private Color colorGain;
-   private Color colorLoss;
-   private static final int PANEL_WIDTH = 400;
-   private static final int PANEL_HEIGHT = 200;
+   
+   public Dimension getPreferredSize() { return new Dimension(DEFAULT_WIDTH, DEFAULT_HEIGHT); }   
 }
