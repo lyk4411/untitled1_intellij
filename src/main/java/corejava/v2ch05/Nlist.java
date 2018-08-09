@@ -25,6 +25,9 @@ public class Nlist {
                 bundle.getString("one"),
                 bundle.getString("two"),
                 bundle.getString("three"));
+        System.out.println();
+        System.out.println("=========================");
+        System.out.printf(String.valueOf(bundle.getObject("date")));
     }
 
     static void translate(ResourceBundle bundle, String key) {

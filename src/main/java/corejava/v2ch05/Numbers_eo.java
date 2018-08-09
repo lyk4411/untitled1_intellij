@@ -6,6 +6,7 @@ package corejava.v2ch05;
  * Porject name: untitled1
  */
 
+import java.util.Date;
 import java.util.ListResourceBundle;
 
 public class Numbers_eo extends ListResourceBundle {
@@ -14,7 +15,8 @@ public class Numbers_eo extends ListResourceBundle {
             {"sum-of-numbers", "%s plus %s estas %s"},
             {"one", "unu"},
             {"two", "du"},
-            {"three", "tri"}
+            {"three", "tri"},
+            {"date",new Date()}
     };
 
     @Override
