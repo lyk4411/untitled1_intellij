@@ -1,10 +1,13 @@
 package corejava.v2ch08.imageViewer;
 
-import java.awt.*;
-import java.io.*;
-import java.nio.file.*;
-import javax.imageio.*;
+import javax.imageio.ImageIO;
 import javax.swing.*;
+import java.awt.*;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 /**
  * A bean for viewing an image.
