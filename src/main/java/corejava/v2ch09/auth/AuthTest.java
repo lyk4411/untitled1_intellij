@@ -34,7 +34,7 @@ public class AuthTest
       }
    }
 }
-
+//
 //F:\Users\lyk\IdeaProjects\untitled1\src\main\java\corejava\v2ch09\auth>java -cla
 //        sspath login.jar;action.jar -Djava.security.policy=AuthTest.policy -Djava.securi
 //        ty.auth.login.config=jaas.config AuthTest
