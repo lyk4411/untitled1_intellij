@@ -1,8 +1,9 @@
 package corejava.v2ch09.permissions;
 
-import java.awt.*;
-import java.awt.event.*;
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * This class demonstrates the custom WordCheckPermission.
@@ -13,8 +14,9 @@ public class PermissionTest
 {
    public static void main(String[] args)
    {
-      System.setProperty("java.security.policy", "permissions/PermissionTest.policy");      
+      System.setProperty("java.security.policy", "file:/F:/Users/lyk/IdeaProjects/untitled1/src/main/java/corejava/v2ch09/permissions/PermissionTest.policy");
       System.setSecurityManager(new SecurityManager());
+//      System.out.println(System.getProperty("java.security.policy"));
       EventQueue.invokeLater(new Runnable()
          {
             public void run()
