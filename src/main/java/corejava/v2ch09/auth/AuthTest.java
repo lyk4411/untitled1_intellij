@@ -1,8 +1,9 @@
 package corejava.v2ch09.auth;
 
-import java.security.*;
-import javax.security.auth.*;
-import javax.security.auth.login.*;
+import javax.security.auth.Subject;
+import javax.security.auth.login.LoginContext;
+import javax.security.auth.login.LoginException;
+import java.security.PrivilegedAction;
 
 /**
  * This program authenticates a user via a custom login and then executes the SysPropAction with the
@@ -33,3 +34,7 @@ public class AuthTest
       }
    }
 }
+
+//F:\Users\lyk\IdeaProjects\untitled1\src\main\java\corejava\v2ch09\auth>java -cla
+//        sspath login.jar;action.jar -Djava.security.policy=AuthTest.policy -Djava.securi
+//        ty.auth.login.config=jaas.config AuthTest
