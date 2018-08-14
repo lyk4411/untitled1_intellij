@@ -1,13 +1,17 @@
 package corejava.v2ch09.jaas;
 
-import java.io.*;
-import java.nio.file.*;
-import java.security.*;
-import java.util.*;
-import javax.security.auth.*;
+import javax.security.auth.Subject;
 import javax.security.auth.callback.*;
-import javax.security.auth.login.*;
-import javax.security.auth.spi.*;
+import javax.security.auth.login.LoginException;
+import javax.security.auth.spi.LoginModule;
+import java.io.IOException;
+import java.nio.file.Paths;
+import java.security.Principal;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.Set;
+import java.util.stream.Stream;
 
 /**
  * This login module authenticates users by reading usernames, passwords, and roles from a text
@@ -76,6 +80,8 @@ public class SimpleLoginModule implements LoginModule
          while (in.hasNextLine())
          {
             String[] inputs = in.nextLine().split("\\|");
+            Stream.of(inputs).forEach(n -> System.out.print(n));
+            System.out.println();
             if (inputs[0].equals(username) && Arrays.equals(inputs[1].toCharArray(), password))
             {
                String role = inputs[2];
