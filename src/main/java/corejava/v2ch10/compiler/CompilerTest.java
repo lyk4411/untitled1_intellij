@@ -1,12 +1,12 @@
 package corejava.v2ch10.compiler;
 
-import java.awt.*;
-import java.io.*;
-import java.util.*;
-import java.util.List;
 import javax.swing.*;
 import javax.tools.*;
-import javax.tools.JavaFileObject.*;
+import javax.tools.JavaFileObject.Kind;
+import java.awt.*;
+import java.io.IOException;
+import java.util.*;
+import java.util.List;
 
 /**
  * @version 1.00 2007-10-28
@@ -39,7 +39,8 @@ public class CompilerTest
          };
 
 
-      String frameClassName = args.length == 0 ? "buttons2.ButtonFrame" : args[0]; 
+      String frameClassName = args.length == 0 ? "corejava.v2ch10.buttons2.ButtonFrame" : args[0];
+
       JavaFileObject source = buildSource(frameClassName);
       JavaCompiler.CompilationTask task = compiler.getTask(null, fileManager, diagnostics, null,
             null, Arrays.asList(source));
@@ -84,6 +85,7 @@ public class CompilerTest
    static JavaFileObject buildSource(String superclassName) 
       throws IOException, ClassNotFoundException
    {
+
       StringBuilderJavaSource source = new StringBuilderJavaSource("x.Frame");
       source.append("package x;\n");
       source.append("public class Frame extends " + superclassName + " {");
