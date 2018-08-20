@@ -8,8 +8,6 @@ package corejava.v2ch10.DocumentedTest.corejava.v2ch10.DocumentedTest;
 
 
 
-import corejava.v2ch10.DocumentedTest.DocumentDemo;
-
 import java.lang.annotation.*;
 import java.util.Arrays;
 
