@@ -7,6 +7,7 @@ import java.lang.annotation.*;
  * @author Cay Horstmann
  */
 
+@Documented
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ActionListenerFor
