@@ -25,6 +25,7 @@ public class Employee
 
    static
    {
+      System.load("F:\\Users\\lyk\\IdeaProjects\\untitled1\\src\\main\\java\\corejava\\v2ch12\\employee\\Employee.c");
       System.loadLibrary("Employee");
    }
 }
