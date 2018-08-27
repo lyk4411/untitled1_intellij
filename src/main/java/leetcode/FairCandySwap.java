@@ -2,6 +2,7 @@ package leetcode;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.IntStream;
 
 /**
  * Created by lyk on 2018-8-27.
@@ -28,9 +29,12 @@ public class FairCandySwap {
 
     public static void main(String[] args) {
         FairCandySwap fcs = new FairCandySwap();
-        System.out.println(fcs.fairCandySwap(new int[]{1, 2}, new int[]{2, 2}));
-        System.out.println(fcs.fairCandySwap(new int[]{1, 2}, new int[]{2, 3}));
-        System.out.println(fcs.fairCandySwap(new int[]{2}, new int[]{1, 3}));
-        System.out.println(fcs.fairCandySwap(new int[]{1, 2, 5}, new int[]{2, 4}));
+        IntStream.of(fcs.fairCandySwap(new int[]{1, 2}, new int[]{2, 2})).forEach(n -> System.out.print(n + " "));
+        System.out.println();
+        IntStream.of(fcs.fairCandySwap(new int[]{1, 2}, new int[]{2, 3})).forEach(n -> System.out.print(n + " "));
+        System.out.println();
+        IntStream.of(fcs.fairCandySwap(new int[]{2}, new int[]{1, 3})).forEach(n -> System.out.print(n + " "));
+        System.out.println();
+        IntStream.of(fcs.fairCandySwap(new int[]{1, 2, 5}, new int[]{2, 4})).forEach(n -> System.out.print(n + " "));
     }
 }
