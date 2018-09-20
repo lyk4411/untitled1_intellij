@@ -16,8 +16,8 @@ public class TreeNode {
     @Override
     public String toString() {
 
-        return (left!=null?left.toString():"")
+        return (left != null ? left.toString() : " null ")
                 + ":" + val + ":" +
-                (right !=null?right.toString():"");
+                (right != null ? right.toString() : " null ");
     }
 }

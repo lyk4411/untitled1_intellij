@@ -39,5 +39,6 @@ public class AllPossibleFullBinaryTrees {
     public static void main(String[] args) {
         AllPossibleFullBinaryTrees apfbt = new AllPossibleFullBinaryTrees();
         System.out.println(apfbt.allPossibleFBT(7));
+        System.out.println(apfbt.allPossibleFBT(6));
     }
 }
