@@ -12,15 +12,15 @@ public class LinkedListTest
    public static void main(String[] args)
    {
       List<String> a = new LinkedList<>();
-      a.add("Amy");
-      a.add("Carl");
-      a.add("Erica");
+      a.add("aAmy");
+      a.add("aCarl");
+      a.add("aErica");
 
       List<String> b = new LinkedList<>();
-      b.add("Bob");
-      b.add("Doug");
-      b.add("Frances");
-      b.add("Gloria");
+      b.add("bBob");
+      b.add("bDoug");
+      b.add("bFrances");
+      b.add("bGloria");
 
       // merge the words from b into a
 
