@@ -1,13 +1,16 @@
 package v1ch14.swingWorker;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.io.*;
-import java.util.*;
-import java.util.List;
-import java.util.concurrent.*;
-
 import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.List;
+import java.util.Scanner;
+import java.util.concurrent.CancellationException;
+import java.util.concurrent.ExecutionException;
 
 /**
  * This program demonstrates a worker thread that runs a potentially time-consuming task.
@@ -130,7 +133,7 @@ class SwingWorkerFrame extends JFrame
                data.number = lineNumber;
                data.line = line;
                publish(data);
-               Thread.sleep(1); // to test cancellation; no need to do this in your programs
+               Thread.sleep(20); // to test cancellation; no need to do this in your programs
             }
          }
          return text;
