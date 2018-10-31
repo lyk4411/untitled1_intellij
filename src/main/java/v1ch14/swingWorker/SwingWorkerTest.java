@@ -181,5 +181,5 @@ class SwingWorkerFrame extends JFrame
          openItem.setEnabled(true);
       }
 
-   };
+   }
 }
