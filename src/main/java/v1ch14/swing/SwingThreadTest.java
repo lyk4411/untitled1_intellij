@@ -91,6 +91,8 @@ class BadWorkerRunnable implements Runnable
       {
          while (true)
          {
+            System.out.println(EventQueue.isDispatchThread());
+
             int i = Math.abs(generator.nextInt());
             if (i % 2 == 0) combo.insertItemAt(i, 0);
             else if (combo.getItemCount() > 0) combo.removeItemAt(i % combo.getItemCount());
@@ -129,6 +131,8 @@ class GoodWorkerRunnable implements Runnable
                {
                   public void run()
                   {
+                     System.out.println(EventQueue.isDispatchThread());
+
                      int i = Math.abs(generator.nextInt());
                      if (i % 2 == 0) combo.insertItemAt(i, 0);
                      else if (combo.getItemCount() > 0) combo.removeItemAt(i
