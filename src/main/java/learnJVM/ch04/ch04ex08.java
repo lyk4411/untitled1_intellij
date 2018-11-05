@@ -20,7 +20,7 @@ public class ch04ex08 {
         List<OOMObject> list = new ArrayList<OOMObject>();
         for (int i = 0; i < num; i++) {
             // 稍作延时，令监视曲线的变化更加明显
-            Thread.sleep(50);
+            Thread.sleep(500);
             list.add(new OOMObject());
         }
         System.gc();
