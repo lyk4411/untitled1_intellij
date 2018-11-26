@@ -29,7 +29,8 @@ public class DynamicProxyTest {
 
         Object bind(Object originalObj) {
             this.originalObj = originalObj;
-            return Proxy.newProxyInstance(originalObj.getClass().getClassLoader(), originalObj.getClass().getInterfaces(), this);
+            return Proxy.newProxyInstance(originalObj.getClass().getClassLoader(),
+                    originalObj.getClass().getInterfaces(), this);
         }
 
         @Override
