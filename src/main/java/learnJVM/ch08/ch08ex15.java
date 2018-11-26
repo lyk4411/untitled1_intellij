@@ -1,8 +1,10 @@
 package learnJVM.ch08;
-import java.lang.invoke.MethodHandle;
-import java.lang.invoke.MethodType;
 
-import static java.lang.invoke.MethodHandles.lookup;
+import java.lang.invoke.MethodHandle;
+import java.lang.invoke.MethodHandles;
+import java.lang.invoke.MethodType;
+import java.lang.reflect.Field;
+
 /**
  * Created by lyk on 2018-11-26.
  * Package name: learnJVM.ch08
@@ -26,10 +28,17 @@ public class ch08ex15 {
     class Son extends Father {
         void thinking() {
             try {
+//                MethodType mt = MethodType.methodType(void.class);
+//                MethodHandle mh = lookup().findSpecial(GrandFather.class,
+//                        "thinking", mt, getClass());
+//                mh.invoke(this);
+                //1.8
                 MethodType mt = MethodType.methodType(void.class);
-                MethodHandle mh = lookup().findSpecial(GrandFather.class,
-                        "thinking", mt, getClass());
-                mh.invoke(this);
+                Field IMPL_LOOKUP = MethodHandles.Lookup.class.getDeclaredField("IMPL_LOOKUP");
+                IMPL_LOOKUP.setAccessible(true);
+                MethodHandles.Lookup lkp = (MethodHandles.Lookup)IMPL_LOOKUP.get(null);
+                MethodHandle h1 = lkp.findSpecial(GrandFather.class, "thinking", mt, GrandFather.class);
+                h1.invoke(this);
                 } catch (Throwable e) {
             }
         }
