@@ -12,10 +12,10 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 interface IBusiness {
-    public boolean doBusiness();
+    boolean doBusiness();
 }
 interface IBusiness2 {
-    public void doBusiness2();
+    void doBusiness2();
 
 }
 
