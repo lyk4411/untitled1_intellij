@@ -28,6 +28,7 @@ public class ch08ex15 {
     class Son extends Father {
         void thinking() {
             try {
+                // 1.7
 //                MethodType mt = MethodType.methodType(void.class);
 //                MethodHandle mh = lookup().findSpecial(GrandFather.class,
 //                        "thinking", mt, getClass());
