@@ -57,5 +57,7 @@ public class GameOf24 {
 //        System.out.println(gameOf24.judgePoint24(new int[]{1, 3, 8, 3}));
         System.out.println(gameOf24.judgePoint24(new int[]{8, 8, 8, 8}));
         System.out.println(gameOf24.judgePoint24(new int[]{6, 6, 4, 2}));
+        System.out.println(gameOf24.judgePoint24(new int[]{2, 2, 1, 9}));
+
     }
 }
