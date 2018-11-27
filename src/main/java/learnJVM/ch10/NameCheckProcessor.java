@@ -1,7 +1,9 @@
 package learnJVM.ch10;
 
-import javax.annotation.processing.*;
-import javax.lang.model.SourceVersion;
+import javax.annotation.processing.AbstractProcessor;
+import javax.annotation.processing.ProcessingEnvironment;
+import javax.annotation.processing.RoundEnvironment;
+import javax.annotation.processing.SupportedAnnotationTypes;
 import javax.lang.model.element.Element;
 import javax.lang.model.element.TypeElement;
 import java.util.Set;
@@ -14,7 +16,7 @@ import java.util.Set;
 // 可以用"*"表示支持所有Annotations
 @SupportedAnnotationTypes("*")
 // 只支持JDK 1.6的Java代码
-@SupportedSourceVersion(SourceVersion.RELEASE_6)
+//@SupportedSourceVersion(SourceVersion.RELEASE_6)
 public class NameCheckProcessor extends AbstractProcessor {
 
     private NameChecker nameChecker;
