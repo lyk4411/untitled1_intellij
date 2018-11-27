@@ -5,6 +5,7 @@ package learnJVM.ch11;
  * Package name: learnJVM.ch11
  * Porject name: untitled1
  */
+//-XX:+UnlockDiagnosticVMOptions -XX:+PrintCompilation -XX:+PrintInlining
 public class ch11ex02 {
     public static final int NUM = 15000;
 
