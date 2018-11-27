@@ -78,8 +78,10 @@ public class Client
         Subject subject = (Subject) Proxy.newProxyInstance(handler.getClass().getClassLoader(), realSubject
                 .getClass().getInterfaces(), handler);
 
-        System.out.println(subject.getClass().getName());
+        System.out.println("class name:" + subject.getClass().getName());
+        System.out.println();
         subject.rent();
+        System.out.println("===============================================");
         subject.hello("world");
     }
 }
