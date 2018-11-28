@@ -5,6 +5,7 @@ package learnJVM.ch12;
  * Package name: learnJVM.ch12
  * Porject name: untitled1
  */
+// -Xmx3G -Xmn2G -server -XX:-DoEscapeAnalysis
 public class EscapeAnalysisLab {
     public static void main(String[] args) throws Exception {
         int sum = 0;
