@@ -11,6 +11,7 @@ public class classtest {
         Class a =  ct.getClass();
         final String name = a.getName();
         System.out.println(name);
+        System.out.println("================================");
 
         String str2 = new String("str")+new String("01");
         str2.intern();
@@ -21,5 +22,13 @@ public class classtest {
         String str4 = "str110111";
         str3.intern();
         System.out.println(str3==str4);
+
+        System.out.println("================================");
+        String s = new String("abc");
+        String s1 = "abc";
+        String s2 = new String("abc");
+        System.out.println(s == s1.intern());
+        System.out.println(s == s2.intern());
+        System.out.println(s1 == s2.intern());
     }
 }
