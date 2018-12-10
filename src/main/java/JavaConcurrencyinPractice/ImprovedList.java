@@ -1,8 +1,9 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.ListIterator;
 
 /**
  * ImprovedList
@@ -11,7 +12,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class ImprovedList<T> implements List<T> {
     private final List<T> list;
 

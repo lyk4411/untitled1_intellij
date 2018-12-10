@@ -1,15 +1,12 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * SafePoint
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class SafePoint {
-    @GuardedBy("this") private int x, y;
+    private int x, y;
 
     private SafePoint(int[] a) {
         this(a[0], a[1]);

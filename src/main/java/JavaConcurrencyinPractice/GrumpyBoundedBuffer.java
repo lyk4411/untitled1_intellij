@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * GrumpyBoundedBuffer
  * <p/>
@@ -9,7 +7,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
         public class GrumpyBoundedBuffer <V> extends BaseBoundedBuffer<V> {
     public GrumpyBoundedBuffer() {
         this(100);

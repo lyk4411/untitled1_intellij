@@ -1,8 +1,8 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * MonitorVehicleTracker
@@ -11,9 +11,8 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
  public class MonitorVehicleTracker {
-    @GuardedBy("this") private final Map<String, MutablePoint> locations;
+    private final Map<String, MutablePoint> locations;
 
     public MonitorVehicleTracker(Map<String, MutablePoint> locations) {
         this.locations = deepCopy(locations);

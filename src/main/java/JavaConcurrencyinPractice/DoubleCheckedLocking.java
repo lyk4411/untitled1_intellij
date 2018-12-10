@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * DoubleCheckedLocking
  * <p/>
@@ -9,7 +7,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@NotThreadSafe
 public class DoubleCheckedLocking {
     private static Resource resource;
 

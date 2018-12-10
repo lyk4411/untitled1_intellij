@@ -1,9 +1,10 @@
 package JavaConcurrencyinPractice;
 
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.math.BigInteger;
-import javax.servlet.*;
-
-import net.jcip.annotations.*;
 
 /**
  * VolatileCachedFactorizer
@@ -12,7 +13,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class VolatileCachedFactorizer extends GenericServlet implements Servlet {
     private volatile OneValueCache cache = new OneValueCache(null, null);
 

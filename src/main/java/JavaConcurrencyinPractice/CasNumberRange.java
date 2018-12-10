@@ -1,8 +1,6 @@
 package JavaConcurrencyinPractice;
 
-import java.util.concurrent.atomic.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * CasNumberRange
@@ -11,9 +9,7 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
         public class CasNumberRange {
-    @Immutable
             private static class IntPair {
         // INVARIANT: lower <= upper
         final int lower;

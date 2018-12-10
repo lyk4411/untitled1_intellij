@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * StripedMap
  * <p/>
@@ -9,7 +7,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class StripedMap {
     // Synchronization policy: buckets[n] guarded by locks[n%N_LOCKS]
     private static final int N_LOCKS = 16;

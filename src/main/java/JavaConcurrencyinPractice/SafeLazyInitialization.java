@@ -1,6 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
 
 /**
  * SafeLazyInitialization
@@ -9,7 +8,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class SafeLazyInitialization {
     private static Resource resource;
 

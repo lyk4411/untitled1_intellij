@@ -1,8 +1,7 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * ServerStatusBeforeSplit
@@ -11,10 +10,9 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class ServerStatusBeforeSplit {
-    @GuardedBy("this") public final Set<String> users;
-    @GuardedBy("this") public final Set<String> queries;
+    public final Set<String> users;
+    public final Set<String> queries;
 
     public ServerStatusBeforeSplit() {
         users = new HashSet<String>();

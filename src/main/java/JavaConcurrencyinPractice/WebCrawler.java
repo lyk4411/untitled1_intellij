@@ -1,10 +1,13 @@
 package JavaConcurrencyinPractice;
 
 import java.net.URL;
-import java.util.*;
-import java.util.concurrent.*;
-
-import net.jcip.annotations.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -17,7 +20,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
  */
 public abstract class WebCrawler {
     private volatile TrackingExecutor exec;
-    @GuardedBy("this") private final Set<URL> urlsToCrawl = new HashSet<URL>();
+    private final Set<URL> urlsToCrawl = new HashSet<URL>();
 
     private final ConcurrentMap<URL, Boolean> seen = new ConcurrentHashMap<URL, Boolean>();
     private static final long TIMEOUT = 500;

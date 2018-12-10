@@ -1,8 +1,6 @@
 package JavaConcurrencyinPractice;
 
-import java.util.concurrent.locks.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
 /**
  * OneShotLatch
@@ -11,7 +9,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class OneShotLatch {
     private final Sync sync = new Sync();
 

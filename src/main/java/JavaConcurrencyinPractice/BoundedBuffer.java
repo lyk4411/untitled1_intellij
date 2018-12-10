@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * BoundedBuffer
  * <p/>
@@ -9,7 +7,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
         public class BoundedBuffer <V> extends BaseBoundedBuffer<V> {
     // CONDITION PREDICATE: not-full (!isFull())
     // CONDITION PREDICATE: not-empty (!isEmpty())

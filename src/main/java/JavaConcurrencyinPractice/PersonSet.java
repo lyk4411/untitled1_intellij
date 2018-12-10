@@ -1,8 +1,7 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * PersonSet
@@ -12,9 +11,8 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@ThreadSafe
 public class PersonSet {
-    @GuardedBy("this") private final Set<Person> mySet = new HashSet<Person>();
+     private final Set<Person> mySet = new HashSet<Person>();
 
     public synchronized void addPerson(Person p) {
         mySet.add(p);

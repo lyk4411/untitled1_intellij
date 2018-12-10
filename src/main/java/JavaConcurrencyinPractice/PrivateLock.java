@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * PrivateLock
  * <p/>
@@ -11,7 +9,7 @@ import net.jcip.annotations.*;
  */
 public class PrivateLock {
     private final Object myLock = new Object();
-    @GuardedBy("myLock") Widget widget;
+    Widget widget;
 
     void someMethod() {
         synchronized (myLock) {

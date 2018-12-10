@@ -1,8 +1,6 @@
 package JavaConcurrencyinPractice;
 
-import java.util.concurrent.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.Semaphore;
 
 /**
  * BoundedBuffer
@@ -11,11 +9,10 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class SemaphoreBoundedBuffer <E> {
     private final Semaphore availableItems, availableSpaces;
-    @GuardedBy("this") private final E[] items;
-    @GuardedBy("this") private int putPosition = 0, takePosition = 0;
+    private final E[] items;
+    private int putPosition = 0, takePosition = 0;
 
     public SemaphoreBoundedBuffer(int capacity) {
         if (capacity <= 0)

@@ -1,9 +1,8 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-import java.util.regex.*;
-
-import net.jcip.annotations.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.regex.Pattern;
 
 /**
  * BetterAttributeStore
@@ -12,9 +11,8 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class BetterAttributeStore {
-    @GuardedBy("this") private final Map<String, String>
+     private final Map<String, String>
             attributes = new HashMap<String, String>();
 
     public boolean userLocationMatches(String name, String regexp) {

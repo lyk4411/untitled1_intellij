@@ -2,7 +2,6 @@ package JavaConcurrencyinPractice;
 
 import java.util.*;
 import java.util.concurrent.*;
-import static net.jcip.examples.LaunderThrowable.launderThrowable;
 
 /**
  * Renderer
@@ -40,7 +39,7 @@ public abstract class Renderer {
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
         } catch (ExecutionException e) {
-            throw launderThrowable(e.getCause());
+            System.err.println(e.getCause());
         }
     }
 

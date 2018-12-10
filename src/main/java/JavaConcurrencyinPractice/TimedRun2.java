@@ -2,7 +2,6 @@ package JavaConcurrencyinPractice;
 
 import java.util.concurrent.*;
 import static java.util.concurrent.Executors.newScheduledThreadPool;
-import static net.jcip.examples.LaunderThrowable.launderThrowable;
 
 /**
  * TimedRun2
@@ -30,7 +29,7 @@ public class TimedRun2 {
 
             void rethrow() {
                 if (t != null)
-                    throw launderThrowable(t);
+                    System.err.println(t);
             }
         }
 

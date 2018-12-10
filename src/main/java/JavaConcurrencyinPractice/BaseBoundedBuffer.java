@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * BaseBoundedBuffer
  * <p/>
@@ -9,12 +7,11 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public abstract class BaseBoundedBuffer <V> {
-    @GuardedBy("this") private final V[] buf;
-    @GuardedBy("this") private int tail;
-    @GuardedBy("this") private int head;
-    @GuardedBy("this") private int count;
+     private final V[] buf;
+     private int tail;
+     private int head;
+    private int count;
 
     protected BaseBoundedBuffer(int capacity) {
         this.buf = (V[]) new Object[capacity];

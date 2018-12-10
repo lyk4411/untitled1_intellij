@@ -1,10 +1,11 @@
 package JavaConcurrencyinPractice;
 
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.math.BigInteger;
-import java.util.concurrent.atomic.*;
-import javax.servlet.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * UnsafeCachingFactorizer
@@ -14,7 +15,6 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@NotThreadSafe
 public class UnsafeCachingFactorizer extends GenericServlet implements Servlet {
     private final AtomicReference<BigInteger> lastNumber
             = new AtomicReference<BigInteger>();

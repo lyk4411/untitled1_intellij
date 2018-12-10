@@ -1,8 +1,7 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * SafeStates
@@ -11,7 +10,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class SafeStates {
     private final Map<String, String> states;
 

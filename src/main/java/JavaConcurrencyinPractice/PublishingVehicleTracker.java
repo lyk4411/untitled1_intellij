@@ -1,9 +1,8 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-import java.util.concurrent.*;
-
-import net.jcip.annotations.*;
+import java.util.Collections;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * PublishingVehicleTracker
@@ -12,7 +11,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class PublishingVehicleTracker {
     private final Map<String, SafePoint> locations;
     private final Map<String, SafePoint> unmodifiableMap;

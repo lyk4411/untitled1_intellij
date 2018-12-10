@@ -1,11 +1,12 @@
 package JavaConcurrencyinPractice;
 
-import static java.util.concurrent.TimeUnit.SECONDS;
 import java.math.BigInteger;
-import java.util.*;
-import java.util.concurrent.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
-import net.jcip.annotations.*;
+import static java.util.concurrent.TimeUnit.SECONDS;
 
 /**
  * PrimeGenerator
@@ -14,11 +15,10 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class PrimeGenerator implements Runnable {
     private static ExecutorService exec = Executors.newCachedThreadPool();
 
-    @GuardedBy("this") private final List<BigInteger> primes
+    private final List<BigInteger> primes
             = new ArrayList<BigInteger>();
     private volatile boolean cancelled;
 

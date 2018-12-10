@@ -1,8 +1,6 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.Vector;
 
 /**
  * BetterVector
@@ -11,7 +9,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class BetterVector <E> extends Vector<E> {
     // When extending a serializable class, you should redefine serialVersionUID
     static final long serialVersionUID = -3963416950630760754L;

@@ -1,8 +1,8 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
-
-import net.jcip.annotations.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * ListHelder
@@ -13,7 +13,6 @@ import net.jcip.annotations.*;
  * @author Brian Goetz and Tim Peierls
  */
 
-@NotThreadSafe
 class BadListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
@@ -25,7 +24,6 @@ class BadListHelper <E> {
     }
 }
 
-@ThreadSafe
 class GoodListHelper <E> {
     public List<E> list = Collections.synchronizedList(new ArrayList<E>());
 
