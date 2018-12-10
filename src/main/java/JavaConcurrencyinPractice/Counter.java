@@ -1,7 +1,5 @@
 package JavaConcurrencyinPractice;
 
-import net.jcip.annotations.*;
-
 /**
  * Counter
  * <p/>
@@ -9,9 +7,8 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public final class Counter {
-    @GuardedBy("this") private long value = 0;
+    private long value = 0;
 
     public synchronized long getValue() {
         return value;

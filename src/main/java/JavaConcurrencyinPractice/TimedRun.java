@@ -1,7 +1,6 @@
 package JavaConcurrencyinPractice;
 
 import java.util.concurrent.*;
-import static net.jcip.examples.LaunderThrowable.launderThrowable;
 
 /**
  * TimedRun
@@ -23,7 +22,7 @@ public class TimedRun {
             // task will be cancelled below
         } catch (ExecutionException e) {
             // exception thrown in task; rethrow
-            throw launderThrowable(e.getCause());
+            System.err.println(e.getCause());
         } finally {
             // Harmless if task already completed
             task.cancel(true); // interrupt if running

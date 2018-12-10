@@ -1,8 +1,6 @@
 package JavaConcurrencyinPractice;
 
-import java.util.concurrent.atomic.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * LinkedQueue
@@ -11,7 +9,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class LinkedQueue <E> {
 
     private static class Node <E> {

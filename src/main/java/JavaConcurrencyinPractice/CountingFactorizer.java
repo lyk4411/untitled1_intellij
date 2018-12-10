@@ -1,10 +1,11 @@
 package JavaConcurrencyinPractice;
 
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.math.BigInteger;
-import java.util.concurrent.atomic.*;
-import javax.servlet.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.atomic.AtomicLong;
 
 /**
  * CountingFactorizer
@@ -13,7 +14,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class CountingFactorizer extends GenericServlet implements Servlet {
     private final AtomicLong count = new AtomicLong(0);
 

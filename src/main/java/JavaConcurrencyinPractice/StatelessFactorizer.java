@@ -1,9 +1,10 @@
 package JavaConcurrencyinPractice;
 
+import javax.servlet.GenericServlet;
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.math.BigInteger;
-import javax.servlet.*;
-
-import net.jcip.annotations.*;
 
 /**
  * StatelessFactorizer
@@ -12,7 +13,7 @@ import net.jcip.annotations.*;
  * 
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
+
 public class StatelessFactorizer extends GenericServlet implements Servlet {
 
     public void service(ServletRequest req, ServletResponse resp) {

@@ -1,8 +1,8 @@
 package JavaConcurrencyinPractice;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
-import static net.jcip.examples.LaunderThrowable.launderThrowable;
 
 /**
  * FutureRenderer
@@ -39,7 +39,7 @@ public abstract class FutureRenderer {
             // We don't need the result, so cancel the task too
             future.cancel(true);
         } catch (ExecutionException e) {
-            throw launderThrowable(e.getCause());
+            System.err.println(e.getCause());
         }
     }
 

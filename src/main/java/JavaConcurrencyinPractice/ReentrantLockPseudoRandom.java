@@ -1,8 +1,7 @@
 package JavaConcurrencyinPractice;
 
-import java.util.concurrent.locks.*;
-
-import net.jcip.annotations.*;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * ReentrantLockPseudoRandom
@@ -11,7 +10,6 @@ import net.jcip.annotations.*;
  *
  * @author Brian Goetz and Tim Peierls
  */
-@ThreadSafe
 public class ReentrantLockPseudoRandom extends PseudoRandom {
     private final Lock lock = new ReentrantLock(false);
     private int seed;
