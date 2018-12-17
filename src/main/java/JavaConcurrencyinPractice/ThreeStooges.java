@@ -33,4 +33,11 @@ import java.util.Vector;
         stooges.add("Curly");
         return stooges.toString();
     }
+
+    public static void main(String[] args) {
+        ThreeStooges ts = new ThreeStooges();
+        System.out.println(ts.stooges);
+        ts.stooges.add("abc");
+        System.out.println(ts.stooges);
+    }
 }
