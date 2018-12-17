@@ -11,9 +11,10 @@ public class VerifyinganAlienDictionary {
         for (int i = 0; i < order.length(); ++i)
             index[order.charAt(i) - 'a'] = i;
 
-        search: for (int i = 0; i < words.length - 1; ++i) {
+        search:
+        for (int i = 0; i < words.length - 1; ++i) {
             String word1 = words[i];
-            String word2 = words[i+1];
+            String word2 = words[i + 1];
 
             // Find the first difference word1[k] != word2[k].
             for (int k = 0; k < Math.min(word1.length(), word2.length()); ++k) {
@@ -36,7 +37,7 @@ public class VerifyinganAlienDictionary {
 
     public static void main(String[] args) {
         VerifyinganAlienDictionary vad = new VerifyinganAlienDictionary();
-        System.out.println(vad.isAlienSorted(new String[]{"hello","leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
-        System.out.println(vad.isAlienSorted(new String[]{"word","world"}, "worldabcefghijkmnpqstuvxyz"));
+        System.out.println(vad.isAlienSorted(new String[]{"hello", "leetcode"}, "hlabcdefgijkmnopqrstuvwxyz"));
+        System.out.println(vad.isAlienSorted(new String[]{"word", "world"}, "worldabcefghijkmnpqstuvxyz"));
     }
 }
