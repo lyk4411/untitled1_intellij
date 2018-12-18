@@ -30,7 +30,7 @@ public class Resource3 {
         });
         t.setDaemon(false);
         t.start();
-        Thread.currentThread().sleep(3);
+        Thread.currentThread().sleep(30);
         for (String s : list) {
             System.out.println(list.hashCode());
             System.out.println(s);
