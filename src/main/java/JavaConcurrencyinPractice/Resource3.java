@@ -23,7 +23,7 @@ public class Resource3 {
 
             @Override
             public void run() {
-                while (true) {
+                while (count <= 1000) {
                     list.add(count++ + "");
                 }
             }
@@ -33,6 +33,11 @@ public class Resource3 {
         Thread.currentThread().sleep(3);
         for (String s : list) {
             System.out.println(list.hashCode());
+            System.out.println(s);
+        }
+        System.out.println("===================================================");
+        for (String s : a) {
+            System.out.println(a.hashCode());
             System.out.println(s);
         }
     }
