@@ -40,6 +40,17 @@ public class Preloader {
 
     interface ProductInfo {
     }
+
+    public static void main(String[] args) {
+        Preloader preloader = new Preloader();
+        try {
+            System.out.println(preloader.get());
+        } catch (DataLoadException e) {
+            e.printStackTrace();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
 
 class DataLoadException extends Exception { }
