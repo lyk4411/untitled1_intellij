@@ -28,7 +28,7 @@ public class Resource3 {
                 }
             }
         });
-        t.setDaemon(true);
+        t.setDaemon(false);
         t.start();
         Thread.currentThread().sleep(3);
         for (String s : list) {
