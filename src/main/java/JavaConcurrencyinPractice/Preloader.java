@@ -43,6 +43,8 @@ public class Preloader {
 
     public static void main(String[] args) {
         Preloader preloader = new Preloader();
+        ExecutorService executor = Executors.newCachedThreadPool();
+        executor.execute(preloader.future);
         try {
             System.out.println(preloader.get());
         } catch (DataLoadException e) {
