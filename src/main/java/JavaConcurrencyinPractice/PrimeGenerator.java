@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.stream.Stream;
 
 import static java.util.concurrent.TimeUnit.SECONDS;
 
@@ -49,5 +50,15 @@ public class PrimeGenerator implements Runnable {
             generator.cancel();
         }
         return generator.get();
+    }
+
+    public static void main(String[] args) {
+        PrimeGenerator pg  = new PrimeGenerator();
+        try {
+            Stream.of(pg.aSecondOfPrimes()).
+                    forEach(n -> System.out.print(n + " : "));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 }
