@@ -30,7 +30,8 @@ public class UniqueEmailAddresses {
         System.out.println(uea.numUniqueEmails(
                 new String[]{"test.email+alex@leetcode.com",
                         "test.e.mail+bob.cathy@leetcode.com",
-                        "testemail+david@lee.tcode.com"}
+                        "testemail+david@lee.tcode.com",
+                        "test.e.m.ail+david@lee.tcode.com"}
         ));
 
     }
