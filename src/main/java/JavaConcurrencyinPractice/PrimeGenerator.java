@@ -31,6 +31,7 @@ public class PrimeGenerator implements Runnable {
                 primes.add(p);
             }
         }
+        exec.shutdown();
     }
 
     public void cancel() {
@@ -56,7 +57,7 @@ public class PrimeGenerator implements Runnable {
         PrimeGenerator pg  = new PrimeGenerator();
         try {
             Stream.of(pg.aSecondOfPrimes()).
-                    forEach(n -> System.out.print(n + " : "));
+                    forEach(n -> System.out.print(n));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
