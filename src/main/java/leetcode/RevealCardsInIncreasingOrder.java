@@ -18,6 +18,7 @@ public class RevealCardsInIncreasingOrder {
             queue.offer(i);
         }
         int count=0;
+        System.out.println(queue);
         for(int i=0;queue.size()>0;i++){
             if(i%2==0){
                 map[count++]=queue.poll();
@@ -25,7 +26,11 @@ public class RevealCardsInIncreasingOrder {
                 queue.offer(queue.poll());
             }
         }
+        IntStream.of(map).forEach(n -> System.out.print(n + " : "));
+        System.out.println();
         Arrays.sort(deck);
+        IntStream.of(deck).forEach(n -> System.out.print(n + " : "));
+        System.out.println();
         int[] result = new int[deck.length];
         for(int i=0;i<deck.length;i++){
             result[map[i]] = deck[i];
