@@ -20,4 +20,13 @@ public class TreeNode {
                 + ":" + val + ":" +
                 (right != null ? right.toString() : " null ");
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof TreeNode) {
+            TreeNode t = (TreeNode) obj;
+            return t.val == this.val;
+        }
+        return false;
+    }
 }
