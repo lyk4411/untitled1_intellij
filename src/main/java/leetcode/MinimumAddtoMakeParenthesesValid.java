@@ -26,5 +26,6 @@ public class MinimumAddtoMakeParenthesesValid {
         System.out.println(mampv.minAddToMakeValid("()))(("));
         System.out.println(mampv.minAddToMakeValid("((("));
         System.out.println(mampv.minAddToMakeValid("()"));
+        System.out.println(mampv.minAddToMakeValid(")))"));
     }
 }
