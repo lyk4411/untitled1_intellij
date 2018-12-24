@@ -28,5 +28,6 @@ public class StoneGame {
         StoneGame sg = new StoneGame();
         System.out.println(sg.stoneGame(new int[]{5,3,4,5}));
         System.out.println(sg.stoneGame(new int[]{5,3,100,4,5}));
+        System.out.println(sg.stoneGame(new int[]{5,5,5,5,5}));
     }
 }
