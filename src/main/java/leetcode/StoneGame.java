@@ -17,11 +17,11 @@ public class StoneGame {
                 int parity = (j + i + N) % 2;  // j - i - N; but +x = -x (mod 2)
                 if (parity == 1) {
                     dp[i + 1][j + 1] = Math.max(piles[i] + dp[i + 2][j + 1], piles[j] + dp[i + 1][j]);
-                    System.out.println("dp[" + (i + 1) + "][" + (j + 1) + "]");
+                    System.out.println("dp[" + (i + 1) + "][" + (j + 1) + "]:" + dp[i + 1][j + 1]);
                 }
                 else{
                     dp[i + 1][j + 1] = Math.min(-piles[i] + dp[i + 2][j + 1], -piles[j] + dp[i + 1][j]);
-                    System.out.println("dp[" + (i + 1) + "][" + (j + 1) + "]");
+                    System.out.println("dp[" + (i + 1) + "][" + (j + 1) + "]:" + dp[i + 1][j + 1]);
                 }
             }
 
