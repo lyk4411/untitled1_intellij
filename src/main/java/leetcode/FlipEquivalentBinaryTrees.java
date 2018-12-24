@@ -55,10 +55,10 @@ public class FlipEquivalentBinaryTrees {
         a1.left = a3;
         System.out.println(febt.flipEquiv(t1, a1));
 
-        System.out.println(t2.equals(a2));
-        System.out.println(t2 == a2);
-        System.out.println(t2.left == a2.left);
-        System.out.println(null == null);
+//        System.out.println(t2.equals(a2));
+//        System.out.println(t2 == a2);
+//        System.out.println(t2.left == a2.left);
+//        System.out.println(null == null);
 
     }
 }
