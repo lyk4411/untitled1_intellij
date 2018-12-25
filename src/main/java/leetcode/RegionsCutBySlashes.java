@@ -39,17 +39,19 @@ public class RegionsCutBySlashes {
             if (dsu.find(x) == x)
                 ans++;
         }
-
+//        for (int i = 0; i < dsu.parent.length; i++) {
+//            System.out.println(dsu.parent[i]);
+//        }
         return ans;
     }
 
     public static void main(String[] args) {
         RegionsCutBySlashes rcbs = new RegionsCutBySlashes();
         System.out.println(rcbs.regionsBySlashes(new String[]{" /", "/ "}));
-        System.out.println(rcbs.regionsBySlashes(new String[]{ " /", "  "}));
-        System.out.println(rcbs.regionsBySlashes(new String[]{ "\\/", "/\\"}));
-        System.out.println(rcbs.regionsBySlashes(new String[]{ "/\\", "\\/"}));
-        System.out.println(rcbs.regionsBySlashes(new String[]{ "//", "/ "}));
+//        System.out.println(rcbs.regionsBySlashes(new String[]{ " /", "  "}));
+//        System.out.println(rcbs.regionsBySlashes(new String[]{ "\\/", "/\\"}));
+//        System.out.println(rcbs.regionsBySlashes(new String[]{ "/\\", "\\/"}));
+//        System.out.println(rcbs.regionsBySlashes(new String[]{ "//", "/ "}));
     }
 }
 
