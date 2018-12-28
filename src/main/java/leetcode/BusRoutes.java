@@ -29,7 +29,7 @@ public class BusRoutes {
                     graph.get(i).add(j);
                     graph.get(j).add(i);
                 }
-        System.out.println(graph);
+//        System.out.println(graph);
 
         // Initialize seen, queue, targets.
         // seen represents whether a node has ever been enqueued to queue.
