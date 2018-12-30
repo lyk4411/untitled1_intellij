@@ -25,18 +25,30 @@ public class SumofDistancesinTree {
             graph.get(edge[0]).add(edge[1]);
             graph.get(edge[1]).add(edge[0]);
         }
+//        System.out.println(graph);
         dfs(0, -1);
+//        IntStream.of(count).forEach(n -> System.out.print(n + " : "));
+//        System.out.println();
+//        IntStream.of(ans).forEach(n -> System.out.print(n + " : "));
+//        System.out.println();
+
         dfs2(0, -1);
         return ans;
     }
 
     public void dfs(int node, int parent) {
+//        System.out.println("dfs:" + node + "," + parent);
         for (int child: graph.get(node))
             if (child != parent) {
                 dfs(child, node);
                 count[node] += count[child];
                 ans[node] += ans[child] + count[child];
             }
+//            else {
+//                System.out.println("child:" + child);
+//                System.out.println("parent:" + parent);
+//                System.out.println("===================");
+//            }
     }
 
     public void dfs2(int node, int parent) {
