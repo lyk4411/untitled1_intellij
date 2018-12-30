@@ -1,9 +1,6 @@
 package leetcode;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.PriorityQueue;
-import java.util.Queue;
+import java.util.*;
 
 /**
  * Created by lyk on 2018-12-30.
@@ -13,10 +10,10 @@ import java.util.Queue;
 public class ReachableNodesInSubdividedGraph {
     class Node {
         public int src;
-        public int move;
-        public Node(int src, int move) {
+        public int hp;
+        public Node(int src, int hp) {
             this.src = src;
-            this.move = move;
+            this.hp = hp;
         }
     }
     public int reachableNodes(int[][] edges, int M, int N) {
@@ -24,8 +21,8 @@ public class ReachableNodesInSubdividedGraph {
         for (int i = 0; i < N; i++) {
             graph.put(i, new HashMap<>());
         }
-        Map<Integer, Boolean> visited = new HashMap<>();
-        Queue<Node> pq = new PriorityQueue<>((a, b) -> (a.move - b.move));
+        Map<Integer, Integer> visited = new HashMap<>();
+        Queue<Node> pq = new PriorityQueue<>((a, b) -> (b.hp - a.hp));
 
         //build graph
         for (int[] v : edges) {
@@ -34,33 +31,38 @@ public class ReachableNodesInSubdividedGraph {
         }
 
         int result = 0;
-        Node head = new Node(0, 0);
+        Node head = new Node(0, M + 1);
         pq.offer(head);
         while (!pq.isEmpty()) {
+//            for(Node p :pq) {
+//                System.out.println("src:" + p.src + " hp:" + p.hp);
+//            }
+//            System.out.println("============");
+
             Node cur = pq.peek();
             pq.poll();
             int src = cur.src;
-            int move = cur.move;
-            if (visited.get(src) != null) continue;
-            visited.put(src, true);
+            int hp = cur.hp - 1;
+            if (null != visited.get(src)) continue;
+//            System.out.println(visited);
+            visited.put(src, hp);
             ++result;
 
+//            System.out.println("src: " + src);
             for (int id : graph.get(src).keySet()) {
                 int dst = id;
+//                System.out.println("dst:" + dst);
                 int weight = graph.get(src).get(dst);
-                int nextMove = move + weight + 1;
-                if (null != visited.get(dst)) {
-                    result += Math.min(M - move, graph.get(src).get(dst));
+//                System.out.println("graph.get(" + src + ").get( " + dst + "):" + weight + " hp: " + hp);
+                if (hp > weight) {
+                    if(visited.get(dst) != null  && graph.get(src).get(dst)==0) continue;
+                    result += weight;
+                    Node next = new Node(dst, hp - weight);
+                    graph.get(dst).put(src, 0);
+                    pq.offer(next);
                 } else {
-                    if (nextMove > M) {
-                        result += M - move;
-                        graph.get(dst).put(src, graph.get(dst).get(src) - (M - move));
-                    } else {
-                        result += weight;
-                        graph.get(dst).put(src, 0);
-                        Node next = new Node(dst, nextMove);
-                        pq.offer(next);
-                    }
+                    graph.get(dst).put(src, graph.get(dst).get(src) - hp);
+                    result += hp;
                 }
             }
         }
@@ -68,10 +70,15 @@ public class ReachableNodesInSubdividedGraph {
         return result;
     }
 
+
+
     public static void main(String[] args) {
         ReachableNodesInSubdividedGraph rnisg = new ReachableNodesInSubdividedGraph();
         System.out.println(rnisg.reachableNodes(
                 new int[][]{{0,1,10},{0,2,1},{1,2,2}},6, 3
+        ));
+        System.out.println(rnisg.reachableNodes(
+                new int[][]{{1,2,5},{0,3,3},{1,3,2},{2,3,5},{0,4,1}},7, 5
         ));
     }
 }
