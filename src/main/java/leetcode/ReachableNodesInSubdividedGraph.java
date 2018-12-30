@@ -80,6 +80,9 @@ public class ReachableNodesInSubdividedGraph {
         System.out.println(rnisg.reachableNodes(
                 new int[][]{{1,2,5},{0,3,3},{1,3,2},{2,3,5},{0,4,1}},7, 5
         ));
+        System.out.println(rnisg.reachableNodes(
+                new int[][]{{3,4,8},{0,1,3},{1,4,0},{1,2,3},{0,3,2},{0,4,10},{1,3,3},{2,4,3},{2,3,3},{0,2,10}},7, 5
+        ));
     }
 }
 
