@@ -70,8 +70,6 @@ public class ReachableNodesInSubdividedGraph {
         return result;
     }
 
-
-
     public static void main(String[] args) {
         ReachableNodesInSubdividedGraph rnisg = new ReachableNodesInSubdividedGraph();
         System.out.println(rnisg.reachableNodes(
