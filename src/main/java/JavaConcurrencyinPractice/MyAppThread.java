@@ -17,6 +17,7 @@ public class MyAppThread extends Thread {
     private static final AtomicInteger alive = new AtomicInteger();
     private static final Logger log = Logger.getAnonymousLogger();
 
+
     public MyAppThread(Runnable r) {
         this(r, DEFAULT_NAME);
     }
@@ -59,5 +60,30 @@ public class MyAppThread extends Thread {
 
     public static void setDebug(boolean b) {
         debugLifecycle = b;
+    }
+
+    public static void main(String[] args) {
+        MyAppThread a1 = new MyAppThread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("a1");
+            }
+        }, "a1");
+        MyAppThread a2 = new MyAppThread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("a2");
+            }
+        }, "a2");
+        MyAppThread a3 = new MyAppThread(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("a3");
+            }
+        }, "a3");
+        a1.start();
+        a2.start();
+        a3.start();
+
     }
 }
