@@ -49,4 +49,9 @@ public class TimingThreadPool extends ThreadPoolExecutor {
             super.terminated();
         }
     }
+    public static void main(String[] args) {
+        TimingThreadPool ttp = new TimingThreadPool();
+        ttp.execute(() -> System.out.println("start1"));
+        ttp.execute(() -> System.out.println("start2"));
+    }
 }
