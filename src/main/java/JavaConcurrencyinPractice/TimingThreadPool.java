@@ -14,7 +14,7 @@ import java.util.logging.*;
 public class TimingThreadPool extends ThreadPoolExecutor {
 
     public TimingThreadPool() {
-        super(1, 1, 0L, TimeUnit.SECONDS, null);
+        super(1, 10, 0L, TimeUnit.SECONDS,  new SynchronousQueue<Runnable>());
     }
 
     private final ThreadLocal<Long> startTime = new ThreadLocal<Long>();
@@ -50,8 +50,17 @@ public class TimingThreadPool extends ThreadPoolExecutor {
         }
     }
     public static void main(String[] args) {
-        TimingThreadPool ttp = new TimingThreadPool();
-        ttp.execute(() -> System.out.println("start1"));
-        ttp.execute(() -> System.out.println("start2"));
+        ThreadPoolExecutor exec = new TimingThreadPool();
+        for (int i = 0; i < 10; i++) {
+            final int finalI = i;
+            exec.execute(new Runnable() {
+                @Override
+                public void run() {
+                    System.out.println(finalI);
+                }
+            });
+        }
+
+        exec.shutdown();
     }
 }
