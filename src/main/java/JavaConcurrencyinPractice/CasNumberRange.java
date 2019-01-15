@@ -4,13 +4,23 @@ import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * CasNumberRange
- * <p/>
+ * <p>
  * Preserving multivariable invariants using CAS
  *
  * @author Brian Goetz and Tim Peierls
  */
-        public class CasNumberRange {
-            private static class IntPair {
+public class CasNumberRange {
+    public static void main(String[] args) {
+        CasNumberRange cnp = new CasNumberRange();
+
+        System.out.println(cnp.getLower());
+        System.out.println(cnp.getUpper());
+        cnp.setLower(1);
+        cnp.setUpper(99);
+        System.out.println(cnp.getLower());
+        System.out.println(cnp.getUpper());
+    }
+    private static class IntPair {
         // INVARIANT: lower <= upper
         final int lower;
         final int upper;
@@ -22,7 +32,7 @@ import java.util.concurrent.atomic.AtomicReference;
     }
 
     private final AtomicReference<IntPair> values =
-            new AtomicReference<IntPair>(new IntPair(0, 0));
+            new AtomicReference<IntPair>(new IntPair(0, 100));
 
     public int getLower() {
         return values.get().lower;
