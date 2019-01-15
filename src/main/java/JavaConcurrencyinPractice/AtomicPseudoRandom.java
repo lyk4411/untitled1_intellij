@@ -26,4 +26,11 @@ public class AtomicPseudoRandom extends PseudoRandom {
             }
         }
     }
+
+    public static void main(String[] args) {
+        AtomicPseudoRandom apr = new AtomicPseudoRandom(200);
+        for (int i = 0; i < 1000; i++) {
+            System.out.println(apr.nextInt(i + 1));
+        }
+    }
 }
