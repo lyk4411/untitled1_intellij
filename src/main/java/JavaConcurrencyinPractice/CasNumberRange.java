@@ -19,11 +19,18 @@ public class CasNumberRange {
         cnp.setUpper(99);
         System.out.println(cnp.getLower());
         System.out.println(cnp.getUpper());
+        cnp.values.set(new IntPair(6, 88));
+        System.out.println(cnp.getLower());
+        System.out.println(cnp.getUpper());
+//        cnp.values.get().lower = 100;
+//        cnp.values.get().upper = 1;
+//        System.out.println(cnp.getLower());
+//        System.out.println(cnp.getUpper());
     }
-    private static class IntPair {
+    public static class IntPair {
         // INVARIANT: lower <= upper
-        final int lower;
-        final int upper;
+        public final int lower;
+        public final int upper;
 
         public IntPair(int lower, int upper) {
             this.lower = lower;
