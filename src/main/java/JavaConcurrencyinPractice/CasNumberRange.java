@@ -31,7 +31,7 @@ public class CasNumberRange {
         }
     }
 
-    private final AtomicReference<IntPair> values =
+    public final AtomicReference<IntPair> values =
             new AtomicReference<IntPair>(new IntPair(0, 100));
 
     public int getLower() {
