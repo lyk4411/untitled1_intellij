@@ -38,8 +38,8 @@ public class ABA {
 
         intT1.start();
         intT2.start();
-        intT1.join();
-        intT2.join();
+//        intT1.join();
+//        intT2.join();
 
         Thread refT1 = new Thread(new Runnable() {
             @Override
