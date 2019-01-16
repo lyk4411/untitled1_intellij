@@ -30,6 +30,9 @@ public class FieldUpdaterTest {
         matchUpdater.compareAndSet(t, "str", "world");
         System.out.println(t.match);
 
+//        t.match = "abc";
+//        System.out.println(t.match);
+
         matchUpdater.compareAndSet(t, "hello", "hhahahahaha");
         System.out.println(t.match);
     }
