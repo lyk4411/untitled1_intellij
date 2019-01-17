@@ -8,5 +8,6 @@ public class Sum {
             sum += i;
         }
         System.out.println(sum);
+        System.out.println(Integer.MAX_VALUE);
     }
 }
