@@ -34,13 +34,9 @@ public class Test {
         }
     };
 
-    private static Provider ARMED_PROVIDER = new Provider() {
-        public Service newService() {
-            return new Service() {
-                @Override public String toString() {
-                    return "Armed service";
-                }
-            };
+    private static Provider ARMED_PROVIDER = () -> new Service() {
+        @Override public String toString() {
+            return "Armed service";
         }
     };
 }
