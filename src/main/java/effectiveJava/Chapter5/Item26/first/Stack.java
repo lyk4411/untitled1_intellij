@@ -1,4 +1,4 @@
-package effectiveJava.Chapter5.Item26.first// Generic stack using E[] - Pages 125-127
+package effectiveJava.Chapter5.Item26.first;// Generic stack using E[] - Pages 125-127
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package effectiveJava.Chapter2.Item5.slow// Creates lots of unnecessary duplicate objects - page 20-21
+package effectiveJava.Chapter2.Item5.slow;// Creates lots of unnecessary duplicate objects - page 20-21
 
 import java.util.*;
 
