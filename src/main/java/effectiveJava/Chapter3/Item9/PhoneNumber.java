@@ -37,13 +37,13 @@ public final class PhoneNumber {
     // Broken - no hashCode method!
 
     // A decent hashCode method - Page 48
-//  @Override public int hashCode() {
-//      int result = 17;
-//      result = 31 * result + areaCode;
-//      result = 31 * result + prefix;
-//      result = 31 * result + lineNumber;
-//      return result;
-//  }
+  @Override public int hashCode() {
+      int result = 17;
+      result = 31 * result + areaCode;
+      result = 31 * result + prefix;
+      result = 31 * result + lineNumber;
+      return result;
+  }
 
 
     // Lazily initialized, cached hashCode - Page 49
