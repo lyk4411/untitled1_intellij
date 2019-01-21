@@ -11,7 +11,7 @@ public final class Sub extends Super {
 
     // Overriding method invoked by superclass constructor
     @Override public void overrideMe() {
-        System.out.println(date);
+        System.out.println(String.valueOf(Class.class) + ":" + date);
     }
 
     public static void main(String[] args) {
