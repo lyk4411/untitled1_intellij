@@ -16,11 +16,7 @@ public class Reduction {
 
     // A few sample functions
 
-    private static final Function<Integer> SUM = new Function<Integer>(){
-        public Integer apply(Integer i1, Integer i2) {
-            return i1 + i2;
-        }
-    };
+    private static final Function<Integer> SUM = (i1, i2) -> i1 + i2;
 
     private static final Function<Integer> PRODUCT = new Function<Integer>(){
         public Integer apply(Integer i1, Integer i2) {
