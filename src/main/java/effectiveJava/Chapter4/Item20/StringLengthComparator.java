@@ -1,6 +1,4 @@
-package effectiveJava.Chapter4.Item20.tagged;
-
-import effectiveJava.Chapter4.Item20.Host;
+package effectiveJava.Chapter4.Item20;
 
 import java.util.Arrays;
 import java.util.stream.Stream;
