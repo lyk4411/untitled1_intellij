@@ -39,5 +39,7 @@ public enum Phase {
                if (src != dst)
                    System.out.printf("%s to %s : %s %n", src, dst,
                                      Transition.from(src, dst));
+       System.out.println("====================");
+       System.out.println(Transition.m);
    }
 }
