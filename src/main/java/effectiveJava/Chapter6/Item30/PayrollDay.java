@@ -1,7 +1,7 @@
 package effectiveJava.Chapter6.Item30;
 
 // The strategy enum pattern
-enum PayrollDay {
+public enum PayrollDay {
     MONDAY(PayType.WEEKDAY), TUESDAY(PayType.WEEKDAY),
     WEDNESDAY(PayType.WEEKDAY), THURSDAY(PayType.WEEKDAY),
     FRIDAY(PayType.WEEKDAY),
@@ -34,5 +34,24 @@ enum PayrollDay {
             double basePay = hoursWorked * payRate;
             return basePay + overtimePay(hoursWorked, payRate);
         }
+    }
+
+    public static void main(String[] args) {
+        for(PayrollDay pd : PayrollDay.values()){
+            System.out.println(pd.payType.overtimePay(15, 900));
+            System.out.println(pd.payType.pay(15, 900));
+        }
+        System.out.println("=====================================");
+        for(PayrollDay pd : PayrollDay.values()){
+            System.out.println(pd.payType.overtimePay(5, 900));
+            System.out.println(pd.payType.pay(15, 900));
+        }
+        System.out.println("=====================================");
+        for(PayrollDay pd : PayrollDay.values()){
+            System.out.println(pd.payType.overtimePay(8, 900));
+            System.out.println(pd.payType.pay(15, 900));
+        }
+        System.out.println("=====================================");
+
     }
 }
