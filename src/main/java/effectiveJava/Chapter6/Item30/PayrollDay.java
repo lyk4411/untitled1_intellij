@@ -53,6 +53,9 @@ public enum PayrollDay {
         }
         System.out.println("=====================================");
         System.out.println(PayType.WEEKDAY);
+        System.out.println(PayType.WEEKDAY.ordinal());
+        System.out.println(PayType.WEEKEND.ordinal());
+
 
     }
 }
