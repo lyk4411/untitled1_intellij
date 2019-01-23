@@ -3,8 +3,7 @@ package effectiveJava.Chapter5.Item28;// Using a recursive type bound with wildc
 import java.util.*;
 
 public class RecursiveTypeBound {
-    public static <T extends Comparable<? super T>> T max(
-        List<? extends T> list) {
+    public static <T extends Comparable<? super T>> T max(List<? extends T> list) {
         Iterator<? extends T> i = list.iterator();
         T result = i.next();
         while (i.hasNext()) {
