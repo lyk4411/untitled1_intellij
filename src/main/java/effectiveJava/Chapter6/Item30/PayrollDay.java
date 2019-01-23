@@ -10,9 +10,9 @@ public enum PayrollDay {
     private final PayType payType;
     PayrollDay(PayType payType) { this.payType = payType; }
 
-    double pay(double hoursWorked, double payRate) {
-        return payType.pay(hoursWorked, payRate);
-    }
+//    double pay(double hoursWorked, double payRate) {
+//        return payType.pay(hoursWorked, payRate);
+//    }
     // The strategy enum type
     private enum PayType {
         WEEKDAY {
@@ -28,7 +28,7 @@ public enum PayrollDay {
         };
         private static final int HOURS_PER_SHIFT = 8;
 
-        abstract double overtimePay(double hrs, double payRate);
+    abstract double overtimePay(double hrs, double payRate);
 
         double pay(double hoursWorked, double payRate) {
             double basePay = hoursWorked * payRate;
@@ -52,6 +52,7 @@ public enum PayrollDay {
             System.out.println(pd.payType.pay(15, 900));
         }
         System.out.println("=====================================");
+        System.out.println(PayType.WEEKDAY);
 
     }
 }
