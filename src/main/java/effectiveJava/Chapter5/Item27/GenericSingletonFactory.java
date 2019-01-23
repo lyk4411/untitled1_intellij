@@ -1,7 +1,5 @@
 package effectiveJava.Chapter5.Item27;// Generic singleton factory method - Pages 131-132
 
-import java.util.*;
-
 public class GenericSingletonFactory {
     // Generic singleton factory pattern
     private static UnaryFunction<Object> IDENTITY_FUNCTION =
