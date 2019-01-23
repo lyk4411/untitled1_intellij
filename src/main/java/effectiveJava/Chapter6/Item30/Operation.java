@@ -38,8 +38,14 @@ public enum Operation {
     public static void main(String[] args) {
         double x = Double.parseDouble(args[0]);
         double y = Double.parseDouble(args[1]);
-        for (Operation op : Operation.values())
+        for (Operation op : Operation.values()){
+            System.out.println(op);
             System.out.printf("%f %s %f = %f%n",
                               x, op, y, op.apply(x, y));
+        }
+        System.out.println("===========================");
+        System.out.println(Operation.fromString("+"));
+        System.out.println(Operation.stringToEnum);
+        System.out.println(Operation.DIVIDE);
     }
 }
