@@ -16,7 +16,11 @@ public class RecursiveTypeBound {
     }
 
     public static void main(String[] args) {
-        List<String> argList = Arrays.asList(args);
+        Integer[] temp = new Integer[args.length];
+        for (int i = 0; i < args.length; i++) {
+            temp[i] = Integer.valueOf(args[i]);
+        }
+        List<Integer> argList = Arrays.asList(temp);
         System.out.println(max(argList));
     }
 }
