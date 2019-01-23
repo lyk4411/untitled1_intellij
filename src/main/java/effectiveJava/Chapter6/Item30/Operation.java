@@ -47,5 +47,6 @@ public enum Operation {
         System.out.println(Operation.fromString("+"));
         System.out.println(Operation.stringToEnum);
         System.out.println(Operation.DIVIDE);
+        System.out.println(Operation.PLUS);
     }
 }
