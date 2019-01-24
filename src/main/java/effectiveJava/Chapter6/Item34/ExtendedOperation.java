@@ -29,6 +29,8 @@ public enum ExtendedOperation implements Operation {
         test(ExtendedOperation.class, x, y);
 
         System.out.println();  // Print a blank line between tests
+        test(BasicOperation.class, x, y);
+        System.out.println();
         test2(Arrays.asList(ExtendedOperation.values()), x, y);
     }
 
