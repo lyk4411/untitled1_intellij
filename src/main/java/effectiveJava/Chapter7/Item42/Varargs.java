@@ -1,5 +1,7 @@
 package effectiveJava.Chapter7.Item42;
 
+import java.util.Arrays;
+
 // Sample uses of varargs
 public class Varargs {
 
@@ -35,5 +37,9 @@ public class Varargs {
     public static void main(String[] args) {
         System.out.println(sum(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
         System.out.println(min(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
+        int[] digits = {1, 2, 3, 4, 5};
+        System.out.println(Arrays.asList(digits));
+        System.out.println(Arrays.toString(digits));
+        System.out.println(digits);
     }
 }
