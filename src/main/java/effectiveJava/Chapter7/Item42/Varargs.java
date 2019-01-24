@@ -40,6 +40,7 @@ public class Varargs {
         int[] digits = {1, 2, 3, 4, 5};
         System.out.println(Arrays.asList(digits));
         System.out.println(Arrays.toString(digits));
+        System.out.println(Arrays.toString(digits).equals("[1, 2, 3, 4, 5]"));
         System.out.println(digits);
     }
 }
