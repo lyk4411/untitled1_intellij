@@ -21,7 +21,7 @@ public class MakeSet {
             System.err.println("Class not accessible.");
             System.exit(1);
         } catch(InstantiationException e) {
-            System.err.println("Class not instantiable.");
+            System.err.println("Class not instantiable...");
             System.exit(1);
         }
 
