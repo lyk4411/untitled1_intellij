@@ -13,6 +13,11 @@ class Card {
         this.suit = suit;
         this.rank = rank;
     }
+
+    @Override
+    public String toString() {
+        return suit.toString() + " : " + rank.toString();
+    }
 }
 
 public class NestedIteration {
@@ -21,13 +26,15 @@ public class NestedIteration {
         Collection<Rank> ranks = Arrays.asList(Rank.values());
 
         List<Card> deck = new ArrayList<Card>();
-        for (Iterator<Suit> i = suits.iterator(); i.hasNext(); )
-            for (Iterator<Rank> j = ranks.iterator(); j.hasNext(); )
-                deck.add(new Card(i.next(), j.next()));
+//        for (Iterator<Suit> i = suits.iterator(); i.hasNext(); )
+//            for (Iterator<Rank> j = ranks.iterator(); j.hasNext(); )
+//                deck.add(new Card(i.next(), j.next()));
 
         // Preferred idiom for nested iteration on collections and arrays
-//        for (Suit suit : suits)
-//            for (Rank rank : ranks)
-//                deck.add(new Card(suit, rank));
+        for (Suit suit : suits)
+            for (Rank rank : ranks)
+                deck.add(new Card(suit, rank));
+
+        System.out.println(deck);
     }
 }
