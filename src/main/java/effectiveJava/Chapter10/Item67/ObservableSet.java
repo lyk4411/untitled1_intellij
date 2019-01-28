@@ -6,28 +6,28 @@ import java.util.concurrent.*;
 public class ObservableSet<E> extends ForwardingSet<E> {
     public ObservableSet(Set<E> set) { super(set); }
 
-    private final List<SetObserver<E>> observers = 
-        new ArrayList<SetObserver<E>>();
+//    private final List<SetObserver<E>> observers =
+//        new ArrayList<SetObserver<E>>();
 
-    public void addObserver(SetObserver<E> observer) {
-        synchronized(observers) {
-            observers.add(observer);
-        }
-    }
-
-    public boolean removeObserver(SetObserver<E> observer) {
-        synchronized(observers) {
-            return observers.remove(observer);
-        }
-    }
-
-    // This method is the culprit
-    private void notifyElementAdded(E element) {
-        synchronized(observers) {
-            for (SetObserver<E> observer : observers)
-                observer.added(this, element);
-        }
-    }
+//    public void addObserver(SetObserver<E> observer) {
+//        synchronized(observers) {
+//            observers.add(observer);
+//        }
+//    }
+//
+//    public boolean removeObserver(SetObserver<E> observer) {
+//        synchronized(observers) {
+//            return observers.remove(observer);
+//        }
+//    }
+//
+//    // This method is the culprit
+//    private void notifyElementAdded(E element) {
+//        synchronized(observers) {
+//            for (SetObserver<E> observer : observers)
+//                observer.added(this, element);
+//        }
+//    }
 
     // Alien method moved outside of synchronized block - open calls - Page 268
 //  private void notifyElementAdded(E element) {
@@ -42,19 +42,19 @@ public class ObservableSet<E> extends ForwardingSet<E> {
 
     //  Thread-safe observable set with CopyOnWriteArrayList - Page 269
 //
-//  private final List<SetObserver<E>> observers = 
-//      new CopyOnWriteArrayList<SetObserver<E>>();
-//  
-//  public void addObserver(SetObserver<E> observer) {
-//      observers.add(observer);
-//  }
-//  public boolean removeObserver(SetObserver<E> observer) {
-//      return observers.remove(observer);
-//  }
-//  private void notifyElementAdded(E element) {
-//      for (SetObserver<E> observer : observers)
-//          observer.added(this, element);
-//  }
+  private final List<SetObserver<E>> observers =
+      new CopyOnWriteArrayList<SetObserver<E>>();
+
+  public void addObserver(SetObserver<E> observer) {
+      observers.add(observer);
+  }
+  public boolean removeObserver(SetObserver<E> observer) {
+      return observers.remove(observer);
+  }
+  private void notifyElementAdded(E element) {
+      for (SetObserver<E> observer : observers)
+          observer.added(this, element);
+  }
 
     @Override public boolean add(E element) {
         boolean added = super.add(element);
