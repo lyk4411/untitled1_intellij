@@ -16,8 +16,10 @@ public class StopThread {
         Thread backgroundThread = new Thread(new Runnable() {
             public void run() {
                 int i = 0;
-                while (!stopRequested())
+                while (!stopRequested()) {
                     i++;
+                }
+                System.out.println(i);
             }
         });
         backgroundThread.start();
