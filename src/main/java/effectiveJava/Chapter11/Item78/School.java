@@ -12,6 +12,8 @@ public class School{
     public String sName = null;
     public String sId = null;
 
+    public static final School instance= new School();
+
     public School(){
         this.sName = "";
         this.sId = "";
@@ -19,5 +21,9 @@ public class School{
     public School(String name, String id){
         this.sName = name;
         this.sId = id;
+    }
+
+    private Object readResolve(){
+        return instance;
     }
 }
