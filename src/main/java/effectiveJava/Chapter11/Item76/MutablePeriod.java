@@ -5,7 +5,7 @@ import java.io.*;
 
 public class MutablePeriod {
     // A period instance
-    public final Period period;
+    public final Period1 period;
 
     // period's start field, to which we shouldn't have access
     public final Date start;
@@ -20,7 +20,7 @@ public class MutablePeriod {
                 new ObjectOutputStream(bos);
 
             // Serialize a valid Period instance
-            out.writeObject(new Period(new Date(), new Date()));
+            out.writeObject(new Period1(new Date(), new Date()));
 
             /*
              * Append rogue "previous object refs" for internal
@@ -35,7 +35,7 @@ public class MutablePeriod {
             // Deserialize Period and "stolen" Date references
             ObjectInputStream in = new ObjectInputStream(
             new ByteArrayInputStream(bos.toByteArray()));
-            period = (Period) in.readObject();
+            period = (Period1) in.readObject();
             start  = (Date)   in.readObject();
             end    = (Date)   in.readObject();
         } catch (Exception e) {
@@ -45,7 +45,7 @@ public class MutablePeriod {
 
     public static void main(String[] args) {
         MutablePeriod mp = new MutablePeriod();
-        Period p = mp.period;
+        Period1 p = mp.period;
         Date pEnd = mp.end;
 
         // Let's turn back the clock

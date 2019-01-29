@@ -4,7 +4,7 @@ package effectiveJava.Chapter11.Item76;// Immutable class that uses defensive co
 import java.util.*;
 import java.io.*;
 
-public final class Period implements Serializable {
+public final class Period1 implements Serializable {
     private Date start;
     private Date end;
 
@@ -14,7 +14,7 @@ public final class Period implements Serializable {
      * @throws IllegalArgumentException if start is after end
      * @throws NullPointerException if start or end is null
      */
-    public Period(Date start, Date end) {
+    public Period1(Date start, Date end) {
         this.start = new Date(start.getTime());
         this.end   = new Date(end.getTime());
         if (this.start.compareTo(this.end) > 0)
@@ -41,16 +41,16 @@ public final class Period implements Serializable {
 
     // readObject method with defensive copying and validity checking - Page 306
     // This will defend against BogusPeriod and MutablePeriod attacks.
-//  private void readObject(ObjectInputStream s)
-//          throws IOException, ClassNotFoundException {
-//      s.defaultReadObject();
-//
-//      // Defensively copy our mutable components
-//      start = new Date(start.getTime());
-//      end   = new Date(end.getTime());
-//  
-//      // Check that our invariants are satisfied
-//      if (start.compareTo(end) > 0)
-//          throw new InvalidObjectException(start +" after "+ end);
-//  }
+  private void readObject(ObjectInputStream s)
+          throws IOException, ClassNotFoundException {
+      s.defaultReadObject();
+
+      // Defensively copy our mutable components
+      start = new Date(start.getTime());
+      end   = new Date(end.getTime());
+
+      // Check that our invariants are satisfied
+      if (start.compareTo(end) > 0)
+          throw new InvalidObjectException(start +" after "+ end);
+  }
 }

@@ -21,7 +21,7 @@ public class BogusPeriod {
      0x00, 0x78 };
 
     public static void main(String[] args) {
-        Period p = (Period) deserialize(serializedForm);
+        Period1 p = (Period1) deserialize(serializedForm);
         System.out.println(p);
     }
 
