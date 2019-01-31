@@ -1,10 +1,8 @@
 package OOAD.ch07.board;
+import OOAD.ch07.unit.Unit;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
-
-import headfirst.gsf.unit.Unit;
 
 public class Board 
 {

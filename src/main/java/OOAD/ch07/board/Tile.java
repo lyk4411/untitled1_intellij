@@ -1,10 +1,9 @@
 package OOAD.ch07.board;
 
+import OOAD.ch07.unit.Unit;
+
 import java.util.LinkedList;
 import java.util.List;
-
-import headfirst.gsf.unit.Unit;
-
 public class Tile
 {
     private List units;
