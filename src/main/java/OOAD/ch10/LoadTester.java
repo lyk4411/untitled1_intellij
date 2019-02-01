@@ -10,9 +10,9 @@ public class LoadTester
             Subway objectville = loader.loadFromFile(new File("ObjectvilleSubway.txt"));
             
             System.out.println("Testing stations");
-            if (    objectville.hasStation("DRY Drive") &&
-                    objectville.hasStation("Weather-O-Rama, Inc.") &&
-                    objectville.hasStation("Boards 'R' Us")) {
+            if (    objectville.hasStation("A1") &&
+                    objectville.hasStation("B1") &&
+                    objectville.hasStation("C1")) {
                 System.out.println("... station test passed successfully.");
             }
             else
@@ -22,9 +22,9 @@ public class LoadTester
             }
             
             System.out.println("\nTesting connections...");
-            if (objectville.hasConnection("DRY Drive", "Head First Theater", "Meyer Line") &&
-                objectville.hasConnection("LSP Lane", "JavaBeans Boulevard", "Booch Line") &&
-                objectville.hasConnection("OOA&D Oval", "Head First Labs", "Gamma Line")) {
+            if (objectville.hasConnection("A1", "B2","A") &&
+                objectville.hasConnection("B4", "B3", "B") &&
+                objectville.hasConnection("C1", "C2", "C")) {
                 System.out.println("...connections test passed succesfully.");
             }
             else
