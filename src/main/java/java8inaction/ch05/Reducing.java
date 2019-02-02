@@ -1,10 +1,12 @@
 package java8inaction.ch05;
-import lambdasinaction.chap4.*;
 
-import java.util.stream.*;
-import java.util.*;
+import java8inaction.ch04.Dish;
 
-import static lambdasinaction.chap4.Dish.menu;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import static java8inaction.ch04.Dish.menu;
+
 
 public class Reducing{
 
