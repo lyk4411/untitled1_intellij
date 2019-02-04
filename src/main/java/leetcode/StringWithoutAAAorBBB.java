@@ -36,5 +36,7 @@ public class StringWithoutAAAorBBB {
         StringWithoutAAAorBBB swab = new StringWithoutAAAorBBB();
         System.out.println(swab.strWithout3a3b(3, 1));
         System.out.println(swab.strWithout3a3b(4, 2));
+        System.out.println(swab.strWithout3a3b(40, 2));
+        System.out.println(swab.strWithout3a3b(2, 10));
     }
 }
