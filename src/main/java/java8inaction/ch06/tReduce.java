@@ -26,7 +26,7 @@ public class tReduce {
                 }
 
         );
-        System.out.println(numbers);
+        System.out.println("numbers: " + numbers);
     }
     static class myList<Integer> extends ArrayList<Integer>{
         myList(){
