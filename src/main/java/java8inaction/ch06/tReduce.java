@@ -12,7 +12,7 @@ import java.util.stream.Stream;
 public class tReduce {
     public static void main(String[] args) {
         Stream<Integer> stream = Arrays.asList(1,2,3,4,5,6,7,8).stream();
-        myList<Integer> numbers = stream.reduce(
+        myList<Integer> numbers = stream.parallel().reduce(
                 new myList<>(),
                  (myList<Integer> l, Integer e) -> {
                      System.out.println("l:" + l + " and e:" + e);
@@ -22,9 +22,9 @@ public class tReduce {
                 (myList<Integer> l1, myList<Integer> l2) -> {
                     System.out.println("l1: " + l1);
                     System.out.println("l2: " + l2);
-                    return new myList<>();
+                    l1.addAll(l2);
+                    return l1;
                 }
-
         );
         System.out.println("numbers: " + numbers);
     }
