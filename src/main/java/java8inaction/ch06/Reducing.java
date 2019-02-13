@@ -1,7 +1,8 @@
 package java8inaction.ch06;
 
-import static java.util.stream.Collectors.*;
-import static lambdasinaction.chap6.Dish.menu;
+import static java.util.stream.Collectors.reducing;
+import static java8inaction.ch06.Dish.menu;
+
 
 public class Reducing {
 

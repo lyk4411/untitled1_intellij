@@ -1,10 +1,11 @@
 package java8inaction.ch06;
 
-import java.util.*;
-import java.util.function.*;
+import java.util.Comparator;
+import java.util.IntSummaryStatistics;
+import java.util.function.BinaryOperator;
 
 import static java.util.stream.Collectors.*;
-import static lambdasinaction.chap6.Dish.menu;
+import static java8inaction.ch06.Dish.menu;
 
 public class Summarizing {
 
