@@ -1,9 +1,11 @@
 package java8inaction.ch06;
 
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
 
 import static java.util.stream.Collectors.*;
-import static java8inaction.ch06.Dish.dishTags;
 import static java8inaction.ch06.Dish.menu;
 
 public class Grouping {
@@ -33,12 +35,13 @@ public class Grouping {
     }
 
     private static Map<Dish.Type, Set<String>> groupDishTagsByType() {
-        return menu.stream().collect(groupingBy(Dish::getType, flatMapping(dish -> dishTags.get( dish.getName() ).stream(), toSet())));
+        return null;
+//        return menu.stream().collect(groupingBy(Dish::getType, flatMapping(dish -> dishTags.get( dish.getName() ).stream(), toSet())));
     }
 
     private static Map<Dish.Type, List<Dish>> groupCaloricDishesByType() {
-//        return menu.stream().filter(dish -> dish.getCalories() > 500).collect(groupingBy(Dish::getType));
-        return menu.stream().collect(groupingBy(Dish::getType, filtering(dish -> dish.getCalories() > 500, toList())));
+        return menu.stream().filter(dish -> dish.getCalories() > 500).collect(groupingBy(Dish::getType));
+//        return menu.stream().collect(groupingBy(Dish::getType, filtering(dish -> dish.getCalories() > 500, toList())));
     }
 
     private static Map<CaloricLevel, List<Dish>> groupDishesByCaloricLevel() {
