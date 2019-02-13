@@ -43,5 +43,14 @@ public class Mapping{
                                 .filter(pair -> (pair[0] + pair[1]) % 3 == 0)
                                 .collect(toList());
         pairs.forEach(pair -> System.out.println("(" + pair[0] + ", " + pair[1] + ")"));
+        System.out.println();
+        List<int[]> pairs1 =
+                numbers1.stream()
+                        .flatMap((Integer i) -> numbers2.stream()
+                                .map((Integer j) -> new int[]{i, j})
+                                .filter(pair -> (pair[0] + pair[1]) % 3 == 0)
+                        )
+                        .collect(toList());
+        pairs1.forEach(pair -> System.out.println("(" + pair[0] + ", " + pair[1] + ")"));
     }
 }
