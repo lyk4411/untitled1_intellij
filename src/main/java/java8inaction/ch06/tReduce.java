@@ -20,6 +20,8 @@ public class tReduce {
                      return l;
                  },
                 (myList<Integer> l1, myList<Integer> l2) -> {
+                    System.out.println("l1: " + l1);
+                    System.out.println("l2: " + l2);
                     return new myList<>();
                 }
 
