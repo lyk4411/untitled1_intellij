@@ -12,26 +12,21 @@ import java.util.stream.Stream;
 public class tReduce {
     public static void main(String[] args) {
         Stream<Integer> stream = Arrays.asList(1,2,3,4,5,6,7,8).stream();
-        myList<Integer> numbers = stream.parallel().reduce(
-                new myList<>(),
-                 (myList<Integer> l, Integer e) -> {
-                     System.out.println("l:" + l + " and e:" + e);
-                     l.add(e);
-                     return l;
+        ArrayList<Integer> numbers = stream.parallel().reduce(
+                new ArrayList<>(),
+                 (ArrayList<Integer> l, Integer e) -> {
+//                     System.out.println("l:" + l + " and e:" + e);
+                     ArrayList<Integer> a = new ArrayList<Integer>(l);
+                     a.add(e);
+                     return a;
                  },
-                (myList<Integer> l1, myList<Integer> l2) -> {
-                    System.out.println("l1: " + l1);
-                    System.out.println("l2: " + l2);
+                (ArrayList<Integer> l1, ArrayList<Integer> l2) -> {
+//                    System.out.println("l1: " + l1);
+//                    System.out.println("l2: " + l2);
                     l1.addAll(l2);
                     return l1;
                 }
         );
         System.out.println("numbers: " + numbers);
-    }
-    static class myList<Integer> extends ArrayList<Integer>{
-        myList(){
-            super();
-            System.out.println("init...");
-        }
     }
 }
