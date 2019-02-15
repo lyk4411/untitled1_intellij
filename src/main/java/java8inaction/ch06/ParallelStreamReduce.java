@@ -28,9 +28,9 @@ public class ParallelStreamReduce {
                 }, (i, j) -> {
                     combineCount.incrementAndGet();
                     System.out.println(String.format("i==j: %s, thread name:%s", i == j, Thread.currentThread().getName()));
-                    ArrayList<Integer> newI = new ArrayList<>(i);
-                    newI.addAll(j);
-                    return newI;
+//                    ArrayList<Integer> newI = new ArrayList<>(i);
+                    i.addAll(j);
+                    return i;
                 });
         System.out.println("---------------------------------------");
         System.out.println("reduce result size: "+reduceResult.size());
