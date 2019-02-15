@@ -1,10 +1,10 @@
 package java8inaction.ch07;
 
-import lambdasinaction.chap4.*;
+import java8inaction.ch04.*;
 
 import java.util.*;
 import static java.util.stream.Collectors.toList;
-import static lambdasinaction.chap4.Dish.menu;
+import static java8inaction.ch04.Dish.menu;
 
 public class Mapping{
 

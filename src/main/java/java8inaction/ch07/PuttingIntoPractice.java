@@ -1,8 +1,7 @@
 package java8inaction.ch07;
 
-import lambdasinaction.chap5.*;
-
-import java.util.*;
+import java.util.Arrays;
+import java.util.List;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;

@@ -1,10 +1,9 @@
 package java8inaction.ch07;
-import lambdasinaction.chap4.*;
+import java8inaction.ch04.Dish;
 
-import java.util.stream.*;
-import java.util.*;
+import java.util.Optional;
 
-import static lambdasinaction.chap4.Dish.menu;
+import static java8inaction.ch04.Dish.menu;
 
 public class Finding{
 
