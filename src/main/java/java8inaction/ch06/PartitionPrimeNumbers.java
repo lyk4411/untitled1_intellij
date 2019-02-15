@@ -32,6 +32,9 @@ public class PartitionPrimeNumbers {
 
     public static boolean isPrime(List<Integer> primes, Integer candidate) {
         double candidateRoot = Math.sqrt((double) candidate);
+//        System.out.println(candidateRoot);
+//        System.out.println("primes:" + primes);
+//        System.out.println("takewhile:" + takeWhile(primes, i -> i <= candidateRoot));
         return takeWhile(primes, i -> i <= candidateRoot).stream().noneMatch(i -> candidate % i == 0);
 //        return primes.stream().takeWhile(i -> i <= candidateRoot).noneMatch(i -> candidate % i == 0);
     }
