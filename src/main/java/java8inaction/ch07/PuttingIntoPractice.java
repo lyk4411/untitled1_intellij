@@ -57,7 +57,7 @@ public class PuttingIntoPractice{
                         .map(transaction -> transaction.getTrader().getName())
                         .distinct()
                         .sorted()
-                        .reduce("", (n1, n2) -> n1 + n2);
+                        .reduce("", (n1, n2) -> n1 + n2 + " : ");
         System.out.println(traderStr);
         
         // Query 5: Are there any trader based in Milan?
