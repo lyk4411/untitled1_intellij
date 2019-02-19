@@ -1,21 +1,14 @@
 package java8inaction.ch11.v1;
 
+import java8inaction.ch11.ExchangeService;
+import java8inaction.ch11.ExchangeService.Money;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.Executor;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
-import lambdasinaction.chap11.ExchangeService;
-import lambdasinaction.chap11.ExchangeService.Money;
 
 public class BestPriceFinder {
 
