@@ -1,8 +1,8 @@
 package java8inaction.ch10;
 
-import java.util.*;
-
-import static java.util.stream.Collectors.toSet;
+import java.util.List;
+import java.util.Optional;
+import java.util.Set;
 
 public class OptionalMain {
 
@@ -14,11 +14,12 @@ public class OptionalMain {
     }
 
     public Set<String> getCarInsuranceNames(List<Person> persons) {
-        return persons.stream()
+         persons.stream()
                       .map(Person::getCar)
                       .map(optCar -> optCar.flatMap(Car::getInsurance))
-                      .map(optInsurance -> optInsurance.map(Insurance::getName))
-                      .flatMap(Optional::stream)
-                      .collect(toSet());
+                      .map(optInsurance -> optInsurance.map(Insurance::getName));
+//                      .flatMap(Optional::get)
+//                      .collect(toSet());
+        return null;
     }
 }
