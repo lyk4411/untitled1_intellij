@@ -1,10 +1,10 @@
 package java8inaction.ch11.v1;
 
-import static lambdasinaction.chap11.Util.delay;
-
 import java.util.Random;
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.Future;
+
+import static java8inaction.ch11.Util.delay;
 
 public class Shop {
 
