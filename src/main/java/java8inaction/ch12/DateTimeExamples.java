@@ -33,6 +33,7 @@ public class DateTimeExamples {
     }
 
     private static void useOldDate() {
+        System.out.println("useOldDate:===============================================");
         Date date = new Date(114, 2, 18);
         System.out.println(date);
 
@@ -44,6 +45,8 @@ public class DateTimeExamples {
     }
 
     private static void useLocalDate() {
+        System.out.println("useLocalDate:===============================================");
+
         LocalDate date = LocalDate.of(2014, 3, 18);
         int year = date.getYear(); // 2014
         Month month = date.getMonth(); // MARCH
@@ -91,6 +94,8 @@ public class DateTimeExamples {
     }
 
     private static void useTemporalAdjuster() {
+        System.out.println("useTemporalAdjuster:===============================================");
+
         LocalDate date = LocalDate.of(2014, 3, 18);
         date = date.with(nextOrSame(DayOfWeek.SUNDAY));
         System.out.println(date);
@@ -128,6 +133,8 @@ public class DateTimeExamples {
     }
 
     private static void useDateFormatter() {
+        System.out.println("useDateFormatter:===============================================");
+
         LocalDate date = LocalDate.of(2014, 3, 18);
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         DateTimeFormatter italianFormatter = DateTimeFormatter.ofPattern("d. MMMM yyyy", Locale.ITALIAN);
