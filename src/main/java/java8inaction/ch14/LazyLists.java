@@ -120,8 +120,8 @@ public class LazyLists {
     }
 
     public static MyList<Integer> primes(MyList<Integer> numbers) {
-        return new LazyList<>(numbers.head(), () -> primes(numbers.tail()
-                .filter(n -> n % numbers.head() != 0)));
+        return new LazyList<>(numbers.head(),
+                () -> primes(numbers.tail().filter(n -> n % numbers.head() != 0)));
     }
 
     static <T> void printAll(MyList<T> numbers) {
