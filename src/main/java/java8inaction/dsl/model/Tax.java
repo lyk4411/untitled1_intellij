@@ -18,7 +18,7 @@ package java8inaction.dsl.model;
 
 public class Tax {
     public static double regional(double value) {
-        return value * 1.1;
+        return value * 1.10;
     }
 
     public static double general(double value) {
