@@ -31,11 +31,19 @@ public class EulerTransform implements Function<Double, Double> {
     }
 
     public static void main(String[] args) {
-
         Stream<Double> piStream2 = Stream.generate(new PiSupplier());
         piStream2.map(new EulerTransform())
                 .skip(100)
                 .limit(10)
+                .forEach(System.out::println);
+
+        Stream<Double> piStream3 = Stream.generate(new PiSupplier());
+        piStream3.map(new EulerTransform())
+                .map(new EulerTransform())
+                .map(new EulerTransform())
+                .map(new EulerTransform())
+                .map(new EulerTransform())
+                .limit(20)
                 .forEach(System.out::println);
     }
 }
