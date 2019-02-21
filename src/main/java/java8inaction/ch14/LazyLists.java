@@ -62,8 +62,11 @@ public class LazyLists {
         }
 
         public MyList<T> filter(Predicate<T> p) {
-            return isEmpty() ? this : p.test(head()) ? new MyLinkedList<>(
-                    head(), tail().filter(p)) : tail().filter(p);
+            return isEmpty() ?
+                    this :
+                    p.test(head()) ?
+                            new MyLinkedList<>(head(), tail().filter(p)) :
+                            tail().filter(p);
         }
     }
 
