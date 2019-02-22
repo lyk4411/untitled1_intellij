@@ -11,6 +11,10 @@ public class PatternMatching {
         Expr e = new BinOp("+", new Number(5), new BinOp("*", new Number(3), new Number(4)));
         Integer result = evaluate(e);
         System.out.println(e + " = " + result);
+
+        Expr e1 = new BinOp("*", new Number(5), new BinOp("+", new Number(3), new Number(4)));
+        Integer result1 = evaluate(e1);
+        System.out.println(e1 + " = " + result1);
     }
 
     private static void simplify() {
