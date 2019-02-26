@@ -86,12 +86,14 @@ public class LazyLists {
 
     static class LazyList<T> implements MyList<T> {
         final T head;
+
         final Supplier<MyList<T>> tail;
 
         public LazyList(T head, Supplier<MyList<T>> tail) {
             this.head = head;
             this.tail = tail;
         }
+
 
         public T head() {
             return head;
