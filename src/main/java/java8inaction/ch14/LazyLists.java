@@ -17,6 +17,9 @@ public class LazyLists {
         int four = numbers.tail().tail().head();
         System.out.println(two + " " + three + " " + four);
 
+        System.out.println(numbers.tail().tail());
+        System.out.println(numbers.tail().tail() == numbers.tail().tail());
+
         numbers = from(2);
         int prime_two = primes(numbers).head();
         int prime_three = primes(numbers).tail().head();
