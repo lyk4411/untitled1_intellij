@@ -1,11 +1,11 @@
 package javaTuning.ch02.buffer;
 
-import java.io.Serializable;
-import java.lang.reflect.Method;
-
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;
 import net.sf.cglib.proxy.MethodProxy;
+
+import java.io.Serializable;
+import java.lang.reflect.Method;
 
 public class CglibHeavyMethodInterceptor implements MethodInterceptor {
 	HeavyMethodDemo real=new HeavyMethodDemo();

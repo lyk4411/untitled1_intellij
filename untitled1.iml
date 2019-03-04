@@ -194,5 +194,6 @@
     <orderEntry type="library" name="Maven: org.springframework:spring-webmvc:4.0.2.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: com.juvenxu.mvnbook:template-method:0.0.1-SNAPSHOT" level="project" />
     <orderEntry type="library" name="Maven: jmock:jmock:1.2.0" level="project" />
+    <orderEntry type="library" name="Maven: net.sf.ehcache:ehcache:1.2.3" level="project" />
   </component>
 </module>

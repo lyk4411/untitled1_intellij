@@ -1,13 +1,10 @@
 package javaTuning.ch02.buffer;
 
-import java.io.IOException;
-import java.io.Serializable;
-import java.util.HashMap;
-
-import net.sf.ehcache.Cache;
 import net.sf.ehcache.CacheException;
 import net.sf.ehcache.CacheManager;
 import net.sf.ehcache.Element;
+
+import java.io.Serializable;
 
 public class EHCacheUtil {
 
@@ -42,8 +39,6 @@ public class EHCacheUtil {
 		try {
 			manager.getCache(cachename).removeAll();
 		} catch (IllegalStateException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
