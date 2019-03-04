@@ -60,7 +60,7 @@ public class StringSplitTest {
 		        st.nextToken();
 		        //System.out.println(a);
 		     }
-		     st = new StringTokenizer(orgStr,";");
+//		     st = new StringTokenizer(orgStr,";");
 	     }
 		long endtime=System.currentTimeMillis();
 		
