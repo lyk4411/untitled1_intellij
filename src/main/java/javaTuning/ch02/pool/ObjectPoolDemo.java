@@ -34,6 +34,7 @@ public class ObjectPoolDemo {
 		try{
 		while(true){
 			if(endcount.get()==3){					//�ȴ�3���߳�ȫ������
+				System.out.println("=====================close=====================");
 				pool.close();
 				break;
 			}
