@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 public class StringSplitTest {
 
-	//@Test
+	@Test
 	public void testSplit_i() {
 		
 		String orgStr=null;
