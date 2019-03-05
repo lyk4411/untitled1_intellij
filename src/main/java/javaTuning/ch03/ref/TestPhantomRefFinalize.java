@@ -1,11 +1,11 @@
 package javaTuning.ch03.ref;
 
+import org.junit.Test;
+
 import java.lang.ref.PhantomReference;
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
 import java.util.HashMap;
-
-import org.junit.Test;
 
 public class TestPhantomRefFinalize {
 
