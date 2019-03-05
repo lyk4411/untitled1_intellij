@@ -1,13 +1,9 @@
 package javaTuning.ch03.ref;
 
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.WeakHashMap;
-
 import org.junit.Test;
+
+import java.util.*;
 
 /**
  * -Xmx5M
