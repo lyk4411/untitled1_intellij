@@ -1,10 +1,10 @@
 package javaTuning.ch03.ref;
 
-import java.lang.ref.WeakReference;
+import org.junit.Test;
+
 import java.lang.ref.Reference;
 import java.lang.ref.ReferenceQueue;
-
-import org.junit.Test;
+import java.lang.ref.WeakReference;
 
 public class TestWeakRef {
 
