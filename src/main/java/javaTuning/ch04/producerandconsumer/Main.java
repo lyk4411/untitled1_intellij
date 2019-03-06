@@ -26,6 +26,6 @@ public class Main {
         producer2.stop();
         producer3.stop();
         Thread.sleep(3000);
-        service.shutdown();
+        service.shutdownNow();
     }
 }

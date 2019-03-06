@@ -19,6 +19,7 @@ public class Consumer implements Runnable {
 
 		try {
 			while(true){
+				if(queue.isEmpty()) break;
 				PCData data = queue.take();
 				if (null != data) {
 					int re = data.getData() * data.getData();
