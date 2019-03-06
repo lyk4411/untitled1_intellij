@@ -1,9 +1,6 @@
 package javaTuning.ch04.producerandconsumer;
 
-import java.util.concurrent.BlockingQueue;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.*;
 
 public class Main {
 	public static void main(String[] args) throws InterruptedException {
@@ -22,10 +19,14 @@ public class Main {
         service.execute(consumer2);
         service.execute(consumer3);
         Thread.sleep(10 * 1000);
-        producer1.stop();
-        producer2.stop();
-        producer3.stop();
+//        producer1.stop();
+//        producer2.stop();
+//        producer3.stop();
         Thread.sleep(3000);
-        service.shutdownNow();
+        service.shutdown();
+        if(!service.awaitTermination(10, TimeUnit.SECONDS)){
+                service.shutdownNow();
+        }
+        System.out.println("end.");
     }
 }

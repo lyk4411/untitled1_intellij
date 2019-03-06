@@ -28,6 +28,7 @@ public class Producer implements Runnable {
 				if (!queue.offer(data, 2, TimeUnit.SECONDS)) {
 					System.err.println("failed to put data��" + data);
 				}
+
 			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();

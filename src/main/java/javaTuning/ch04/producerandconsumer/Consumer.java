@@ -19,8 +19,8 @@ public class Consumer implements Runnable {
 
 		try {
 			while(true){
-				if(queue.isEmpty()) break;
-				PCData data = queue.take();
+
+				PCData data = queue.poll();
 				if (null != data) {
 					int re = data.getData() * data.getData();
 					System.out.println(MessageFormat.format("{0}*{1}={2}",
