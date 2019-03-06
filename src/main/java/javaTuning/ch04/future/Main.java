@@ -22,5 +22,6 @@ public class Main {
         //�൱�������е�data.getContent()��ȡ��call()�����ķ���ֵ
         //�����ʱcall()����û��ִ����ɣ�����Ȼ��ȴ�
         System.out.println("���� = " + future.get());
+        executor.shutdownNow();
     }
 }
