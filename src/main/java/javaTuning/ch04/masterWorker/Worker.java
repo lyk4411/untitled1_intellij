@@ -5,9 +5,7 @@ import java.util.Queue;
 
 
 public class Worker implements Runnable{
-	//������У�����ȡ��������
 	protected Queue<Object> workQueue;
-	//������������
 	protected Map<String,Object> resultMap;
 	public void setWorkQueue(Queue<Object> workQueue) {
 		this.workQueue = workQueue;
@@ -17,7 +15,6 @@ public class Worker implements Runnable{
 		this.resultMap = resultMap;
 	}
 	
-	//����������߼�����������ʵ�־����߼�
 	public Object handle(Object input){
 		return input;
 	}
@@ -25,12 +22,9 @@ public class Worker implements Runnable{
 	@Override
 	public void run() {
 		while (true) {
-			 //��ȡ������
 			 Object input = workQueue.poll();
 			 if (input == null) break;
-			 //����������
 			 Object re=handle(input);
-			 //��������д������
 			 resultMap.put(Integer.toString(input.hashCode()), re);
 		}
 	}

@@ -10,14 +10,10 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 
 
 public class Master {
-	//�������
 	protected Queue<Object> workQueue = new ConcurrentLinkedQueue<Object>();
-	//Worker�̶߳���
 	protected Map<String,Thread> threadMap=new HashMap<String,Thread>();
-	//������������
 	protected Map<String,Object> resultMap = new ConcurrentHashMap<String,Object>();
 	
-	//�Ƿ����е������񶼽�����
 	public boolean isComplete(){
 		for(Map.Entry<String,Thread> entry:threadMap.entrySet()){
 			if(entry.getValue().getState()!=Thread.State.TERMINATED){
@@ -27,7 +23,6 @@ public class Master {
 		return true;
 	}
 	
-	//Master�Ĺ��죬��Ҫһ��Worker�����߼�������Ҫ��Worker��������
 	public Master(Worker worker,int countWorker){
 		worker.setWorkQueue(workQueue);
 		worker.setResultMap(resultMap);
@@ -35,17 +30,14 @@ public class Master {
 			threadMap.put(Integer.toString(i), new Thread(worker,Integer.toString(i)));
 	}
 	
-	//�ύһ������
 	public void submit(Object job){
 		workQueue.add(job);
 	}
 	
-	//��������������
 	public Map<String,Object>  getResultMap(){
 		return resultMap;
 	}
 	
-	//��ʼ�������е�Worker���̣����д���
 	public void execute(){
 		for(Map.Entry<String, Thread> entry:threadMap.entrySet()){
 			entry.getValue().start();
