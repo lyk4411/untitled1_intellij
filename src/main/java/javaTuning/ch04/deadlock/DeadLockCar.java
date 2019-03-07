@@ -118,6 +118,6 @@ public class DeadLockCar extends Thread{
 		car2west.start();
 		car2east.start();
 		Thread.sleep(1000);
-//		car2north.interrupt();
+		car2north.interrupt();
 	}
 }
