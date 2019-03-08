@@ -24,7 +24,7 @@ public class TraceClassInstance {
 
 	public static void main(String[] args) throws CannotCompileException, InstantiationException,
 			IllegalAccessException, NotFoundException {
-		for (int i = 0; i < Integer.MAX_VALUE; i++) {
+		for (int i = 0; i < 1502; i++) {
 			JavaBeanObject v=createInstance2(i);
 			cl = new MyClassLoader();
 		}
