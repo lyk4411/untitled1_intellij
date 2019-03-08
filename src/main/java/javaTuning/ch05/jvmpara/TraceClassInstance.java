@@ -33,7 +33,7 @@ public class TraceClassInstance {
 	private static JavaBeanObject createInstance2(int i) throws CannotCompileException,
 			InstantiationException, IllegalAccessException, NotFoundException {
 		CtClass c = ClassPool.getDefault().makeClass("Geym" + i);
-		c.setSuperclass(ClassPool.getDefault().get("javatuning.ch5.memory.JavaBeanObject"));
+		c.setSuperclass(ClassPool.getDefault().get("javaTuning.ch05.memory.JavaBeanObject"));
 		Class clz = c.toClass(cl, null);
 		return (JavaBeanObject)clz.newInstance();
 	}
