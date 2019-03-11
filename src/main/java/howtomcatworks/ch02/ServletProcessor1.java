@@ -14,7 +14,7 @@ public class ServletProcessor1 {
   public void process(Request request, Response response) {
 
     String uri = request.getUri();
-    String servletName = uri.substring(uri.lastIndexOf("/") + 1);
+    String servletName = "howtomcatworks.ch02." + uri.substring(uri.lastIndexOf("/") + 1);
     URLClassLoader loader = null;
 
     try {
@@ -26,6 +26,7 @@ public class ServletProcessor1 {
       // org.apache.catalina.startup.ClassLoaderFactory
       String repository = (new URL("file", null, classPath.getCanonicalPath() + File.separator))
           .toString();
+      System.out.println("repository:" + repository);
       // the code for forming the URL is taken from the addRepository method in
       // org.apache.catalina.loader.StandardClassLoader class.
       urls[0] = new URL(null, repository, streamHandler);
