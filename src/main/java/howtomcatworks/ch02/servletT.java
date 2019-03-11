@@ -1,9 +1,6 @@
 package howtomcatworks.ch02;
 
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import javax.servlet.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -13,29 +10,38 @@ import java.io.PrintWriter;
  * Porject name: untitled1
  */
 
-public class servletT extends HttpServlet {
+public class servletT implements Servlet {
 
     public servletT(){
         super();
     }
 
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
 
-        resp.setContentType("text/html");
-        PrintWriter out = resp.getWriter();
-        out.println("<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">");
-        out.println("<HTML>");
-        out.println("  <HEAD><TITLE>A Servlet</TITLE></HEAD>");
-        out.println("  <BODY>");
-        out.print("    This is ");
-        out.print(this.getClass());
-        out.println(", using the GET method");
-        out.println("  </BODY>");
-        out.println("</HTML>");
-        out.flush();
-        out.close();
+    @Override
+    public void init(ServletConfig servletConfig) throws ServletException {
+
     }
 
+    @Override
+    public ServletConfig getServletConfig() {
+        return null;
+    }
+
+    @Override
+    public void service(ServletRequest request, ServletResponse response) throws ServletException, IOException {
+        System.out.println("from hello world.");
+        PrintWriter out = response.getWriter();
+        out.println("Hello. Roses are red.");
+        out.print("Violets are blue.");
+    }
+
+    @Override
+    public String getServletInfo() {
+        return null;
+    }
+
+    @Override
+    public void destroy() {
+
+    }
 }
