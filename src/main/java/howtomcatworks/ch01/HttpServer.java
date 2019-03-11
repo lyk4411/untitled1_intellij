@@ -66,6 +66,7 @@ public class HttpServer {
 
         //check if the previous URI is a shutdown command
         shutdown = request.getUri().equals(SHUTDOWN_COMMAND);
+        System.out.println("URI:" + request.getUri());
       }
       catch (Exception e) {
         e.printStackTrace();
