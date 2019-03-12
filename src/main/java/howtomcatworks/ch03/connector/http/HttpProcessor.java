@@ -32,7 +32,7 @@ public class HttpProcessor {
    * The string manager for this package.
    */
   protected StringManager sm =
-    StringManager.getManager("howtomcatworks.ch03.connector.http");
+    StringManager.getManager("howtomcatworks");
 
   public void process(Socket socket) {
     SocketInputStream input = null;
