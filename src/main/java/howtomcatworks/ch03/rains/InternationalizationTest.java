@@ -11,14 +11,15 @@ import java.util.Locale;
  */
 public class InternationalizationTest {
     public static void main(String[] args) {
-//        Locale.setDefault(Locale.ENGLISH);
-//        StringManager manager = StringManager.getManager("howtomcatworks.ch03.rains");
-//        System.out.println(manager.getString("theme"));
+        Locale.setDefault(Locale.ENGLISH);
+        StringManager manager = StringManager.getManager("rains");
+        System.out.println(manager.getString("theme"));
 
-        System.out.println(System.getProperty("user.dir"));
-        System.out.println(Thread.currentThread().getContextClassLoader().getResource(""));
+//        System.out.println(Thread.currentThread().getContextClassLoader().getResource(""));
+//        System.out.println(System.getProperty("user.dir"));
         Locale.setDefault(Locale.JAPANESE);
-        StringManager manager1 = StringManager.getManager("howtomcatworks.ch03.rains");
+        StringManager manager1 = StringManager.getManager("rains");
+        System.out.println(manager == manager1);
         System.out.println(manager1.getString("theme"));
 
 
