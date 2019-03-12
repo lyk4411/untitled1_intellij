@@ -280,12 +280,14 @@ public class SocketInputStream extends InputStream {
     }
 
 
+
+
     /**
      * Read a header, and copies it to the given buffer. This
      * function is meant to be used during the HTTP request header parsing.
      * Do NOT attempt to read the request body using it.
      *
-     * param request Line Request line object
+     * param requestLine Request line object
      * @throws IOException If an exception occurs during the underlying socket
      * read operations, or if the given buffer is not big enough to accomodate
      * the whole line.
