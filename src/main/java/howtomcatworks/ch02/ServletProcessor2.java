@@ -1,20 +1,20 @@
 package howtomcatworks.ch02;
 
+import javax.servlet.Servlet;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.net.URLClassLoader;
 import java.net.URLStreamHandler;
-import javax.servlet.Servlet;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
 
 public class ServletProcessor2 {
 
   public void process(Request request, Response response) {
 
     String uri = request.getUri();
-    String servletName = uri.substring(uri.lastIndexOf("/") + 1);
+    String servletName = "howtomcatworks.ch02." + uri.substring(uri.lastIndexOf("/") + 1);
     URLClassLoader loader = null;
 
     try {
