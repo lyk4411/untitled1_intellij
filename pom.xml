@@ -453,6 +453,12 @@
             <version>1.5.4</version>
         </dependency>
 
+        <dependency>
+            <groupId>tomcat</groupId>
+            <artifactId>catalina</artifactId>
+            <version>4.0.4</version>
+        </dependency>
+
     </dependencies>
     <distributionManagement>
         <repository>
