@@ -35,14 +35,16 @@ public class CheckCompletenessofaBinaryTree {
         t1.right = t3;
         t2.left = t4;
         t2.right = t5;
-        t3.right = t6;
+        t3.left = t6;
         System.out.println(ccbt.isCompleteTree(t1));
+        TreeNode t7 = new TreeNode(7);
 
         t1.left = t2;
         t1.right = t3;
         t2.left = t4;
         t2.right = t5;
-        t3.left = t6;
+        t3.right = t7;
+        t3.left = null;
         System.out.println(ccbt.isCompleteTree(t1));
     }
 }
