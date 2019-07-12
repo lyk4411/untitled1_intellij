@@ -11,6 +11,8 @@ import java.util.List;
 public class ExpressiveWords {
     public int expressiveWords(String S, String[] words) {
         RLE R = new RLE(S);
+//        System.out.println(R.key);
+//        System.out.println(R.counts);
         int ans = 0;
 
         search: for (String word: words) {
