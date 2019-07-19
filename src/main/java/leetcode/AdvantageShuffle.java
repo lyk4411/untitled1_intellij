@@ -54,6 +54,10 @@ public class AdvantageShuffle {
         A = new int[]{12,24,8,32};
         B = new int[]{13,25,32,11};
         IntStream.of(as.advantageCount(A, B)).forEach(n -> System.out.print(n + " : "));
+        A = new int[]{2,0,4,1,2};
+        B = new int[]{1,3,0,0,2};
+        System.out.println();
+        IntStream.of(as.advantageCount(A, B)).forEach(n -> System.out.print(n + " : "));
 
     }
 }
