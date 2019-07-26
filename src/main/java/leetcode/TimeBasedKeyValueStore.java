@@ -27,6 +27,10 @@ public class TimeBasedKeyValueStore {
         if (!M.containsKey(key)) return "";
 
         List<Pair<Integer, String>> A = M.get(key);
+//        如果搜索键包含在列表中，则返回搜索键的索引；否则返回 (-(插入点) - 1)。插入点
+//        被定义为将键插入列表的那一点：即第一个大于此键的元素索引；如果列表中的所有元素
+//        都小于指定的键，则为 list.size()。注意，这保证了当且仅当此键被找到时，返回的
+//        值将 >= 0。
         int i = Collections.binarySearch(A, new Pair<Integer, String>(timestamp, "{"),
                 (a, b) -> Integer.compare(a.getKey(), b.getKey()));
 
