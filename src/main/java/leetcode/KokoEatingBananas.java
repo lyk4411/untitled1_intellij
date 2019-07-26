@@ -34,6 +34,12 @@ public class KokoEatingBananas {
         KokoEatingBananas keb = new KokoEatingBananas();
         int[] piles1 = new int[]{3,6,7,11};
         int H1 = 8;
+        int[] piles2 = new int[]{30,11,23,4,20};
+        int H2 = 5;
+        int[] piles3 = new int[]{30,11,23,4,20};
+        int H3 = 6;
         System.out.println(keb.minEatingSpeed(piles1, H1));
+        System.out.println(keb.minEatingSpeed(piles2, H2));
+        System.out.println(keb.minEatingSpeed(piles3, H3));
     }
 }
