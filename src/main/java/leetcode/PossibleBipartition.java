@@ -25,7 +25,7 @@ public class PossibleBipartition {
 
         color = new HashMap();
         for (int node = 1; node <= N; ++node)
-            if (!color.containsKey(node) && !dfs(node, 0))
+            if (!color.containsKey(node) & !dfs(node, 0))
                 return false;
         return true;
     }
