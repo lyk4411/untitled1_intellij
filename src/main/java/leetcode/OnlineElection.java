@@ -27,6 +27,7 @@ public class OnlineElection {
                 new int[]{0,1,1,0,0,1,0},
                 new int[]{0,5,10,15,20,25,30}
         );
+        System.out.println(oe.tm);
         System.out.println(oe.q(3));
         System.out.println(oe.q(12));
         System.out.println(oe.q(25));
