@@ -27,5 +27,4 @@ public class PlusOne {
             res[0] = 1;
             return res;
         }
-
 }
