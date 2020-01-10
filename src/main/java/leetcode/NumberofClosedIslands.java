@@ -31,6 +31,10 @@ public class NumberofClosedIslands {
     public static void main(String[] args) {
         NumberofClosedIslands nci = new NumberofClosedIslands();
         int[][] g1 = new int[][]{{1,1,1,1,1,1,1,0},{1,0,0,0,0,1,1,0},{1,0,1,0,1,1,1,0},{1,0,0,0,0,1,0,1},{1,1,1,1,1,1,1,0}};
+        int[][] g2 = new int[][]{{0,0,1,0,0},{0,1,0,1,0},{0,1,1,1,0}};
+        int[][] g3 = new int[][]{{1,1,1,1,1,1,1},{1,0,0,0,0,0,1},{1,0,1,1,1,0,1},{1,0,1,0,1,0,1},{1,0,1,1,1,0,1},{1,0,0,0,0,0,1},{1,1,1,1,1,1,1}};
         System.out.println(nci.closedIsland(g1));
+        System.out.println(nci.closedIsland(g2));
+        System.out.println(nci.closedIsland(g3));
     }
 }
